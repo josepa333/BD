@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5e19e52724ba4310982d929630f053e2" Name="Diagram1">
+        <EntityTypeShape EntityType="proyectoBaseModel.alineacion" Width="1.5" PointX="3" PointY="67.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.anotadore" Width="1.5" PointX="6" PointY="67.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.arbitro" Width="1.5" PointX="8.25" PointY="69.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.arbitrojuego" Width="1.5" PointX="10.5" PointY="67.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.cambio" Width="1.5" PointX="3" PointY="62.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.categoria" Width="1.5" PointX="3" PointY="73.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.club" Width="1.5" PointX="5.25" PointY="79.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.clubcompeticiontemporada" Width="1.5" PointX="10.5" PointY="75" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.competicion" Width="1.5" PointX="3" PointY="84.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.competiciontemporada" Width="1.5" PointX="5.25" PointY="87.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.contrato" Width="1.5" PointX="13.5" PointY="83.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.correo" Width="1.5" PointX="8.25" PointY="82.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.direccion" Width="1.5" PointX="11.25" PointY="86.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.entrenador" Width="1.5" PointX="11.25" PointY="90.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.entrenadortitulo" Width="1.5" PointX="13.5" PointY="93.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.especialidad" Width="1.5" PointX="3" PointY="99.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.especialidadjugador" Width="1.5" PointX="8.25" PointY="77.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.fechacalendario" Width="1.5" PointX="16.5" PointY="79.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.federacion" Width="1.5" PointX="3" PointY="102.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.funcclubcomptemporada" Width="1.5" PointX="13.5" PointY="88.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.funcionariodeportivo" Width="1.5" PointX="3" PointY="106.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.histalineacion" Width="1.5" PointX="13.5" PointY="71.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.histanotadore" Width="1.5" PointX="16.5" PointY="74.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.histarbitrojuego" Width="1.5" PointX="13.5" PointY="67.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.histcambio" Width="1.5" PointX="16.5" PointY="69.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.histclubcompeticiontemporada" Width="1.5" PointX="13.5" PointY="76.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.histcompeticiontemporada" Width="1.5" PointX="8.25" PointY="86.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.histfechacalendario" Width="1.5" PointX="19.5" PointY="75.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.histfuncclubcomptemporada" Width="1.5" PointX="16.5" PointY="83.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.histjuego" Width="1.5" PointX="16.5" PointY="62.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.juego" Width="1.5" PointX="7.5" PointY="60.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.jugador" Width="1.5" PointX="11.25" PointY="80.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.oferta" Width="1.5" PointX="16.5" PointY="89.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.sociosclub" Width="1.5" PointX="7.5" PointY="73.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.telefono" Width="1.5" PointX="8.25" PointY="91.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.temporada" Width="1.5" PointX="3" PointY="111.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.tituloacademico" Width="1.5" PointX="3" PointY="115.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoBaseModel.usuario" Width="1.5" PointX="0.75" PointY="60.5" IsExpanded="true" />
+        <AssociationConnector Association="proyectoBaseModel.alineacion_club_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.alineacion_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.alineacion_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.alineacion_juego_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.alineacion_jugador_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.anotadores_club_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.anotadores_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.anotadores_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.anotadores_juego_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.anotadores_jugador_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.arbitro_categoria_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.arbitro_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.arbitro_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.arbitrojuego_arbitro_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histarbitrojuego_arbitro_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.arbitrojuego_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.arbitrojuego_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.arbitrojuego_juego_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.cambios_club_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.cambios_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.cambios_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.cambios_juego_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.cambios_jugador_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.cambios_jugador_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.categoria_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.categoria_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.club_federacion_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.club_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.club_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.clubtemporada_club_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.clubtemporada_club_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.contrato_club_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histalineacion_club_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histanotadores_club_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histcambios_club_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histjuego_club_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histjuego_club_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.juego_club_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.juego_club_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.jugadorclubtemporada_club_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.jugadorclubtemporada_club_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.oferta_club_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.sociosclub_club_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.clubcompeticiontemporada_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.clubcompeticiontemporada_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.clubcompeticiontemporada_fk3" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.competicion_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.competicion_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.temporada_competicion_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.temporada_competicion_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.competiciontemporada_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.competiciontemporada_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.competiciontemporada_fk3" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.fechacalendario_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.jugadorclubcomptemporada_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.contrato_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.contrato_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.contrato_fk3" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.correo_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.correo_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.correo_fk3" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.direccion_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.direccion_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.direccion_fk3" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.entrenador_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.entrenador_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.entrenador_fk3" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.entrenadortitulo_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.entrenadortitulo_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.entrenadortitulo_fk3" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.entrenadortitulo_fk4" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.especialidad_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.especialidad_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.especialidadjugador_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.especialidadjugador_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.especialidadjugador_fk3" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.especialidadjugador_fk4" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.fechacalendario_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.fechacalendario_fk3" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.juego_fechascalendario_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.federacion_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.federacion_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.funcclubcomptemporada_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.funcclubcomptemporada_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.jugadorclubtemporada_fk3" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.funcionariodeportivo_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.funcionariodeportivo_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.jugador_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.jugadorclubtemporada_fk4" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.oferta_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.telefono_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histalineacion_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histalineacion_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histalineacion_histjuego_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histalineacion_jugador_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histanotadores_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histanotadores_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histanotadores_histjuego_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histanotadores_jugador_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histarbitrojuego_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histarbitrojuego_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histarbitrojuego_fk3" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histcambios_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histcambios_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histcambios_histjuego_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histcambios_jugador_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histcambios_jugador_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histclubcompeticiontempor_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histclubcompeticiontempor_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histclubcompeticiontempor_fk3" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.hist_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histcompeticiontemporada_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histcompeticiontemporada_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histfechacalendario_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histfuncclubcomptemporada_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histfechacalendario_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histfechacalendario_fk3" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histjuego_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histfuncclubcomptemporada_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histfuncclubcomptemporada_fk3" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histjuego_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.histjuego_fk3" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.juego_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.juego_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.jugador_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.jugador_fk3" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.oferta_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.oferta_fk3" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.sociosclub_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.sociosclub_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.telefono_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.telefono_fk3" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.temporada_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.temporada_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.tituloacademico_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.tituloacademico_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.usuario_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoBaseModel.usuario_fk2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
