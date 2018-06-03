@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoBases", "ProyectoBases\ProyectoBases.csproj", "{C2D2B352-0DE9-4679-86ED-52C111417767}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A5CC51A1-7440-4F83-A8DA-92B456633C17} = {A5CC51A1-7440-4F83-A8DA-92B456633C17}
+	EndProjectSection
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "appBases", "appBases\", "{A5CC51A1-7440-4F83-A8DA-92B456633C17}"
 	ProjectSection(WebsiteProperties) = preProject
