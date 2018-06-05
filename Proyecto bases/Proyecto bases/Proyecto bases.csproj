@@ -176,6 +176,9 @@
     <Compile Include="Models\arbitrojuego.cs">
       <DependentUpon>clasesModelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\calendarioCompeticion_Result.cs">
+      <DependentUpon>clasesModelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\cambios.cs">
       <DependentUpon>clasesModelo.tt</DependentUpon>
     </Compile>

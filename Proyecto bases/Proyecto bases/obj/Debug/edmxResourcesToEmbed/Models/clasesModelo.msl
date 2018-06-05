@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="ProyectoBasesJARModelStoreContainer" CdmEntityContainer="ProyectoBasesJAREntities1">
+  <EntityContainerMapping StorageEntityContainer="ProyectoBasesJARModelStoreContainer" CdmEntityContainer="ProyectoBasesJAREntities4">
     <EntitySetMapping Name="alineacion">
       <EntityTypeMapping TypeName="ProyectoBasesJARModel.alineacion">
         <MappingFragment StoreEntitySet="alineacion">
@@ -532,5 +532,23 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="buscaFecha" FunctionName="ProyectoBasesJARModel.Store.buscaFecha" />
+    <FunctionImportMapping FunctionImportName="calendarioCompeticion" FunctionName="ProyectoBasesJARModel.Store.calendarioCompeticion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProyectoBasesJARModel.calendarioCompeticion_Result">
+          <ScalarProperty Name="idcompeticion" ColumnName="idcompeticion" />
+          <ScalarProperty Name="idcalendario" ColumnName="idcalendario" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="idtemporada" ColumnName="idtemporada" />
+          <ScalarProperty Name="usrcreador" ColumnName="usrcreador" />
+          <ScalarProperty Name="fchcreacion" ColumnName="fchcreacion" />
+          <ScalarProperty Name="usrmodificador" ColumnName="usrmodificador" />
+          <ScalarProperty Name="fchmodificacion" ColumnName="fchmodificacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="determinaFecha" FunctionName="ProyectoBasesJARModel.Store.determinaFecha" />
+    <FunctionImportMapping FunctionImportName="generaCalendario" FunctionName="ProyectoBasesJARModel.Store.generaCalendario" />
+    <FunctionImportMapping FunctionImportName="ligador" FunctionName="ProyectoBasesJARModel.Store.ligador" />
   </EntityContainerMapping>
 </Mapping>

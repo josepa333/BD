@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ProyectoBasesJARModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ProyectoBasesJARModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="alineacion">
           <Key>
             <PropertyRef Name="idfuncionario" />
@@ -2212,6 +2212,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="buscaFecha" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NombreEquipo" Type="varchar" Mode="In" />
+          <Parameter Name="Fecha" Type="datetime" Mode="In" />
+          <Parameter Name="respuesta" Type="char" Mode="InOut" />
+        </Function>
+        <Function Name="calendarioCompeticion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="competicion" Type="varchar" Mode="In" />
+          <Parameter Name="temporada" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="determinaFecha" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Semana" Type="int" Mode="In" />
+          <Parameter Name="Dia" Type="int" Mode="In" />
+          <Parameter Name="Fecha" Type="datetime" Mode="InOut" />
+        </Function>
+        <Function Name="generaCalendario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="competicion" Type="varchar" Mode="In" />
+          <Parameter Name="temporada" Type="numeric" Mode="In" />
+          <Parameter Name="federacion" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="ligador" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="equipo1" Type="varchar" Mode="In" />
+          <Parameter Name="equipo2" Type="varchar" Mode="In" />
+          <Parameter Name="Dia" Type="int" Mode="In" />
+          <Parameter Name="fechaJuego" Type="datetime" Mode="InOut" />
+        </Function>
         <EntityContainer Name="ProyectoBasesJARModelStoreContainer">
           <EntitySet Name="alineacion" EntityType="Self.alineacion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="anotadores" EntityType="Self.anotadores" Schema="dbo" store:Type="Tables" />
@@ -2804,8 +2829,7 @@
             <End Role="usuario1" EntitySet="usuario" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ProyectoBasesJARModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -5292,7 +5316,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ProyectoBasesJAREntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ProyectoBasesJAREntities4" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="alineacion" EntityType="Self.alineacion" />
           <EntitySet Name="anotadores" EntityType="Self.anotadores" />
           <EntitySet Name="arbitro" EntityType="Self.arbitro" />
@@ -5883,13 +5907,48 @@
             <End Role="usuario" EntitySet="usuario" />
             <End Role="usuario1" EntitySet="usuario" />
           </AssociationSet>
+          <FunctionImport Name="buscaFecha">
+            <Parameter Name="NombreEquipo" Mode="In" Type="String" />
+            <Parameter Name="Fecha" Mode="In" Type="DateTime" />
+            <Parameter Name="respuesta" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="calendarioCompeticion" ReturnType="Collection(ProyectoBasesJARModel.calendarioCompeticion_Result)">
+            <Parameter Name="competicion" Mode="In" Type="String" />
+            <Parameter Name="temporada" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="determinaFecha">
+            <Parameter Name="Semana" Mode="In" Type="Int32" />
+            <Parameter Name="Dia" Mode="In" Type="Int32" />
+            <Parameter Name="Fecha" Mode="InOut" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="generaCalendario">
+            <Parameter Name="competicion" Mode="In" Type="String" />
+            <Parameter Name="temporada" Mode="In" Type="Decimal" />
+            <Parameter Name="federacion" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ligador">
+            <Parameter Name="equipo1" Mode="In" Type="String" />
+            <Parameter Name="equipo2" Mode="In" Type="String" />
+            <Parameter Name="Dia" Mode="In" Type="Int32" />
+            <Parameter Name="fechaJuego" Mode="InOut" Type="DateTime" />
+          </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="calendarioCompeticion_Result">
+          <Property Type="String" Name="idcompeticion" Nullable="false" MaxLength="8" />
+          <Property Type="Decimal" Name="idcalendario" Nullable="false" Precision="10" Scale="0" />
+          <Property Type="DateTime" Name="fecha" Nullable="false" Precision="23" />
+          <Property Type="Decimal" Name="idtemporada" Nullable="false" Precision="5" Scale="0" />
+          <Property Type="String" Name="usrcreador" Nullable="false" MaxLength="15" />
+          <Property Type="DateTime" Name="fchcreacion" Nullable="false" />
+          <Property Type="String" Name="usrmodificador" Nullable="true" MaxLength="15" />
+          <Property Type="DateTime" Name="fchmodificacion" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ProyectoBasesJARModelStoreContainer" CdmEntityContainer="ProyectoBasesJAREntities1">
+        <EntityContainerMapping StorageEntityContainer="ProyectoBasesJARModelStoreContainer" CdmEntityContainer="ProyectoBasesJAREntities4">
           <EntitySetMapping Name="alineacion">
             <EntityTypeMapping TypeName="ProyectoBasesJARModel.alineacion">
               <MappingFragment StoreEntitySet="alineacion">
@@ -6421,6 +6480,24 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="buscaFecha" FunctionName="ProyectoBasesJARModel.Store.buscaFecha" />
+          <FunctionImportMapping FunctionImportName="calendarioCompeticion" FunctionName="ProyectoBasesJARModel.Store.calendarioCompeticion">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProyectoBasesJARModel.calendarioCompeticion_Result">
+                <ScalarProperty Name="idcompeticion" ColumnName="idcompeticion" />
+                <ScalarProperty Name="idcalendario" ColumnName="idcalendario" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="idtemporada" ColumnName="idtemporada" />
+                <ScalarProperty Name="usrcreador" ColumnName="usrcreador" />
+                <ScalarProperty Name="fchcreacion" ColumnName="fchcreacion" />
+                <ScalarProperty Name="usrmodificador" ColumnName="usrmodificador" />
+                <ScalarProperty Name="fchmodificacion" ColumnName="fchmodificacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="determinaFecha" FunctionName="ProyectoBasesJARModel.Store.determinaFecha" />
+          <FunctionImportMapping FunctionImportName="generaCalendario" FunctionName="ProyectoBasesJARModel.Store.generaCalendario" />
+          <FunctionImportMapping FunctionImportName="ligador" FunctionName="ProyectoBasesJARModel.Store.ligador" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

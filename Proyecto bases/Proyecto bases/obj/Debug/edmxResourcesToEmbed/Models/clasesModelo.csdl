@@ -2483,7 +2483,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="ProyectoBasesJAREntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="ProyectoBasesJAREntities4" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="alineacion" EntityType="Self.alineacion" />
     <EntitySet Name="anotadores" EntityType="Self.anotadores" />
     <EntitySet Name="arbitro" EntityType="Self.arbitro" />
@@ -3074,5 +3074,40 @@
       <End Role="usuario" EntitySet="usuario" />
       <End Role="usuario1" EntitySet="usuario" />
     </AssociationSet>
+    <FunctionImport Name="buscaFecha">
+      <Parameter Name="NombreEquipo" Mode="In" Type="String" />
+      <Parameter Name="Fecha" Mode="In" Type="DateTime" />
+      <Parameter Name="respuesta" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="calendarioCompeticion" ReturnType="Collection(ProyectoBasesJARModel.calendarioCompeticion_Result)">
+      <Parameter Name="competicion" Mode="In" Type="String" />
+      <Parameter Name="temporada" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="determinaFecha">
+      <Parameter Name="Semana" Mode="In" Type="Int32" />
+      <Parameter Name="Dia" Mode="In" Type="Int32" />
+      <Parameter Name="Fecha" Mode="InOut" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="generaCalendario">
+      <Parameter Name="competicion" Mode="In" Type="String" />
+      <Parameter Name="temporada" Mode="In" Type="Decimal" />
+      <Parameter Name="federacion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ligador">
+      <Parameter Name="equipo1" Mode="In" Type="String" />
+      <Parameter Name="equipo2" Mode="In" Type="String" />
+      <Parameter Name="Dia" Mode="In" Type="Int32" />
+      <Parameter Name="fechaJuego" Mode="InOut" Type="DateTime" />
+    </FunctionImport>
   </EntityContainer>
+  <ComplexType Name="calendarioCompeticion_Result">
+    <Property Type="String" Name="idcompeticion" Nullable="false" MaxLength="8" />
+    <Property Type="Decimal" Name="idcalendario" Nullable="false" Precision="10" Scale="0" />
+    <Property Type="DateTime" Name="fecha" Nullable="false" Precision="23" />
+    <Property Type="Decimal" Name="idtemporada" Nullable="false" Precision="5" Scale="0" />
+    <Property Type="String" Name="usrcreador" Nullable="false" MaxLength="15" />
+    <Property Type="DateTime" Name="fchcreacion" Nullable="false" />
+    <Property Type="String" Name="usrmodificador" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="fchmodificacion" Nullable="true" />
+  </ComplexType>
 </Schema>

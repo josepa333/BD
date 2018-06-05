@@ -12,11 +12,13 @@ namespace Proyecto_bases.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
-    public partial class ProyectoBasesJAREntities1 : DbContext
+    public partial class ProyectoBasesJAREntities4 : DbContext
     {
-        public ProyectoBasesJAREntities1()
-            : base("name=ProyectoBasesJAREntities1")
+        public ProyectoBasesJAREntities4()
+            : base("name=ProyectoBasesJAREntities4")
         {
         }
     
@@ -63,5 +65,78 @@ namespace Proyecto_bases.Models
         public virtual DbSet<temporada> temporada { get; set; }
         public virtual DbSet<tituloacademico> tituloacademico { get; set; }
         public virtual DbSet<usuario> usuario { get; set; }
+    
+        public virtual int buscaFecha(string nombreEquipo, Nullable<System.DateTime> fecha, ObjectParameter respuesta)
+        {
+            var nombreEquipoParameter = nombreEquipo != null ?
+                new ObjectParameter("NombreEquipo", nombreEquipo) :
+                new ObjectParameter("NombreEquipo", typeof(string));
+    
+            var fechaParameter = fecha.HasValue ?
+                new ObjectParameter("Fecha", fecha) :
+                new ObjectParameter("Fecha", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("buscaFecha", nombreEquipoParameter, fechaParameter, respuesta);
+        }
+    
+        public virtual ObjectResult<calendarioCompeticion_Result> calendarioCompeticion(string competicion, Nullable<decimal> temporada)
+        {
+            var competicionParameter = competicion != null ?
+                new ObjectParameter("competicion", competicion) :
+                new ObjectParameter("competicion", typeof(string));
+    
+            var temporadaParameter = temporada.HasValue ?
+                new ObjectParameter("temporada", temporada) :
+                new ObjectParameter("temporada", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<calendarioCompeticion_Result>("calendarioCompeticion", competicionParameter, temporadaParameter);
+        }
+    
+        public virtual int determinaFecha(Nullable<int> semana, Nullable<int> dia, ObjectParameter fecha)
+        {
+            var semanaParameter = semana.HasValue ?
+                new ObjectParameter("Semana", semana) :
+                new ObjectParameter("Semana", typeof(int));
+    
+            var diaParameter = dia.HasValue ?
+                new ObjectParameter("Dia", dia) :
+                new ObjectParameter("Dia", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("determinaFecha", semanaParameter, diaParameter, fecha);
+        }
+    
+        public virtual int generaCalendario(string competicion, Nullable<decimal> temporada, string federacion)
+        {
+            var competicionParameter = competicion != null ?
+                new ObjectParameter("competicion", competicion) :
+                new ObjectParameter("competicion", typeof(string));
+    
+            var temporadaParameter = temporada.HasValue ?
+                new ObjectParameter("temporada", temporada) :
+                new ObjectParameter("temporada", typeof(decimal));
+    
+            var federacionParameter = federacion != null ?
+                new ObjectParameter("federacion", federacion) :
+                new ObjectParameter("federacion", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("generaCalendario", competicionParameter, temporadaParameter, federacionParameter);
+        }
+    
+        public virtual int ligador(string equipo1, string equipo2, Nullable<int> dia, ObjectParameter fechaJuego)
+        {
+            var equipo1Parameter = equipo1 != null ?
+                new ObjectParameter("equipo1", equipo1) :
+                new ObjectParameter("equipo1", typeof(string));
+    
+            var equipo2Parameter = equipo2 != null ?
+                new ObjectParameter("equipo2", equipo2) :
+                new ObjectParameter("equipo2", typeof(string));
+    
+            var diaParameter = dia.HasValue ?
+                new ObjectParameter("Dia", dia) :
+                new ObjectParameter("Dia", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ligador", equipo1Parameter, equipo2Parameter, diaParameter, fechaJuego);
+        }
     }
 }

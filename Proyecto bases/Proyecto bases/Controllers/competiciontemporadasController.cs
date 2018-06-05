@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -12,7 +13,7 @@ namespace Proyecto_bases.Controllers
 {
     public class competiciontemporadasController : Controller
     {
-        private ProyectoBasesJAREntities1 db = new ProyectoBasesJAREntities1();
+        private ProyectoBasesJAREntities4 db = new ProyectoBasesJAREntities4();
 
         // GET: competiciontemporadas
         public ActionResult Index()
@@ -141,17 +142,15 @@ namespace Proyecto_bases.Controllers
             base.Dispose(disposing);
         }
 
-        public ActionResult Calendario(string id)
+        public ActionResult Calendario(string id, int id2)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            competiciontemporada competiciontemporada = db.competiciontemporada.Find(id);
-            if (competiciontemporada == null)
-            {
-                return HttpNotFound();
-            }
+            SqlParameter parameter1 = new SqlParameter("@competicion", id);
+            SqlParameter parameter2 = new SqlParameter("@temporada", id2);
+            SqlParameter parameter3 = new SqlParameter("@federacion", "123");
+            db.Database.SqlQuery<fechacalendario>("exec generaCalendario @competicion, @temporada, @federacion", parameter1, parameter2, parameter3);
+
+
+            var competiciontemporada = db.fechacalendario.Where(x => x.idcompeticion == id).Where(x => x.idtemporada == id2).ToList();
             return View(competiciontemporada);
         }
     }
