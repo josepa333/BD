@@ -149,7 +149,6 @@ namespace Proyecto_bases.Controllers
             SqlParameter parameter3 = new SqlParameter("@federacion", "123");
             db.Database.SqlQuery<fechacalendario>("exec generaCalendario @competicion, @temporada, @federacion", parameter1, parameter2, parameter3);
 
-
             var competiciontemporada = db.fechacalendario.Where(x => x.idcompeticion == id).Where(x => x.idtemporada == id2).ToList();
             return View(competiciontemporada);
         }
