@@ -107,13 +107,13 @@ namespace Proyecto_bases.Controllers
         }
 
         // GET: competiciontemporadas/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(string id, int id2)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            competiciontemporada competiciontemporada = db.competiciontemporada.Find(id);
+            competiciontemporada competiciontemporada = db.competiciontemporada.Find(id,id2);  
             if (competiciontemporada == null)
             {
                 return HttpNotFound();
@@ -124,9 +124,9 @@ namespace Proyecto_bases.Controllers
         // POST: competiciontemporadas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(string id,int id2)
         {
-            competiciontemporada competiciontemporada = db.competiciontemporada.Find(id);
+            competiciontemporada competiciontemporada = db.competiciontemporada.Find(id,id2);
             db.competiciontemporada.Remove(competiciontemporada);
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -139,6 +139,20 @@ namespace Proyecto_bases.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult Calendario(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            competiciontemporada competiciontemporada = db.competiciontemporada.Find(id);
+            if (competiciontemporada == null)
+            {
+                return HttpNotFound();
+            }
+            return View(competiciontemporada);
         }
     }
 }

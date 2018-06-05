@@ -414,6 +414,7 @@
     <Content Include="Views\competiciontemporadas\Details.cshtml" />
     <Content Include="Views\competiciontemporadas\Edit.cshtml" />
     <Content Include="Views\competiciontemporadas\Index.cshtml" />
+    <Content Include="Views\competiciontemporadas\Calendario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

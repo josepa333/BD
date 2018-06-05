@@ -13,52 +13,48 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.fchcreacion)
+            @Html.DisplayName("ID Competicion")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.fchmodificacion)
+            @Html.DisplayName("Nbr Competicion")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.competicion.tipo)
+            @Html.DisplayName("Tipo Competicion")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.temporada.nombre)
+            @Html.DisplayName("ID Temporada")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.usuario.usrcreador)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.usuario1.usrcreador)
+            @Html.DisplayName("Nbr Temporada")
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.fchcreacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.fchmodificacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.competicion.tipo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.temporada.nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.usuario.usrcreador)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.usuario1.usrcreador)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>
+                @Html.DisplayFor(model => item.competicion.idcompeticion)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.competicion.nombre)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.competicion.tipo)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.temporada.idtemporada)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.temporada.nombre)
+            </th>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.idcompeticion, id2=item.idtemporada  }) |
+                @Html.ActionLink("Details", "Details", new { id = item.idcompeticion, id2 = item.idtemporada }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.idcompeticion, id2 = item.idtemporada }) |
+                @Html.ActionLink("Crear calendario", "Calendario", new { id = item.idcompeticion, id2 = item.idtemporada })
+            </td>
+        </tr>
+    }
 
 </table>
