@@ -5292,7 +5292,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ProyectoBasesJAREntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ProyectoBasesJAREntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="alineacion" EntityType="Self.alineacion" />
           <EntitySet Name="anotadores" EntityType="Self.anotadores" />
           <EntitySet Name="arbitro" EntityType="Self.arbitro" />
@@ -5889,7 +5889,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ProyectoBasesJARModelStoreContainer" CdmEntityContainer="ProyectoBasesJAREntities">
+        <EntityContainerMapping StorageEntityContainer="ProyectoBasesJARModelStoreContainer" CdmEntityContainer="ProyectoBasesJAREntities1">
           <EntitySetMapping Name="alineacion">
             <EntityTypeMapping TypeName="ProyectoBasesJARModel.alineacion">
               <MappingFragment StoreEntitySet="alineacion">

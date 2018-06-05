@@ -91,3 +91,7 @@ C:\Users\jose pablo\Desktop\BD\BD\Proyecto bases\Proyecto bases\obj\Debug\Proyec
 C:\Users\jose pablo\Desktop\BD\BD\Proyecto bases\Proyecto bases\obj\Debug\Proyecto bases.csproj.CopyComplete
 C:\Users\jose pablo\Desktop\BD\BD\Proyecto bases\Proyecto bases\obj\Debug\Proyecto bases.dll
 C:\Users\jose pablo\Desktop\BD\BD\Proyecto bases\Proyecto bases\obj\Debug\Proyecto bases.pdb
+C:\Users\jose pablo\Desktop\BD\BD\Proyecto bases\Proyecto bases\bin\EntityFramework.dll
+C:\Users\jose pablo\Desktop\BD\BD\Proyecto bases\Proyecto bases\bin\EntityFramework.SqlServer.dll
+C:\Users\jose pablo\Desktop\BD\BD\Proyecto bases\Proyecto bases\bin\EntityFramework.xml
+C:\Users\jose pablo\Desktop\BD\BD\Proyecto bases\Proyecto bases\bin\EntityFramework.SqlServer.xml
