@@ -431,7 +431,7 @@
     <Content Include="Views\jugadores\Details.cshtml" />
     <Content Include="Views\jugadores\Edit.cshtml" />
     <Content Include="Views\jugadores\Index.cshtml" />
-    <Content Include="Views\jugadores\historialJugador.cshtml" />
+    <Content Include="Views\jugadores\Historial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
