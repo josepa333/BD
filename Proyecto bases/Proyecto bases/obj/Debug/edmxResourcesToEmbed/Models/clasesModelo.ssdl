@@ -2226,6 +2226,13 @@
     <Parameter Name="temporada" Type="numeric" Mode="In" />
     <Parameter Name="federacion" Type="varchar" Mode="In" />
   </Function>
+  <Function Name="infoJugador" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idJugador" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="juegosDeResultados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="competicion" Type="varchar" Mode="In" />
+    <Parameter Name="temporada" Type="numeric" Mode="In" />
+  </Function>
   <Function Name="ligador" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="equipo1" Type="varchar" Mode="In" />
     <Parameter Name="equipo2" Type="varchar" Mode="In" />

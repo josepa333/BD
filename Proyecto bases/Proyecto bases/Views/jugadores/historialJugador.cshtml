@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Proyecto_bases.Models.infoJugador_Result>
+
+@{
+    ViewBag.Title = "Historial jugador";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Nombre")
+        </th>
+        <th>
+            @Html.DisplayName("Fecha inicio")
+        </th>
+        <th>
+            @Html.DisplayName("Fecha final")
+        </th>
+        <th>
+            @Html.DisplayName("Tipo")
+        </th>
+        <th>
+            @Html.DisplayName("Promedio rendimiento")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <th>
+                @Html.DisplayFor(model => item.idjuego)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.idclubcasa)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.golescasa)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.idclubvisita)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.golesvisita)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.idcalendario)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.sinopsis)
+            </th>
+        </tr>
+    }
+
+</table>

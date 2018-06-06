@@ -3103,6 +3103,13 @@
       <Parameter Name="competicion" Mode="In" Type="String" />
       <Parameter Name="temporada" Mode="In" Type="Decimal" />
     </FunctionImport>
+    <FunctionImport Name="juegosDeResultados" ReturnType="Collection(ProyectoBasesJARModel.juegosDeResultados_Result)">
+      <Parameter Name="competicion" Mode="In" Type="String" />
+      <Parameter Name="temporada" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="infoJugador" ReturnType="Collection(ProyectoBasesJARModel.infoJugador_Result)">
+      <Parameter Name="idJugador" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="calendarioCompeticion_Result">
     <Property Type="String" Name="idcompeticion" Nullable="false" MaxLength="8" />
@@ -3113,5 +3120,26 @@
     <Property Type="DateTime" Name="fchcreacion" Nullable="false" />
     <Property Type="String" Name="usrmodificador" Nullable="true" MaxLength="15" />
     <Property Type="DateTime" Name="fchmodificacion" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="juegosDeResultados_Result">
+    <Property Type="Decimal" Name="idjuego" Nullable="false" Precision="10" Scale="0" />
+    <Property Type="String" Name="jugado" Nullable="false" MaxLength="1" />
+    <Property Type="Decimal" Name="golescasa" Nullable="true" Precision="2" Scale="0" />
+    <Property Type="Decimal" Name="golesvisita" Nullable="true" Precision="2" Scale="0" />
+    <Property Type="String" Name="idclubcasa" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="idclubvisita" Nullable="false" MaxLength="10" />
+    <Property Type="Decimal" Name="idcalendario" Nullable="false" Precision="10" Scale="0" />
+    <Property Type="String" Name="sinopsis" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="usrcreador" Nullable="false" MaxLength="15" />
+    <Property Type="DateTime" Name="fchcreacion" Nullable="true" />
+    <Property Type="String" Name="usrmodificador" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="fchmodificacion" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="infoJugador_Result">
+    <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="fchinicio" Nullable="false" />
+    <Property Type="DateTime" Name="fchfinal" Nullable="false" />
+    <Property Type="String" Name="tipo" Nullable="true" MaxLength="1" />
+    <Property Type="Decimal" Name="rendimiento" Nullable="true" Precision="38" Scale="6" />
   </ComplexType>
 </Schema>

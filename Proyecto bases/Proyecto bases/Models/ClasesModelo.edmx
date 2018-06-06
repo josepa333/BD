@@ -2231,6 +2231,9 @@
           <Parameter Name="temporada" Type="numeric" Mode="In" />
           <Parameter Name="federacion" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="infoJugador" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idJugador" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="juegosDeResultados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="competicion" Type="varchar" Mode="In" />
           <Parameter Name="temporada" Type="numeric" Mode="In" />
@@ -5944,6 +5947,9 @@
             <Parameter Name="competicion" Mode="In" Type="String" />
             <Parameter Name="temporada" Mode="In" Type="Decimal" />
           </FunctionImport>
+          <FunctionImport Name="infoJugador" ReturnType="Collection(ProyectoBasesJARModel.infoJugador_Result)">
+            <Parameter Name="idJugador" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="calendarioCompeticion_Result">
           <Property Type="String" Name="idcompeticion" Nullable="false" MaxLength="8" />
@@ -5968,6 +5974,13 @@
           <Property Type="DateTime" Name="fchcreacion" Nullable="true" />
           <Property Type="String" Name="usrmodificador" Nullable="true" MaxLength="15" />
           <Property Type="DateTime" Name="fchmodificacion" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="infoJugador_Result">
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="fchinicio" Nullable="false" />
+          <Property Type="DateTime" Name="fchfinal" Nullable="false" />
+          <Property Type="String" Name="tipo" Nullable="true" MaxLength="1" />
+          <Property Type="Decimal" Name="rendimiento" Nullable="true" Precision="38" Scale="6" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -6526,6 +6539,17 @@
                 <ScalarProperty Name="fchcreacion" ColumnName="fchcreacion" />
                 <ScalarProperty Name="usrmodificador" ColumnName="usrmodificador" />
                 <ScalarProperty Name="fchmodificacion" ColumnName="fchmodificacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="infoJugador" FunctionName="ProyectoBasesJARModel.Store.infoJugador">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProyectoBasesJARModel.infoJugador_Result">
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="fchinicio" ColumnName="fchinicio" />
+                <ScalarProperty Name="fchfinal" ColumnName="fchfinal" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="rendimiento" ColumnName="rendimiento" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

@@ -161,6 +161,7 @@
     </Compile>
     <Compile Include="Controllers\competiciontemporadasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\jugadoresController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -272,7 +273,13 @@
     <Compile Include="Models\histjuego.cs">
       <DependentUpon>clasesModelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\infoJugador_Result.cs">
+      <DependentUpon>clasesModelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\juego.cs">
+      <DependentUpon>clasesModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\juegosDeResultados_Result.cs">
       <DependentUpon>clasesModelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\jugador.cs">
@@ -418,6 +425,13 @@
     <Content Include="Views\competiciontemporadas\Edit.cshtml" />
     <Content Include="Views\competiciontemporadas\Index.cshtml" />
     <Content Include="Views\competiciontemporadas\Calendario.cshtml" />
+    <Content Include="Views\competiciontemporadas\Resultados.cshtml" />
+    <Content Include="Views\jugadores\Create.cshtml" />
+    <Content Include="Views\jugadores\Delete.cshtml" />
+    <Content Include="Views\jugadores\Details.cshtml" />
+    <Content Include="Views\jugadores\Edit.cshtml" />
+    <Content Include="Views\jugadores\Index.cshtml" />
+    <Content Include="Views\jugadores\historialJugador.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

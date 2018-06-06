@@ -23,13 +23,13 @@ namespace Proyecto_bases.Controllers
         }
 
         // GET: competiciontemporadas/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(string id, int id2)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            competiciontemporada competiciontemporada = db.competiciontemporada.Find(id);
+            competiciontemporada competiciontemporada = db.competiciontemporada.Find(id, id2);
             if (competiciontemporada == null)
             {
                 return HttpNotFound();
@@ -69,13 +69,13 @@ namespace Proyecto_bases.Controllers
         }
 
         // GET: competiciontemporadas/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(string id, int id2)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            competiciontemporada competiciontemporada = db.competiciontemporada.Find(id);
+            competiciontemporada competiciontemporada = db.competiciontemporada.Find(id, id2);
             if (competiciontemporada == null)
             {
                 return HttpNotFound();
@@ -148,9 +148,20 @@ namespace Proyecto_bases.Controllers
             SqlParameter parameter2 = new SqlParameter("@temporada", id2);
             SqlParameter parameter3 = new SqlParameter("@federacion", "123");
             db.Database.SqlQuery<fechacalendario>("exec generaCalendario @competicion, @temporada, @federacion", parameter1, parameter2, parameter3);
+            db.SaveChanges();
 
             var competiciontemporada = db.fechacalendario.Where(x => x.idcompeticion == id).Where(x => x.idtemporada == id2).ToList();
             return View(competiciontemporada);
+        }
+
+        public ActionResult Resultados(string id, int id2)
+        {
+            SqlParameter parameter1 = new SqlParameter("@competicion", id);
+            SqlParameter parameter2 = new SqlParameter("@temporada", id2);
+            db.Database.SqlQuery<juego>("exec creaResultados @competicion, @temporada", parameter1, parameter2);
+
+            List<juego> lista = db.Database.SqlQuery<juego>("exec juegosDeResultados @competicion, @temporada", parameter1, parameter2).ToList();
+            return View(lista);
         }
     }
 }

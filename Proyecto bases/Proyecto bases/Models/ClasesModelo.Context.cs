@@ -164,5 +164,15 @@ namespace Proyecto_bases.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<juegosDeResultados_Result>("juegosDeResultados", competicionParameter, temporadaParameter);
         }
+    
+        public virtual ObjectResult<infoJugador_Result> infoJugador(string idJugador)
+        {
+            var idJugadorParameter = idJugador != null ?
+                new ObjectParameter("idJugador", idJugador) :
+                new ObjectParameter("idJugador", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<infoJugador_Result>("infoJugador", idJugadorParameter);
+        }
     }
 }
+ 
