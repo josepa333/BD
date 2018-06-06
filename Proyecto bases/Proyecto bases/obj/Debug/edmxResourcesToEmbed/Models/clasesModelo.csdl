@@ -3099,6 +3099,10 @@
       <Parameter Name="Dia" Mode="In" Type="Int32" />
       <Parameter Name="fechaJuego" Mode="InOut" Type="DateTime" />
     </FunctionImport>
+    <FunctionImport Name="creaResultados">
+      <Parameter Name="competicion" Mode="In" Type="String" />
+      <Parameter Name="temporada" Mode="In" Type="Decimal" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="calendarioCompeticion_Result">
     <Property Type="String" Name="idcompeticion" Nullable="false" MaxLength="8" />
