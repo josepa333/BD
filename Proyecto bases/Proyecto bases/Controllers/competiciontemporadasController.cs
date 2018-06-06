@@ -163,5 +163,14 @@ namespace Proyecto_bases.Controllers
             List<juego> lista = db.Database.SqlQuery<juego>("exec juegosDeResultados @competicion, @temporada", parameter1, parameter2).ToList();
             return View(lista);
         }
+        public ActionResult TablaGeneral(string id, int id2)
+        {
+            SqlParameter parameter1 = new SqlParameter("@competicion", id);
+            SqlParameter parameter2 = new SqlParameter("@temporada", id2);
+            db.Database.SqlQuery<juego>("exec rankingLiga @competicion, @temporada", parameter1, parameter2);
+
+            List<> lista = db.Database.SqlQuery<juego>("exec rankingLiga @competicion, @temporada", parameter1, parameter2).ToList();
+            return View(lista);
+        }
     }
 }

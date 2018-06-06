@@ -173,6 +173,27 @@ namespace Proyecto_bases.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<infoJugador_Result>("infoJugador", idJugadorParameter);
         }
+    
+        public virtual int rankingLiga(string idCompeticion, Nullable<decimal> idTemporada)
+        {
+            var idCompeticionParameter = idCompeticion != null ?
+                new ObjectParameter("idCompeticion", idCompeticion) :
+                new ObjectParameter("idCompeticion", typeof(string));
+    
+            var idTemporadaParameter = idTemporada.HasValue ?
+                new ObjectParameter("idTemporada", idTemporada) :
+                new ObjectParameter("idTemporada", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("rankingLiga", idCompeticionParameter, idTemporadaParameter);
+        }
+    
+        public virtual ObjectResult<infoEntrenador_Result> infoEntrenador(string idEntrenador)
+        {
+            var idEntrenadorParameter = idEntrenador != null ?
+                new ObjectParameter("idEntrenador", idEntrenador) :
+                new ObjectParameter("idEntrenador", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<infoEntrenador_Result>("infoEntrenador", idEntrenadorParameter);
+        }
     }
 }
- 

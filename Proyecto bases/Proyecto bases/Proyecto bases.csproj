@@ -273,6 +273,9 @@
     <Compile Include="Models\histjuego.cs">
       <DependentUpon>clasesModelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\infoEntrenador_Result.cs">
+      <DependentUpon>clasesModelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\infoJugador_Result.cs">
       <DependentUpon>clasesModelo.tt</DependentUpon>
     </Compile>
