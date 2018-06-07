@@ -193,9 +193,18 @@ namespace Proyecto_bases.Controllers
             List<tablaGeneral_Result> lista = db.Database.SqlQuery<tablaGeneral_Result>("exec tablaGeneral @competicion, @temporada", parameter1, parameter2).ToList();
             return View(lista);
         }
-        
+        public ActionResult Arbitros(string id, int id2)
+        {
+            SqlParameter parameter1 = new SqlParameter("@idCompeticion", id);
+            SqlParameter parameter2 = new SqlParameter("@idTemporada", id2);
+            
+            List<arbitroDatos_Result> lista = db.Database.SqlQuery<arbitroDatos_Result>("exec arbitroDatos @idCompeticion, @idTemporada", parameter1, parameter2).ToList();
+            return View(lista);
+        }
+
     }
 }
+
 
 
 /* SqlParameter parameter1 = new SqlParameter("@competicion", id);
