@@ -182,35 +182,5 @@ namespace Proyecto_bases.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<tablaGeneral_Result>("tablaGeneral", idCompeticionParameter, idTemporadaParameter);
         }
-    
-        public virtual ObjectResult<arbitroDatos_Result> arbitroDatos(string idCompeticion, Nullable<decimal> idTemporada)
-        {
-            var idCompeticionParameter = idCompeticion != null ?
-                new ObjectParameter("idCompeticion", idCompeticion) :
-                new ObjectParameter("idCompeticion", typeof(string));
-    
-            var idTemporadaParameter = idTemporada.HasValue ?
-                new ObjectParameter("idTemporada", idTemporada) :
-                new ObjectParameter("idTemporada", typeof(decimal));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<arbitroDatos_Result>("arbitroDatos", idCompeticionParameter, idTemporadaParameter);
-        }
-    
-        public virtual ObjectResult<equipos_2_Result> equipos_2(Nullable<System.DateTime> fecha, string equipo1, string equipo2)
-        {
-            var fechaParameter = fecha.HasValue ?
-                new ObjectParameter("fecha", fecha) :
-                new ObjectParameter("fecha", typeof(System.DateTime));
-    
-            var equipo1Parameter = equipo1 != null ?
-                new ObjectParameter("equipo1", equipo1) :
-                new ObjectParameter("equipo1", typeof(string));
-    
-            var equipo2Parameter = equipo2 != null ?
-                new ObjectParameter("equipo2", equipo2) :
-                new ObjectParameter("equipo2", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<equipos_2_Result>("equipos_2", fechaParameter, equipo1Parameter, equipo2Parameter);
-        }
     }
 }

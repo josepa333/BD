@@ -175,9 +175,6 @@
     <Compile Include="Models\arbitro.cs">
       <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\arbitroDatos_Result.cs">
-      <DependentUpon>mdoelos.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\arbitrojuego.cs">
       <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
@@ -445,11 +442,7 @@
     <Content Include="Views\entrenador\Edit.cshtml" />
     <Content Include="Views\entrenador\Index.cshtml" />
     <Content Include="Views\entrenador\Historial.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\View.cshtml" />
-=======
-    <Content Include="Views\competiciontemporadas\Arbitros.cshtml" />
->>>>>>> 6e993041ce7db40a560ec0dc2a2b7c63abc18bc8
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
