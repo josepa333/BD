@@ -53,7 +53,8 @@
                 @Html.ActionLink("Details", "Details", new { id = item.idcompeticion, id2 = item.idtemporada }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.idcompeticion, id2 = item.idtemporada }) |
                 @Html.ActionLink("Crear calendario", "Calendario", new { id = item.idcompeticion, id2 = item.idtemporada }) |
-                @Html.ActionLink("Generar resultados", "Resultados", new { id = item.idcompeticion, id2 = item.idtemporada })
+                @Html.ActionLink("Generar resultados", "Resultados", new { id = item.idcompeticion, id2 = item.idtemporada }) | 
+                @Html.ActionLink("Tabla General", "TablaGeneral", new { id = item.idcompeticion, id2 = item.idtemporada })
             </td>
         </tr>
     }

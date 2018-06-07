@@ -13,7 +13,7 @@ namespace Proyecto_bases.Controllers
 {
     public class competiciontemporadasController : Controller
     {
-        private ProyectoBasesJAREntities4 db = new ProyectoBasesJAREntities4();
+        private ProyectoBasesJAREntities8 db = new ProyectoBasesJAREntities8();
 
         // GET: competiciontemporadas
         public ActionResult Index()
@@ -144,11 +144,19 @@ namespace Proyecto_bases.Controllers
 
         public ActionResult Calendario(string id, int id2)
         {
+            SqlConnection conn = new SqlConnection("data source=ecRhin.ec.tec.ac.cr\\Estudiantes;initial catalog=ProyectoBasesJAR;persist security info=True;user id=josepalvarado;password=josepalvarado;MultipleActiveResultSets=True;App=EntityFramework");
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("generaCalendario", conn);
+
             SqlParameter parameter1 = new SqlParameter("@competicion", id);
+            cmd.Parameters.Add(parameter1);
             SqlParameter parameter2 = new SqlParameter("@temporada", id2);
+            cmd.Parameters.Add(parameter2);
             SqlParameter parameter3 = new SqlParameter("@federacion", "123");
-            db.Database.SqlQuery<fechacalendario>("exec generaCalendario @competicion, @temporada, @federacion", parameter1, parameter2, parameter3);
-            db.SaveChanges();
+            cmd.Parameters.Add(parameter3);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.ExecuteNonQuery();
+            conn.Close();
 
             var competiciontemporada = db.fechacalendario.Where(x => x.idcompeticion == id).Where(x => x.idtemporada == id2).ToList();
             return View(competiciontemporada);
@@ -156,13 +164,25 @@ namespace Proyecto_bases.Controllers
 
         public ActionResult Resultados(string id, int id2)
         {
-            SqlParameter parameter1 = new SqlParameter("@competicion", id);
-            SqlParameter parameter2 = new SqlParameter("@temporada", id2);
-            db.Database.SqlQuery<juego>("exec creaResultados @competicion, @temporada", parameter1, parameter2);
+            SqlConnection conn = new SqlConnection("data source=ecRhin.ec.tec.ac.cr\\Estudiantes;initial catalog=ProyectoBasesJAR;persist security info=True;user id=josepalvarado;password=josepalvarado;MultipleActiveResultSets=True;App=EntityFramework");
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("creaResultados", conn);
 
-            List<juego> lista = db.Database.SqlQuery<juego>("exec juegosDeResultados @competicion, @temporada", parameter1, parameter2).ToList();
+            SqlParameter parameter1 = new SqlParameter("@competicion", id);
+            cmd.Parameters.Add(parameter1);
+            SqlParameter parameter2 = new SqlParameter("@temporada", id2);
+            cmd.Parameters.Add(parameter2);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+
+            SqlParameter parameter3 = new SqlParameter("@competicion", id);
+            SqlParameter parameter4 = new SqlParameter("@temporada", id2);
+            List<juego> lista = db.Database.SqlQuery<juego>("exec juegosDeResultados @competicion, @temporada", parameter3, parameter4).ToList();
             return View(lista);
         }
+        /*
         public ActionResult TablaGeneral(string id, int id2)
         {
             SqlParameter parameter1 = new SqlParameter("@competicion", id);
@@ -172,5 +192,13 @@ namespace Proyecto_bases.Controllers
             List<> lista = db.Database.SqlQuery<juego>("exec rankingLiga @competicion, @temporada", parameter1, parameter2).ToList();
             return View(lista);
         }
+        */
     }
 }
+
+
+/* SqlParameter parameter1 = new SqlParameter("@competicion", id);
+            SqlParameter parameter2 = new SqlParameter("@temporada", id2);
+            SqlParameter parameter3 = new SqlParameter("@federacion", "123");
+            db.Database.SqlQuery<fechacalendario>("exec generaCalendario @competicion, @temporada, @federacion", parameter1, parameter2, parameter3);
+            db.SaveChanges();*/

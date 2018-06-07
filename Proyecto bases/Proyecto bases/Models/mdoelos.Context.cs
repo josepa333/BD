@@ -15,10 +15,10 @@ namespace Proyecto_bases.Models
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class ProyectoBasesJAREntities4 : DbContext
+    public partial class ProyectoBasesJAREntities8 : DbContext
     {
-        public ProyectoBasesJAREntities4()
-            : base("name=ProyectoBasesJAREntities4")
+        public ProyectoBasesJAREntities8()
+            : base("name=ProyectoBasesJAREntities8")
         {
         }
     
@@ -79,7 +79,7 @@ namespace Proyecto_bases.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("buscaFecha", nombreEquipoParameter, fechaParameter, respuesta);
         }
     
-        public virtual ObjectResult<calendarioCompeticion_Result> calendarioCompeticion(string competicion, Nullable<decimal> temporada)
+        public virtual int creaResultados(string competicion, Nullable<decimal> temporada)
         {
             var competicionParameter = competicion != null ?
                 new ObjectParameter("competicion", competicion) :
@@ -89,7 +89,7 @@ namespace Proyecto_bases.Models
                 new ObjectParameter("temporada", temporada) :
                 new ObjectParameter("temporada", typeof(decimal));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<calendarioCompeticion_Result>("calendarioCompeticion", competicionParameter, temporadaParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("creaResultados", competicionParameter, temporadaParameter);
         }
     
         public virtual int determinaFecha(Nullable<int> semana, Nullable<int> dia, ObjectParameter fecha)
@@ -122,34 +122,22 @@ namespace Proyecto_bases.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("generaCalendario", competicionParameter, temporadaParameter, federacionParameter);
         }
     
-        public virtual int ligador(string equipo1, string equipo2, Nullable<int> dia, ObjectParameter fechaJuego)
+        public virtual ObjectResult<infoEntrenador_Result> infoEntrenador(string idEntrenador)
         {
-            var equipo1Parameter = equipo1 != null ?
-                new ObjectParameter("equipo1", equipo1) :
-                new ObjectParameter("equipo1", typeof(string));
+            var idEntrenadorParameter = idEntrenador != null ?
+                new ObjectParameter("idEntrenador", idEntrenador) :
+                new ObjectParameter("idEntrenador", typeof(string));
     
-            var equipo2Parameter = equipo2 != null ?
-                new ObjectParameter("equipo2", equipo2) :
-                new ObjectParameter("equipo2", typeof(string));
-    
-            var diaParameter = dia.HasValue ?
-                new ObjectParameter("Dia", dia) :
-                new ObjectParameter("Dia", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ligador", equipo1Parameter, equipo2Parameter, diaParameter, fechaJuego);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<infoEntrenador_Result>("infoEntrenador", idEntrenadorParameter);
         }
     
-        public virtual int creaResultados(string competicion, Nullable<decimal> temporada)
+        public virtual ObjectResult<infoJugador_Result> infoJugador(string idJugador)
         {
-            var competicionParameter = competicion != null ?
-                new ObjectParameter("competicion", competicion) :
-                new ObjectParameter("competicion", typeof(string));
+            var idJugadorParameter = idJugador != null ?
+                new ObjectParameter("idJugador", idJugador) :
+                new ObjectParameter("idJugador", typeof(string));
     
-            var temporadaParameter = temporada.HasValue ?
-                new ObjectParameter("temporada", temporada) :
-                new ObjectParameter("temporada", typeof(decimal));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("creaResultados", competicionParameter, temporadaParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<infoJugador_Result>("infoJugador", idJugadorParameter);
         }
     
         public virtual ObjectResult<juegosDeResultados_Result> juegosDeResultados(string competicion, Nullable<decimal> temporada)
@@ -165,35 +153,21 @@ namespace Proyecto_bases.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<juegosDeResultados_Result>("juegosDeResultados", competicionParameter, temporadaParameter);
         }
     
-        public virtual ObjectResult<infoJugador_Result> infoJugador(string idJugador)
+        public virtual int ligador(string equipo1, string equipo2, Nullable<int> dia, ObjectParameter fechaJuego)
         {
-            var idJugadorParameter = idJugador != null ?
-                new ObjectParameter("idJugador", idJugador) :
-                new ObjectParameter("idJugador", typeof(string));
+            var equipo1Parameter = equipo1 != null ?
+                new ObjectParameter("equipo1", equipo1) :
+                new ObjectParameter("equipo1", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<infoJugador_Result>("infoJugador", idJugadorParameter);
-        }
+            var equipo2Parameter = equipo2 != null ?
+                new ObjectParameter("equipo2", equipo2) :
+                new ObjectParameter("equipo2", typeof(string));
     
-        public virtual int rankingLiga(string idCompeticion, Nullable<decimal> idTemporada)
-        {
-            var idCompeticionParameter = idCompeticion != null ?
-                new ObjectParameter("idCompeticion", idCompeticion) :
-                new ObjectParameter("idCompeticion", typeof(string));
+            var diaParameter = dia.HasValue ?
+                new ObjectParameter("Dia", dia) :
+                new ObjectParameter("Dia", typeof(int));
     
-            var idTemporadaParameter = idTemporada.HasValue ?
-                new ObjectParameter("idTemporada", idTemporada) :
-                new ObjectParameter("idTemporada", typeof(decimal));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("rankingLiga", idCompeticionParameter, idTemporadaParameter);
-        }
-    
-        public virtual ObjectResult<infoEntrenador_Result> infoEntrenador(string idEntrenador)
-        {
-            var idEntrenadorParameter = idEntrenador != null ?
-                new ObjectParameter("idEntrenador", idEntrenador) :
-                new ObjectParameter("idEntrenador", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<infoEntrenador_Result>("infoEntrenador", idEntrenadorParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ligador", equipo1Parameter, equipo2Parameter, diaParameter, fechaJuego);
         }
     }
 }

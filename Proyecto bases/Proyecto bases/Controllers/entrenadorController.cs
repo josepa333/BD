@@ -11,33 +11,33 @@ using Proyecto_bases.Models;
 
 namespace Proyecto_bases.Controllers
 {
-    public class jugadoresController : Controller
+    public class entrenadorController : Controller
     {
         private ProyectoBasesJAREntities8 db = new ProyectoBasesJAREntities8();
 
-        // GET: jugadores
+        // GET: entrenador
         public ActionResult Index()
         {
-            var jugador = db.jugador.Include(j => j.funcionariodeportivo).Include(j => j.usuario).Include(j => j.usuario1);
-            return View(jugador.ToList());
+            var entrenador = db.entrenador.Include(e => e.funcionariodeportivo).Include(e => e.usuario).Include(e => e.usuario1);
+            return View(entrenador.ToList());
         }
 
-        // GET: jugadores/Details/5
+        // GET: entrenador/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            jugador jugador = db.jugador.Find(id);
-            if (jugador == null)
+            entrenador entrenador = db.entrenador.Find(id);
+            if (entrenador == null)
             {
                 return HttpNotFound();
             }
-            return View(jugador);
+            return View(entrenador);
         }
 
-        // GET: jugadores/Create
+        // GET: entrenador/Create
         public ActionResult Create()
         {
             ViewBag.idfuncionario = new SelectList(db.funcionariodeportivo, "idfuncionario", "foto");
@@ -46,85 +46,85 @@ namespace Proyecto_bases.Controllers
             return View();
         }
 
-        // POST: jugadores/Create
+        // POST: entrenador/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idfuncionario,rendimiento,peso,altura,usrcreador,fchcreacion,usrmodificador,fchmodificacion")] jugador jugador)
+        public ActionResult Create([Bind(Include = "idfuncionario,fchiniciocarrera,jugadorjuventud,usrcreador,fchcreacion,usrmodificador,fchmodificacion")] entrenador entrenador)
         {
             if (ModelState.IsValid)
             {
-                db.jugador.Add(jugador);
+                db.entrenador.Add(entrenador);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.idfuncionario = new SelectList(db.funcionariodeportivo, "idfuncionario", "foto", jugador.idfuncionario);
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", jugador.usrcreador);
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", jugador.usrmodificador);
-            return View(jugador);
+            ViewBag.idfuncionario = new SelectList(db.funcionariodeportivo, "idfuncionario", "foto", entrenador.idfuncionario);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", entrenador.usrcreador);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", entrenador.usrmodificador);
+            return View(entrenador);
         }
 
-        // GET: jugadores/Edit/5
+        // GET: entrenador/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            jugador jugador = db.jugador.Find(id);
-            if (jugador == null)
+            entrenador entrenador = db.entrenador.Find(id);
+            if (entrenador == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.idfuncionario = new SelectList(db.funcionariodeportivo, "idfuncionario", "foto", jugador.idfuncionario);
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", jugador.usrcreador);
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", jugador.usrmodificador);
-            return View(jugador);
+            ViewBag.idfuncionario = new SelectList(db.funcionariodeportivo, "idfuncionario", "foto", entrenador.idfuncionario);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", entrenador.usrcreador);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", entrenador.usrmodificador);
+            return View(entrenador);
         }
 
-        // POST: jugadores/Edit/5
+        // POST: entrenador/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idfuncionario,rendimiento,peso,altura,usrcreador,fchcreacion,usrmodificador,fchmodificacion")] jugador jugador)
+        public ActionResult Edit([Bind(Include = "idfuncionario,fchiniciocarrera,jugadorjuventud,usrcreador,fchcreacion,usrmodificador,fchmodificacion")] entrenador entrenador)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(jugador).State = EntityState.Modified;
+                db.Entry(entrenador).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.idfuncionario = new SelectList(db.funcionariodeportivo, "idfuncionario", "foto", jugador.idfuncionario);
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", jugador.usrcreador);
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", jugador.usrmodificador);
-            return View(jugador);
+            ViewBag.idfuncionario = new SelectList(db.funcionariodeportivo, "idfuncionario", "foto", entrenador.idfuncionario);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", entrenador.usrcreador);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", entrenador.usrmodificador);
+            return View(entrenador);
         }
 
-        // GET: jugadores/Delete/5
+        // GET: entrenador/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            jugador jugador = db.jugador.Find(id);
-            if (jugador == null)
+            entrenador entrenador = db.entrenador.Find(id);
+            if (entrenador == null)
             {
                 return HttpNotFound();
             }
-            return View(jugador);
+            return View(entrenador);
         }
 
-        // POST: jugadores/Delete/5
+        // POST: entrenador/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            jugador jugador = db.jugador.Find(id);
-            db.jugador.Remove(jugador);
+            entrenador entrenador = db.entrenador.Find(id);
+            db.entrenador.Remove(entrenador);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -137,11 +137,10 @@ namespace Proyecto_bases.Controllers
             }
             base.Dispose(disposing);
         }
-
         public ActionResult Historial(string id)
         {
-            SqlParameter parameter1 = new SqlParameter("@idJugador", id);
-            List<infoJugador_Result> lista = db.Database.SqlQuery<infoJugador_Result>("exec infoJugador @idJugador", parameter1).ToList();
+            SqlParameter parameter1 = new SqlParameter("@idEntrenador", id);
+            List<infoJugador_Result> lista = db.Database.SqlQuery<infoJugador_Result>("exec infoEntrenador @idEntrenador", parameter1).ToList();
             return View(lista);
         }
     }

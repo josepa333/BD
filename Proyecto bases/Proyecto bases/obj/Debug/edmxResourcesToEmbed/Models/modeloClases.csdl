@@ -2483,7 +2483,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="ProyectoBasesJAREntities4" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="ProyectoBasesJAREntities5" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="alineacion" EntityType="Self.alineacion" />
     <EntitySet Name="anotadores" EntityType="Self.anotadores" />
     <EntitySet Name="arbitro" EntityType="Self.arbitro" />
@@ -3079,7 +3079,7 @@
       <Parameter Name="Fecha" Mode="In" Type="DateTime" />
       <Parameter Name="respuesta" Mode="InOut" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="calendarioCompeticion" ReturnType="Collection(ProyectoBasesJARModel.calendarioCompeticion_Result)">
+    <FunctionImport Name="creaResultados">
       <Parameter Name="competicion" Mode="In" Type="String" />
       <Parameter Name="temporada" Mode="In" Type="Decimal" />
     </FunctionImport>
@@ -3093,52 +3093,52 @@
       <Parameter Name="temporada" Mode="In" Type="Decimal" />
       <Parameter Name="federacion" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="infoEntrenador" ReturnType="Collection(ProyectoBasesJARModel.infoEntrenador_Result)">
+      <Parameter Name="idEntrenador" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="infoJugador" ReturnType="Collection(ProyectoBasesJARModel.infoJugador_Result)">
+      <Parameter Name="idJugador" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="juegosDeResultados" ReturnType="Collection(ProyectoBasesJARModel.juegosDeResultados_Result)">
+      <Parameter Name="competicion" Mode="In" Type="String" />
+      <Parameter Name="temporada" Mode="In" Type="Decimal" />
+    </FunctionImport>
     <FunctionImport Name="ligador">
       <Parameter Name="equipo1" Mode="In" Type="String" />
       <Parameter Name="equipo2" Mode="In" Type="String" />
       <Parameter Name="Dia" Mode="In" Type="Int32" />
       <Parameter Name="fechaJuego" Mode="InOut" Type="DateTime" />
     </FunctionImport>
-    <FunctionImport Name="creaResultados">
-      <Parameter Name="competicion" Mode="In" Type="String" />
-      <Parameter Name="temporada" Mode="In" Type="Decimal" />
-    </FunctionImport>
-    <FunctionImport Name="juegosDeResultados" ReturnType="Collection(ProyectoBasesJARModel.juegosDeResultados_Result)">
-      <Parameter Name="competicion" Mode="In" Type="String" />
-      <Parameter Name="temporada" Mode="In" Type="Decimal" />
-    </FunctionImport>
-    <FunctionImport Name="infoJugador" ReturnType="Collection(ProyectoBasesJARModel.infoJugador_Result)">
-      <Parameter Name="idJugador" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="rankingLiga">
+    <FunctionImport Name="prueba">
       <Parameter Name="idCompeticion" Mode="In" Type="String" />
       <Parameter Name="idTemporada" Mode="In" Type="Decimal" />
-    </FunctionImport>
-    <FunctionImport Name="rankingLiga1">
-      <Parameter Name="idCompeticion" Mode="In" Type="String" />
-      <Parameter Name="idTemporada" Mode="In" Type="Decimal" />
-    </FunctionImport>
-    <FunctionImport Name="infoEntrenador" ReturnType="Collection(ProyectoBasesJARModel.infoEntrenador_Result)">
-      <Parameter Name="idEntrenador" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="tablaGeneral">
       <Parameter Name="idCompeticion" Mode="In" Type="String" />
       <Parameter Name="idTemporada" Mode="In" Type="Decimal" />
     </FunctionImport>
-    <FunctionImport Name="prueba" ReturnType="Collection(ProyectoBasesJARModel.prueba_Result)">
+    <FunctionImport Name="pruebaRetorno" ReturnType="Collection(String)">
+      <Parameter Name="idCompeticion" Mode="In" Type="String" />
+      <Parameter Name="idTemporada" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="pruebaRetorno2" ReturnType="Collection(ProyectoBasesJARModel.pruebaRetorno2_Result)">
       <Parameter Name="idCompeticion" Mode="In" Type="String" />
       <Parameter Name="idTemporada" Mode="In" Type="Decimal" />
     </FunctionImport>
   </EntityContainer>
-  <ComplexType Name="calendarioCompeticion_Result">
-    <Property Type="String" Name="idcompeticion" Nullable="false" MaxLength="8" />
-    <Property Type="Decimal" Name="idcalendario" Nullable="false" Precision="10" Scale="0" />
-    <Property Type="DateTime" Name="fecha" Nullable="false" Precision="23" />
-    <Property Type="Decimal" Name="idtemporada" Nullable="false" Precision="5" Scale="0" />
-    <Property Type="String" Name="usrcreador" Nullable="false" MaxLength="15" />
-    <Property Type="DateTime" Name="fchcreacion" Nullable="false" />
-    <Property Type="String" Name="usrmodificador" Nullable="true" MaxLength="15" />
-    <Property Type="DateTime" Name="fchmodificacion" Nullable="true" />
+  <ComplexType Name="infoEntrenador_Result">
+    <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="fchinicio" Nullable="false" />
+    <Property Type="DateTime" Name="fchfinal" Nullable="false" />
+    <Property Type="String" Name="tipo" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="sinopsis" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="infoJugador_Result">
+    <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="fchinicio" Nullable="false" />
+    <Property Type="DateTime" Name="fchfinal" Nullable="false" />
+    <Property Type="String" Name="tipo" Nullable="true" MaxLength="1" />
+    <Property Type="Decimal" Name="rendimiento" Nullable="true" Precision="38" Scale="6" />
   </ComplexType>
   <ComplexType Name="juegosDeResultados_Result">
     <Property Type="Decimal" Name="idjuego" Nullable="false" Precision="10" Scale="0" />
@@ -3154,28 +3154,8 @@
     <Property Type="String" Name="usrmodificador" Nullable="true" MaxLength="15" />
     <Property Type="DateTime" Name="fchmodificacion" Nullable="true" />
   </ComplexType>
-  <ComplexType Name="infoJugador_Result">
+  <ComplexType Name="pruebaRetorno2_Result">
     <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
-    <Property Type="DateTime" Name="fchinicio" Nullable="false" />
-    <Property Type="DateTime" Name="fchfinal" Nullable="false" />
-    <Property Type="String" Name="tipo" Nullable="true" MaxLength="1" />
-    <Property Type="Decimal" Name="rendimiento" Nullable="true" Precision="38" Scale="6" />
-  </ComplexType>
-  <ComplexType Name="infoEntrenador_Result">
-    <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
-    <Property Type="DateTime" Name="fchinicio" Nullable="false" />
-    <Property Type="DateTime" Name="fchfinal" Nullable="false" />
-    <Property Type="String" Name="tipo" Nullable="true" MaxLength="1" />
-    <Property Type="String" Name="sinopsis" Nullable="true" MaxLength="50" />
-  </ComplexType>
-  <ComplexType Name="prueba_Result">
     <Property Type="String" Name="idclub" Nullable="false" MaxLength="10" />
-    <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
-    <Property Type="DateTime" Name="fchfundado" Nullable="false" />
-    <Property Type="String" Name="idfederacion" Nullable="false" MaxLength="8" />
-    <Property Type="String" Name="usrcreador" Nullable="false" MaxLength="15" />
-    <Property Type="DateTime" Name="fchcreacion" Nullable="false" />
-    <Property Type="String" Name="usrmodificador" Nullable="true" MaxLength="15" />
-    <Property Type="DateTime" Name="fchmodificacion" Nullable="true" />
   </ComplexType>
 </Schema>

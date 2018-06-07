@@ -160,151 +160,149 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Controllers\competiciontemporadasController.cs" />
+    <Compile Include="Controllers\entrenadorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\jugadoresController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\alineacion.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\anotadores.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\arbitro.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\arbitrojuego.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\calendarioCompeticion_Result.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\cambios.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\categoria.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\clasesModelo.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>clasesModelo.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\clasesModelo.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>clasesModelo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\clasesModelo.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>clasesModelo.edmx</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\club.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\clubcompeticiontemporada.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\competicion.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\competiciontemporada.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\contrato.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\correo.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\direccion.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\entrenador.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\entrenadortitulo.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\especialidad.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\especialidadjugador.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\fechacalendario.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\federacion.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\funcclubcomptemporada.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\funcionariodeportivo.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\histalineacion.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\histanotadores.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\histarbitrojuego.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\histcambios.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\histclubcompeticiontemporada.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\histcompeticiontemporada.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\histfechacalendario.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\histfuncclubcomptemporada.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\histjuego.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\infoEntrenador_Result.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\infoJugador_Result.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\juego.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\juegosDeResultados_Result.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\jugador.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mdoelos.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mdoelos.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mdoelos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mdoelos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mdoelos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mdoelos.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\oferta.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sociosclub.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\telefono.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\temporada.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tituloacademico.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\usuario.cs">
-      <DependentUpon>clasesModelo.tt</DependentUpon>
+      <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -331,15 +329,15 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Models\clasesModelo.Context.tt">
+    <Content Include="Models\mdoelos.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>clasesModelo.edmx</DependentUpon>
-      <LastGenOutput>clasesModelo.Context.cs</LastGenOutput>
+      <DependentUpon>mdoelos.edmx</DependentUpon>
+      <LastGenOutput>mdoelos.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\clasesModelo.tt">
+    <Content Include="Models\mdoelos.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>clasesModelo.edmx</DependentUpon>
-      <LastGenOutput>clasesModelo.cs</LastGenOutput>
+      <DependentUpon>mdoelos.edmx</DependentUpon>
+      <LastGenOutput>mdoelos.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -373,12 +371,12 @@
     <None Include="Connected Services\ServiceReference1\Service2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <EntityDeploy Include="Models\clasesModelo.edmx">
+    <EntityDeploy Include="Models\mdoelos.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>clasesModelo.Designer.cs</LastGenOutput>
+      <LastGenOutput>mdoelos.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\clasesModelo.edmx.diagram">
-      <DependentUpon>clasesModelo.edmx</DependentUpon>
+    <Content Include="Models\mdoelos.edmx.diagram">
+      <DependentUpon>mdoelos.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -435,6 +433,12 @@
     <Content Include="Views\jugadores\Edit.cshtml" />
     <Content Include="Views\jugadores\Index.cshtml" />
     <Content Include="Views\jugadores\Historial.cshtml" />
+    <Content Include="Views\entrenador\Create.cshtml" />
+    <Content Include="Views\entrenador\Delete.cshtml" />
+    <Content Include="Views\entrenador\Details.cshtml" />
+    <Content Include="Views\entrenador\Edit.cshtml" />
+    <Content Include="Views\entrenador\Index.cshtml" />
+    <Content Include="Views\entrenador\Historial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

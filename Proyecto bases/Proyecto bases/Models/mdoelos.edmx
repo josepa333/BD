@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="ProyectoBasesJARModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ProyectoBasesJARModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="alineacion">
           <Key>
             <PropertyRef Name="idfuncionario" />
@@ -2247,10 +2247,6 @@
           <Parameter Name="Dia" Type="int" Mode="In" />
           <Parameter Name="fechaJuego" Type="datetime" Mode="InOut" />
         </Function>
-        <Function Name="rankingLiga" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="idCompeticion" Type="varchar" Mode="In" />
-          <Parameter Name="idTemporada" Type="numeric" Mode="In" />
-        </Function>
         <EntityContainer Name="ProyectoBasesJARModelStoreContainer">
           <EntitySet Name="alineacion" EntityType="Self.alineacion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="anotadores" EntityType="Self.anotadores" Schema="dbo" store:Type="Tables" />
@@ -2843,7 +2839,8 @@
             <End Role="usuario1" EntitySet="usuario" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ProyectoBasesJARModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -5330,7 +5327,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ProyectoBasesJAREntities4" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ProyectoBasesJAREntities8" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="alineacion" EntityType="Self.alineacion" />
           <EntitySet Name="anotadores" EntityType="Self.anotadores" />
           <EntitySet Name="arbitro" EntityType="Self.arbitro" />
@@ -5926,7 +5923,7 @@
             <Parameter Name="Fecha" Mode="In" Type="DateTime" />
             <Parameter Name="respuesta" Mode="InOut" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="calendarioCompeticion" ReturnType="Collection(ProyectoBasesJARModel.calendarioCompeticion_Result)">
+          <FunctionImport Name="creaResultados">
             <Parameter Name="competicion" Mode="In" Type="String" />
             <Parameter Name="temporada" Mode="In" Type="Decimal" />
           </FunctionImport>
@@ -5940,44 +5937,36 @@
             <Parameter Name="temporada" Mode="In" Type="Decimal" />
             <Parameter Name="federacion" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="infoEntrenador" ReturnType="Collection(ProyectoBasesJARModel.infoEntrenador_Result)">
+            <Parameter Name="idEntrenador" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="infoJugador" ReturnType="Collection(ProyectoBasesJARModel.infoJugador_Result)">
+            <Parameter Name="idJugador" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="juegosDeResultados" ReturnType="Collection(ProyectoBasesJARModel.juegosDeResultados_Result)">
+            <Parameter Name="competicion" Mode="In" Type="String" />
+            <Parameter Name="temporada" Mode="In" Type="Decimal" />
+          </FunctionImport>
           <FunctionImport Name="ligador">
             <Parameter Name="equipo1" Mode="In" Type="String" />
             <Parameter Name="equipo2" Mode="In" Type="String" />
             <Parameter Name="Dia" Mode="In" Type="Int32" />
             <Parameter Name="fechaJuego" Mode="InOut" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="creaResultados">
-            <Parameter Name="competicion" Mode="In" Type="String" />
-            <Parameter Name="temporada" Mode="In" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="juegosDeResultados" ReturnType="Collection(ProyectoBasesJARModel.juegosDeResultados_Result)">
-            <Parameter Name="competicion" Mode="In" Type="String" />
-            <Parameter Name="temporada" Mode="In" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="infoJugador" ReturnType="Collection(ProyectoBasesJARModel.infoJugador_Result)">
-          <Parameter Name="idJugador" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="rankingLiga">
-            <Parameter Name="idCompeticion" Mode="In" Type="String" />
-            <Parameter Name="idTemporada" Mode="In" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="rankingLiga1">
-            <Parameter Name="idCompeticion" Mode="In" Type="String" />
-            <Parameter Name="idTemporada" Mode="In" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="infoEntrenador" ReturnType="Collection(ProyectoBasesJARModel.infoEntrenador_Result)">
-          <Parameter Name="idEntrenador" Mode="In" Type="String" />
-          </FunctionImport>
         </EntityContainer>
-        <ComplexType Name="calendarioCompeticion_Result">
-          <Property Type="String" Name="idcompeticion" Nullable="false" MaxLength="8" />
-          <Property Type="Decimal" Name="idcalendario" Nullable="false" Precision="10" Scale="0" />
-          <Property Type="DateTime" Name="fecha" Nullable="false" Precision="23" />
-          <Property Type="Decimal" Name="idtemporada" Nullable="false" Precision="5" Scale="0" />
-          <Property Type="String" Name="usrcreador" Nullable="false" MaxLength="15" />
-          <Property Type="DateTime" Name="fchcreacion" Nullable="false" />
-          <Property Type="String" Name="usrmodificador" Nullable="true" MaxLength="15" />
-          <Property Type="DateTime" Name="fchmodificacion" Nullable="true" />
+        <ComplexType Name="infoEntrenador_Result">
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="fchinicio" Nullable="false" />
+          <Property Type="DateTime" Name="fchfinal" Nullable="false" />
+          <Property Type="String" Name="tipo" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="sinopsis" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="infoJugador_Result">
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="fchinicio" Nullable="false" />
+          <Property Type="DateTime" Name="fchfinal" Nullable="false" />
+          <Property Type="String" Name="tipo" Nullable="true" MaxLength="1" />
+          <Property Type="Decimal" Name="rendimiento" Nullable="true" Precision="38" Scale="6" />
         </ComplexType>
         <ComplexType Name="juegosDeResultados_Result">
           <Property Type="Decimal" Name="idjuego" Nullable="false" Precision="10" Scale="0" />
@@ -5993,26 +5982,12 @@
           <Property Type="String" Name="usrmodificador" Nullable="true" MaxLength="15" />
           <Property Type="DateTime" Name="fchmodificacion" Nullable="true" />
         </ComplexType>
-        <ComplexType Name="infoJugador_Result">
-          <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
-          <Property Type="DateTime" Name="fchinicio" Nullable="false" />
-          <Property Type="DateTime" Name="fchfinal" Nullable="false" />
-          <Property Type="String" Name="tipo" Nullable="true" MaxLength="1" />
-          <Property Type="Decimal" Name="rendimiento" Nullable="true" Precision="38" Scale="6" />
-        </ComplexType>
-        <ComplexType Name="infoEntrenador_Result">
-          <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
-          <Property Type="DateTime" Name="fchinicio" Nullable="false" />
-          <Property Type="DateTime" Name="fchfinal" Nullable="false" />
-          <Property Type="String" Name="tipo" Nullable="true" MaxLength="1" />
-          <Property Type="String" Name="sinopsis" Nullable="true" MaxLength="50" />
-        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ProyectoBasesJARModelStoreContainer" CdmEntityContainer="ProyectoBasesJAREntities4">
+        <EntityContainerMapping StorageEntityContainer="ProyectoBasesJARModelStoreContainer" CdmEntityContainer="ProyectoBasesJAREntities8">
           <EntitySetMapping Name="alineacion">
             <EntityTypeMapping TypeName="ProyectoBasesJARModel.alineacion">
               <MappingFragment StoreEntitySet="alineacion">
@@ -6545,10 +6520,31 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="buscaFecha" FunctionName="ProyectoBasesJARModel.Store.buscaFecha" />
+          <FunctionImportMapping FunctionImportName="creaResultados" FunctionName="ProyectoBasesJARModel.Store.creaResultados" />
           <FunctionImportMapping FunctionImportName="determinaFecha" FunctionName="ProyectoBasesJARModel.Store.determinaFecha" />
           <FunctionImportMapping FunctionImportName="generaCalendario" FunctionName="ProyectoBasesJARModel.Store.generaCalendario" />
-          <FunctionImportMapping FunctionImportName="ligador" FunctionName="ProyectoBasesJARModel.Store.ligador" />
-          <FunctionImportMapping FunctionImportName="creaResultados" FunctionName="ProyectoBasesJARModel.Store.creaResultados" />
+          <FunctionImportMapping FunctionImportName="infoEntrenador" FunctionName="ProyectoBasesJARModel.Store.infoEntrenador">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProyectoBasesJARModel.infoEntrenador_Result">
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="fchinicio" ColumnName="fchinicio" />
+                <ScalarProperty Name="fchfinal" ColumnName="fchfinal" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="sinopsis" ColumnName="sinopsis" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="infoJugador" FunctionName="ProyectoBasesJARModel.Store.infoJugador">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProyectoBasesJARModel.infoJugador_Result">
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="fchinicio" ColumnName="fchinicio" />
+                <ScalarProperty Name="fchfinal" ColumnName="fchfinal" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="rendimiento" ColumnName="rendimiento" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="juegosDeResultados" FunctionName="ProyectoBasesJARModel.Store.juegosDeResultados">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ProyectoBasesJARModel.juegosDeResultados_Result">
@@ -6567,29 +6563,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="infoJugador" FunctionName="ProyectoBasesJARModel.Store.infoJugador">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ProyectoBasesJARModel.infoJugador_Result">
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="fchinicio" ColumnName="fchinicio" />
-                <ScalarProperty Name="fchfinal" ColumnName="fchfinal" />
-                <ScalarProperty Name="tipo" ColumnName="tipo" />
-                <ScalarProperty Name="rendimiento" ColumnName="rendimiento" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="rankingLiga1" FunctionName="ProyectoBasesJARModel.Store.rankingLiga" />
-          <FunctionImportMapping FunctionImportName="infoEntrenador" FunctionName="ProyectoBasesJARModel.Store.infoEntrenador">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ProyectoBasesJARModel.infoEntrenador_Result">
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="fchinicio" ColumnName="fchinicio" />
-                <ScalarProperty Name="fchfinal" ColumnName="fchfinal" />
-                <ScalarProperty Name="tipo" ColumnName="tipo" />
-                <ScalarProperty Name="sinopsis" ColumnName="sinopsis" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ligador" FunctionName="ProyectoBasesJARModel.Store.ligador" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
