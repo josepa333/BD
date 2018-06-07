@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Proyecto_bases.Models.tablaGeneral_Result>
+
+@{
+    ViewBag.Title = "Resultados de partidos jugados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("ID Club")
+        </th>
+        <th>
+            @Html.DisplayName("Nombre Club")
+        </th>
+        <th>
+            @Html.DisplayName("Partidos jugados")
+        </th>
+        <th>
+            @Html.DisplayName("Partidos ganados")
+        </th>
+        <th>
+            @Html.DisplayName("Partidos perdidos")
+        </th>
+        <th>
+            @Html.DisplayName("Partidos empatados")
+        </th>
+        <th>
+            @Html.DisplayName("Goles a favor")
+        </th>
+        <th>
+            @Html.DisplayName("Goles en contra")
+        </th>
+        <th>
+            @Html.DisplayName("Puntos totales")
+        </th>
+        <th>
+            @Html.DisplayName("ID Federacion")
+        </th>
+        <th></th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <th>
+            @Html.DisplayFor(model => item.idclub)
+        </th>
+        <th>
+            @Html.DisplayFor(model => item.nbrclub)
+        </th>
+        <th>
+            @Html.DisplayFor(model => item.pjugados)
+        </th>
+        <th>
+            @Html.DisplayFor(model => item.pganados)
+        </th>
+        <th>
+            @Html.DisplayFor(model => item.pperdidos)
+        </th>
+        <th>
+            @Html.DisplayFor(model => item.pempatados)
+        </th>
+        <th>
+            @Html.DisplayFor(model => item.golesAFavor)
+        </th>
+        <th>
+            @Html.DisplayFor(model => item.golesEnContra)
+        </th>
+        <th>
+            @Html.DisplayFor(model => item.puntosTotales)
+        </th>
+        <th>
+            @Html.DisplayFor(model => item.idfederacion)
+        </th>
+    </tr>
+    }
+</table>

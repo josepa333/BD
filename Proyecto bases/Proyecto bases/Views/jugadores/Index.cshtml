@@ -22,19 +22,19 @@
             @Html.DisplayNameFor(model => model.altura)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.fchcreacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fchmodificacion)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.funcionariodeportivo.foto)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.usuario.usrcreador)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.usuario1.usrcreador)
+            @Html.DisplayNameFor(model => model.fchcreacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usuario1.usrmodificador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fchmodificacion)
         </th>
         <th></th>
     </tr>
@@ -51,26 +51,26 @@
             @Html.DisplayFor(modelItem => item.altura)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.fchcreacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.fchmodificacion)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.funcionariodeportivo.foto)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.usuario.usrcreador)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.usuario1.usrcreador)
+            @Html.DisplayFor(modelItem => item.fchcreacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuario1.usrmodificador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fchmodificacion)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.idfuncionario }) |
             @Html.ActionLink("Details", "Details", new { id = item.idfuncionario }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.idfuncionario }) |
             @Html.ActionLink("Historial", "Historial", new { id = item.idfuncionario })
-            
+
         </td>
     </tr>
 }

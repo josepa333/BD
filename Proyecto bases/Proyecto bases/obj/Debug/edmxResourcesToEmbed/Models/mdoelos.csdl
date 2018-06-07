@@ -3109,6 +3109,10 @@
       <Parameter Name="Dia" Mode="In" Type="Int32" />
       <Parameter Name="fechaJuego" Mode="InOut" Type="DateTime" />
     </FunctionImport>
+    <FunctionImport Name="tablaGeneral" ReturnType="Collection(ProyectoBasesJARModel.tablaGeneral_Result)">
+      <Parameter Name="idCompeticion" Mode="In" Type="String" />
+      <Parameter Name="idTemporada" Mode="In" Type="Decimal" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="infoEntrenador_Result">
     <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
@@ -3137,5 +3141,17 @@
     <Property Type="DateTime" Name="fchcreacion" Nullable="true" />
     <Property Type="String" Name="usrmodificador" Nullable="true" MaxLength="15" />
     <Property Type="DateTime" Name="fchmodificacion" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="tablaGeneral_Result">
+    <Property Type="String" Name="idclub" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="nbrclub" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="pjugados" Nullable="false" Precision="3" Scale="0" />
+    <Property Type="Decimal" Name="pganados" Nullable="false" Precision="3" Scale="0" />
+    <Property Type="Decimal" Name="pperdidos" Nullable="false" Precision="3" Scale="0" />
+    <Property Type="Decimal" Name="pempatados" Nullable="false" Precision="3" Scale="0" />
+    <Property Type="Decimal" Name="golesAFavor" Nullable="false" Precision="3" Scale="0" />
+    <Property Type="Decimal" Name="golesEnContra" Nullable="false" Precision="3" Scale="0" />
+    <Property Type="Decimal" Name="puntosTotales" Nullable="false" Precision="3" Scale="0" />
+    <Property Type="String" Name="idfederacion" Nullable="false" MaxLength="8" />
   </ComplexType>
 </Schema>

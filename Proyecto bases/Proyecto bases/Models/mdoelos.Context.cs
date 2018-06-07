@@ -169,5 +169,18 @@ namespace Proyecto_bases.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ligador", equipo1Parameter, equipo2Parameter, diaParameter, fechaJuego);
         }
+    
+        public virtual ObjectResult<tablaGeneral_Result> tablaGeneral(string idCompeticion, Nullable<decimal> idTemporada)
+        {
+            var idCompeticionParameter = idCompeticion != null ?
+                new ObjectParameter("idCompeticion", idCompeticion) :
+                new ObjectParameter("idCompeticion", typeof(string));
+    
+            var idTemporadaParameter = idTemporada.HasValue ?
+                new ObjectParameter("idTemporada", idTemporada) :
+                new ObjectParameter("idTemporada", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<tablaGeneral_Result>("tablaGeneral", idCompeticionParameter, idTemporadaParameter);
+        }
     }
 }

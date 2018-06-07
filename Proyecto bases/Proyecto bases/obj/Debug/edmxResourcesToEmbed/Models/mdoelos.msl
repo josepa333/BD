@@ -577,5 +577,21 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="ligador" FunctionName="ProyectoBasesJARModel.Store.ligador" />
+    <FunctionImportMapping FunctionImportName="tablaGeneral" FunctionName="ProyectoBasesJARModel.Store.tablaGeneral">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProyectoBasesJARModel.tablaGeneral_Result">
+          <ScalarProperty Name="idclub" ColumnName="idclub" />
+          <ScalarProperty Name="nbrclub" ColumnName="nbrclub" />
+          <ScalarProperty Name="pjugados" ColumnName="pjugados" />
+          <ScalarProperty Name="pganados" ColumnName="pganados" />
+          <ScalarProperty Name="pperdidos" ColumnName="pperdidos" />
+          <ScalarProperty Name="pempatados" ColumnName="pempatados" />
+          <ScalarProperty Name="golesAFavor" ColumnName="golesAFavor" />
+          <ScalarProperty Name="golesEnContra" ColumnName="golesEnContra" />
+          <ScalarProperty Name="puntosTotales" ColumnName="puntosTotales" />
+          <ScalarProperty Name="idfederacion" ColumnName="idfederacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

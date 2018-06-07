@@ -292,6 +292,9 @@
     <Compile Include="Models\sociosclub.cs">
       <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tablaGeneral_Result.cs">
+      <DependentUpon>mdoelos.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\telefono.cs">
       <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
@@ -426,7 +429,7 @@
     <Content Include="Views\competiciontemporadas\Edit.cshtml" />
     <Content Include="Views\competiciontemporadas\Index.cshtml" />
     <Content Include="Views\competiciontemporadas\Calendario.cshtml" />
-    <Content Include="Views\competiciontemporadas\Resultados.cshtml" />
+    <Content Include="Views\competiciontemporadas\TablaGeneral.cshtml" />
     <Content Include="Views\jugadores\Create.cshtml" />
     <Content Include="Views\jugadores\Delete.cshtml" />
     <Content Include="Views\jugadores\Details.cshtml" />
