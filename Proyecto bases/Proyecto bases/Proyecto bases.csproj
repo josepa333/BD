@@ -175,9 +175,12 @@
     <Compile Include="Models\arbitro.cs">
       <DependentUpon>modeloClases3.tt</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Models\arbitroDatos_Result.cs">
       <DependentUpon>modeloClases3.tt</DependentUpon>
     </Compile>
+=======
+>>>>>>> 51d390e72cfd7fc2ea9e936c91cdf00eae8cbf88
     <Compile Include="Models\arbitrojuego.cs">
       <DependentUpon>modeloClases3.tt</DependentUpon>
     </Compile>
@@ -448,10 +451,11 @@
     <Content Include="Views\entrenador\Edit.cshtml" />
     <Content Include="Views\entrenador\Index.cshtml" />
     <Content Include="Views\entrenador\Historial.cshtml" />
-    <Content Include="Views\competiciontemporadas\Arbitros.cshtml" />
+    <Content Include="Views\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\VsClubes\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

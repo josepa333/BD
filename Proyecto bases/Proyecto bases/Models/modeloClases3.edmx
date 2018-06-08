@@ -2212,10 +2212,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="arbitroDatos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="idCompeticion" Type="varchar" Mode="In" />
-          <Parameter Name="idTemporada" Type="numeric" Mode="In" />
-        </Function>
         <Function Name="buscaFecha" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="NombreEquipo" Type="varchar" Mode="In" />
           <Parameter Name="Fecha" Type="datetime" Mode="In" />
@@ -2229,11 +2225,6 @@
           <Parameter Name="Semana" Type="int" Mode="In" />
           <Parameter Name="Dia" Type="int" Mode="In" />
           <Parameter Name="Fecha" Type="datetime" Mode="InOut" />
-        </Function>
-        <Function Name="equipos_2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="fecha" Type="date" Mode="In" />
-          <Parameter Name="equipo1" Type="varchar" Mode="In" />
-          <Parameter Name="equipo2" Type="varchar" Mode="In" />
         </Function>
         <Function Name="generaCalendario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="competicion" Type="varchar" Mode="In" />

@@ -3113,6 +3113,7 @@
       <Parameter Name="idCompeticion" Mode="In" Type="String" />
       <Parameter Name="idTemporada" Mode="In" Type="Decimal" />
     </FunctionImport>
+<<<<<<< HEAD
     <FunctionImport Name="arbitroDatos" ReturnType="Collection(ProyectoBasesJARModel.arbitroDatos_Result)">
       <Parameter Name="idCompeticion" Mode="In" Type="String" />
       <Parameter Name="idTemporada" Mode="In" Type="Decimal" />
@@ -3122,6 +3123,8 @@
       <Parameter Name="equipo1" Mode="In" Type="String" />
       <Parameter Name="equipo2" Mode="In" Type="String" />
     </FunctionImport>
+=======
+>>>>>>> 51d390e72cfd7fc2ea9e936c91cdf00eae8cbf88
   </EntityContainer>
   <ComplexType Name="infoEntrenador_Result">
     <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
@@ -3163,6 +3166,7 @@
     <Property Type="Decimal" Name="puntosTotales" Nullable="false" Precision="3" Scale="0" />
     <Property Type="String" Name="idfederacion" Nullable="false" MaxLength="8" />
   </ComplexType>
+<<<<<<< HEAD
   <ComplexType Name="arbitroDatos_Result">
     <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
     <Property Type="Decimal" Name="Column1" Nullable="true" Precision="38" Scale="6" />
@@ -3174,4 +3178,6 @@
     <Property Type="String" Name="idclubvisita" Nullable="false" MaxLength="10" />
     <Property Type="Decimal" Name="golesvisita" Nullable="true" Precision="2" Scale="0" />
   </ComplexType>
+=======
+>>>>>>> 51d390e72cfd7fc2ea9e936c91cdf00eae8cbf88
 </Schema>

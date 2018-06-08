@@ -593,6 +593,7 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+<<<<<<< HEAD
     <FunctionImportMapping FunctionImportName="arbitroDatos" FunctionName="ProyectoBasesJARModel.Store.arbitroDatos">
       <ResultMapping>
         <ComplexTypeMapping TypeName="ProyectoBasesJARModel.arbitroDatos_Result">
@@ -612,5 +613,7 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+=======
+>>>>>>> 51d390e72cfd7fc2ea9e936c91cdf00eae8cbf88
   </EntityContainerMapping>
 </Mapping>
