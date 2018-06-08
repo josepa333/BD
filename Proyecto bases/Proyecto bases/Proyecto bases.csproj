@@ -451,12 +451,9 @@
     <Content Include="Views\entrenador\Edit.cshtml" />
     <Content Include="Views\entrenador\Index.cshtml" />
     <Content Include="Views\entrenador\Historial.cshtml" />
-<<<<<<< HEAD
-    <Content Include="Views\View.cshtml" />
-    <Content Include="Views\VsClubes\Equipos2.cshtml" />
-=======
     <Content Include="Views\competiciontemporadas\Arbitros.cshtml" />
->>>>>>> 090929242f13571826e6c255088c2a7b1a878a25
+    <Content Include="Views\Rivales\rivales.cshtml" />
+    <Content Include="Views\Rivales\Menu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

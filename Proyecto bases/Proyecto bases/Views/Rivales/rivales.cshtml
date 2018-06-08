@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Proyecto_bases.Models.Rivales_Result>
+@{
+    ViewBag.Title = "Resultados de partidos jugados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Index</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("ID Club Casa")
+        </th>
+        <th>
+            @Html.DisplayName("Goles Casa")
+        </th>
+        <th>
+            @Html.DisplayName("Goles Visita")
+        </th>
+        <th>
+            @Html.DisplayName("ID Club Visita")
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>
+                @Html.DisplayFor(model => item.idclubcasa)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.golescasa)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.golesvisita)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.idclubvisita)
+            </th>
+        </tr>
+    }
+</table>
