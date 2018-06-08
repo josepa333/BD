@@ -2212,6 +2212,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="arbitroDatos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idCompeticion" Type="varchar" Mode="In" />
+          <Parameter Name="idTemporada" Type="numeric" Mode="In" />
+        </Function>
         <Function Name="buscaFecha" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="NombreEquipo" Type="varchar" Mode="In" />
           <Parameter Name="Fecha" Type="datetime" Mode="In" />
@@ -2225,6 +2229,11 @@
           <Parameter Name="Semana" Type="int" Mode="In" />
           <Parameter Name="Dia" Type="int" Mode="In" />
           <Parameter Name="Fecha" Type="datetime" Mode="InOut" />
+        </Function>
+        <Function Name="equipos_2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fecha" Type="date" Mode="In" />
+          <Parameter Name="equipo1" Type="varchar" Mode="In" />
+          <Parameter Name="equipo2" Type="varchar" Mode="In" />
         </Function>
         <Function Name="generaCalendario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="competicion" Type="varchar" Mode="In" />
@@ -2246,6 +2255,11 @@
           <Parameter Name="equipo2" Type="varchar" Mode="In" />
           <Parameter Name="Dia" Type="int" Mode="In" />
           <Parameter Name="fechaJuego" Type="datetime" Mode="InOut" />
+        </Function>
+        <Function Name="Rivales" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fecha" Type="date" Mode="In" />
+          <Parameter Name="equipo1" Type="varchar" Mode="In" />
+          <Parameter Name="equipo2" Type="varchar" Mode="In" />
         </Function>
         <Function Name="tablaGeneral" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idCompeticion" Type="varchar" Mode="In" />
@@ -5960,6 +5974,20 @@
             <Parameter Name="idCompeticion" Mode="In" Type="String" />
             <Parameter Name="idTemporada" Mode="In" Type="Decimal" />
           </FunctionImport>
+          <FunctionImport Name="arbitroDatos" ReturnType="Collection(ProyectoBasesJARModel.arbitroDatos_Result)">
+            <Parameter Name="idCompeticion" Mode="In" Type="String" />
+            <Parameter Name="idTemporada" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="equipos_2" ReturnType="Collection(ProyectoBasesJARModel.equipos_2_Result)">
+            <Parameter Name="fecha" Mode="In" Type="DateTime" />
+            <Parameter Name="equipo1" Mode="In" Type="String" />
+            <Parameter Name="equipo2" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Rivales" ReturnType="Collection(ProyectoBasesJARModel.Rivales_Result)">
+            <Parameter Name="fecha" Mode="In" Type="DateTime" />
+            <Parameter Name="equipo1" Mode="In" Type="String" />
+            <Parameter Name="equipo2" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="infoEntrenador_Result">
           <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
@@ -6000,6 +6028,24 @@
           <Property Type="Decimal" Name="golesEnContra" Nullable="false" Precision="3" Scale="0" />
           <Property Type="Decimal" Name="puntosTotales" Nullable="false" Precision="3" Scale="0" />
           <Property Type="String" Name="idfederacion" Nullable="false" MaxLength="8" />
+        </ComplexType>
+        <ComplexType Name="arbitroDatos_Result">
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="Column1" Nullable="true" Precision="38" Scale="6" />
+        </ComplexType>
+        <ComplexType Name="equipos_2_Result">
+          <Property Type="Decimal" Name="idJuego" Nullable="false" Precision="10" Scale="0" />
+          <Property Type="String" Name="idclubcasa" Nullable="false" MaxLength="10" />
+          <Property Type="Decimal" Name="golescasa" Nullable="true" Precision="2" Scale="0" />
+          <Property Type="String" Name="idclubvisita" Nullable="false" MaxLength="10" />
+          <Property Type="Decimal" Name="golesvisita" Nullable="true" Precision="2" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="Rivales_Result">
+          <Property Type="Decimal" Name="idJuego" Nullable="false" Precision="10" Scale="0" />
+          <Property Type="String" Name="idclubcasa" Nullable="false" MaxLength="10" />
+          <Property Type="Decimal" Name="golescasa" Nullable="true" Precision="2" Scale="0" />
+          <Property Type="String" Name="idclubvisita" Nullable="false" MaxLength="10" />
+          <Property Type="Decimal" Name="golesvisita" Nullable="true" Precision="2" Scale="0" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -6596,6 +6642,36 @@
                 <ScalarProperty Name="golesEnContra" ColumnName="golesEnContra" />
                 <ScalarProperty Name="puntosTotales" ColumnName="puntosTotales" />
                 <ScalarProperty Name="idfederacion" ColumnName="idfederacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="arbitroDatos" FunctionName="ProyectoBasesJARModel.Store.arbitroDatos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProyectoBasesJARModel.arbitroDatos_Result">
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="Column1" ColumnName="Column1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="equipos_2" FunctionName="ProyectoBasesJARModel.Store.equipos_2">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProyectoBasesJARModel.equipos_2_Result">
+                <ScalarProperty Name="idJuego" ColumnName="idJuego" />
+                <ScalarProperty Name="idclubcasa" ColumnName="idclubcasa" />
+                <ScalarProperty Name="golescasa" ColumnName="golescasa" />
+                <ScalarProperty Name="idclubvisita" ColumnName="idclubvisita" />
+                <ScalarProperty Name="golesvisita" ColumnName="golesvisita" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Rivales" FunctionName="ProyectoBasesJARModel.Store.Rivales">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProyectoBasesJARModel.Rivales_Result">
+                <ScalarProperty Name="idJuego" ColumnName="idJuego" />
+                <ScalarProperty Name="idclubcasa" ColumnName="idclubcasa" />
+                <ScalarProperty Name="golescasa" ColumnName="golescasa" />
+                <ScalarProperty Name="idclubvisita" ColumnName="idclubvisita" />
+                <ScalarProperty Name="golesvisita" ColumnName="golesvisita" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

@@ -175,6 +175,9 @@
     <Compile Include="Models\arbitro.cs">
       <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\arbitroDatos_Result.cs">
+      <DependentUpon>mdoelos.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\arbitrojuego.cs">
       <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
@@ -209,6 +212,9 @@
       <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\entrenadortitulo.cs">
+      <DependentUpon>mdoelos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\equipos_2_Result.cs">
       <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\especialidad.cs">
@@ -287,6 +293,9 @@
       <DependentUpon>mdoelos.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\oferta.cs">
+      <DependentUpon>mdoelos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rivales_Result.cs">
       <DependentUpon>mdoelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sociosclub.cs">
@@ -442,8 +451,12 @@
     <Content Include="Views\entrenador\Edit.cshtml" />
     <Content Include="Views\entrenador\Index.cshtml" />
     <Content Include="Views\entrenador\Historial.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\View.cshtml" />
     <Content Include="Views\VsClubes\Equipos2.cshtml" />
+=======
+    <Content Include="Views\competiciontemporadas\Arbitros.cshtml" />
+>>>>>>> 090929242f13571826e6c255088c2a7b1a878a25
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

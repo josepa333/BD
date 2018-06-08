@@ -593,5 +593,13 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="arbitroDatos" FunctionName="ProyectoBasesJARModel.Store.arbitroDatos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProyectoBasesJARModel.arbitroDatos_Result">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

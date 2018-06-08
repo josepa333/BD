@@ -14,18 +14,12 @@ namespace Proyecto_bases.Models
 
 using System;
     
-public partial class infoEntrenador_Result
+public partial class arbitroDatos_Result
 {
 
     public string nombre { get; set; }
 
-    public System.DateTime fchinicio { get; set; }
-
-    public System.DateTime fchfinal { get; set; }
-
-    public string tipo { get; set; }
-
-    public string sinopsis { get; set; }
+    public Nullable<decimal> Column1 { get; set; }
 
 }
 

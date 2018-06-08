@@ -14,18 +14,18 @@ namespace Proyecto_bases.Models
 
 using System;
     
-public partial class infoEntrenador_Result
+public partial class Rivales_Result
 {
 
-    public string nombre { get; set; }
+    public decimal idJuego { get; set; }
 
-    public System.DateTime fchinicio { get; set; }
+    public string idclubcasa { get; set; }
 
-    public System.DateTime fchfinal { get; set; }
+    public Nullable<decimal> golescasa { get; set; }
 
-    public string tipo { get; set; }
+    public string idclubvisita { get; set; }
 
-    public string sinopsis { get; set; }
+    public Nullable<decimal> golesvisita { get; set; }
 
 }
 
