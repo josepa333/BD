@@ -1,0 +1,62 @@
+﻿@model IEnumerab<Proyecto_bases.Models.equipos_2_Result>
+
+@{
+    ViewBag.Title = "Equipos2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Equipos2</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Casa")
+        </th>
+        <th>
+            @Html.DisplayName("Goles Casa")
+        </th>
+        <th>
+            @Html.DisplayName("Goles Visita")
+        </th>
+        <th>
+            @Html.DisplayName("Visita")
+        </th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>
+                @Html.DisplayFor(model => item.idclub)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.nbrclub)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.pjugados)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.pganados)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.pperdidos)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.pempatados)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.golesAFavor)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.golesEnContra)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.puntosTotales)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.idfederacion)
+            </th>
+        </tr>
+    }
+</table>
