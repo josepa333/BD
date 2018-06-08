@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="ProyectoBasesJARModelStoreContainer" CdmEntityContainer="ProyectoBasesJAREntities8">
+  <EntityContainerMapping StorageEntityContainer="ProyectoBasesJARModelStoreContainer" CdmEntityContainer="ProyectoBasesJAREntities9">
     <EntitySetMapping Name="alineacion">
       <EntityTypeMapping TypeName="ProyectoBasesJARModel.alineacion">
         <MappingFragment StoreEntitySet="alineacion">
@@ -532,9 +532,28 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="arbitroDatos" FunctionName="ProyectoBasesJARModel.Store.arbitroDatos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProyectoBasesJARModel.arbitroDatos_Result">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="buscaFecha" FunctionName="ProyectoBasesJARModel.Store.buscaFecha" />
     <FunctionImportMapping FunctionImportName="creaResultados" FunctionName="ProyectoBasesJARModel.Store.creaResultados" />
     <FunctionImportMapping FunctionImportName="determinaFecha" FunctionName="ProyectoBasesJARModel.Store.determinaFecha" />
+    <FunctionImportMapping FunctionImportName="equipos_2" FunctionName="ProyectoBasesJARModel.Store.equipos_2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProyectoBasesJARModel.equipos_2_Result">
+          <ScalarProperty Name="idJuego" ColumnName="idJuego" />
+          <ScalarProperty Name="idclubcasa" ColumnName="idclubcasa" />
+          <ScalarProperty Name="golescasa" ColumnName="golescasa" />
+          <ScalarProperty Name="idclubvisita" ColumnName="idclubvisita" />
+          <ScalarProperty Name="golesvisita" ColumnName="golesvisita" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="generaCalendario" FunctionName="ProyectoBasesJARModel.Store.generaCalendario" />
     <FunctionImportMapping FunctionImportName="infoEntrenador" FunctionName="ProyectoBasesJARModel.Store.infoEntrenador">
       <ResultMapping>
@@ -590,25 +609,6 @@
           <ScalarProperty Name="golesEnContra" ColumnName="golesEnContra" />
           <ScalarProperty Name="puntosTotales" ColumnName="puntosTotales" />
           <ScalarProperty Name="idfederacion" ColumnName="idfederacion" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="arbitroDatos" FunctionName="ProyectoBasesJARModel.Store.arbitroDatos">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="ProyectoBasesJARModel.arbitroDatos_Result">
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
-          <ScalarProperty Name="Column1" ColumnName="Column1" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="equipos_2" FunctionName="ProyectoBasesJARModel.Store.equipos_2">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="ProyectoBasesJARModel.equipos_2_Result">
-          <ScalarProperty Name="idJuego" ColumnName="idJuego" />
-          <ScalarProperty Name="idclubcasa" ColumnName="idclubcasa" />
-          <ScalarProperty Name="golescasa" ColumnName="golescasa" />
-          <ScalarProperty Name="idclubvisita" ColumnName="idclubvisita" />
-          <ScalarProperty Name="golesvisita" ColumnName="golesvisita" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
