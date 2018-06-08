@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="cbf0d2c76a8f4de9bc6f0b1102e5001d" Name="Diagram1" ZoomLevel="33">
+      <Diagram DiagramId="7031f69a0c7f46c5bea75c14e002fa69" Name="Diagram1" ZoomLevel="32">
         <EntityTypeShape EntityType="ProyectoBasesJARModel.alineacion" Width="1.5" PointX="3" PointY="67.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBasesJARModel.anotadores" Width="1.5" PointX="6" PointY="67.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBasesJARModel.arbitro" Width="1.5" PointX="8.25" PointY="69.25" IsExpanded="true" />

@@ -593,7 +593,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-<<<<<<< HEAD
     <FunctionImportMapping FunctionImportName="arbitroDatos" FunctionName="ProyectoBasesJARModel.Store.arbitroDatos">
       <ResultMapping>
         <ComplexTypeMapping TypeName="ProyectoBasesJARModel.arbitroDatos_Result">
@@ -602,18 +601,5 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="equipos_2" FunctionName="ProyectoBasesJARModel.Store.equipos_2">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="ProyectoBasesJARModel.equipos_2_Result">
-          <ScalarProperty Name="idJuego" ColumnName="idJuego" />
-          <ScalarProperty Name="idclubcasa" ColumnName="idclubcasa" />
-          <ScalarProperty Name="golescasa" ColumnName="golescasa" />
-          <ScalarProperty Name="idclubvisita" ColumnName="idclubvisita" />
-          <ScalarProperty Name="golesvisita" ColumnName="golesvisita" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-=======
->>>>>>> 51d390e72cfd7fc2ea9e936c91cdf00eae8cbf88
   </EntityContainerMapping>
 </Mapping>

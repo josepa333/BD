@@ -13,7 +13,7 @@ namespace Proyecto_bases.Controllers
 {
     public class entrenadorController : Controller
     {
-        private ProyectoBasesJAREntities9 db = new ProyectoBasesJAREntities9();
+        private ProyectoBasesJAREntities8 db = new ProyectoBasesJAREntities8();
 
         // GET: entrenador
         public ActionResult Index()
