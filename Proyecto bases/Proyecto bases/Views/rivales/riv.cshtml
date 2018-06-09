@@ -1,8 +1,10 @@
 ﻿@model IEnumerable<Proyecto_bases.Models.Rivales_Result>
+
 @{
     ViewBag.Title = "Resultados de partidos jugados";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <h2>Index</h2>
 <table class="table">
     <tr>
@@ -23,6 +25,9 @@
     @foreach (var item in Model)
     {
         <tr>
+            <th>
+                @Html.DisplayFor(model => item.idJuego)
+            </th>
             <th>
                 @Html.DisplayFor(model => item.idclubcasa)
             </th>
