@@ -601,5 +601,27 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="equipos_2" FunctionName="ProyectoBasesJARModel.Store.equipos_2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProyectoBasesJARModel.equipos_2_Result">
+          <ScalarProperty Name="idJuego" ColumnName="idJuego" />
+          <ScalarProperty Name="idclubcasa" ColumnName="idclubcasa" />
+          <ScalarProperty Name="golescasa" ColumnName="golescasa" />
+          <ScalarProperty Name="idclubvisita" ColumnName="idclubvisita" />
+          <ScalarProperty Name="golesvisita" ColumnName="golesvisita" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Rivales" FunctionName="ProyectoBasesJARModel.Store.Rivales">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProyectoBasesJARModel.Rivales_Result">
+          <ScalarProperty Name="idJuego" ColumnName="idJuego" />
+          <ScalarProperty Name="idclubcasa" ColumnName="idclubcasa" />
+          <ScalarProperty Name="golescasa" ColumnName="golescasa" />
+          <ScalarProperty Name="idclubvisita" ColumnName="idclubvisita" />
+          <ScalarProperty Name="golesvisita" ColumnName="golesvisita" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

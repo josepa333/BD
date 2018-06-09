@@ -2225,6 +2225,11 @@
     <Parameter Name="Dia" Type="int" Mode="In" />
     <Parameter Name="Fecha" Type="datetime" Mode="InOut" />
   </Function>
+  <Function Name="equipos_2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fecha" Type="date" Mode="In" />
+    <Parameter Name="equipo1" Type="varchar" Mode="In" />
+    <Parameter Name="equipo2" Type="varchar" Mode="In" />
+  </Function>
   <Function Name="generaCalendario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="competicion" Type="varchar" Mode="In" />
     <Parameter Name="temporada" Type="numeric" Mode="In" />
@@ -2245,6 +2250,11 @@
     <Parameter Name="equipo2" Type="varchar" Mode="In" />
     <Parameter Name="Dia" Type="int" Mode="In" />
     <Parameter Name="fechaJuego" Type="datetime" Mode="InOut" />
+  </Function>
+  <Function Name="Rivales" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fecha" Type="date" Mode="In" />
+    <Parameter Name="equipo1" Type="varchar" Mode="In" />
+    <Parameter Name="equipo2" Type="varchar" Mode="In" />
   </Function>
   <Function Name="tablaGeneral" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="idCompeticion" Type="varchar" Mode="In" />

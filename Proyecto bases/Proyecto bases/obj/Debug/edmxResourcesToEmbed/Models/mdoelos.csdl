@@ -3117,6 +3117,16 @@
       <Parameter Name="idCompeticion" Mode="In" Type="String" />
       <Parameter Name="idTemporada" Mode="In" Type="Decimal" />
     </FunctionImport>
+    <FunctionImport Name="equipos_2" ReturnType="Collection(ProyectoBasesJARModel.equipos_2_Result)">
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+      <Parameter Name="equipo1" Mode="In" Type="String" />
+      <Parameter Name="equipo2" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Rivales" ReturnType="Collection(ProyectoBasesJARModel.Rivales_Result)">
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+      <Parameter Name="equipo1" Mode="In" Type="String" />
+      <Parameter Name="equipo2" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="infoEntrenador_Result">
     <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
@@ -3161,5 +3171,19 @@
   <ComplexType Name="arbitroDatos_Result">
     <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
     <Property Type="Decimal" Name="Column1" Nullable="true" Precision="38" Scale="6" />
+  </ComplexType>
+  <ComplexType Name="equipos_2_Result">
+    <Property Type="Decimal" Name="idJuego" Nullable="false" Precision="10" Scale="0" />
+    <Property Type="String" Name="idclubcasa" Nullable="false" MaxLength="10" />
+    <Property Type="Decimal" Name="golescasa" Nullable="true" Precision="2" Scale="0" />
+    <Property Type="String" Name="idclubvisita" Nullable="false" MaxLength="10" />
+    <Property Type="Decimal" Name="golesvisita" Nullable="true" Precision="2" Scale="0" />
+  </ComplexType>
+  <ComplexType Name="Rivales_Result">
+    <Property Type="Decimal" Name="idJuego" Nullable="false" Precision="10" Scale="0" />
+    <Property Type="String" Name="idclubcasa" Nullable="false" MaxLength="10" />
+    <Property Type="Decimal" Name="golescasa" Nullable="true" Precision="2" Scale="0" />
+    <Property Type="String" Name="idclubvisita" Nullable="false" MaxLength="10" />
+    <Property Type="Decimal" Name="golesvisita" Nullable="true" Precision="2" Scale="0" />
   </ComplexType>
 </Schema>
