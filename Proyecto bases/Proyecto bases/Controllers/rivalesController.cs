@@ -25,7 +25,6 @@ namespace Proyecto_bases.Controllers
         [HttpPost]
         public ActionResult riv(string casa, string visita, string fecha)
         {
-
             SqlConnection conn = new SqlConnection("data source=ecRhin.ec.tec.ac.cr\\Estudiantes;initial catalog=ProyectoBasesJAR;persist security info=True;user id=josepalvarado;password=josepalvarado;MultipleActiveResultSets=True;App=EntityFramework");
             conn.Open();
             SqlCommand cmd = new SqlCommand("Rivales", conn);

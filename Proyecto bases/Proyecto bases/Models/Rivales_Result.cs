@@ -13,12 +13,11 @@ namespace Proyecto_bases.Models
 {
 
 using System;
-    using System.ComponentModel.DataAnnotations;
-
-    public partial class Rivales_Result
+    
+public partial class Rivales_Result
 {
 
-    public decimal idJuego { get; set; }
+    public decimal idJuego { get ; set; }
 
     public string idclubcasa { get; set; }
 
