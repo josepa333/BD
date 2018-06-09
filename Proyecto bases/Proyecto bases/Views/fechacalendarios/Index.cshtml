@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Proyecto_bases.Models.fechacalendario>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fchcreacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fchmodificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.competiciontemporada.usrcreador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usuario.usrcreador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usuario1.usrcreador)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fchcreacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fchmodificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.competiciontemporada.usrcreador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuario.usrcreador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuario1.usrcreador)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idcalendario }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idcalendario }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idcalendario })
+
+        </td>
+    </tr>
+}
+
+</table>

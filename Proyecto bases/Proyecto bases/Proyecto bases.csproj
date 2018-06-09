@@ -161,6 +161,7 @@
     </Compile>
     <Compile Include="Controllers\competiciontemporadasController.cs" />
     <Compile Include="Controllers\entrenadorController.cs" />
+    <Compile Include="Controllers\fechacalendariosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\jugadoresController.cs" />
     <Compile Include="Global.asax.cs">
@@ -452,6 +453,13 @@
     <Content Include="Views\entrenador\Index.cshtml" />
     <Content Include="Views\entrenador\Historial.cshtml" />
     <Content Include="Views\competiciontemporadas\Arbitros.cshtml" />
+    <Content Include="Views\competiciontemporadas\AdministrarCalendario.cshtml" />
+    <Content Include="Views\fechacalendarios\Create.cshtml" />
+    <Content Include="Views\fechacalendarios\Delete.cshtml" />
+    <Content Include="Views\fechacalendarios\Details.cshtml" />
+    <Content Include="Views\fechacalendarios\Edit.cshtml" />
+    <Content Include="Views\fechacalendarios\Index.cshtml" />
+    <Content Include="Views\competiciontemporadas\Resultados.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

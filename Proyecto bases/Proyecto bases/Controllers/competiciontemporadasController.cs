@@ -202,6 +202,13 @@ namespace Proyecto_bases.Controllers
             return View(lista);
         }
 
+        public ActionResult AdministrarCalendario(string id, int id2)
+        {
+            var competiciontemporada = db.fechacalendario.Where(x => x.idcompeticion == id).Where(x => x.idtemporada == id2).ToList();
+            return View(competiciontemporada);
+        }
+
+        
     }
 }
 

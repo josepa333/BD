@@ -143,5 +143,7 @@ namespace Proyecto_bases.Controllers
             List<infoJugador_Result> lista = db.Database.SqlQuery<infoJugador_Result>("exec infoEntrenador @idEntrenador", parameter1).ToList();
             return View(lista);
         }
+
+        
     }
 }
