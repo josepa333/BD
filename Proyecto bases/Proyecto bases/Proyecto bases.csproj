@@ -164,6 +164,7 @@
     <Compile Include="Controllers\fechacalendariosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\jugadoresController.cs" />
+    <Compile Include="Controllers\rivalesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -453,6 +454,7 @@
     <Content Include="Views\entrenador\Index.cshtml" />
     <Content Include="Views\entrenador\Historial.cshtml" />
     <Content Include="Views\competiciontemporadas\Arbitros.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\competiciontemporadas\AdministrarCalendario.cshtml" />
     <Content Include="Views\fechacalendarios\Create.cshtml" />
     <Content Include="Views\fechacalendarios\Delete.cshtml" />
@@ -460,6 +462,10 @@
     <Content Include="Views\fechacalendarios\Edit.cshtml" />
     <Content Include="Views\fechacalendarios\Index.cshtml" />
     <Content Include="Views\competiciontemporadas\Resultados.cshtml" />
+=======
+    <Content Include="Views\rivales\riv.cshtml" />
+    <Content Include="Views\rivales\Index.cshtml" />
+>>>>>>> 406093e11d86f11b129fdc75d5cae2c7e82c1eea
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

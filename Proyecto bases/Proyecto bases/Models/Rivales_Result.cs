@@ -13,8 +13,9 @@ namespace Proyecto_bases.Models
 {
 
 using System;
-    
-public partial class Rivales_Result
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class Rivales_Result
 {
 
     public decimal idJuego { get; set; }
