@@ -159,7 +159,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\alineacionController.cs" />
     <Compile Include="Controllers\anotadoresController.cs" />
+    <Compile Include="Controllers\arbitrojuegoController.cs" />
+    <Compile Include="Controllers\arbitrosController.cs" />
     <Compile Include="Controllers\clubcompeticiontemporadaController.cs" />
     <Compile Include="Controllers\clubsController.cs" />
     <Compile Include="Controllers\competicionsController.cs" />
@@ -167,11 +170,13 @@
     <Compile Include="Controllers\entrenadorController.cs" />
     <Compile Include="Controllers\fechacalendariosController.cs" />
     <Compile Include="Controllers\federacionsController.cs" />
+    <Compile Include="Controllers\funcclubcomptemporadaController.cs" />
     <Compile Include="Controllers\funcionariodeportivoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\juegoesController.cs" />
     <Compile Include="Controllers\jugadoresController.cs" />
     <Compile Include="Controllers\rivalesController.cs" />
+    <Compile Include="Controllers\temporadaController.cs" />
     <Compile Include="Controllers\usuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -517,6 +522,31 @@
     <Content Include="Views\usuarios\Details.cshtml" />
     <Content Include="Views\usuarios\Edit.cshtml" />
     <Content Include="Views\usuarios\Index.cshtml" />
+    <Content Include="Views\alineacion\Create.cshtml" />
+    <Content Include="Views\alineacion\Delete.cshtml" />
+    <Content Include="Views\alineacion\Details.cshtml" />
+    <Content Include="Views\alineacion\Edit.cshtml" />
+    <Content Include="Views\alineacion\Index.cshtml" />
+    <Content Include="Views\arbitros\Create.cshtml" />
+    <Content Include="Views\arbitros\Delete.cshtml" />
+    <Content Include="Views\arbitros\Details.cshtml" />
+    <Content Include="Views\arbitros\Edit.cshtml" />
+    <Content Include="Views\arbitros\Index.cshtml" />
+    <Content Include="Views\arbitrojuego\Create.cshtml" />
+    <Content Include="Views\arbitrojuego\Delete.cshtml" />
+    <Content Include="Views\arbitrojuego\Details.cshtml" />
+    <Content Include="Views\arbitrojuego\Edit.cshtml" />
+    <Content Include="Views\arbitrojuego\Index.cshtml" />
+    <Content Include="Views\funcclubcomptemporada\Create.cshtml" />
+    <Content Include="Views\funcclubcomptemporada\Delete.cshtml" />
+    <Content Include="Views\funcclubcomptemporada\Details.cshtml" />
+    <Content Include="Views\funcclubcomptemporada\Edit.cshtml" />
+    <Content Include="Views\funcclubcomptemporada\Index.cshtml" />
+    <Content Include="Views\temporada\Create.cshtml" />
+    <Content Include="Views\temporada\Delete.cshtml" />
+    <Content Include="Views\temporada\Details.cshtml" />
+    <Content Include="Views\temporada\Edit.cshtml" />
+    <Content Include="Views\temporada\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

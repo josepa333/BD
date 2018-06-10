@@ -1,0 +1,91 @@
+﻿@model Proyecto_bases.Models.funcclubcomptemporada
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>funcclubcomptemporada</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.goles)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.goles)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sinopsis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sinopsis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fchcreacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fchcreacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fchmodificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fchmodificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.club.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.club.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.competiciontemporada.usrcreador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.competiciontemporada.usrcreador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usuario.usrcreador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuario.usrcreador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usuario1.usrcreador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuario1.usrcreador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.funcionariodeportivo.foto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.funcionariodeportivo.foto)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,96 @@
+﻿@model IEnumerable<Proyecto_bases.Models.alineacion>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.jugador.idfuncionario)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.jugador.funcionariodeportivo.nombre)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.club.nombre)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.tipo)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.rendimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usrcreador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fchcreacion)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.usrmodificador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fchmodificacion)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <th>
+            @Html.DisplayFor(modelItem => item.jugador.idfuncionario)
+        </th>
+
+        <th>
+            @Html.DisplayFor(modelItem => item.jugador.funcionariodeportivo.nombre)
+        </th>
+
+        <th>
+            @Html.DisplayFor(modelItem => item.club.nombre)
+        </th>
+
+        <th>
+            @Html.DisplayFor(modelItem => item.tipo)
+        </th>
+
+        <th>
+            @Html.DisplayFor(modelItem => item.rendimiento)
+        </th>
+        <th>
+            @Html.DisplayFor(modelItem => item.usrcreador)
+        </th>
+        <th>
+            @Html.DisplayFor(modelItem => item.fchcreacion)
+        </th>
+
+        <th>
+            @Html.DisplayFor(modelItem => item.usrmodificador)
+        </th>
+        <th>
+            @Html.DisplayFor(modelItem => item.fchmodificacion)
+        </th>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
