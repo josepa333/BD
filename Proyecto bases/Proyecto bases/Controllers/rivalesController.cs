@@ -14,7 +14,7 @@ namespace Proyecto_bases.Controllers
     public class rivalesController : Controller
     {
 
-        private ProyectoBasesJAREntities8 db = new ProyectoBasesJAREntities8();
+        private ProyectoBasesJAREntities9 db = new ProyectoBasesJAREntities9();
 
         // GET: rivales
         public ActionResult Index()

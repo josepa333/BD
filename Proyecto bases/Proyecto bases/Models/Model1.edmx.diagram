@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7031f69a0c7f46c5bea75c14e002fa69" Name="Diagram1" ZoomLevel="32">
+      <Diagram DiagramId="39151818c1cf4a1890ca24ad744198c8" Name="Diagram1" ZoomLevel="85">
         <EntityTypeShape EntityType="ProyectoBasesJARModel.alineacion" Width="1.5" PointX="3" PointY="67.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBasesJARModel.anotadores" Width="1.5" PointX="6" PointY="67.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBasesJARModel.arbitro" Width="1.5" PointX="8.25" PointY="69.25" IsExpanded="true" />
@@ -13,35 +13,35 @@
         <EntityTypeShape EntityType="ProyectoBasesJARModel.categoria" Width="1.5" PointX="3" PointY="73.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBasesJARModel.club" Width="1.5" PointX="5.25" PointY="79.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBasesJARModel.clubcompeticiontemporada" Width="1.5" PointX="10.5" PointY="75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoBasesJARModel.competicion" Width="1.5" PointX="3" PointY="84.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBasesJARModel.competicion" Width="1.5" PointX="3" PointY="84.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBasesJARModel.competiciontemporada" Width="1.5" PointX="5.25" PointY="87.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoBasesJARModel.contrato" Width="1.5" PointX="13.5" PointY="83.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoBasesJARModel.correo" Width="1.5" PointX="8.25" PointY="82.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoBasesJARModel.direccion" Width="1.5" PointX="11.25" PointY="86.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBasesJARModel.contrato" Width="1.5" PointX="13.5" PointY="84" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBasesJARModel.correo" Width="1.5" PointX="8.25" PointY="82.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBasesJARModel.direccion" Width="1.5" PointX="11.25" PointY="86.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBasesJARModel.entrenador" Width="1.5" PointX="11.25" PointY="90.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoBasesJARModel.entrenadortitulo" Width="1.5" PointX="13.5" PointY="93.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoBasesJARModel.especialidad" Width="1.5" PointX="3" PointY="99.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoBasesJARModel.especialidadjugador" Width="1.5" PointX="8.25" PointY="77.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoBasesJARModel.fechacalendario" Width="1.5" PointX="16.5" PointY="79.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoBasesJARModel.federacion" Width="1.5" PointX="3" PointY="102.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBasesJARModel.entrenadortitulo" Width="1.5" PointX="13.5" PointY="94" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBasesJARModel.especialidad" Width="1.5" PointX="3" PointY="99.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBasesJARModel.especialidadjugador" Width="1.5" PointX="8.25" PointY="77.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBasesJARModel.fechacalendario" Width="1.5" PointX="10.5" PointY="63.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBasesJARModel.federacion" Width="1.5" PointX="3" PointY="102.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBasesJARModel.funcclubcomptemporada" Width="1.5" PointX="13.5" PointY="88.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoBasesJARModel.funcionariodeportivo" Width="1.5" PointX="3" PointY="106.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoBasesJARModel.histalineacion" Width="1.5" PointX="13.5" PointY="71.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoBasesJARModel.histanotadores" Width="1.5" PointX="16.5" PointY="74.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBasesJARModel.funcionariodeportivo" Width="1.5" PointX="3" PointY="106.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBasesJARModel.histalineacion" Width="1.5" PointX="13.5" PointY="71.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBasesJARModel.histanotadores" Width="1.5" PointX="16.5" PointY="74.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBasesJARModel.histarbitrojuego" Width="1.5" PointX="13.5" PointY="67.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBasesJARModel.histcambios" Width="1.5" PointX="16.5" PointY="69.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBasesJARModel.histclubcompeticiontemporada" Width="1.5" PointX="13.5" PointY="76.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBasesJARModel.histcompeticiontemporada" Width="1.5" PointX="8.25" PointY="86.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoBasesJARModel.histfechacalendario" Width="1.5" PointX="19.5" PointY="75.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBasesJARModel.histfechacalendario" Width="1.5" PointX="16.5" PointY="79.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBasesJARModel.histfuncclubcomptemporada" Width="1.5" PointX="16.5" PointY="83.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBasesJARModel.histjuego" Width="1.5" PointX="16.5" PointY="62.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBasesJARModel.juego" Width="1.5" PointX="7.5" PointY="60.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBasesJARModel.jugador" Width="1.5" PointX="11.25" PointY="80.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBasesJARModel.oferta" Width="1.5" PointX="16.5" PointY="89.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoBasesJARModel.sociosclub" Width="1.5" PointX="7.5" PointY="73.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoBasesJARModel.telefono" Width="1.5" PointX="8.25" PointY="91.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoBasesJARModel.temporada" Width="1.5" PointX="3" PointY="111.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoBasesJARModel.tituloacademico" Width="1.5" PointX="3" PointY="115.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBasesJARModel.sociosclub" Width="1.5" PointX="7.5" PointY="74" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBasesJARModel.telefono" Width="1.5" PointX="8.25" PointY="91.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBasesJARModel.temporada" Width="1.5" PointX="3" PointY="111.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBasesJARModel.tituloacademico" Width="1.5" PointX="3" PointY="115.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBasesJARModel.usuario" Width="1.5" PointX="0.75" PointY="60.5" IsExpanded="true" />
         <AssociationConnector Association="ProyectoBasesJARModel.alineacion_club_fk1" ManuallyRouted="false" />
         <AssociationConnector Association="ProyectoBasesJARModel.alineacion_fk1" ManuallyRouted="false" />

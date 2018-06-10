@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="ProyectoBasesJARModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ProyectoBasesJARModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="alineacion">
           <Key>
             <PropertyRef Name="idfuncionario" />
@@ -2858,7 +2858,8 @@
             <End Role="usuario1" EntitySet="usuario" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ProyectoBasesJARModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -2868,8 +2869,8 @@
             <PropertyRef Name="idjuego" />
           </Key>
           <Property Name="idfuncionario" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="idjuego" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
-          <Property Name="rendimiento" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="idjuego" Type="Int32" Nullable="false" />
+          <Property Name="rendimiento" Type="Int32" />
           <Property Name="idclub" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="tipo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="usrcreador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
@@ -2888,8 +2889,8 @@
             <PropertyRef Name="minjuego" />
           </Key>
           <Property Name="idfuncionario" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="idjuego" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
-          <Property Name="minjuego" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="idjuego" Type="Int32" Nullable="false" />
+          <Property Name="minjuego" Type="Int32" Nullable="false" />
           <Property Name="video" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="idclub" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="usrcreador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
@@ -2907,7 +2908,7 @@
             <PropertyRef Name="idarbitro" />
           </Key>
           <Property Name="idarbitro" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="rendimiento" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="rendimiento" Type="Int32" Nullable="false" />
           <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="idcategoria" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="usrcreador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
@@ -2925,9 +2926,9 @@
             <PropertyRef Name="idjuego" />
             <PropertyRef Name="idarbitro" />
           </Key>
-          <Property Name="calificacion" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="calificacion" Type="Int32" Nullable="false" />
           <Property Name="tipo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="idjuego" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="idjuego" Type="Int32" Nullable="false" />
           <Property Name="idarbitro" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="usrcreador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fchcreacion" Type="DateTime" Nullable="false" Precision="0" />
@@ -2944,9 +2945,9 @@
             <PropertyRef Name="idjuego" />
           </Key>
           <Property Name="jugadorentra" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="minjuego" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="minjuego" Type="Int32" Nullable="false" />
           <Property Name="jugadorsale" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="idjuego" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="idjuego" Type="Int32" Nullable="false" />
           <Property Name="idclub" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="usrcreador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fchcreacion" Type="DateTime" Nullable="false" Precision="0" />
@@ -2965,7 +2966,7 @@
           </Key>
           <Property Name="idcategoria" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="minimorendimiento" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="minimorendimiento" Type="Int32" Nullable="false" />
           <Property Name="usrcreador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fchcreacion" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="usrmodificador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
@@ -3014,12 +3015,12 @@
             <PropertyRef Name="idcompeticion" />
           </Key>
           <Property Name="idclub" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="posicion" Type="Decimal" Precision="2" Scale="0" Nullable="false" />
-          <Property Name="golesafavor" Type="Decimal" Precision="3" Scale="0" />
-          <Property Name="golesencontra" Type="Decimal" Precision="3" Scale="0" />
-          <Property Name="idtemporada" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="posicion" Type="Int32" Nullable="false" />
+          <Property Name="golesafavor" Type="Int32" />
+          <Property Name="golesencontra" Type="Int32" />
+          <Property Name="idtemporada" Type="Int32" Nullable="false" />
           <Property Name="idcompeticion" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="puntos" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="puntos" Type="Int32" />
           <Property Name="usrcreador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fchcreacion" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="usrmodificador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
@@ -3040,11 +3041,11 @@
           <Property Name="fchcreacion" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="usrmodificador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="usrmodificacion" Type="DateTime" Precision="0" />
+          <Property Name="fchmodificacion" Type="DateTime" Precision="3" />
           <NavigationProperty Name="usuario" Relationship="Self.competicion_fk1" FromRole="competicion" ToRole="usuario" />
           <NavigationProperty Name="usuario1" Relationship="Self.competicion_fk2" FromRole="competicion" ToRole="usuario" />
           <NavigationProperty Name="competiciontemporada" Relationship="Self.temporada_competicion_fk1" FromRole="competicion" ToRole="competiciontemporada" />
           <NavigationProperty Name="histcompeticiontemporada" Relationship="Self.temporada_competicion_fk2" FromRole="competicion" ToRole="histcompeticiontemporada" />
-          <Property Name="fchmodificacion" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="competiciontemporada">
           <Key>
@@ -3052,7 +3053,7 @@
             <PropertyRef Name="idtemporada" />
           </Key>
           <Property Name="idcompeticion" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="idtemporada" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="idtemporada" Type="Int32" Nullable="false" />
           <Property Name="usrcreador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fchcreacion" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="usrmodificador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
@@ -3169,7 +3170,7 @@
           </Key>
           <Property Name="idfuncionario" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="idespecialidad" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="gradoespecialidad" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="gradoespecialidad" Type="Int32" Nullable="false" />
           <Property Name="usrcreador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fchcreacion" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="usrmodificador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
@@ -3184,9 +3185,9 @@
             <PropertyRef Name="idcalendario" />
           </Key>
           <Property Name="idcompeticion" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="idcalendario" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="idcalendario" Type="Int32" Nullable="false" />
           <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="idtemporada" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="idtemporada" Type="Int32" Nullable="false" />
           <Property Name="usrcreador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fchcreacion" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="usrmodificador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
@@ -3220,9 +3221,9 @@
           </Key>
           <Property Name="idfuncionario" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="idclub" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="goles" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="goles" Type="Int32" />
           <Property Name="sinopsis" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="idtemporada" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="idtemporada" Type="Int32" Nullable="false" />
           <Property Name="idcompeticion" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="usrcreador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fchcreacion" Type="DateTime" Nullable="false" Precision="0" />
@@ -3264,8 +3265,8 @@
             <PropertyRef Name="idjuego" />
           </Key>
           <Property Name="idfuncionario" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="idjuego" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
-          <Property Name="rendimiento" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="idjuego" Type="Int32" Nullable="false" />
+          <Property Name="rendimiento" Type="Int32" />
           <Property Name="idclub" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="tipo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="usrcreador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
@@ -3284,8 +3285,8 @@
             <PropertyRef Name="minjuego" />
           </Key>
           <Property Name="idfuncionario" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="idjuego" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
-          <Property Name="minjuego" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="idjuego" Type="Int32" Nullable="false" />
+          <Property Name="minjuego" Type="Int32" Nullable="false" />
           <Property Name="video" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="idclub" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="usrcreador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
@@ -3303,9 +3304,9 @@
             <PropertyRef Name="idjuego" />
             <PropertyRef Name="idarbitro" />
           </Key>
-          <Property Name="calificacion" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="calificacion" Type="Int32" Nullable="false" />
           <Property Name="tipo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="idjuego" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="idjuego" Type="Int32" Nullable="false" />
           <Property Name="idarbitro" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="usrcreador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fchcreacion" Type="DateTime" Nullable="false" Precision="0" />
@@ -3322,9 +3323,9 @@
             <PropertyRef Name="idjuego" />
           </Key>
           <Property Name="jugadorentra" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="minjuego" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="minjuego" Type="Int32" Nullable="false" />
           <Property Name="jugadorsale" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="idjuego" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="idjuego" Type="Int32" Nullable="false" />
           <Property Name="idclub" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="usrcreador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fchcreacion" Type="DateTime" Nullable="false" Precision="0" />
@@ -3344,12 +3345,12 @@
             <PropertyRef Name="idcompeticion" />
           </Key>
           <Property Name="idclub" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="posicion" Type="Decimal" Precision="2" Scale="0" Nullable="false" />
-          <Property Name="golesafavor" Type="Decimal" Precision="3" Scale="0" />
-          <Property Name="golesencontra" Type="Decimal" Precision="3" Scale="0" />
-          <Property Name="idtemporada" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="posicion" Type="Int32" Nullable="false" />
+          <Property Name="golesafavor" Type="Int32" />
+          <Property Name="golesencontra" Type="Int32" />
+          <Property Name="idtemporada" Type="Int32" Nullable="false" />
           <Property Name="idcompeticion" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="puntos" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="puntos" Type="Int32" />
           <Property Name="usrcreador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fchcreacion" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="usrmodificador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
@@ -3365,7 +3366,7 @@
             <PropertyRef Name="idtemporada" />
           </Key>
           <Property Name="idcompeticion" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="idtemporada" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="idtemporada" Type="Int32" Nullable="false" />
           <Property Name="usrcreador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fchcreacion" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="usrmodificador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
@@ -3383,9 +3384,9 @@
             <PropertyRef Name="idcalendario" />
           </Key>
           <Property Name="idcompeticion" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="idcalendario" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="idcalendario" Type="Int32" Nullable="false" />
           <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="idtemporada" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="idtemporada" Type="Int32" Nullable="false" />
           <Property Name="usrcreador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fchcreacion" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="usrmodificador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
@@ -3404,9 +3405,9 @@
           </Key>
           <Property Name="idfuncionario" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="idclub" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="goles" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="goles" Type="Int32" />
           <Property Name="sinopsis" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="idtemporada" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="idtemporada" Type="Int32" Nullable="false" />
           <Property Name="idcompeticion" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="usrcreador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fchcreacion" Type="DateTime" Nullable="false" Precision="0" />
@@ -3422,13 +3423,13 @@
           <Key>
             <PropertyRef Name="idjuego" />
           </Key>
-          <Property Name="idjuego" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="idjuego" Type="Int32" Nullable="false" />
           <Property Name="jugado" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="golescasa" Type="Decimal" Precision="2" Scale="0" />
-          <Property Name="golesvisita" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="golescasa" Type="Int32" />
+          <Property Name="golesvisita" Type="Int32" />
           <Property Name="idclubcasa" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="idclubvisita" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="idcalendario" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="idcalendario" Type="Int32" Nullable="false" />
           <Property Name="sinopsis" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="usrcreador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fchcreacion" Type="DateTime" Nullable="false" Precision="0" />
@@ -3448,13 +3449,13 @@
           <Key>
             <PropertyRef Name="idjuego" />
           </Key>
-          <Property Name="idjuego" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="idjuego" Type="Int32" Nullable="false" />
           <Property Name="jugado" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="golescasa" Type="Decimal" Precision="2" Scale="0" />
-          <Property Name="golesvisita" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="golescasa" Type="Int32" />
+          <Property Name="golesvisita" Type="Int32" />
           <Property Name="idclubcasa" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="idclubvisita" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="idcalendario" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="idcalendario" Type="Int32" Nullable="false" />
           <Property Name="sinopsis" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="usrcreador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fchcreacion" Type="DateTime" Precision="0" />
@@ -3475,7 +3476,7 @@
             <PropertyRef Name="idfuncionario" />
           </Key>
           <Property Name="idfuncionario" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="rendimiento" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="rendimiento" Type="Int32" Nullable="false" />
           <Property Name="peso" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="altura" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="usrcreador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
@@ -3535,7 +3536,7 @@
             <PropertyRef Name="telefono1" />
             <PropertyRef Name="idfuncionario" />
           </Key>
-          <Property Name="telefono1" Type="Decimal" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="telefono1" Type="Int32" Nullable="false" />
           <Property Name="idfuncionario" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="usrcreador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fchcreacion" Type="DateTime" Nullable="false" Precision="0" />
@@ -3549,7 +3550,7 @@
           <Key>
             <PropertyRef Name="idtemporada" />
           </Key>
-          <Property Name="idtemporada" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="idtemporada" Type="Int32" Nullable="false" />
           <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="usrcreador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fchcreacion" Type="DateTime" Nullable="false" Precision="0" />
@@ -5346,7 +5347,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ProyectoBasesJAREntities8" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ProyectoBasesJAREntities9" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="alineacion" EntityType="Self.alineacion" />
           <EntitySet Name="anotadores" EntityType="Self.anotadores" />
           <EntitySet Name="arbitro" EntityType="Self.arbitro" />
@@ -5937,6 +5938,10 @@
             <End Role="usuario" EntitySet="usuario" />
             <End Role="usuario1" EntitySet="usuario" />
           </AssociationSet>
+          <FunctionImport Name="arbitroDatos" ReturnType="Collection(ProyectoBasesJARModel.arbitroDatos_Result)">
+            <Parameter Name="idCompeticion" Mode="In" Type="String" />
+            <Parameter Name="idTemporada" Mode="In" Type="Decimal" />
+          </FunctionImport>
           <FunctionImport Name="buscaFecha">
             <Parameter Name="NombreEquipo" Mode="In" Type="String" />
             <Parameter Name="Fecha" Mode="In" Type="DateTime" />
@@ -5951,16 +5956,21 @@
             <Parameter Name="Dia" Mode="In" Type="Int32" />
             <Parameter Name="Fecha" Mode="InOut" Type="DateTime" />
           </FunctionImport>
+          <FunctionImport Name="equipos_2" ReturnType="Collection(ProyectoBasesJARModel.equipos_2_Result)">
+            <Parameter Name="fecha" Mode="In" Type="DateTime" />
+            <Parameter Name="equipo1" Mode="In" Type="String" />
+            <Parameter Name="equipo2" Mode="In" Type="String" />
+          </FunctionImport>
           <FunctionImport Name="generaCalendario">
             <Parameter Name="competicion" Mode="In" Type="String" />
             <Parameter Name="temporada" Mode="In" Type="Decimal" />
             <Parameter Name="federacion" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="infoEntrenador" ReturnType="Collection(ProyectoBasesJARModel.infoEntrenador_Result)">
-          <Parameter Name="idEntrenador" Mode="In" Type="String" />
+            <Parameter Name="idEntrenador" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="infoJugador" ReturnType="Collection(ProyectoBasesJARModel.infoJugador_Result)">
-          <Parameter Name="idJugador" Mode="In" Type="String" />
+            <Parameter Name="idJugador" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="juegosDeResultados" ReturnType="Collection(ProyectoBasesJARModel.juegosDeResultados_Result)">
             <Parameter Name="competicion" Mode="In" Type="String" />
@@ -5972,25 +5982,27 @@
             <Parameter Name="Dia" Mode="In" Type="Int32" />
             <Parameter Name="fechaJuego" Mode="InOut" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="tablaGeneral" ReturnType="Collection(ProyectoBasesJARModel.tablaGeneral_Result)">
-            <Parameter Name="idCompeticion" Mode="In" Type="String" />
-            <Parameter Name="idTemporada" Mode="In" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="arbitroDatos" ReturnType="Collection(ProyectoBasesJARModel.arbitroDatos_Result)">
-            <Parameter Name="idCompeticion" Mode="In" Type="String" />
-            <Parameter Name="idTemporada" Mode="In" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="equipos_2" ReturnType="Collection(ProyectoBasesJARModel.equipos_2_Result)">
-            <Parameter Name="fecha" Mode="In" Type="DateTime" />
-            <Parameter Name="equipo1" Mode="In" Type="String" />
-            <Parameter Name="equipo2" Mode="In" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="Rivales" ReturnType="Collection(ProyectoBasesJARModel.Rivales_Result)">
             <Parameter Name="fecha" Mode="In" Type="DateTime" />
             <Parameter Name="equipo1" Mode="In" Type="String" />
             <Parameter Name="equipo2" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="tablaGeneral" ReturnType="Collection(ProyectoBasesJARModel.tablaGeneral_Result)">
+            <Parameter Name="idCompeticion" Mode="In" Type="String" />
+            <Parameter Name="idTemporada" Mode="In" Type="Decimal" />
+          </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="arbitroDatos_Result">
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="Column1" Nullable="true" Precision="38" Scale="6" />
+        </ComplexType>
+        <ComplexType Name="equipos_2_Result">
+          <Property Type="Decimal" Name="idJuego" Nullable="false" Precision="10" Scale="0" />
+          <Property Type="String" Name="idclubcasa" Nullable="false" MaxLength="10" />
+          <Property Type="Decimal" Name="golescasa" Nullable="true" Precision="2" Scale="0" />
+          <Property Type="String" Name="idclubvisita" Nullable="false" MaxLength="10" />
+          <Property Type="Decimal" Name="golesvisita" Nullable="true" Precision="2" Scale="0" />
+        </ComplexType>
         <ComplexType Name="infoEntrenador_Result">
           <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
           <Property Type="DateTime" Name="fchinicio" Nullable="false" />
@@ -6019,6 +6031,13 @@
           <Property Type="String" Name="usrmodificador" Nullable="true" MaxLength="15" />
           <Property Type="DateTime" Name="fchmodificacion" Nullable="true" />
         </ComplexType>
+        <ComplexType Name="Rivales_Result">
+          <Property Type="Decimal" Name="idJuego" Nullable="false" Precision="10" Scale="0" />
+          <Property Type="String" Name="idclubcasa" Nullable="false" MaxLength="10" />
+          <Property Type="Decimal" Name="golescasa" Nullable="true" Precision="2" Scale="0" />
+          <Property Type="String" Name="idclubvisita" Nullable="false" MaxLength="10" />
+          <Property Type="Decimal" Name="golesvisita" Nullable="true" Precision="2" Scale="0" />
+        </ComplexType>
         <ComplexType Name="tablaGeneral_Result">
           <Property Type="String" Name="idclub" Nullable="false" MaxLength="10" />
           <Property Type="String" Name="nbrclub" Nullable="false" MaxLength="50" />
@@ -6031,30 +6050,12 @@
           <Property Type="Decimal" Name="puntosTotales" Nullable="false" Precision="3" Scale="0" />
           <Property Type="String" Name="idfederacion" Nullable="false" MaxLength="8" />
         </ComplexType>
-        <ComplexType Name="arbitroDatos_Result">
-          <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
-          <Property Type="Decimal" Name="Column1" Nullable="true" Precision="38" Scale="6" />
-        </ComplexType>
-        <ComplexType Name="equipos_2_Result">
-          <Property Type="Decimal" Name="idJuego" Nullable="false" Precision="10" Scale="0" />
-          <Property Type="String" Name="idclubcasa" Nullable="false" MaxLength="10" />
-          <Property Type="Decimal" Name="golescasa" Nullable="true" Precision="2" Scale="0" />
-          <Property Type="String" Name="idclubvisita" Nullable="false" MaxLength="10" />
-          <Property Type="Decimal" Name="golesvisita" Nullable="true" Precision="2" Scale="0" />
-        </ComplexType>
-        <ComplexType Name="Rivales_Result">
-          <Property Type="Decimal" Name="idJuego" Nullable="false" Precision="10" Scale="0" />
-          <Property Type="String" Name="idclubcasa" Nullable="false" MaxLength="10" />
-          <Property Type="Decimal" Name="golescasa" Nullable="true" Precision="2" Scale="0" />
-          <Property Type="String" Name="idclubvisita" Nullable="false" MaxLength="10" />
-          <Property Type="Decimal" Name="golesvisita" Nullable="true" Precision="2" Scale="0" />
-        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ProyectoBasesJARModelStoreContainer" CdmEntityContainer="ProyectoBasesJAREntities8">
+        <EntityContainerMapping StorageEntityContainer="ProyectoBasesJARModelStoreContainer" CdmEntityContainer="ProyectoBasesJAREntities9">
           <EntitySetMapping Name="alineacion">
             <EntityTypeMapping TypeName="ProyectoBasesJARModel.alineacion">
               <MappingFragment StoreEntitySet="alineacion">
@@ -6175,7 +6176,6 @@
           <EntitySetMapping Name="competicion">
             <EntityTypeMapping TypeName="ProyectoBasesJARModel.competicion">
               <MappingFragment StoreEntitySet="competicion">
-                <ScalarProperty Name="fchmodificacion" ColumnName="fchmodificacion" />
                 <ScalarProperty Name="idcompeticion" ColumnName="idcompeticion" />
                 <ScalarProperty Name="tipo" ColumnName="tipo" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -6183,6 +6183,7 @@
                 <ScalarProperty Name="fchcreacion" ColumnName="fchcreacion" />
                 <ScalarProperty Name="usrmodificador" ColumnName="usrmodificador" />
                 <ScalarProperty Name="usrmodificacion" ColumnName="usrmodificacion" />
+                <ScalarProperty Name="fchmodificacion" ColumnName="fchmodificacion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -6587,9 +6588,28 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="arbitroDatos" FunctionName="ProyectoBasesJARModel.Store.arbitroDatos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProyectoBasesJARModel.arbitroDatos_Result">
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="Column1" ColumnName="Column1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="buscaFecha" FunctionName="ProyectoBasesJARModel.Store.buscaFecha" />
           <FunctionImportMapping FunctionImportName="creaResultados" FunctionName="ProyectoBasesJARModel.Store.creaResultados" />
           <FunctionImportMapping FunctionImportName="determinaFecha" FunctionName="ProyectoBasesJARModel.Store.determinaFecha" />
+          <FunctionImportMapping FunctionImportName="equipos_2" FunctionName="ProyectoBasesJARModel.Store.equipos_2">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProyectoBasesJARModel.equipos_2_Result">
+                <ScalarProperty Name="idJuego" ColumnName="idJuego" />
+                <ScalarProperty Name="idclubcasa" ColumnName="idclubcasa" />
+                <ScalarProperty Name="golescasa" ColumnName="golescasa" />
+                <ScalarProperty Name="idclubvisita" ColumnName="idclubvisita" />
+                <ScalarProperty Name="golesvisita" ColumnName="golesvisita" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="generaCalendario" FunctionName="ProyectoBasesJARModel.Store.generaCalendario" />
           <FunctionImportMapping FunctionImportName="infoEntrenador" FunctionName="ProyectoBasesJARModel.Store.infoEntrenador">
             <ResultMapping>
@@ -6632,6 +6652,17 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="ligador" FunctionName="ProyectoBasesJARModel.Store.ligador" />
+          <FunctionImportMapping FunctionImportName="Rivales" FunctionName="ProyectoBasesJARModel.Store.Rivales">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProyectoBasesJARModel.Rivales_Result">
+                <ScalarProperty Name="idJuego" ColumnName="idJuego" />
+                <ScalarProperty Name="idclubcasa" ColumnName="idclubcasa" />
+                <ScalarProperty Name="golescasa" ColumnName="golescasa" />
+                <ScalarProperty Name="idclubvisita" ColumnName="idclubvisita" />
+                <ScalarProperty Name="golesvisita" ColumnName="golesvisita" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="tablaGeneral" FunctionName="ProyectoBasesJARModel.Store.tablaGeneral">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ProyectoBasesJARModel.tablaGeneral_Result">
@@ -6645,36 +6676,6 @@
                 <ScalarProperty Name="golesEnContra" ColumnName="golesEnContra" />
                 <ScalarProperty Name="puntosTotales" ColumnName="puntosTotales" />
                 <ScalarProperty Name="idfederacion" ColumnName="idfederacion" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="arbitroDatos" FunctionName="ProyectoBasesJARModel.Store.arbitroDatos">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ProyectoBasesJARModel.arbitroDatos_Result">
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="Column1" ColumnName="Column1" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="equipos_2" FunctionName="ProyectoBasesJARModel.Store.equipos_2">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ProyectoBasesJARModel.equipos_2_Result">
-                <ScalarProperty Name="idJuego" ColumnName="idJuego" />
-                <ScalarProperty Name="idclubcasa" ColumnName="idclubcasa" />
-                <ScalarProperty Name="golescasa" ColumnName="golescasa" />
-                <ScalarProperty Name="idclubvisita" ColumnName="idclubvisita" />
-                <ScalarProperty Name="golesvisita" ColumnName="golesvisita" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Rivales" FunctionName="ProyectoBasesJARModel.Store.Rivales">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ProyectoBasesJARModel.Rivales_Result">
-                <ScalarProperty Name="idJuego" ColumnName="idJuego" />
-                <ScalarProperty Name="idclubcasa" ColumnName="idclubcasa" />
-                <ScalarProperty Name="golescasa" ColumnName="golescasa" />
-                <ScalarProperty Name="idclubvisita" ColumnName="idclubvisita" />
-                <ScalarProperty Name="golesvisita" ColumnName="golesvisita" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

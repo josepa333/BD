@@ -12,7 +12,7 @@ namespace Proyecto_bases.Controllers
 {
     public class clubcompeticiontemporadaController : Controller
     {
-        private ProyectoBasesJAREntities8 db = new ProyectoBasesJAREntities8();
+        private ProyectoBasesJAREntities9 db = new ProyectoBasesJAREntities9();
 
         // GET: clubcompeticiontemporada
         public ActionResult Index()

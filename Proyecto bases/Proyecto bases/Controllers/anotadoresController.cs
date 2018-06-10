@@ -12,7 +12,7 @@ namespace Proyecto_bases.Controllers
 {
     public class anotadoresController : Controller
     {
-        private ProyectoBasesJAREntities8 db = new ProyectoBasesJAREntities8();
+        private ProyectoBasesJAREntities9 db = new ProyectoBasesJAREntities9();
 
         // GET: anotadores
         public ActionResult Index()
