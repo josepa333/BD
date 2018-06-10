@@ -39,8 +39,8 @@ namespace Proyecto_bases.Controllers
         // GET: temporadas/Create
         public ActionResult Create()
         {
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador");
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador");
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1");
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1");
             return View();
         }
 
@@ -58,8 +58,8 @@ namespace Proyecto_bases.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", temporada.usrmodificador);
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", temporada.usrcreador);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", temporada.usrmodificador);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", temporada.usrcreador);
             return View(temporada);
         }
 
@@ -75,8 +75,8 @@ namespace Proyecto_bases.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", temporada.usrmodificador);
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", temporada.usrcreador);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", temporada.usrmodificador);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", temporada.usrcreador);
             return View(temporada);
         }
 
@@ -93,8 +93,8 @@ namespace Proyecto_bases.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", temporada.usrmodificador);
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", temporada.usrcreador);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", temporada.usrmodificador);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", temporada.usrcreador);
             return View(temporada);
         }
 

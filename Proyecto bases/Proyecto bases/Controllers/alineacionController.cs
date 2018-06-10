@@ -22,13 +22,13 @@ namespace Proyecto_bases.Controllers
         }
 
         // GET: alineacions/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(string id, int id2)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            alineacion alineacion = db.alineacion.Find(id);
+            alineacion alineacion = db.alineacion.Find(id,id2);
             if (alineacion == null)
             {
                 return HttpNotFound();
@@ -39,11 +39,11 @@ namespace Proyecto_bases.Controllers
         // GET: alineacions/Create
         public ActionResult Create()
         {
-            ViewBag.idclub = new SelectList(db.club, "idclub", "nombre");
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador");
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador");
-            ViewBag.idjuego = new SelectList(db.juego, "idjuego", "jugado");
-            ViewBag.idfuncionario = new SelectList(db.jugador, "idfuncionario", "peso");
+            ViewBag.idclub = new SelectList(db.club, "idclub", "idclub");
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1");
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1");
+            ViewBag.idjuego = new SelectList(db.juego, "idjuego", "idjuego");
+            ViewBag.idfuncionario = new SelectList(db.jugador, "idfuncionario", "idfuncionario");
             return View();
         }
 
@@ -61,31 +61,31 @@ namespace Proyecto_bases.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.idclub = new SelectList(db.club, "idclub", "nombre", alineacion.idclub);
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", alineacion.usrcreador);
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", alineacion.usrmodificador);
-            ViewBag.idjuego = new SelectList(db.juego, "idjuego", "jugado", alineacion.idjuego);
-            ViewBag.idfuncionario = new SelectList(db.jugador, "idfuncionario", "peso", alineacion.idfuncionario);
+            ViewBag.idclub = new SelectList(db.club, "idclub", "idclub", alineacion.idclub);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", alineacion.usrcreador);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", alineacion.usrmodificador);
+            ViewBag.idjuego = new SelectList(db.juego, "idjuego", "idjuego", alineacion.idjuego);
+            ViewBag.idfuncionario = new SelectList(db.jugador, "idfuncionario", "idfuncionario", alineacion.idfuncionario);
             return View(alineacion);
         }
 
         // GET: alineacions/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(string id, int id2)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            alineacion alineacion = db.alineacion.Find(id);
+            alineacion alineacion = db.alineacion.Find(id, id2);
             if (alineacion == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.idclub = new SelectList(db.club, "idclub", "nombre", alineacion.idclub);
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", alineacion.usrcreador);
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", alineacion.usrmodificador);
-            ViewBag.idjuego = new SelectList(db.juego, "idjuego", "jugado", alineacion.idjuego);
-            ViewBag.idfuncionario = new SelectList(db.jugador, "idfuncionario", "peso", alineacion.idfuncionario);
+            ViewBag.idclub = new SelectList(db.club, "idclub", "idclub", alineacion.idclub);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", alineacion.usrcreador);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", alineacion.usrmodificador);
+            ViewBag.idjuego = new SelectList(db.juego, "idjuego", "idjuego", alineacion.idjuego);
+            ViewBag.idfuncionario = new SelectList(db.jugador, "idfuncionario", "idfuncionario", alineacion.idfuncionario);
             return View(alineacion);
         }
 
@@ -102,22 +102,22 @@ namespace Proyecto_bases.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.idclub = new SelectList(db.club, "idclub", "nombre", alineacion.idclub);
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", alineacion.usrcreador);
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", alineacion.usrmodificador);
-            ViewBag.idjuego = new SelectList(db.juego, "idjuego", "jugado", alineacion.idjuego);
-            ViewBag.idfuncionario = new SelectList(db.jugador, "idfuncionario", "peso", alineacion.idfuncionario);
+            ViewBag.idclub = new SelectList(db.club, "idclub", "idclub", alineacion.idclub);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", alineacion.usrcreador);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", alineacion.usrmodificador);
+            ViewBag.idjuego = new SelectList(db.juego, "idjuego", "idjuego", alineacion.idjuego);
+            ViewBag.idfuncionario = new SelectList(db.jugador, "idfuncionario", "idfuncionario", alineacion.idfuncionario);
             return View(alineacion);
         }
 
         // GET: alineacions/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(string id, int id2)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            alineacion alineacion = db.alineacion.Find(id);
+            alineacion alineacion = db.alineacion.Find(id, id2);
             if (alineacion == null)
             {
                 return HttpNotFound();
@@ -128,9 +128,9 @@ namespace Proyecto_bases.Controllers
         // POST: alineacions/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(string id, int id2)
         {
-            alineacion alineacion = db.alineacion.Find(id);
+            alineacion alineacion = db.alineacion.Find(id, id2);
             db.alineacion.Remove(alineacion);
             db.SaveChanges();
             return RedirectToAction("Index");

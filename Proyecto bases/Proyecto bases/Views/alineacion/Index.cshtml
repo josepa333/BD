@@ -23,6 +23,10 @@
         </th>
 
         <th>
+            @Html.DisplayNameFor(model => model.idjuego)
+        </th>
+
+        <th>
             @Html.DisplayNameFor(model => model.club.nombre)
         </th>
 
@@ -61,6 +65,10 @@
         </th>
 
         <th>
+            @Html.DisplayFor(modelItem => item.idjuego)
+        </th>
+
+        <th>
             @Html.DisplayFor(modelItem => item.club.nombre)
         </th>
 
@@ -86,9 +94,9 @@
         </th>
 
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "Edit", new { id = item.idfuncionario , id2=item.idjuego}) |
+            @Html.ActionLink("Details", "Details", new { id = item.idfuncionario, id2 = item.idjuego }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.idfuncionario, id2 = item.idjuego })
         </td>
     </tr>
 }

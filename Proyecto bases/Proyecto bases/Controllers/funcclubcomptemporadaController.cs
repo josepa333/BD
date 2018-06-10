@@ -22,13 +22,13 @@ namespace Proyecto_bases.Controllers
         }
 
         // GET: funcclubcomptemporadas/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(string id, string id2, int id3, string id4)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            funcclubcomptemporada funcclubcomptemporada = db.funcclubcomptemporada.Find(id);
+            funcclubcomptemporada funcclubcomptemporada = db.funcclubcomptemporada.Find(id,id2,id3,id4);
             if (funcclubcomptemporada == null)
             {
                 return HttpNotFound();
@@ -39,11 +39,11 @@ namespace Proyecto_bases.Controllers
         // GET: funcclubcomptemporadas/Create
         public ActionResult Create()
         {
-            ViewBag.idclub = new SelectList(db.club, "idclub", "nombre");
-            ViewBag.idcompeticion = new SelectList(db.competiciontemporada, "idcompeticion", "usrcreador");
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador");
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador");
-            ViewBag.idfuncionario = new SelectList(db.funcionariodeportivo, "idfuncionario", "foto");
+            ViewBag.idclub = new SelectList(db.club, "idclub", "idclub");
+            ViewBag.idcompeticion = new SelectList(db.competiciontemporada, "idcompeticion", "idcompeticion");
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1");
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1");
+            ViewBag.idfuncionario = new SelectList(db.funcionariodeportivo, "idfuncionario", "idfuncionario");
             return View();
         }
 
@@ -61,31 +61,31 @@ namespace Proyecto_bases.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.idclub = new SelectList(db.club, "idclub", "nombre", funcclubcomptemporada.idclub);
-            ViewBag.idcompeticion = new SelectList(db.competiciontemporada, "idcompeticion", "usrcreador", funcclubcomptemporada.idcompeticion);
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", funcclubcomptemporada.usrcreador);
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", funcclubcomptemporada.usrmodificador);
-            ViewBag.idfuncionario = new SelectList(db.funcionariodeportivo, "idfuncionario", "foto", funcclubcomptemporada.idfuncionario);
+            ViewBag.idclub = new SelectList(db.club, "idclub", "idclub", funcclubcomptemporada.idclub);
+            ViewBag.idcompeticion = new SelectList(db.competiciontemporada, "idcompeticion", "idcompeticion", funcclubcomptemporada.idcompeticion);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", funcclubcomptemporada.usrcreador);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", funcclubcomptemporada.usrmodificador);
+            ViewBag.idfuncionario = new SelectList(db.funcionariodeportivo, "idfuncionario", "idfuncionario", funcclubcomptemporada.idfuncionario);
             return View(funcclubcomptemporada);
         }
 
         // GET: funcclubcomptemporadas/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(string id, string id2, int id3, string id4)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            funcclubcomptemporada funcclubcomptemporada = db.funcclubcomptemporada.Find(id);
+            funcclubcomptemporada funcclubcomptemporada = db.funcclubcomptemporada.Find(id, id2, id3, id4);
             if (funcclubcomptemporada == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.idclub = new SelectList(db.club, "idclub", "nombre", funcclubcomptemporada.idclub);
-            ViewBag.idcompeticion = new SelectList(db.competiciontemporada, "idcompeticion", "usrcreador", funcclubcomptemporada.idcompeticion);
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", funcclubcomptemporada.usrcreador);
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", funcclubcomptemporada.usrmodificador);
-            ViewBag.idfuncionario = new SelectList(db.funcionariodeportivo, "idfuncionario", "foto", funcclubcomptemporada.idfuncionario);
+            ViewBag.idclub = new SelectList(db.club, "idclub", "idclub", funcclubcomptemporada.idclub);
+            ViewBag.idcompeticion = new SelectList(db.competiciontemporada, "idcompeticion", "idcompeticion", funcclubcomptemporada.idcompeticion);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", funcclubcomptemporada.usrcreador);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", funcclubcomptemporada.usrmodificador);
+            ViewBag.idfuncionario = new SelectList(db.funcionariodeportivo, "idfuncionario", "idfuncionario", funcclubcomptemporada.idfuncionario);
             return View(funcclubcomptemporada);
         }
 
@@ -102,22 +102,22 @@ namespace Proyecto_bases.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.idclub = new SelectList(db.club, "idclub", "nombre", funcclubcomptemporada.idclub);
-            ViewBag.idcompeticion = new SelectList(db.competiciontemporada, "idcompeticion", "usrcreador", funcclubcomptemporada.idcompeticion);
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", funcclubcomptemporada.usrcreador);
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", funcclubcomptemporada.usrmodificador);
-            ViewBag.idfuncionario = new SelectList(db.funcionariodeportivo, "idfuncionario", "foto", funcclubcomptemporada.idfuncionario);
+            ViewBag.idclub = new SelectList(db.club, "idclub", "idclub", funcclubcomptemporada.idclub);
+            ViewBag.idcompeticion = new SelectList(db.competiciontemporada, "idcompeticion", "idcompeticion", funcclubcomptemporada.idcompeticion);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", funcclubcomptemporada.usrcreador);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", funcclubcomptemporada.usrmodificador);
+            ViewBag.idfuncionario = new SelectList(db.funcionariodeportivo, "idfuncionario", "idfuncionario", funcclubcomptemporada.idfuncionario);
             return View(funcclubcomptemporada);
         }
 
         // GET: funcclubcomptemporadas/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(string id, string id2, int id3, string id4)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            funcclubcomptemporada funcclubcomptemporada = db.funcclubcomptemporada.Find(id);
+            funcclubcomptemporada funcclubcomptemporada = db.funcclubcomptemporada.Find(id, id2, id3, id4);
             if (funcclubcomptemporada == null)
             {
                 return HttpNotFound();
@@ -128,9 +128,9 @@ namespace Proyecto_bases.Controllers
         // POST: funcclubcomptemporadas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(string id, string id2, int id3, string id4)
         {
-            funcclubcomptemporada funcclubcomptemporada = db.funcclubcomptemporada.Find(id);
+            funcclubcomptemporada funcclubcomptemporada = db.funcclubcomptemporada.Find(id, id2, id3, id4);
             db.funcclubcomptemporada.Remove(funcclubcomptemporada);
             db.SaveChanges();
             return RedirectToAction("Index");

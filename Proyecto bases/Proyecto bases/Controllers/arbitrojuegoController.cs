@@ -22,13 +22,13 @@ namespace Proyecto_bases.Controllers
         }
 
         // GET: arbitrojuegoes/Details/5
-        public ActionResult Details(decimal id)
+        public ActionResult Details(int id, string id2)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            arbitrojuego arbitrojuego = db.arbitrojuego.Find(id);
+            arbitrojuego arbitrojuego = db.arbitrojuego.Find(id, id2);
             if (arbitrojuego == null)
             {
                 return HttpNotFound();
@@ -39,10 +39,10 @@ namespace Proyecto_bases.Controllers
         // GET: arbitrojuegoes/Create
         public ActionResult Create()
         {
-            ViewBag.idarbitro = new SelectList(db.arbitro, "idarbitro", "nombre");
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador");
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador");
-            ViewBag.idjuego = new SelectList(db.juego, "idjuego", "jugado");
+            ViewBag.idarbitro = new SelectList(db.arbitro, "idarbitro", "idarbitro");
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1");
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1");
+            ViewBag.idjuego = new SelectList(db.juego, "idjuego", "idjuego");
             return View();
         }
 
@@ -60,29 +60,29 @@ namespace Proyecto_bases.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.idarbitro = new SelectList(db.arbitro, "idarbitro", "nombre", arbitrojuego.idarbitro);
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", arbitrojuego.usrcreador);
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", arbitrojuego.usrmodificador);
-            ViewBag.idjuego = new SelectList(db.juego, "idjuego", "jugado", arbitrojuego.idjuego);
+            ViewBag.idarbitro = new SelectList(db.arbitro, "idarbitro", "idarbitro", arbitrojuego.idarbitro);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", arbitrojuego.usrcreador);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", arbitrojuego.usrmodificador);
+            ViewBag.idjuego = new SelectList(db.juego, "idjuego", "idjuego", arbitrojuego.idjuego);
             return View(arbitrojuego);
         }
 
         // GET: arbitrojuegoes/Edit/5
-        public ActionResult Edit(decimal id)
+        public ActionResult Edit(int id, string id2)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            arbitrojuego arbitrojuego = db.arbitrojuego.Find(id);
+            arbitrojuego arbitrojuego = db.arbitrojuego.Find(id, id2);
             if (arbitrojuego == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.idarbitro = new SelectList(db.arbitro, "idarbitro", "nombre", arbitrojuego.idarbitro);
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", arbitrojuego.usrcreador);
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", arbitrojuego.usrmodificador);
-            ViewBag.idjuego = new SelectList(db.juego, "idjuego", "jugado", arbitrojuego.idjuego);
+            ViewBag.idarbitro = new SelectList(db.arbitro, "idarbitro", "idarbitro", arbitrojuego.idarbitro);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", arbitrojuego.usrcreador);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", arbitrojuego.usrmodificador);
+            ViewBag.idjuego = new SelectList(db.juego, "idjuego", "idjuego", arbitrojuego.idjuego);
             return View(arbitrojuego);
         }
 
@@ -99,21 +99,21 @@ namespace Proyecto_bases.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.idarbitro = new SelectList(db.arbitro, "idarbitro", "nombre", arbitrojuego.idarbitro);
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", arbitrojuego.usrcreador);
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", arbitrojuego.usrmodificador);
-            ViewBag.idjuego = new SelectList(db.juego, "idjuego", "jugado", arbitrojuego.idjuego);
+            ViewBag.idarbitro = new SelectList(db.arbitro, "idarbitro", "idarbitro", arbitrojuego.idarbitro);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", arbitrojuego.usrcreador);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", arbitrojuego.usrmodificador);
+            ViewBag.idjuego = new SelectList(db.juego, "idjuego", "idjuego", arbitrojuego.idjuego);
             return View(arbitrojuego);
         }
 
         // GET: arbitrojuegoes/Delete/5
-        public ActionResult Delete(decimal id)
+        public ActionResult Delete(int id, string id2)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            arbitrojuego arbitrojuego = db.arbitrojuego.Find(id);
+            arbitrojuego arbitrojuego = db.arbitrojuego.Find(id, id2);
             if (arbitrojuego == null)
             {
                 return HttpNotFound();
@@ -124,9 +124,9 @@ namespace Proyecto_bases.Controllers
         // POST: arbitrojuegoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(decimal id)
+        public ActionResult DeleteConfirmed(int id, string id2)
         {
-            arbitrojuego arbitrojuego = db.arbitrojuego.Find(id);
+            arbitrojuego arbitrojuego = db.arbitrojuego.Find(id,id2);
             db.arbitrojuego.Remove(arbitrojuego);
             db.SaveChanges();
             return RedirectToAction("Index");

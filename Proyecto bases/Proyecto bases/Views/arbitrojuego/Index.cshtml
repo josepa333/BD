@@ -72,9 +72,9 @@
             @Html.DisplayFor(modelItem => item.fchmodificacion)
         </th>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "Edit", new {  id=item.idjuego, id2=item.idarbitro  }) |
+            @Html.ActionLink("Details", "Details", new { id = item.idjuego, id2 = item.idarbitro }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.idjuego, id2 = item.idarbitro })
         </td>
     </tr>
 }
