@@ -17,7 +17,7 @@ using System;
 public partial class Rivales_Result
 {
 
-    public decimal idJuego { get ; set; }
+    public decimal idJuego { get; set; }
 
     public string idclubcasa { get; set; }
 

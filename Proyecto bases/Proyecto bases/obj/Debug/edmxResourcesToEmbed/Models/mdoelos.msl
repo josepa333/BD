@@ -121,6 +121,7 @@
     <EntitySetMapping Name="competicion">
       <EntityTypeMapping TypeName="ProyectoBasesJARModel.competicion">
         <MappingFragment StoreEntitySet="competicion">
+          <ScalarProperty Name="fchmodificacion" ColumnName="fchmodificacion" />
           <ScalarProperty Name="idcompeticion" ColumnName="idcompeticion" />
           <ScalarProperty Name="tipo" ColumnName="tipo" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />

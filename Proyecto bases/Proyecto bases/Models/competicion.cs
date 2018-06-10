@@ -43,6 +43,8 @@ public partial class competicion
 
     public Nullable<System.DateTime> usrmodificacion { get; set; }
 
+    public Nullable<System.DateTime> fchmodificacion { get; set; }
+
 
 
     public virtual usuario usuario { get; set; }

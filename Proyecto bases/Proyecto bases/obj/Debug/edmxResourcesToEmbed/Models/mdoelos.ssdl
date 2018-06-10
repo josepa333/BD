@@ -126,6 +126,7 @@
     <Property Name="fchcreacion" Type="date" Nullable="false" />
     <Property Name="usrmodificador" Type="varchar" MaxLength="15" />
     <Property Name="usrmodificacion" Type="date" />
+    <Property Name="fchmodificacion" Type="datetime" />
   </EntityType>
   <EntityType Name="competiciontemporada">
     <Key>

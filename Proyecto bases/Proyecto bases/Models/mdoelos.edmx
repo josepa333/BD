@@ -131,6 +131,7 @@
           <Property Name="fchcreacion" Type="date" Nullable="false" />
           <Property Name="usrmodificador" Type="varchar" MaxLength="15" />
           <Property Name="usrmodificacion" Type="date" />
+          <Property Name="fchmodificacion" Type="datetime" />
         </EntityType>
         <EntityType Name="competiciontemporada">
           <Key>
@@ -3043,6 +3044,7 @@
           <NavigationProperty Name="usuario1" Relationship="Self.competicion_fk2" FromRole="competicion" ToRole="usuario" />
           <NavigationProperty Name="competiciontemporada" Relationship="Self.temporada_competicion_fk1" FromRole="competicion" ToRole="competiciontemporada" />
           <NavigationProperty Name="histcompeticiontemporada" Relationship="Self.temporada_competicion_fk2" FromRole="competicion" ToRole="histcompeticiontemporada" />
+          <Property Name="fchmodificacion" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="competiciontemporada">
           <Key>
@@ -6173,6 +6175,7 @@
           <EntitySetMapping Name="competicion">
             <EntityTypeMapping TypeName="ProyectoBasesJARModel.competicion">
               <MappingFragment StoreEntitySet="competicion">
+                <ScalarProperty Name="fchmodificacion" ColumnName="fchmodificacion" />
                 <ScalarProperty Name="idcompeticion" ColumnName="idcompeticion" />
                 <ScalarProperty Name="tipo" ColumnName="tipo" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />

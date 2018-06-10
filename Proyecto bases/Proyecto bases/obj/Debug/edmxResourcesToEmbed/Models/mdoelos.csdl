@@ -182,6 +182,7 @@
     <NavigationProperty Name="usuario1" Relationship="Self.competicion_fk2" FromRole="competicion" ToRole="usuario" />
     <NavigationProperty Name="competiciontemporada" Relationship="Self.temporada_competicion_fk1" FromRole="competicion" ToRole="competiciontemporada" />
     <NavigationProperty Name="histcompeticiontemporada" Relationship="Self.temporada_competicion_fk2" FromRole="competicion" ToRole="histcompeticiontemporada" />
+    <Property Name="fchmodificacion" Type="DateTime" Precision="3" />
   </EntityType>
   <EntityType Name="competiciontemporada">
     <Key>
