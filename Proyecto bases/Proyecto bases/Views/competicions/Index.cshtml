@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Proyecto_bases.Models.funcionariodeportivo>
+﻿@model IEnumerable<Proyecto_bases.Models.competicion>
 
 @{
     ViewBag.Title = "Index";
@@ -13,46 +13,45 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.idfuncionario)
+            @Html.DisplayNameFor(model => model.idcompeticion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipo)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.nombre)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.fchnacimiento)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.fchcreacion)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.fchmodificacion)
+            @Html.DisplayNameFor(model => model.usrmodificacion)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.usrcreador)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.usrmodificador)
+            @Html.DisplayNameFor(model => model.usrmodificacion)
         </th>
-
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.idfuncionario)
+            @Html.DisplayFor(modelItem => item.idcompeticion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipo)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.nombre)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.fchnacimiento)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.fchcreacion)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.fchmodificacion)
+            @Html.DisplayFor(modelItem => item.fc)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.usrcreador)
@@ -61,9 +60,9 @@
             @Html.DisplayFor(modelItem => item.usrmodificador)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.idfuncionario }) |
-            @Html.ActionLink("Details", "Details", new { id = item.idfuncionario }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.idfuncionario })
+            @Html.ActionLink("Edit", "Edit", new { id = item.idcompeticion }) |
+            @Html.ActionLink("Details", "Details", new { id = item.idcompeticion }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.idcompeticion })
         </td>
     </tr>
 }

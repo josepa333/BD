@@ -159,11 +159,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\clubcompeticiontemporadaController.cs" />
+    <Compile Include="Controllers\clubsController.cs" />
+    <Compile Include="Controllers\competicionsController.cs" />
     <Compile Include="Controllers\competiciontemporadasController.cs" />
     <Compile Include="Controllers\entrenadorController.cs" />
     <Compile Include="Controllers\fechacalendariosController.cs" />
     <Compile Include="Controllers\funcionariodeportivoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\juegoesController.cs" />
     <Compile Include="Controllers\jugadoresController.cs" />
     <Compile Include="Controllers\rivalesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -469,6 +473,26 @@
     <Content Include="Views\funcionariodeportivo\Details.cshtml" />
     <Content Include="Views\funcionariodeportivo\Edit.cshtml" />
     <Content Include="Views\funcionariodeportivo\Index.cshtml" />
+    <Content Include="Views\juegoes\Create.cshtml" />
+    <Content Include="Views\juegoes\Delete.cshtml" />
+    <Content Include="Views\juegoes\Details.cshtml" />
+    <Content Include="Views\juegoes\Edit.cshtml" />
+    <Content Include="Views\juegoes\Index.cshtml" />
+    <Content Include="Views\clubs\Create.cshtml" />
+    <Content Include="Views\clubs\Delete.cshtml" />
+    <Content Include="Views\clubs\Details.cshtml" />
+    <Content Include="Views\clubs\Edit.cshtml" />
+    <Content Include="Views\clubs\Index.cshtml" />
+    <Content Include="Views\clubcompeticiontemporada\Create.cshtml" />
+    <Content Include="Views\clubcompeticiontemporada\Delete.cshtml" />
+    <Content Include="Views\clubcompeticiontemporada\Details.cshtml" />
+    <Content Include="Views\clubcompeticiontemporada\Edit.cshtml" />
+    <Content Include="Views\clubcompeticiontemporada\Index.cshtml" />
+    <Content Include="Views\competicions\Create.cshtml" />
+    <Content Include="Views\competicions\Delete.cshtml" />
+    <Content Include="Views\competicions\Details.cshtml" />
+    <Content Include="Views\competicions\Edit.cshtml" />
+    <Content Include="Views\competicions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

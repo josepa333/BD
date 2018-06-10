@@ -1,0 +1,107 @@
+﻿@model Proyecto_bases.Models.juego
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>juego</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.jugado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jugado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.golescasa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.golescasa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.golesvisita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.golesvisita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sinopsis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sinopsis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fchcreacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fchcreacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fchmodificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fchmodificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.club.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.club.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.club1.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.club1.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechacalendario.idcompeticion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechacalendario.idcompeticion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usuario.usrcreador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuario.usrcreador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usuario1.usrcreador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuario1.usrcreador)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idjuego }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

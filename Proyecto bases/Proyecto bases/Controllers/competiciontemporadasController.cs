@@ -40,10 +40,10 @@ namespace Proyecto_bases.Controllers
         // GET: competiciontemporadas/Create
         public ActionResult Create()
         {
-            ViewBag.idcompeticion = new SelectList(db.competicion, "idcompeticion", "tipo");
-            ViewBag.idtemporada = new SelectList(db.temporada, "idtemporada", "nombre");
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador");
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador");
+            ViewBag.idcompeticion = new SelectList(db.competicion, "idcompeticion", "idcompeticion");
+            ViewBag.idtemporada = new SelectList(db.temporada, "idtemporada", "idtemporada");
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1");
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1");
             return View();
         }
 
@@ -61,10 +61,10 @@ namespace Proyecto_bases.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.idcompeticion = new SelectList(db.competicion, "idcompeticion", "tipo", competiciontemporada.idcompeticion);
-            ViewBag.idtemporada = new SelectList(db.temporada, "idtemporada", "nombre", competiciontemporada.idtemporada);
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", competiciontemporada.usrcreador);
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", competiciontemporada.usrmodificador);
+            ViewBag.idcompeticion = new SelectList(db.competicion, "idcompeticion", "idcompeticion", competiciontemporada.idcompeticion);
+            ViewBag.idtemporada = new SelectList(db.temporada, "idtemporada", "idtemporada", competiciontemporada.idtemporada);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", competiciontemporada.usrcreador);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", competiciontemporada.usrmodificador);
             return View(competiciontemporada);
         }
 
@@ -80,10 +80,10 @@ namespace Proyecto_bases.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.idcompeticion = new SelectList(db.competicion, "idcompeticion", "tipo", competiciontemporada.idcompeticion);
-            ViewBag.idtemporada = new SelectList(db.temporada, "idtemporada", "nombre", competiciontemporada.idtemporada);
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", competiciontemporada.usrcreador);
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", competiciontemporada.usrmodificador);
+            ViewBag.idcompeticion = new SelectList(db.competicion, "idcompeticion", "idcompeticion", competiciontemporada.idcompeticion);
+            ViewBag.idtemporada = new SelectList(db.temporada, "idtemporada", "idtemporada", competiciontemporada.idtemporada);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", competiciontemporada.usrcreador);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", competiciontemporada.usrmodificador);
             return View(competiciontemporada);
         }
 
@@ -100,10 +100,10 @@ namespace Proyecto_bases.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.idcompeticion = new SelectList(db.competicion, "idcompeticion", "tipo", competiciontemporada.idcompeticion);
-            ViewBag.idtemporada = new SelectList(db.temporada, "idtemporada", "nombre", competiciontemporada.idtemporada);
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", competiciontemporada.usrcreador);
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", competiciontemporada.usrmodificador);
+            ViewBag.idcompeticion = new SelectList(db.competicion, "idcompeticion", "idcompeticion", competiciontemporada.idcompeticion);
+            ViewBag.idtemporada = new SelectList(db.temporada, "idtemporada", "idtemporada", competiciontemporada.idtemporada);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", competiciontemporada.usrcreador);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", competiciontemporada.usrmodificador);
             return View(competiciontemporada);
         }
 

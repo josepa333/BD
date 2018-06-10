@@ -39,9 +39,9 @@ namespace Proyecto_bases.Controllers
         // GET: fechacalendarios/Create
         public ActionResult Create()
         {
-            ViewBag.idcompeticion = new SelectList(db.competiciontemporada, "idcompeticion", "usrcreador");
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador");
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador");
+            ViewBag.idcompeticion = new SelectList(db.competiciontemporada, "idcompeticion", "idcompeticion");
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1");
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1");
             return View();
         }
 
@@ -59,9 +59,9 @@ namespace Proyecto_bases.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.idcompeticion = new SelectList(db.competiciontemporada, "idcompeticion", "usrcreador", fechacalendario.idcompeticion);
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", fechacalendario.usrmodificador);
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", fechacalendario.usrcreador);
+            ViewBag.idcompeticion = new SelectList(db.competiciontemporada, "idcompeticion", "idcompeticion", fechacalendario.idcompeticion);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", fechacalendario.usrmodificador);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", fechacalendario.usrcreador);
             return View(fechacalendario);
         }
 
@@ -77,9 +77,9 @@ namespace Proyecto_bases.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.idcompeticion = new SelectList(db.competiciontemporada, "idcompeticion", "usrcreador", fechacalendario.idcompeticion);
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", fechacalendario.usrmodificador);
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", fechacalendario.usrcreador);
+            ViewBag.idcompeticion = new SelectList(db.competiciontemporada, "idcompeticion", "idcompeticion", fechacalendario.idcompeticion);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", fechacalendario.usrmodificador);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", fechacalendario.usrcreador);
             return View(fechacalendario);
         }
 
@@ -96,9 +96,9 @@ namespace Proyecto_bases.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.idcompeticion = new SelectList(db.competiciontemporada, "idcompeticion", "usrcreador", fechacalendario.idcompeticion);
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", fechacalendario.usrmodificador);
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", fechacalendario.usrcreador);
+            ViewBag.idcompeticion = new SelectList(db.competiciontemporada, "idcompeticion", "idcompeticion", fechacalendario.idcompeticion);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", fechacalendario.usrmodificador);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", fechacalendario.usrcreador);
             return View(fechacalendario);
         }
 

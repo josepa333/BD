@@ -1,0 +1,95 @@
+﻿@model IEnumerable<Proyecto_bases.Models.clubcompeticiontemporada>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idcompeticion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idtemporada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idclub)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.posicion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.golesafavor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.golesencontra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.puntos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fchcreacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fchmodificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usrcreador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usrmodificador)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idcompeticion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idtemporada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idclub)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.posicion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.golesafavor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.golesencontra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.puntos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fchcreacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fchmodificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usrcreador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usrmodificador)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.idclub, id2 = item.idtemporada, id3 = item.idcompeticion }) |
+            @Html.ActionLink("Details", "Details", new { id = item.idclub, id2 = item.idtemporada, id3 = item.idcompeticion }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.idclub, id2 = item.idtemporada, id3 = item.idcompeticion })
+        </td>
+    </tr>
+}
+
+</table>

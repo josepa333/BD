@@ -39,10 +39,10 @@ namespace Proyecto_bases.Controllers
         // GET: funcionariodeportivo/Create
         public ActionResult Create()
         {
-            ViewBag.idfuncionario = new SelectList(db.entrenador, "idfuncionario", "jugadorjuventud");
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador");
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador");
-            ViewBag.idfuncionario = new SelectList(db.jugador, "idfuncionario", "peso");
+            ViewBag.idfuncionario = new SelectList(db.entrenador, "idfuncionario", "idfuncionario");
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1");
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1");
+            ViewBag.idfuncionario = new SelectList(db.jugador, "idfuncionario", "idfuncionario");
             return View();
         }
 
@@ -60,10 +60,10 @@ namespace Proyecto_bases.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.idfuncionario = new SelectList(db.entrenador, "idfuncionario", "jugadorjuventud", funcionariodeportivo.idfuncionario);
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", funcionariodeportivo.usrcreador);
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", funcionariodeportivo.usrmodificador);
-            ViewBag.idfuncionario = new SelectList(db.jugador, "idfuncionario", "peso", funcionariodeportivo.idfuncionario);
+            ViewBag.idfuncionario = new SelectList(db.entrenador, "idfuncionario", "idfuncionario", funcionariodeportivo.idfuncionario);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", funcionariodeportivo.usrcreador);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", funcionariodeportivo.usrmodificador);
+            ViewBag.idfuncionario = new SelectList(db.jugador, "idfuncionario", "idfuncionario", funcionariodeportivo.idfuncionario);
             return View(funcionariodeportivo);
         }
 
@@ -79,10 +79,10 @@ namespace Proyecto_bases.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.idfuncionario = new SelectList(db.entrenador, "idfuncionario", "jugadorjuventud", funcionariodeportivo.idfuncionario);
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", funcionariodeportivo.usrcreador);
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", funcionariodeportivo.usrmodificador);
-            ViewBag.idfuncionario = new SelectList(db.jugador, "idfuncionario", "peso", funcionariodeportivo.idfuncionario);
+            ViewBag.idfuncionario = new SelectList(db.entrenador, "idfuncionario", "idfuncionario", funcionariodeportivo.idfuncionario);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", funcionariodeportivo.usrcreador);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", funcionariodeportivo.usrmodificador);
+            ViewBag.idfuncionario = new SelectList(db.jugador, "idfuncionario", "idfuncionario", funcionariodeportivo.idfuncionario);
             return View(funcionariodeportivo);
         }
 
@@ -99,10 +99,10 @@ namespace Proyecto_bases.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.idfuncionario = new SelectList(db.entrenador, "idfuncionario", "jugadorjuventud", funcionariodeportivo.idfuncionario);
-            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usrcreador", funcionariodeportivo.usrcreador);
-            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usrcreador", funcionariodeportivo.usrmodificador);
-            ViewBag.idfuncionario = new SelectList(db.jugador, "idfuncionario", "peso", funcionariodeportivo.idfuncionario);
+            ViewBag.idfuncionario = new SelectList(db.entrenador, "idfuncionario", "idfuncionario", funcionariodeportivo.idfuncionario);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", funcionariodeportivo.usrcreador);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", funcionariodeportivo.usrmodificador);
+            ViewBag.idfuncionario = new SelectList(db.jugador, "idfuncionario", "idfuncionario", funcionariodeportivo.idfuncionario);
             return View(funcionariodeportivo);
         }
 
