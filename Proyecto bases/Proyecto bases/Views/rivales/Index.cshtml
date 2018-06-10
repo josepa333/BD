@@ -4,22 +4,21 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>View</h2>
+<h2>Rivales</h2>
 
 @using (Html.BeginForm("riv", "rivales", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>competiciontemporada</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            ID del Club Casa
+            ID del Club 1
             @Html.TextBox("casa", null, new { @class = "form-control" })
         </div>
         <div class="form-group">
-            ID del club Visita
+            ID del Club 2
             @Html.TextBox("visita", null, new { @class = "form-control" })
         </div>
         
