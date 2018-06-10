@@ -2236,6 +2236,10 @@
     <Parameter Name="temporada" Type="numeric" Mode="In" />
     <Parameter Name="federacion" Type="varchar" Mode="In" />
   </Function>
+  <Function Name="infoArbitros" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="competicion" Type="varchar" Mode="In" />
+    <Parameter Name="temporada" Type="numeric" Mode="In" />
+  </Function>
   <Function Name="infoEntrenador" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="idEntrenador" Type="varchar" Mode="In" />
   </Function>

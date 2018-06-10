@@ -272,6 +272,12 @@
     <Compile Include="Models\histjuego.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\historialArbitros_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\infoArbitros_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\infoEntrenador_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ProyectoBasesJARModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ProyectoBasesJARModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="alineacion">
           <Key>
             <PropertyRef Name="idfuncionario" />
@@ -2241,6 +2241,10 @@
           <Parameter Name="temporada" Type="numeric" Mode="In" />
           <Parameter Name="federacion" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="infoArbitros" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="competicion" Type="varchar" Mode="In" />
+          <Parameter Name="temporada" Type="numeric" Mode="In" />
+        </Function>
         <Function Name="infoEntrenador" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idEntrenador" Type="varchar" Mode="In" />
         </Function>
@@ -2858,8 +2862,7 @@
             <End Role="usuario1" EntitySet="usuario" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ProyectoBasesJARModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -5967,10 +5970,10 @@
             <Parameter Name="federacion" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="infoEntrenador" ReturnType="Collection(ProyectoBasesJARModel.infoEntrenador_Result)">
-            <Parameter Name="idEntrenador" Mode="In" Type="String" />
+          <Parameter Name="idEntrenador" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="infoJugador" ReturnType="Collection(ProyectoBasesJARModel.infoJugador_Result)">
-            <Parameter Name="idJugador" Mode="In" Type="String" />
+          <Parameter Name="idJugador" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="juegosDeResultados" ReturnType="Collection(ProyectoBasesJARModel.juegosDeResultados_Result)">
             <Parameter Name="competicion" Mode="In" Type="String" />
@@ -5990,6 +5993,14 @@
           <FunctionImport Name="tablaGeneral" ReturnType="Collection(ProyectoBasesJARModel.tablaGeneral_Result)">
             <Parameter Name="idCompeticion" Mode="In" Type="String" />
             <Parameter Name="idTemporada" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="historialArbitros" ReturnType="Collection(ProyectoBasesJARModel.historialArbitros_Result)">
+            <Parameter Name="competicion" Mode="In" Type="String" />
+            <Parameter Name="temporada" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="infoArbitros" ReturnType="Collection(ProyectoBasesJARModel.infoArbitros_Result)">
+            <Parameter Name="competicion" Mode="In" Type="String" />
+            <Parameter Name="temporada" Mode="In" Type="Decimal" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="arbitroDatos_Result">
@@ -6049,6 +6060,14 @@
           <Property Type="Decimal" Name="golesEnContra" Nullable="false" Precision="3" Scale="0" />
           <Property Type="Decimal" Name="puntosTotales" Nullable="false" Precision="3" Scale="0" />
           <Property Type="String" Name="idfederacion" Nullable="false" MaxLength="8" />
+        </ComplexType>
+        <ComplexType Name="historialArbitros_Result">
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="Column1" Nullable="true" Precision="38" Scale="6" />
+        </ComplexType>
+        <ComplexType Name="infoArbitros_Result">
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="promedio" Nullable="true" Precision="38" Scale="6" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -6676,6 +6695,14 @@
                 <ScalarProperty Name="golesEnContra" ColumnName="golesEnContra" />
                 <ScalarProperty Name="puntosTotales" ColumnName="puntosTotales" />
                 <ScalarProperty Name="idfederacion" ColumnName="idfederacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="infoArbitros" FunctionName="ProyectoBasesJARModel.Store.infoArbitros">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProyectoBasesJARModel.infoArbitros_Result">
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="promedio" ColumnName="promedio" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

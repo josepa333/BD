@@ -229,5 +229,31 @@ namespace Proyecto_bases.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<tablaGeneral_Result>("tablaGeneral", idCompeticionParameter, idTemporadaParameter);
         }
+    
+        public virtual ObjectResult<historialArbitros_Result> historialArbitros(string competicion, Nullable<decimal> temporada)
+        {
+            var competicionParameter = competicion != null ?
+                new ObjectParameter("competicion", competicion) :
+                new ObjectParameter("competicion", typeof(string));
+    
+            var temporadaParameter = temporada.HasValue ?
+                new ObjectParameter("temporada", temporada) :
+                new ObjectParameter("temporada", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<historialArbitros_Result>("historialArbitros", competicionParameter, temporadaParameter);
+        }
+    
+        public virtual ObjectResult<infoArbitros_Result> infoArbitros(string competicion, Nullable<decimal> temporada)
+        {
+            var competicionParameter = competicion != null ?
+                new ObjectParameter("competicion", competicion) :
+                new ObjectParameter("competicion", typeof(string));
+    
+            var temporadaParameter = temporada.HasValue ?
+                new ObjectParameter("temporada", temporada) :
+                new ObjectParameter("temporada", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<infoArbitros_Result>("infoArbitros", competicionParameter, temporadaParameter);
+        }
     }
 }

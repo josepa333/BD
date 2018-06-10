@@ -195,10 +195,10 @@ namespace Proyecto_bases.Controllers
         }
         public ActionResult Arbitros(string id, int id2)
         {
-            SqlParameter parameter1 = new SqlParameter("@idCompeticion", id);
-            SqlParameter parameter2 = new SqlParameter("@idTemporada", id2);
+            SqlParameter parameter1 = new SqlParameter("@competicion", id);
+            SqlParameter parameter2 = new SqlParameter("@temporada", id2);
             
-            List<arbitroDatos_Result> lista = db.Database.SqlQuery<arbitroDatos_Result>("exec arbitroDatos @idCompeticion, @idTemporada", parameter1, parameter2).ToList();
+            List<infoArbitros_Result> lista = db.Database.SqlQuery<infoArbitros_Result>("exec infoArbitros @competicion, @temporada", parameter1, parameter2).ToList();
             return View(lista);
         }
 
@@ -211,11 +211,3 @@ namespace Proyecto_bases.Controllers
         
     }
 }
-
-
-
-/* SqlParameter parameter1 = new SqlParameter("@competicion", id);
-            SqlParameter parameter2 = new SqlParameter("@temporada", id2);
-            SqlParameter parameter3 = new SqlParameter("@federacion", "123");
-            db.Database.SqlQuery<fechacalendario>("exec generaCalendario @competicion, @temporada, @federacion", parameter1, parameter2, parameter3);
-            db.SaveChanges();*/
