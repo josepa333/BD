@@ -162,6 +162,7 @@
     <Compile Include="Controllers\competiciontemporadasController.cs" />
     <Compile Include="Controllers\entrenadorController.cs" />
     <Compile Include="Controllers\fechacalendariosController.cs" />
+    <Compile Include="Controllers\funcionariodeportivoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\jugadoresController.cs" />
     <Compile Include="Controllers\rivalesController.cs" />
@@ -463,6 +464,11 @@
     <Content Include="Views\competiciontemporadas\Resultados.cshtml" />
     <Content Include="Views\rivales\Index.cshtml" />
     <Content Include="Views\rivales\riv.cshtml" />
+    <Content Include="Views\funcionariodeportivo\Create.cshtml" />
+    <Content Include="Views\funcionariodeportivo\Delete.cshtml" />
+    <Content Include="Views\funcionariodeportivo\Details.cshtml" />
+    <Content Include="Views\funcionariodeportivo\Edit.cshtml" />
+    <Content Include="Views\funcionariodeportivo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
