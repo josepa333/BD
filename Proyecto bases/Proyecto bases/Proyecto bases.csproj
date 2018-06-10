@@ -159,17 +159,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\anotadoresController.cs" />
     <Compile Include="Controllers\clubcompeticiontemporadaController.cs" />
     <Compile Include="Controllers\clubsController.cs" />
     <Compile Include="Controllers\competicionsController.cs" />
     <Compile Include="Controllers\competiciontemporadasController.cs" />
     <Compile Include="Controllers\entrenadorController.cs" />
     <Compile Include="Controllers\fechacalendariosController.cs" />
+    <Compile Include="Controllers\federacionsController.cs" />
     <Compile Include="Controllers\funcionariodeportivoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\juegoesController.cs" />
     <Compile Include="Controllers\jugadoresController.cs" />
     <Compile Include="Controllers\rivalesController.cs" />
+    <Compile Include="Controllers\usuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -493,6 +496,21 @@
     <Content Include="Views\competicions\Details.cshtml" />
     <Content Include="Views\competicions\Edit.cshtml" />
     <Content Include="Views\competicions\Index.cshtml" />
+    <Content Include="Views\federacions\Create.cshtml" />
+    <Content Include="Views\federacions\Delete.cshtml" />
+    <Content Include="Views\federacions\Details.cshtml" />
+    <Content Include="Views\federacions\Edit.cshtml" />
+    <Content Include="Views\federacions\Index.cshtml" />
+    <Content Include="Views\anotadores\Create.cshtml" />
+    <Content Include="Views\anotadores\Delete.cshtml" />
+    <Content Include="Views\anotadores\Details.cshtml" />
+    <Content Include="Views\anotadores\Edit.cshtml" />
+    <Content Include="Views\anotadores\Index.cshtml" />
+    <Content Include="Views\usuarios\Create.cshtml" />
+    <Content Include="Views\usuarios\Delete.cshtml" />
+    <Content Include="Views\usuarios\Details.cshtml" />
+    <Content Include="Views\usuarios\Edit.cshtml" />
+    <Content Include="Views\usuarios\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

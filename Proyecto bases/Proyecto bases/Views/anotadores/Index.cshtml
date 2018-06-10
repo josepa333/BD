@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Proyecto_bases.Models.anotadores>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idfuncionario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idjuego)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idclub)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.minjuego)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.fchcreacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fchmodificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usrcreador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usrmodificador)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idfuncionario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idjuego)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idclub)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.minjuego)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.fchcreacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fchmodificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usrcreador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usrmodificador)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.idjuego, id2=item.minjuego }) |
+            @Html.ActionLink("Details", "Details", new { id = item.idjuego, id2 = item.minjuego }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.idjuego, id2 = item.minjuego })
+        </td>
+    </tr>
+}
+
+</table>
