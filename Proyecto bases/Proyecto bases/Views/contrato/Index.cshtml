@@ -1,0 +1,94 @@
+﻿@model IEnumerable<Proyecto_bases.Models.contrato>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idclub)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idfuncionario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.validez)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.importe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fchinicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fchfinal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fchcreacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fchmodificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.club.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usrcreador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usrcreador)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idclub)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idfuncionario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.validez)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.importe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fchinicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fchfinal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fchcreacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fchmodificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.club.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usrcreador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usrcreador)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.fchfinal, id2=item.idclub, id3=item.idfuncionario }) |
+            @Html.ActionLink("Details", "Details", new { id = item.fchfinal, id2 = item.idclub, id3 = item.idfuncionario }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.fchfinal, id2 = item.idclub, id3 = item.idfuncionario })
+        </td>
+    </tr>
+}
+
+</table>
