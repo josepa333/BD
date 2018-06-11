@@ -45,24 +45,31 @@
         <td>
             @Html.DisplayFor(modelItem => item.idcalendario)
         </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.fecha)
         </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.idcompeticion)
         </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.idtemporada)
         </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.fchcreacion)
         </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.fchmodificacion)
         </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.usrcreador)
         </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.usrmodificador)
         </td>
@@ -70,8 +77,10 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.idcalendario }) |
             @Html.ActionLink("Details", "Details", new { id = item.idcalendario }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.idcalendario })
+            @Html.ActionLink("Delete", "Delete", new { id = item.idcalendario }) |
+            @Html.ActionLink("Juegos", "juegosFechaCalendario", new { idC = item.idcalendario })
         </td>
+
     </tr>
 }
 

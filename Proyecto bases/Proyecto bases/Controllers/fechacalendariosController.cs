@@ -136,5 +136,19 @@ namespace Proyecto_bases.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult juegosFechaCalendario(int idC)
+        {
+            ViewBag.idC = idC;
+            var juego = db.juego.Where(x => x.idcalendario == idC).ToList();
+            return View(juego);
+        }
+
+        public ActionResult anotadoresJuego(int idJ)
+        {
+            ViewBag.idJ = idJ;
+            var anotaciones = db.anotadores.Where(x => x.idjuego == idJ).ToList();
+            return View(anotaciones);
+        }
+
     }
 }

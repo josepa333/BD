@@ -18,7 +18,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.idcompeticion, "idcompeticion", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("idcompeticion", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("idcompeticion", null, htmlAttributes: new { @class = "form-control", style = "height: 50px;" })
                 @Html.ValidationMessageFor(model => model.idcompeticion, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -44,7 +44,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.usrcreador, "usrcreador", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("usrcreador", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("usrcreador", null, htmlAttributes: new { @class = "form-control", style = "height: 50px;" })
                 @Html.ValidationMessageFor(model => model.usrcreador, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -60,7 +60,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.usrmodificador, "usrmodificador", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("usrmodificador", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("usrmodificador", null, htmlAttributes: new { @class = "form-control", style = "height: 50px;" })
                 @Html.ValidationMessageFor(model => model.usrmodificador, "", new { @class = "text-danger" })
             </div>
         </div>

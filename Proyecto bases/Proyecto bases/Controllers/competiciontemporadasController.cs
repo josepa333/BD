@@ -158,6 +158,8 @@ namespace Proyecto_bases.Controllers
             cmd.ExecuteNonQuery();
             conn.Close();
 
+            ViewBag.idT = id2;
+            ViewBag.idC = id;
             var competiciontemporada = db.fechacalendario.Where(x => x.idcompeticion == id).Where(x => x.idtemporada == id2).ToList();
             return View(competiciontemporada);
         }
@@ -176,10 +178,11 @@ namespace Proyecto_bases.Controllers
             cmd.ExecuteNonQuery();
             conn.Close();
 
-
+            ViewBag.idT = id2;
+            ViewBag.idC = id;
             SqlParameter parameter3 = new SqlParameter("@competicion", id);
             SqlParameter parameter4 = new SqlParameter("@temporada", id2);
-            List<juego> lista = db.Database.SqlQuery<juego>("exec juegosDeResultados @competicion, @temporada", parameter3, parameter4).ToList();
+            List<juegosDeResultados_Result> lista = db.Database.SqlQuery<juegosDeResultados_Result>("exec juegosDeResultados @competicion, @temporada", parameter3, parameter4).ToList();
             return View(lista);
         }
 
@@ -190,6 +193,8 @@ namespace Proyecto_bases.Controllers
             SqlParameter parameter2 = new SqlParameter("@temporada", id2);
             db.Database.SqlQuery<juego>("exec rankingLiga @competicion, @temporada", parameter1, parameter2);
 
+            ViewBag.idT = id2;
+            ViewBag.idC = id;
             List<tablaGeneral_Result> lista = db.Database.SqlQuery<tablaGeneral_Result>("exec tablaGeneral @competicion, @temporada", parameter1, parameter2).ToList();
             return View(lista);
         }
@@ -197,17 +202,19 @@ namespace Proyecto_bases.Controllers
         {
             SqlParameter parameter1 = new SqlParameter("@competicion", id);
             SqlParameter parameter2 = new SqlParameter("@temporada", id2);
-            
+
+            ViewBag.idT = id2;
+            ViewBag.idC = id;
             List<infoArbitros_Result> lista = db.Database.SqlQuery<infoArbitros_Result>("exec infoArbitros @competicion, @temporada", parameter1, parameter2).ToList();
             return View(lista);
         }
 
         public ActionResult AdministrarCalendario(string id, int id2)
         {
+            ViewBag.idT = id2;
+            ViewBag.idC = id;
             var competiciontemporada = db.fechacalendario.Where(x => x.idcompeticion == id).Where(x => x.idtemporada == id2).ToList();
             return View(competiciontemporada);
         }
-
-        
     }
 }

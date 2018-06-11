@@ -372,6 +372,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Resources\IMG_9919.JPG" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -547,6 +548,8 @@
     <Content Include="Views\temporada\Details.cshtml" />
     <Content Include="Views\temporada\Edit.cshtml" />
     <Content Include="Views\temporada\Index.cshtml" />
+    <Content Include="Views\fechacalendarios\juegosFechaCalendario.cshtml" />
+    <Content Include="Views\fechacalendarios\anotadoresJuego.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

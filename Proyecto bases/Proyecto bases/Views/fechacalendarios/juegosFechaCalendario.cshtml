@@ -1,9 +1,12 @@
-﻿@model IEnumerable<Proyecto_bases.Models.juegosDeResultados_Result>
+﻿@model IEnumerable<Proyecto_bases.Models.juego>
+
 @{
-    ViewBag.Title = "Resultados de partidos jugados";
+    ViewBag.Title = "Juegos de fecha calendario";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>Resultados de juegos de temporada @ViewBag.idT y competicion @ViewBag.idC</h2>
+
+<h2>Juegos del idCalendario @ViewBag.idC</h2>
+
 <table class="table">
     <tr>
         <th>
@@ -24,9 +27,20 @@
         <th>
             @Html.DisplayName("ID calendario")
         </th>
+        <th>
+            @Html.DisplayName("Usuario creador")
+        </th>
+        <th>
+            @Html.DisplayName("Fecha creacion")
+        </th>
+        <th>
+            @Html.DisplayName("Usuario modificador")
+        </th>
+        <th>
+            @Html.DisplayName("Fecha modificacion")
+        </th>
         <th></th>
     </tr>
-
     @foreach (var item in Model)
     {
     <tr>
@@ -48,6 +62,21 @@
         <th>
             @Html.DisplayFor(model => item.idcalendario)
         </th>
+        <th>
+            @Html.DisplayFor(model => item.usrcreador)
+        </th>
+        <th>
+            @Html.DisplayFor(model => item.fchcreacion)
+        </th>
+        <th>
+            @Html.DisplayFor(model => item.usrmodificador)
+        </th>
+        <th>
+            @Html.DisplayFor(model => item.fchmodificacion)
+        </th>
+        <td>
+            @Html.ActionLink("Anotaciones", "anotadoresJuego", new { idJ = item.idjuego })
+        </td>
     </tr>
     }
 </table>
