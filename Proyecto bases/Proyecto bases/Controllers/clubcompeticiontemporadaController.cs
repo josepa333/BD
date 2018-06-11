@@ -39,6 +39,7 @@ namespace Proyecto_bases.Controllers
         // GET: clubcompeticiontemporada/Create
         public ActionResult Create()
         {
+            ViewBag.idtemporada = new SelectList(db.temporada, "idtemporada", "idtemporada");
             ViewBag.idclub = new SelectList(db.club, "idclub", "idclub");
             ViewBag.idcompeticion = new SelectList(db.competiciontemporada, "idcompeticion", "idcompeticion");
             ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1");
@@ -59,7 +60,7 @@ namespace Proyecto_bases.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            ViewBag.idtemporada = new SelectList(db.temporada, "idtemporada", "idtemporada");
             ViewBag.idclub = new SelectList(db.club, "idclub", "idclub", clubcompeticiontemporada.idclub);
             ViewBag.idcompeticion = new SelectList(db.competiciontemporada, "idcompeticion", "idcompeticion", clubcompeticiontemporada.idcompeticion);
             ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", clubcompeticiontemporada.usrcreador);
@@ -79,6 +80,7 @@ namespace Proyecto_bases.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.idtemporada = new SelectList(db.temporada, "idtemporada", "idtemporada");
             ViewBag.idclub = new SelectList(db.club, "idclub", "idclub", clubcompeticiontemporada.idclub);
             ViewBag.idcompeticion = new SelectList(db.competiciontemporada, "idcompeticion", "idcompeticion", clubcompeticiontemporada.idcompeticion);
             ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", clubcompeticiontemporada.usrcreador);
@@ -99,6 +101,7 @@ namespace Proyecto_bases.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.idtemporada = new SelectList(db.temporada, "idtemporada", "idtemporada");
             ViewBag.idclub = new SelectList(db.club, "idclub", "idclub", clubcompeticiontemporada.idclub);
             ViewBag.idcompeticion = new SelectList(db.competiciontemporada, "idcompeticion", "idcompeticion", clubcompeticiontemporada.idcompeticion);
             ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", clubcompeticiontemporada.usrcreador);

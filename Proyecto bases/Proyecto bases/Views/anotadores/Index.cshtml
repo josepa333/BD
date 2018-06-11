@@ -24,7 +24,9 @@
         <th>
             @Html.DisplayNameFor(model => model.minjuego)
         </th>
-
+        <th>
+            @Html.DisplayNameFor(model => model.video)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.fchcreacion)
         </th>
@@ -55,7 +57,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.minjuego)
         </td>
-
+        <td>
+            <video src="@Url.Content("~/resources/" + item.video + ".mp4")"  width="75" height="75" video autoplay />
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.fchcreacion)
         </td>
@@ -70,7 +74,7 @@
         </td>
 
         <td>
-            @Html.ActionLink("Edit", "Edit", new {  id=item.idjuego, id2=item.minjuego }) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.idjuego, id2 = item.minjuego }) |
             @Html.ActionLink("Details", "Details", new { id = item.idjuego, id2 = item.minjuego }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.idjuego, id2 = item.minjuego })
         </td>

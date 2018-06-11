@@ -65,7 +65,7 @@ namespace Proyecto_bases.Models
         public virtual DbSet<temporada> temporada { get; set; }
         public virtual DbSet<tituloacademico> tituloacademico { get; set; }
         public virtual DbSet<usuario> usuario { get; set; }
-    
+
         public virtual ObjectResult<arbitroDatos_Result> arbitroDatos(string idCompeticion, Nullable<decimal> idTemporada)
         {
             var idCompeticionParameter = idCompeticion != null ?

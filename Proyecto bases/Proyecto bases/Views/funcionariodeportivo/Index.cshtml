@@ -22,6 +22,9 @@
             @Html.DisplayNameFor(model => model.fchnacimiento)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.foto)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.fchcreacion)
         </th>
         <th>
@@ -47,6 +50,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.fchnacimiento)
+        </td>
+        <td>
+            <img src="@Url.Content("~/resources/" + item.foto + ".png")" alt="IMAGES" width="75" height="75" />
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.fchcreacion)
