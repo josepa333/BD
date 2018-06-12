@@ -65,7 +65,7 @@ namespace Proyecto_bases.Models
         public virtual DbSet<temporada> temporada { get; set; }
         public virtual DbSet<tituloacademico> tituloacademico { get; set; }
         public virtual DbSet<usuario> usuario { get; set; }
-
+    
         public virtual ObjectResult<arbitroDatos_Result> arbitroDatos(string idCompeticion, Nullable<decimal> idTemporada)
         {
             var idCompeticionParameter = idCompeticion != null ?
@@ -254,6 +254,19 @@ namespace Proyecto_bases.Models
                 new ObjectParameter("temporada", typeof(decimal));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<infoArbitros_Result>("infoArbitros", competicionParameter, temporadaParameter);
+        }
+    
+        public virtual int borrarUnaCompeticionTemporada(string competicion, Nullable<decimal> temporada, ObjectParameter fecha)
+        {
+            var competicionParameter = competicion != null ?
+                new ObjectParameter("competicion", competicion) :
+                new ObjectParameter("competicion", typeof(string));
+    
+            var temporadaParameter = temporada.HasValue ?
+                new ObjectParameter("temporada", temporada) :
+                new ObjectParameter("temporada", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("borrarUnaCompeticionTemporada", competicionParameter, temporadaParameter, fecha);
         }
     }
 }
