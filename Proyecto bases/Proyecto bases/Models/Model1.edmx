@@ -427,12 +427,6 @@
           <Property Name="usrmodificador" Type="varchar" MaxLength="15" />
           <Property Name="fchmodificacion" Type="date" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'ProyectoBasesJAR.dbo.Image' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Image">
-          <Property Name="ID" Type="varchar" MaxLength="60" />
-          <Property Name="ImagePath" Type="varchar" MaxLength="60" />
-        </EntityType>-->
         <EntityType Name="juego">
           <Key>
             <PropertyRef Name="idjuego" />
@@ -931,6 +925,18 @@ warning 6013: The table/view 'ProyectoBasesJAR.dbo.Image' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="clubtemporada_club_fk2">
+          <End Role="club" Type="Self.club" Multiplicity="1" />
+          <End Role="histclubcompeticiontemporada" Type="Self.histclubcompeticiontemporada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="club">
+              <PropertyRef Name="idclub" />
+            </Principal>
+            <Dependent Role="histclubcompeticiontemporada">
+              <PropertyRef Name="idclub" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="competicion_fk1">
           <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
           <End Role="competicion" Type="Self.competicion" Multiplicity="*" />
@@ -1379,6 +1385,456 @@ warning 6013: The table/view 'ProyectoBasesJAR.dbo.Image' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="hist_fk1">
+          <End Role="temporada" Type="Self.temporada" Multiplicity="1" />
+          <End Role="histcompeticiontemporada" Type="Self.histcompeticiontemporada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="temporada">
+              <PropertyRef Name="idtemporada" />
+            </Principal>
+            <Dependent Role="histcompeticiontemporada">
+              <PropertyRef Name="idtemporada" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histalineacion_club_fk1">
+          <End Role="club" Type="Self.club" Multiplicity="1" />
+          <End Role="histalineacion" Type="Self.histalineacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="club">
+              <PropertyRef Name="idclub" />
+            </Principal>
+            <Dependent Role="histalineacion">
+              <PropertyRef Name="idclub" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histalineacion_fk1">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="histalineacion" Type="Self.histalineacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="usuario" />
+            </Principal>
+            <Dependent Role="histalineacion">
+              <PropertyRef Name="usrcreador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histalineacion_fk2">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+          <End Role="histalineacion" Type="Self.histalineacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="usuario" />
+            </Principal>
+            <Dependent Role="histalineacion">
+              <PropertyRef Name="usrmodificador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histalineacion_histjuego_fk1">
+          <End Role="histjuego" Type="Self.histjuego" Multiplicity="1" />
+          <End Role="histalineacion" Type="Self.histalineacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="histjuego">
+              <PropertyRef Name="idjuego" />
+            </Principal>
+            <Dependent Role="histalineacion">
+              <PropertyRef Name="idjuego" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histalineacion_jugador_fk1">
+          <End Role="jugador" Type="Self.jugador" Multiplicity="1" />
+          <End Role="histalineacion" Type="Self.histalineacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="jugador">
+              <PropertyRef Name="idfuncionario" />
+            </Principal>
+            <Dependent Role="histalineacion">
+              <PropertyRef Name="idfuncionario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histanotadores_club_fk1">
+          <End Role="club" Type="Self.club" Multiplicity="1" />
+          <End Role="histanotadores" Type="Self.histanotadores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="club">
+              <PropertyRef Name="idclub" />
+            </Principal>
+            <Dependent Role="histanotadores">
+              <PropertyRef Name="idclub" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histanotadores_fk1">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="histanotadores" Type="Self.histanotadores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="usuario" />
+            </Principal>
+            <Dependent Role="histanotadores">
+              <PropertyRef Name="usrcreador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histanotadores_fk2">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+          <End Role="histanotadores" Type="Self.histanotadores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="usuario" />
+            </Principal>
+            <Dependent Role="histanotadores">
+              <PropertyRef Name="usrmodificador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histanotadores_histjuego_fk1">
+          <End Role="histjuego" Type="Self.histjuego" Multiplicity="1" />
+          <End Role="histanotadores" Type="Self.histanotadores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="histjuego">
+              <PropertyRef Name="idjuego" />
+            </Principal>
+            <Dependent Role="histanotadores">
+              <PropertyRef Name="idjuego" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histanotadores_jugador_fk1">
+          <End Role="jugador" Type="Self.jugador" Multiplicity="1" />
+          <End Role="histanotadores" Type="Self.histanotadores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="jugador">
+              <PropertyRef Name="idfuncionario" />
+            </Principal>
+            <Dependent Role="histanotadores">
+              <PropertyRef Name="idfuncionario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histarbitrojuego_arbitro_fk1">
+          <End Role="arbitro" Type="Self.arbitro" Multiplicity="1" />
+          <End Role="histarbitrojuego" Type="Self.histarbitrojuego" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arbitro">
+              <PropertyRef Name="idarbitro" />
+            </Principal>
+            <Dependent Role="histarbitrojuego">
+              <PropertyRef Name="idarbitro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histarbitrojuego_fk1">
+          <End Role="histjuego" Type="Self.histjuego" Multiplicity="1" />
+          <End Role="histarbitrojuego" Type="Self.histarbitrojuego" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="histjuego">
+              <PropertyRef Name="idjuego" />
+            </Principal>
+            <Dependent Role="histarbitrojuego">
+              <PropertyRef Name="idjuego" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histarbitrojuego_fk2">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="histarbitrojuego" Type="Self.histarbitrojuego" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="usuario" />
+            </Principal>
+            <Dependent Role="histarbitrojuego">
+              <PropertyRef Name="usrcreador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histarbitrojuego_fk3">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+          <End Role="histarbitrojuego" Type="Self.histarbitrojuego" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="usuario" />
+            </Principal>
+            <Dependent Role="histarbitrojuego">
+              <PropertyRef Name="usrmodificador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histcambios_club_fk1">
+          <End Role="club" Type="Self.club" Multiplicity="1" />
+          <End Role="histcambios" Type="Self.histcambios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="club">
+              <PropertyRef Name="idclub" />
+            </Principal>
+            <Dependent Role="histcambios">
+              <PropertyRef Name="idclub" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histcambios_fk1">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="histcambios" Type="Self.histcambios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="usuario" />
+            </Principal>
+            <Dependent Role="histcambios">
+              <PropertyRef Name="usrcreador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histcambios_fk2">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+          <End Role="histcambios" Type="Self.histcambios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="usuario" />
+            </Principal>
+            <Dependent Role="histcambios">
+              <PropertyRef Name="usrmodificador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histcambios_histjuego_fk1">
+          <End Role="histjuego" Type="Self.histjuego" Multiplicity="1" />
+          <End Role="histcambios" Type="Self.histcambios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="histjuego">
+              <PropertyRef Name="idjuego" />
+            </Principal>
+            <Dependent Role="histcambios">
+              <PropertyRef Name="idjuego" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histcambios_jugador_fk1">
+          <End Role="jugador" Type="Self.jugador" Multiplicity="1" />
+          <End Role="histcambios" Type="Self.histcambios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="jugador">
+              <PropertyRef Name="idfuncionario" />
+            </Principal>
+            <Dependent Role="histcambios">
+              <PropertyRef Name="jugadorentra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histcambios_jugador_fk2">
+          <End Role="jugador" Type="Self.jugador" Multiplicity="1" />
+          <End Role="histcambios" Type="Self.histcambios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="jugador">
+              <PropertyRef Name="idfuncionario" />
+            </Principal>
+            <Dependent Role="histcambios">
+              <PropertyRef Name="jugadorsale" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histclubcompeticiontempor_fk1">
+          <End Role="histcompeticiontemporada" Type="Self.histcompeticiontemporada" Multiplicity="1" />
+          <End Role="histclubcompeticiontemporada" Type="Self.histclubcompeticiontemporada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="histcompeticiontemporada">
+              <PropertyRef Name="idtemporada" />
+              <PropertyRef Name="idcompeticion" />
+            </Principal>
+            <Dependent Role="histclubcompeticiontemporada">
+              <PropertyRef Name="idtemporada" />
+              <PropertyRef Name="idcompeticion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histclubcompeticiontempor_fk2">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="histclubcompeticiontemporada" Type="Self.histclubcompeticiontemporada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="usuario" />
+            </Principal>
+            <Dependent Role="histclubcompeticiontemporada">
+              <PropertyRef Name="usrcreador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histclubcompeticiontempor_fk3">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+          <End Role="histclubcompeticiontemporada" Type="Self.histclubcompeticiontemporada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="usuario" />
+            </Principal>
+            <Dependent Role="histclubcompeticiontemporada">
+              <PropertyRef Name="usrmodificador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histcompeticiontemporada_fk1">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="histcompeticiontemporada" Type="Self.histcompeticiontemporada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="usuario" />
+            </Principal>
+            <Dependent Role="histcompeticiontemporada">
+              <PropertyRef Name="usrcreador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histcompeticiontemporada_fk2">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+          <End Role="histcompeticiontemporada" Type="Self.histcompeticiontemporada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="usuario" />
+            </Principal>
+            <Dependent Role="histcompeticiontemporada">
+              <PropertyRef Name="usrmodificador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histfechacalendario_fk1">
+          <End Role="histcompeticiontemporada" Type="Self.histcompeticiontemporada" Multiplicity="1" />
+          <End Role="histfechacalendario" Type="Self.histfechacalendario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="histcompeticiontemporada">
+              <PropertyRef Name="idtemporada" />
+              <PropertyRef Name="idcompeticion" />
+            </Principal>
+            <Dependent Role="histfechacalendario">
+              <PropertyRef Name="idtemporada" />
+              <PropertyRef Name="idcompeticion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histfechacalendario_fk2">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="histfechacalendario" Type="Self.histfechacalendario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="usuario" />
+            </Principal>
+            <Dependent Role="histfechacalendario">
+              <PropertyRef Name="usrcreador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histfechacalendario_fk3">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+          <End Role="histfechacalendario" Type="Self.histfechacalendario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="usuario" />
+            </Principal>
+            <Dependent Role="histfechacalendario">
+              <PropertyRef Name="usrmodificador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histfuncclubcomptemporada_fk1">
+          <End Role="histcompeticiontemporada" Type="Self.histcompeticiontemporada" Multiplicity="1" />
+          <End Role="histfuncclubcomptemporada" Type="Self.histfuncclubcomptemporada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="histcompeticiontemporada">
+              <PropertyRef Name="idtemporada" />
+              <PropertyRef Name="idcompeticion" />
+            </Principal>
+            <Dependent Role="histfuncclubcomptemporada">
+              <PropertyRef Name="idtemporada" />
+              <PropertyRef Name="idcompeticion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histfuncclubcomptemporada_fk2">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="histfuncclubcomptemporada" Type="Self.histfuncclubcomptemporada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="usuario" />
+            </Principal>
+            <Dependent Role="histfuncclubcomptemporada">
+              <PropertyRef Name="usrcreador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histfuncclubcomptemporada_fk3">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+          <End Role="histfuncclubcomptemporada" Type="Self.histfuncclubcomptemporada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="usuario" />
+            </Principal>
+            <Dependent Role="histfuncclubcomptemporada">
+              <PropertyRef Name="usrmodificador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histjuego_club_fk1">
+          <End Role="club" Type="Self.club" Multiplicity="1" />
+          <End Role="histjuego" Type="Self.histjuego" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="club">
+              <PropertyRef Name="idclub" />
+            </Principal>
+            <Dependent Role="histjuego">
+              <PropertyRef Name="idclubcasa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histjuego_club_fk2">
+          <End Role="club" Type="Self.club" Multiplicity="1" />
+          <End Role="histjuego" Type="Self.histjuego" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="club">
+              <PropertyRef Name="idclub" />
+            </Principal>
+            <Dependent Role="histjuego">
+              <PropertyRef Name="idclubvisita" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histjuego_fk1">
+          <End Role="histfechacalendario" Type="Self.histfechacalendario" Multiplicity="1" />
+          <End Role="histjuego" Type="Self.histjuego" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="histfechacalendario">
+              <PropertyRef Name="idcalendario" />
+            </Principal>
+            <Dependent Role="histjuego">
+              <PropertyRef Name="idcalendario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histjuego_fk2">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="histjuego" Type="Self.histjuego" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="usuario" />
+            </Principal>
+            <Dependent Role="histjuego">
+              <PropertyRef Name="usrcreador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="histjuego_fk3">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+          <End Role="histjuego" Type="Self.histjuego" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="usuario" />
+            </Principal>
+            <Dependent Role="histjuego">
+              <PropertyRef Name="usrmodificador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="juego_club_fk1">
           <End Role="club" Type="Self.club" Multiplicity="1" />
           <End Role="juego" Type="Self.juego" Multiplicity="*" />
@@ -1505,6 +1961,18 @@ warning 6013: The table/view 'ProyectoBasesJAR.dbo.Image' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="jugadorclubtemporada_club_fk2">
+          <End Role="club" Type="Self.club" Multiplicity="1" />
+          <End Role="histfuncclubcomptemporada" Type="Self.histfuncclubcomptemporada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="club">
+              <PropertyRef Name="idclub" />
+            </Principal>
+            <Dependent Role="histfuncclubcomptemporada">
+              <PropertyRef Name="idclub" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="jugadorclubtemporada_fk3">
           <End Role="funcionariodeportivo" Type="Self.funcionariodeportivo" Multiplicity="1" />
           <End Role="funcclubcomptemporada" Type="Self.funcclubcomptemporada" Multiplicity="*" />
@@ -1513,6 +1981,18 @@ warning 6013: The table/view 'ProyectoBasesJAR.dbo.Image' does not have a primar
               <PropertyRef Name="idfuncionario" />
             </Principal>
             <Dependent Role="funcclubcomptemporada">
+              <PropertyRef Name="idfuncionario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="jugadorclubtemporada_fk4">
+          <End Role="funcionariodeportivo" Type="Self.funcionariodeportivo" Multiplicity="1" />
+          <End Role="histfuncclubcomptemporada" Type="Self.histfuncclubcomptemporada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="funcionariodeportivo">
+              <PropertyRef Name="idfuncionario" />
+            </Principal>
+            <Dependent Role="histfuncclubcomptemporada">
               <PropertyRef Name="idfuncionario" />
             </Dependent>
           </ReferentialConstraint>
@@ -1649,6 +2129,18 @@ warning 6013: The table/view 'ProyectoBasesJAR.dbo.Image' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="temporada_competicion_fk2">
+          <End Role="competicion" Type="Self.competicion" Multiplicity="1" />
+          <End Role="histcompeticiontemporada" Type="Self.histcompeticiontemporada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="competicion">
+              <PropertyRef Name="idcompeticion" />
+            </Principal>
+            <Dependent Role="histcompeticiontemporada">
+              <PropertyRef Name="idcompeticion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="temporada_fk1">
           <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
           <End Role="temporada" Type="Self.temporada" Multiplicity="*" />
@@ -1724,11 +2216,6 @@ warning 6013: The table/view 'ProyectoBasesJAR.dbo.Image' does not have a primar
         <Function Name="arbitroDatos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idCompeticion" Type="varchar" Mode="In" />
           <Parameter Name="idTemporada" Type="numeric" Mode="In" />
-        </Function>
-        <Function Name="borrarUnaCompeticionTemporada" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="competicion" Type="varchar" Mode="In" />
-          <Parameter Name="temporada" Type="numeric" Mode="In" />
-          <Parameter Name="Fecha" Type="datetime" Mode="InOut" />
         </Function>
         <Function Name="buscaFecha" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="NombreEquipo" Type="varchar" Mode="In" />
@@ -1950,6 +2437,10 @@ warning 6013: The table/view 'ProyectoBasesJAR.dbo.Image' does not have a primar
             <End Role="club" EntitySet="club" />
             <End Role="clubcompeticiontemporada" EntitySet="clubcompeticiontemporada" />
           </AssociationSet>
+          <AssociationSet Name="clubtemporada_club_fk2" Association="Self.clubtemporada_club_fk2">
+            <End Role="club" EntitySet="club" />
+            <End Role="histclubcompeticiontemporada" EntitySet="histclubcompeticiontemporada" />
+          </AssociationSet>
           <AssociationSet Name="competicion_fk1" Association="Self.competicion_fk1">
             <End Role="usuario" EntitySet="usuario" />
             <End Role="competicion" EntitySet="competicion" />
@@ -2098,6 +2589,154 @@ warning 6013: The table/view 'ProyectoBasesJAR.dbo.Image' does not have a primar
             <End Role="usuario" EntitySet="usuario" />
             <End Role="funcionariodeportivo" EntitySet="funcionariodeportivo" />
           </AssociationSet>
+          <AssociationSet Name="hist_fk1" Association="Self.hist_fk1">
+            <End Role="temporada" EntitySet="temporada" />
+            <End Role="histcompeticiontemporada" EntitySet="histcompeticiontemporada" />
+          </AssociationSet>
+          <AssociationSet Name="histalineacion_club_fk1" Association="Self.histalineacion_club_fk1">
+            <End Role="club" EntitySet="club" />
+            <End Role="histalineacion" EntitySet="histalineacion" />
+          </AssociationSet>
+          <AssociationSet Name="histalineacion_fk1" Association="Self.histalineacion_fk1">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="histalineacion" EntitySet="histalineacion" />
+          </AssociationSet>
+          <AssociationSet Name="histalineacion_fk2" Association="Self.histalineacion_fk2">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="histalineacion" EntitySet="histalineacion" />
+          </AssociationSet>
+          <AssociationSet Name="histalineacion_histjuego_fk1" Association="Self.histalineacion_histjuego_fk1">
+            <End Role="histjuego" EntitySet="histjuego" />
+            <End Role="histalineacion" EntitySet="histalineacion" />
+          </AssociationSet>
+          <AssociationSet Name="histalineacion_jugador_fk1" Association="Self.histalineacion_jugador_fk1">
+            <End Role="jugador" EntitySet="jugador" />
+            <End Role="histalineacion" EntitySet="histalineacion" />
+          </AssociationSet>
+          <AssociationSet Name="histanotadores_club_fk1" Association="Self.histanotadores_club_fk1">
+            <End Role="club" EntitySet="club" />
+            <End Role="histanotadores" EntitySet="histanotadores" />
+          </AssociationSet>
+          <AssociationSet Name="histanotadores_fk1" Association="Self.histanotadores_fk1">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="histanotadores" EntitySet="histanotadores" />
+          </AssociationSet>
+          <AssociationSet Name="histanotadores_fk2" Association="Self.histanotadores_fk2">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="histanotadores" EntitySet="histanotadores" />
+          </AssociationSet>
+          <AssociationSet Name="histanotadores_histjuego_fk1" Association="Self.histanotadores_histjuego_fk1">
+            <End Role="histjuego" EntitySet="histjuego" />
+            <End Role="histanotadores" EntitySet="histanotadores" />
+          </AssociationSet>
+          <AssociationSet Name="histanotadores_jugador_fk1" Association="Self.histanotadores_jugador_fk1">
+            <End Role="jugador" EntitySet="jugador" />
+            <End Role="histanotadores" EntitySet="histanotadores" />
+          </AssociationSet>
+          <AssociationSet Name="histarbitrojuego_arbitro_fk1" Association="Self.histarbitrojuego_arbitro_fk1">
+            <End Role="arbitro" EntitySet="arbitro" />
+            <End Role="histarbitrojuego" EntitySet="histarbitrojuego" />
+          </AssociationSet>
+          <AssociationSet Name="histarbitrojuego_fk1" Association="Self.histarbitrojuego_fk1">
+            <End Role="histjuego" EntitySet="histjuego" />
+            <End Role="histarbitrojuego" EntitySet="histarbitrojuego" />
+          </AssociationSet>
+          <AssociationSet Name="histarbitrojuego_fk2" Association="Self.histarbitrojuego_fk2">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="histarbitrojuego" EntitySet="histarbitrojuego" />
+          </AssociationSet>
+          <AssociationSet Name="histarbitrojuego_fk3" Association="Self.histarbitrojuego_fk3">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="histarbitrojuego" EntitySet="histarbitrojuego" />
+          </AssociationSet>
+          <AssociationSet Name="histcambios_club_fk1" Association="Self.histcambios_club_fk1">
+            <End Role="club" EntitySet="club" />
+            <End Role="histcambios" EntitySet="histcambios" />
+          </AssociationSet>
+          <AssociationSet Name="histcambios_fk1" Association="Self.histcambios_fk1">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="histcambios" EntitySet="histcambios" />
+          </AssociationSet>
+          <AssociationSet Name="histcambios_fk2" Association="Self.histcambios_fk2">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="histcambios" EntitySet="histcambios" />
+          </AssociationSet>
+          <AssociationSet Name="histcambios_histjuego_fk1" Association="Self.histcambios_histjuego_fk1">
+            <End Role="histjuego" EntitySet="histjuego" />
+            <End Role="histcambios" EntitySet="histcambios" />
+          </AssociationSet>
+          <AssociationSet Name="histcambios_jugador_fk1" Association="Self.histcambios_jugador_fk1">
+            <End Role="jugador" EntitySet="jugador" />
+            <End Role="histcambios" EntitySet="histcambios" />
+          </AssociationSet>
+          <AssociationSet Name="histcambios_jugador_fk2" Association="Self.histcambios_jugador_fk2">
+            <End Role="jugador" EntitySet="jugador" />
+            <End Role="histcambios" EntitySet="histcambios" />
+          </AssociationSet>
+          <AssociationSet Name="histclubcompeticiontempor_fk1" Association="Self.histclubcompeticiontempor_fk1">
+            <End Role="histcompeticiontemporada" EntitySet="histcompeticiontemporada" />
+            <End Role="histclubcompeticiontemporada" EntitySet="histclubcompeticiontemporada" />
+          </AssociationSet>
+          <AssociationSet Name="histclubcompeticiontempor_fk2" Association="Self.histclubcompeticiontempor_fk2">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="histclubcompeticiontemporada" EntitySet="histclubcompeticiontemporada" />
+          </AssociationSet>
+          <AssociationSet Name="histclubcompeticiontempor_fk3" Association="Self.histclubcompeticiontempor_fk3">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="histclubcompeticiontemporada" EntitySet="histclubcompeticiontemporada" />
+          </AssociationSet>
+          <AssociationSet Name="histcompeticiontemporada_fk1" Association="Self.histcompeticiontemporada_fk1">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="histcompeticiontemporada" EntitySet="histcompeticiontemporada" />
+          </AssociationSet>
+          <AssociationSet Name="histcompeticiontemporada_fk2" Association="Self.histcompeticiontemporada_fk2">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="histcompeticiontemporada" EntitySet="histcompeticiontemporada" />
+          </AssociationSet>
+          <AssociationSet Name="histfechacalendario_fk1" Association="Self.histfechacalendario_fk1">
+            <End Role="histcompeticiontemporada" EntitySet="histcompeticiontemporada" />
+            <End Role="histfechacalendario" EntitySet="histfechacalendario" />
+          </AssociationSet>
+          <AssociationSet Name="histfechacalendario_fk2" Association="Self.histfechacalendario_fk2">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="histfechacalendario" EntitySet="histfechacalendario" />
+          </AssociationSet>
+          <AssociationSet Name="histfechacalendario_fk3" Association="Self.histfechacalendario_fk3">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="histfechacalendario" EntitySet="histfechacalendario" />
+          </AssociationSet>
+          <AssociationSet Name="histfuncclubcomptemporada_fk1" Association="Self.histfuncclubcomptemporada_fk1">
+            <End Role="histcompeticiontemporada" EntitySet="histcompeticiontemporada" />
+            <End Role="histfuncclubcomptemporada" EntitySet="histfuncclubcomptemporada" />
+          </AssociationSet>
+          <AssociationSet Name="histfuncclubcomptemporada_fk2" Association="Self.histfuncclubcomptemporada_fk2">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="histfuncclubcomptemporada" EntitySet="histfuncclubcomptemporada" />
+          </AssociationSet>
+          <AssociationSet Name="histfuncclubcomptemporada_fk3" Association="Self.histfuncclubcomptemporada_fk3">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="histfuncclubcomptemporada" EntitySet="histfuncclubcomptemporada" />
+          </AssociationSet>
+          <AssociationSet Name="histjuego_club_fk1" Association="Self.histjuego_club_fk1">
+            <End Role="club" EntitySet="club" />
+            <End Role="histjuego" EntitySet="histjuego" />
+          </AssociationSet>
+          <AssociationSet Name="histjuego_club_fk2" Association="Self.histjuego_club_fk2">
+            <End Role="club" EntitySet="club" />
+            <End Role="histjuego" EntitySet="histjuego" />
+          </AssociationSet>
+          <AssociationSet Name="histjuego_fk1" Association="Self.histjuego_fk1">
+            <End Role="histfechacalendario" EntitySet="histfechacalendario" />
+            <End Role="histjuego" EntitySet="histjuego" />
+          </AssociationSet>
+          <AssociationSet Name="histjuego_fk2" Association="Self.histjuego_fk2">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="histjuego" EntitySet="histjuego" />
+          </AssociationSet>
+          <AssociationSet Name="histjuego_fk3" Association="Self.histjuego_fk3">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="histjuego" EntitySet="histjuego" />
+          </AssociationSet>
           <AssociationSet Name="juego_club_fk1" Association="Self.juego_club_fk1">
             <End Role="club" EntitySet="club" />
             <End Role="juego" EntitySet="juego" />
@@ -2138,9 +2777,17 @@ warning 6013: The table/view 'ProyectoBasesJAR.dbo.Image' does not have a primar
             <End Role="club" EntitySet="club" />
             <End Role="funcclubcomptemporada" EntitySet="funcclubcomptemporada" />
           </AssociationSet>
+          <AssociationSet Name="jugadorclubtemporada_club_fk2" Association="Self.jugadorclubtemporada_club_fk2">
+            <End Role="club" EntitySet="club" />
+            <End Role="histfuncclubcomptemporada" EntitySet="histfuncclubcomptemporada" />
+          </AssociationSet>
           <AssociationSet Name="jugadorclubtemporada_fk3" Association="Self.jugadorclubtemporada_fk3">
             <End Role="funcionariodeportivo" EntitySet="funcionariodeportivo" />
             <End Role="funcclubcomptemporada" EntitySet="funcclubcomptemporada" />
+          </AssociationSet>
+          <AssociationSet Name="jugadorclubtemporada_fk4" Association="Self.jugadorclubtemporada_fk4">
+            <End Role="funcionariodeportivo" EntitySet="funcionariodeportivo" />
+            <End Role="histfuncclubcomptemporada" EntitySet="histfuncclubcomptemporada" />
           </AssociationSet>
           <AssociationSet Name="oferta_club_fk1" Association="Self.oferta_club_fk1">
             <End Role="club" EntitySet="club" />
@@ -2185,6 +2832,10 @@ warning 6013: The table/view 'ProyectoBasesJAR.dbo.Image' does not have a primar
           <AssociationSet Name="temporada_competicion_fk1" Association="Self.temporada_competicion_fk1">
             <End Role="competicion" EntitySet="competicion" />
             <End Role="competiciontemporada" EntitySet="competiciontemporada" />
+          </AssociationSet>
+          <AssociationSet Name="temporada_competicion_fk2" Association="Self.temporada_competicion_fk2">
+            <End Role="competicion" EntitySet="competicion" />
+            <End Role="histcompeticiontemporada" EntitySet="histcompeticiontemporada" />
           </AssociationSet>
           <AssociationSet Name="temporada_fk1" Association="Self.temporada_fk1">
             <End Role="usuario" EntitySet="usuario" />
@@ -5351,11 +6002,6 @@ warning 6013: The table/view 'ProyectoBasesJAR.dbo.Image' does not have a primar
             <Parameter Name="competicion" Mode="In" Type="String" />
             <Parameter Name="temporada" Mode="In" Type="Decimal" />
           </FunctionImport>
-          <FunctionImport Name="borrarUnaCompeticionTemporada">
-            <Parameter Name="competicion" Mode="In" Type="String" />
-            <Parameter Name="temporada" Mode="In" Type="Decimal" />
-            <Parameter Name="Fecha" Mode="InOut" Type="DateTime" />
-          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="arbitroDatos_Result">
           <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
@@ -6060,7 +6706,6 @@ warning 6013: The table/view 'ProyectoBasesJAR.dbo.Image' does not have a primar
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="borrarUnaCompeticionTemporada" FunctionName="ProyectoBasesJARModel.Store.borrarUnaCompeticionTemporada" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

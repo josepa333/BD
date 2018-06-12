@@ -288,3 +288,100 @@ D:\Usuario\Documents\GitHub\BD\Proyecto bases\Proyecto bases\obj\Debug\Proyecto 
 D:\Usuario\Documents\GitHub\BD\Proyecto bases\Proyecto bases\obj\Debug\Proyecto bases.csproj.CoreCompileInputs.cache
 D:\Usuario\Documents\GitHub\BD\Proyecto bases\Proyecto bases\obj\Debug\Proyecto bases.dll
 D:\Usuario\Documents\GitHub\BD\Proyecto bases\Proyecto bases\obj\Debug\Proyecto bases.pdb
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\obj\Debug\Proyecto bases.csprojAssemblyReference.cache
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\obj\Debug\Proyecto bases.csproj.CoreCompileInputs.cache
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\obj\Debug\Proyecto bases.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\obj\Debug\Proyecto bases.pdb
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\ApplicationInsights.config
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\Proyecto bases.dll.config
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\Proyecto bases.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\Proyecto bases.pdb
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\csc.exe
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\csc.exe.config
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\csc.rsp
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\csi.exe
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\csi.exe.config
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\csi.rsp
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\System.AppContext.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\System.Console.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\System.IO.Compression.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\System.IO.Pipes.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\System.Security.Claims.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\System.Threading.Thread.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\System.ValueTuple.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\System.Xml.XPath.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\vbc.exe
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\vbc.exe.config
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\vbc.rsp
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\VBCSCompiler.exe
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\Antlr3.Runtime.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\EntityFramework.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\EntityFramework.SqlServer.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\Microsoft.AI.Web.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\Microsoft.ApplicationInsights.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\Newtonsoft.Json.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\System.Web.Helpers.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\System.Web.Mvc.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\System.Web.Optimization.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\System.Web.Razor.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\System.Web.WebPages.Deployment.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\System.Web.WebPages.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\System.Web.WebPages.Razor.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\WebGrease.dll
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\EntityFramework.xml
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\EntityFramework.SqlServer.xml
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\Microsoft.AI.Web.xml
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\System.Web.Helpers.xml
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\System.Web.Razor.xml
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\System.Web.WebPages.xml
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\System.Web.WebPages.Deployment.xml
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\System.Web.WebPages.Razor.xml
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\System.Web.Mvc.xml
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\System.Web.Optimization.xml
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\Newtonsoft.Json.xml
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\Antlr3.Runtime.pdb
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\jose pablo\Desktop\New folder\BD-08b85264ff72cde9fd70a3d46bd7eaecfc45f7e6\Proyecto bases\Proyecto bases\obj\Debug\Proyecto bases.csproj.CopyComplete

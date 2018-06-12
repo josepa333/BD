@@ -16,7 +16,6 @@
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.idcompeticion)
-
     <div class="form-group">
         @Html.LabelFor(model => model.tipo, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -24,7 +23,6 @@
             @Html.ValidationMessageFor(model => model.tipo, "", new { @class = "text-danger" })
         </div>
     </div>
-
     <div class="form-group">
         @Html.LabelFor(model => model.nombre, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -32,7 +30,6 @@
             @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
         </div>
     </div>
-
     <div class="form-group">
         @Html.LabelFor(model => model.usrcreador, "usrcreador", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -40,7 +37,6 @@
             @Html.ValidationMessageFor(model => model.usrcreador, "", new { @class = "text-danger" })
         </div>
     </div>
-
     <div class="form-group">
         @Html.LabelFor(model => model.fchcreacion, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -48,7 +44,6 @@
             @Html.ValidationMessageFor(model => model.fchcreacion, "", new { @class = "text-danger" })
         </div>
     </div>
-
     <div class="form-group">
         @Html.LabelFor(model => model.usrmodificador, "usrmodificador", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -64,8 +59,6 @@
             @Html.ValidationMessageFor(model => model.usrmodificacion, "", new { @class = "text-danger" })
         </div>
     </div>
-
-
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Save" class="btn btn-default" />

@@ -140,7 +140,7 @@ namespace Proyecto_bases.Controllers
         public ActionResult Historial(string id)
         {
             SqlParameter parameter1 = new SqlParameter("@idEntrenador", id);
-            List<infoJugador_Result> lista = db.Database.SqlQuery<infoJugador_Result>("exec infoEntrenador @idEntrenador", parameter1).ToList();
+            List<infoEntrenador_Result> lista = db.Database.SqlQuery<infoEntrenador_Result>("exec infoEntrenador @idEntrenador", parameter1).ToList();
             return View(lista);
         }
 

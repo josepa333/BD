@@ -632,6 +632,5 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="borrarUnaCompeticionTemporada" FunctionName="ProyectoBasesJARModel.Store.borrarUnaCompeticionTemporada" />
   </EntityContainerMapping>
 </Mapping>

@@ -39,7 +39,6 @@ namespace Proyecto_bases.Controllers
         // GET: fechacalendarios/Create
         public ActionResult Create()
         {
-            ViewBag.idtemporada = new SelectList(db.temporada, "idtemporada", "idtemporada");
             ViewBag.idcompeticion = new SelectList(db.competiciontemporada, "idcompeticion", "idcompeticion");
             ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1");
             ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1");
@@ -59,7 +58,7 @@ namespace Proyecto_bases.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.idtemporada = new SelectList(db.temporada, "idtemporada", "idtemporada", fechacalendario.idtemporada);
+
             ViewBag.idcompeticion = new SelectList(db.competiciontemporada, "idcompeticion", "idcompeticion", fechacalendario.idcompeticion);
             ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", fechacalendario.usrmodificador);
             ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", fechacalendario.usrcreador);
@@ -78,7 +77,6 @@ namespace Proyecto_bases.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.idtemporada = new SelectList(db.temporada, "idtemporada", "idtemporada", fechacalendario.idtemporada);
             ViewBag.idcompeticion = new SelectList(db.competiciontemporada, "idcompeticion", "idcompeticion", fechacalendario.idcompeticion);
             ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", fechacalendario.usrmodificador);
             ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", fechacalendario.usrcreador);
@@ -98,7 +96,6 @@ namespace Proyecto_bases.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.idtemporada = new SelectList(db.temporada, "idtemporada", "idtemporada", fechacalendario.idtemporada);
             ViewBag.idcompeticion = new SelectList(db.competiciontemporada, "idcompeticion", "idcompeticion", fechacalendario.idcompeticion);
             ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", fechacalendario.usrmodificador);
             ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", fechacalendario.usrcreador);

@@ -3136,11 +3136,6 @@
       <Parameter Name="competicion" Mode="In" Type="String" />
       <Parameter Name="temporada" Mode="In" Type="Decimal" />
     </FunctionImport>
-    <FunctionImport Name="borrarUnaCompeticionTemporada">
-      <Parameter Name="competicion" Mode="In" Type="String" />
-      <Parameter Name="temporada" Mode="In" Type="Decimal" />
-      <Parameter Name="Fecha" Mode="InOut" Type="DateTime" />
-    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="arbitroDatos_Result">
     <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />

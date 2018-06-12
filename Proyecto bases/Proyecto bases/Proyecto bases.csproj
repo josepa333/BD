@@ -167,6 +167,7 @@
     <Compile Include="Controllers\clubsController.cs" />
     <Compile Include="Controllers\competicionsController.cs" />
     <Compile Include="Controllers\competiciontemporadasController.cs" />
+    <Compile Include="Controllers\contratoesController.cs" />
     <Compile Include="Controllers\entrenadorController.cs" />
     <Compile Include="Controllers\fechacalendariosController.cs" />
     <Compile Include="Controllers\federacionsController.cs" />
@@ -560,6 +561,11 @@
     <Content Include="Views\fechacalendarios\anotadoresJuego.cshtml" />
     <Content Include="Views\Image\Create.cshtml" />
     <Content Include="Views\Image\Index.cshtml" />
+    <Content Include="Views\contratoes\Create.cshtml" />
+    <Content Include="Views\contratoes\Delete.cshtml" />
+    <Content Include="Views\contratoes\Details.cshtml" />
+    <Content Include="Views\contratoes\Edit.cshtml" />
+    <Content Include="Views\contratoes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
