@@ -178,6 +178,7 @@
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\juegoesController.cs" />
     <Compile Include="Controllers\jugadoresController.cs" />
+    <Compile Include="Controllers\rivalesAnotadoresController.cs" />
     <Compile Include="Controllers\rivalesController.cs" />
     <Compile Include="Controllers\temporadaController.cs" />
     <Compile Include="Controllers\usuariosController.cs" />
@@ -317,6 +318,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\oferta.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\rivalesAnotaciones_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Rivales_Result.cs">
@@ -569,6 +573,8 @@
     <Content Include="Views\contratoes\Index.cshtml" />
     <Content Include="Views\crearCalendario\Index.cshtml" />
     <Content Include="Views\crearCalendario\calendarioCreado.cshtml" />
+    <Content Include="Views\rivalesAnotadores\anotadoresRivales.cshtml" />
+    <Content Include="Views\rivalesAnotadores\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

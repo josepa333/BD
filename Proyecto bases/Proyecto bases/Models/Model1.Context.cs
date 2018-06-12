@@ -359,6 +359,45 @@ public partial class ProyectoBasesJAREntities9 : DbContext
         return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<infoArbitros_Result>("infoArbitros", competicionParameter, temporadaParameter);
     }
 
+
+    public virtual int borrarUnaCompeticionTemporada(string competicion, Nullable<decimal> temporada, ObjectParameter fecha)
+    {
+
+        var competicionParameter = competicion != null ?
+            new ObjectParameter("competicion", competicion) :
+            new ObjectParameter("competicion", typeof(string));
+
+
+        var temporadaParameter = temporada.HasValue ?
+            new ObjectParameter("temporada", temporada) :
+            new ObjectParameter("temporada", typeof(decimal));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("borrarUnaCompeticionTemporada", competicionParameter, temporadaParameter, fecha);
+    }
+
+
+    public virtual ObjectResult<rivalesAnotaciones_Result> rivalesAnotaciones(Nullable<System.DateTime> fecha, string equipo1, string equipo2)
+    {
+
+        var fechaParameter = fecha.HasValue ?
+            new ObjectParameter("fecha", fecha) :
+            new ObjectParameter("fecha", typeof(System.DateTime));
+
+
+        var equipo1Parameter = equipo1 != null ?
+            new ObjectParameter("equipo1", equipo1) :
+            new ObjectParameter("equipo1", typeof(string));
+
+
+        var equipo2Parameter = equipo2 != null ?
+            new ObjectParameter("equipo2", equipo2) :
+            new ObjectParameter("equipo2", typeof(string));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<rivalesAnotaciones_Result>("rivalesAnotaciones", fechaParameter, equipo1Parameter, equipo2Parameter);
+    }
+
 }
 
 }

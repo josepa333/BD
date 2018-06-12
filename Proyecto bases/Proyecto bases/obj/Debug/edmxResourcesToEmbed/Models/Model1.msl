@@ -632,5 +632,14 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="borrarUnaCompeticionTemporada" FunctionName="ProyectoBasesJARModel.Store.borrarUnaCompeticionTemporada" />
+    <FunctionImportMapping FunctionImportName="rivalesAnotaciones" FunctionName="ProyectoBasesJARModel.Store.rivalesAnotaciones">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProyectoBasesJARModel.rivalesAnotaciones_Result">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="golesTotales" ColumnName="golesTotales" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

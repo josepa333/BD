@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Proyecto_bases.Models.rivalesAnotaciones_Result>
+    @{
+        ViewBag.Title = "Resultados de partidos jugados";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    <h2>Anotadores entre @ViewBag.idCasa y @ViewBag.idVisita</h2>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayName("ID Funcionario")
+            </th>
+            <th>
+                @Html.DisplayName("Total goles")
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>
+                    @Html.DisplayFor(model => item.nombre)
+                </th>
+                <th>
+                    @Html.DisplayFor(model => item.golesTotales)
+                </th>
+            </tr>
+        }
+    </table>

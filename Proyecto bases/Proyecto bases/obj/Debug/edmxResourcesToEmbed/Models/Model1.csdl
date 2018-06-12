@@ -3136,6 +3136,16 @@
       <Parameter Name="competicion" Mode="In" Type="String" />
       <Parameter Name="temporada" Mode="In" Type="Decimal" />
     </FunctionImport>
+    <FunctionImport Name="borrarUnaCompeticionTemporada">
+      <Parameter Name="competicion" Mode="In" Type="String" />
+      <Parameter Name="temporada" Mode="In" Type="Decimal" />
+      <Parameter Name="Fecha" Mode="InOut" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="rivalesAnotaciones" ReturnType="Collection(ProyectoBasesJARModel.rivalesAnotaciones_Result)">
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+      <Parameter Name="equipo1" Mode="In" Type="String" />
+      <Parameter Name="equipo2" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="arbitroDatos_Result">
     <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
@@ -3202,5 +3212,9 @@
   <ComplexType Name="infoArbitros_Result">
     <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
     <Property Type="Decimal" Name="promedio" Nullable="true" Precision="38" Scale="6" />
+  </ComplexType>
+  <ComplexType Name="rivalesAnotaciones_Result">
+    <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="golesTotales" Nullable="true" />
   </ComplexType>
 </Schema>
