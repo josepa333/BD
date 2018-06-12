@@ -150,5 +150,139 @@ namespace Proyecto_bases.Controllers
             return View(anotaciones);
         }
 
-    }
+
+        public ActionResult EditarJuegos(int idJ)
+        {
+            if (idJ == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            juego juego = db.juego.Find(idJ);
+            if (juego == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.idclubcasa = new SelectList(db.club, "idclub", "idclub", juego.idclubcasa);
+            ViewBag.idclubvisita = new SelectList(db.club, "idclub", "idclub", juego.idclubvisita);
+            ViewBag.idcalendario = new SelectList(db.fechacalendario, "idcalendario", "idcalendario", juego.idcalendario);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", juego.usrcreador);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", juego.usrmodificador);
+            return View(juego);
+        }
+
+        // POST: juegoes/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditarJuegos([Bind(Include = "idjuego,jugado,golescasa,golesvisita,idclubcasa,idclubvisita,idcalendario,sinopsis,usrcreador,fchcreacion,usrmodificador,fchmodificacion")] juego juego)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(juego).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.idclubcasa = new SelectList(db.club, "idclub", "idclub", juego.idclubcasa);
+            ViewBag.idclubvisita = new SelectList(db.club, "idclub", "idclub", juego.idclubvisita);
+            ViewBag.idcalendario = new SelectList(db.fechacalendario, "idcalendario", "idcalendario", juego.idcalendario);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", juego.usrcreador);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", juego.usrmodificador);
+            return View(juego);
+        }
+
+
+        public ActionResult BorrarJuegos(int idJ)
+        {
+            if (idJ == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            juego juego = db.juego.Find(idJ);
+            if (juego == null)
+            {
+                return HttpNotFound();
+            }
+            return View(juego);
+        }
+
+        // POST: juegoes/Delete/5
+        [HttpPost, ActionName("BorrarJuegos")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmedJuegos(decimal idJ)
+        {
+            juego juego = db.juego.Find(idJ);
+            db.juego.Remove(juego);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult EditarAnotadores(int id, int id2)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            anotadores anotadores = db.anotadores.Find(id, id2);
+            if (anotadores == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.idclub = new SelectList(db.club, "idclub", "idclub", anotadores.idclub);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", anotadores.usrcreador);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", anotadores.usrmodificador);
+            ViewBag.idjuego = new SelectList(db.juego, "idjuego", "idjuego", anotadores.idjuego);
+            ViewBag.idfuncionario = new SelectList(db.jugador, "idfuncionario", "idfuncionario", anotadores.idfuncionario);
+            return View(anotadores);
+        }
+
+        // POST: anotadores/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditarAnotadores([Bind(Include = "idfuncionario,idjuego,minjuego,video,idclub,usrcreador,fchcreacion,usrmodificador,fchmodificacion")] anotadores anotadores)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(anotadores).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.idclub = new SelectList(db.club, "idclub", "idclub", anotadores.idclub);
+            ViewBag.usrcreador = new SelectList(db.usuario, "usuario1", "usuario1", anotadores.usrcreador);
+            ViewBag.usrmodificador = new SelectList(db.usuario, "usuario1", "usuario1", anotadores.usrmodificador);
+            ViewBag.idjuego = new SelectList(db.juego, "idjuego", "idjuego", anotadores.idjuego);
+            ViewBag.idfuncionario = new SelectList(db.jugador, "idfuncionario", "idfuncionario", anotadores.idfuncionario);
+            return View(anotadores);
+        }
+
+
+        // GET: anotadores/Delete/5
+        public ActionResult BorrarAnotadores(int id, int id2)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            anotadores anotadores = db.anotadores.Find(id, id2);
+            if (anotadores == null)
+            {
+                return HttpNotFound();
+            }
+            return View(anotadores);
+        }
+
+        // POST: anotadores/Delete/5
+        [HttpPost, ActionName("BorrarAnotadores")]
+        [ValidateAntiForgeryToken]
+        public ActionResult BorrarAnotadoresConfirmado(int id, int id2)
+        {
+            anotadores anotadores = db.anotadores.Find(id, id2);
+            db.anotadores.Remove(anotadores);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+    }//
+
 }

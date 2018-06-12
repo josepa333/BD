@@ -7,6 +7,9 @@
 
 <h2>Juegos del idCalendario @ViewBag.idC</h2>
 
+<p>
+    @Html.ActionLink("Create New", "Create", "juegoes")
+</p>
 <table class="table">
     <tr>
         <th>
@@ -43,40 +46,44 @@
     </tr>
     @foreach (var item in Model)
     {
-    <tr>
-        <th>
-            @Html.DisplayFor(model => item.idjuego)
-        </th>
-        <th>
-            @Html.DisplayFor(model => item.idclubcasa)
-        </th>
-        <th>
-            @Html.DisplayFor(model => item.golescasa)
-        </th>
-        <th>
-            @Html.DisplayFor(model => item.idclubvisita)
-        </th>
-        <th>
-            @Html.DisplayFor(model => item.golesvisita)
-        </th>
-        <th>
-            @Html.DisplayFor(model => item.idcalendario)
-        </th>
-        <th>
-            @Html.DisplayFor(model => item.usrcreador)
-        </th>
-        <th>
-            @Html.DisplayFor(model => item.fchcreacion)
-        </th>
-        <th>
-            @Html.DisplayFor(model => item.usrmodificador)
-        </th>
-        <th>
-            @Html.DisplayFor(model => item.fchmodificacion)
-        </th>
-        <td>
-            @Html.ActionLink("Anotaciones", "anotadoresJuego", new { idJ = item.idjuego })
-        </td>
-    </tr>
+        <tr>
+            <th>
+                @Html.DisplayFor(model => item.idjuego)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.idclubcasa)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.golescasa)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.idclubvisita)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.golesvisita)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.idcalendario)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.usrcreador)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.fchcreacion)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.usrmodificador)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.fchmodificacion)
+            </th>
+            <td>
+                @Html.ActionLink("Edit", "EditarJuegos", new { idJ = item.idjuego }) |
+                @Html.ActionLink("Delete", "BorrarJuegos", new { idJ = item.idjuego }) |
+                @Html.ActionLink("Anotaciones", "anotadoresJuego", new { idJ = item.idjuego })
+            </td>
+        </tr>
     }
+
 </table>
+@Html.ActionLink("Index", "Index")

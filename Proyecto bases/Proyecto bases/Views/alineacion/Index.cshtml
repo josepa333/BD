@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Alineaciones</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -15,40 +15,34 @@
 
 
         <th>
-            @Html.DisplayNameFor(model => model.jugador.idfuncionario)
-        </th>
-
-        <th>
-            @Html.DisplayNameFor(model => model.jugador.funcionariodeportivo.nombre)
-        </th>
-
-        <th>
-            @Html.DisplayNameFor(model => model.idjuego)
-        </th>
-
-        <th>
-            @Html.DisplayNameFor(model => model.club.nombre)
-        </th>
-
-        <th>
-            @Html.DisplayNameFor(model => model.tipo)
-        </th>
-
-        <th>
-            @Html.DisplayNameFor(model => model.rendimiento)
+            @Html.DisplayName("ID Funcionario")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.usrcreador)
+            @Html.DisplayName("Nombre funcionario")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.fchcreacion)
-        </th>
-
-        <th>
-            @Html.DisplayNameFor(model => model.usrmodificador)
+            @Html.DisplayName("ID Juego")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.fchmodificacion)
+            @Html.DisplayName("Nombre club")
+        </th>
+        <th>
+            @Html.DisplayName("Tipo")
+        </th>
+        <th>
+            @Html.DisplayName("Rendimiento")
+        </th>
+        <th>
+            @Html.DisplayName("Usuario creador")
+        </th>
+        <th>
+            @Html.DisplayName("Fecha creacion")
+        </th>
+        <th>
+            @Html.DisplayName("Usuario modificador")
+        </th>
+        <th>
+            @Html.DisplayName("Fecha modificacion")
         </th>
 
         <th></th>

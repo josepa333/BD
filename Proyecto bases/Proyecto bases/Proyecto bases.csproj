@@ -575,6 +575,10 @@
     <Content Include="Views\crearCalendario\calendarioCreado.cshtml" />
     <Content Include="Views\rivalesAnotadores\anotadoresRivales.cshtml" />
     <Content Include="Views\rivalesAnotadores\Index.cshtml" />
+    <Content Include="Views\fechacalendarios\EditarJuegos.cshtml" />
+    <Content Include="Views\fechacalendarios\BorrarJuegos.cshtml" />
+    <Content Include="Views\fechacalendarios\EditarAnotadores.cshtml" />
+    <Content Include="Views\fechacalendarios\BorrarAnotadores.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
