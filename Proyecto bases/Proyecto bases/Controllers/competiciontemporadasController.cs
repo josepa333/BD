@@ -142,7 +142,7 @@ namespace Proyecto_bases.Controllers
             base.Dispose(disposing);
         }
 
-        public ActionResult Calendario(string id, int id2)
+        public ActionResult Calendario(string id, int id2,string id3)
         {
             SqlConnection conn = new SqlConnection("data source=ecRhin.ec.tec.ac.cr\\Estudiantes;initial catalog=ProyectoBasesJAR;persist security info=True;user id=josepalvarado;password=josepalvarado;MultipleActiveResultSets=True;App=EntityFramework");
             conn.Open();

@@ -9,6 +9,8 @@ using System.Web;
 using System.Web.Mvc;
 using Proyecto_bases.Models;
 
+
+
 namespace Proyecto_bases.Controllers
 {
     public class entrenadorController : Controller
