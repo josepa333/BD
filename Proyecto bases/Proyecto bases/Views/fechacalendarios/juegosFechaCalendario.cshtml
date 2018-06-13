@@ -12,72 +12,72 @@
 </p>
 <table class="table">
     <tr>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("ID Juego")
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("ID Club Casa")
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("Goles Casa")
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("ID Club Visita")
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("Goles Visita")
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("ID calendario")
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("Usuario creador")
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("Fecha creacion")
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("Usuario modificador")
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("Fecha modificacion")
         </th>
-        <th></th>
+        <th style="background-color:#1A2A40; color:#9CA6AD "></th>
     </tr>
     @foreach (var item in Model)
     {
         <tr>
-            <th>
+            <td style="background-color:#f2f2f2">
                 @Html.DisplayFor(model => item.idjuego)
-            </th>
-            <th>
+            </td>
+            <td style="background-color:#e0eeFF">
                 @Html.DisplayFor(model => item.idclubcasa)
-            </th>
-            <th>
+            </td>
+            <td style="background-color:#f2f2f2">
                 @Html.DisplayFor(model => item.golescasa)
-            </th>
-            <th>
+            </td>
+            <td style="background-color:#e0eeFF">
                 @Html.DisplayFor(model => item.idclubvisita)
-            </th>
-            <th>
+            </td>
+            <td style="background-color:#f2f2f2">
                 @Html.DisplayFor(model => item.golesvisita)
-            </th>
-            <th>
+            </td>
+            <td style="background-color:#f2f2f2">
                 @Html.DisplayFor(model => item.idcalendario)
-            </th>
-            <th>
+            </td>
+            <td style="background-color:#f2f2f2">
                 @Html.DisplayFor(model => item.usrcreador)
-            </th>
-            <th>
+            </td>
+            <td style="background-color:#f2f2f2">
                 @Html.DisplayFor(model => item.fchcreacion)
-            </th>
-            <th>
+            </td>
+            <td style="background-color:#f2f2f2">
                 @Html.DisplayFor(model => item.usrmodificador)
-            </th>
-            <th>
+            </td>
+            <td style="background-color:#f2f2f2">
                 @Html.DisplayFor(model => item.fchmodificacion)
-            </th>
-            <td>
+            </td>
+            <td style="background-color:#f2f2f2">
                 @Html.ActionLink("Edit", "EditarJuegos", new { idJ = item.idjuego }) |
                 @Html.ActionLink("Delete", "BorrarJuegos", new { idJ = item.idjuego }) |
                 @Html.ActionLink("Anotaciones", "anotadoresJuego", new { idJ = item.idjuego })

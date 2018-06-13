@@ -9,73 +9,78 @@
 
 <table class="table">
     <tr>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("ID Club")
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("Nombre Club")
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("Partidos jugados")
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("Partidos ganados")
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("Partidos perdidos")
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("Partidos empatados")
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("Goles a favor")
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("Goles en contra")
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("Puntos totales")
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("ID Federacion")
         </th>
-        <th></th>
+        <th style="background-color:#1A2A40; color:#9CA6AD "></th>
     </tr>
 
 
     @foreach (var item in Model)
     {
     <tr>
-        <th>
+        <td style="background-color:#f2f2f2">
+
             @Html.DisplayFor(model => item.idclub)
-        </th>
-        <th>
+        </td>
+        <td style="background-color:#e0eeFF">
             @Html.DisplayFor(model => item.nbrclub)
-        </th>
-        <th>
+        </td>
+        <td style="background-color:#f2f2f2">
+
             @Html.DisplayFor(model => item.pjugados)
-        </th>
-        <th>
+        </td>
+        <td style="background-color:#e0eeFF">
             @Html.DisplayFor(model => item.pganados)
-        </th>
-        <th>
+        </td>
+        <td style="background-color:#f2f2f2">
+
             @Html.DisplayFor(model => item.pperdidos)
-        </th>
-        <th>
+        </td>
+        <td style="background-color:#e0eeFF">
             @Html.DisplayFor(model => item.pempatados)
-        </th>
-        <th>
+        </td>
+        <td style="background-color:#f2f2f2">
+
             @Html.DisplayFor(model => item.golesAFavor)
-        </th>
-        <th>
+        </td>
+        <td style="background-color:#e0eeFF">
             @Html.DisplayFor(model => item.golesEnContra)
-        </th>
-        <th>
+        </td>
+        <td style="background-color:#f2f2f2">
+
             @Html.DisplayFor(model => item.puntosTotales)
-        </th>
-        <th>
+        </td>
+        <td style="background-color:#e0eeFF">
             @Html.DisplayFor(model => item.idfederacion)
-        </th>
+        </td>
     </tr>
     }
 </table>

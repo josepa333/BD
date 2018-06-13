@@ -12,69 +12,77 @@
 </p>
 <table class="table">
     <tr>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("ID Calendario")
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("Fecha")
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("ID Competicion")
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("ID Temporada")
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("Fecha creacion")
         </th>
-        <th>
-            @Html.DisplayName("Fecha modificacion")
-        </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("Usuario creador")
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
+            @Html.DisplayName("Fecha modificacion")
+        </th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayName("Usuario modificador")
         </th>
 
-        <th></th>
+        <th style="background-color:#1A2A40; color:#9CA6AD "></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        <td style="background-color:#f2f2f2">
+
             @Html.DisplayFor(modelItem => item.idcalendario)
         </td>
 
-        <td>
+        <td style="background-color:#e0eeFF">
+
             @Html.DisplayFor(modelItem => item.fecha)
         </td>
 
-        <td>
+        <td style="background-color:#f2f2f2">
+
             @Html.DisplayFor(modelItem => item.idcompeticion)
         </td>
 
-        <td>
+        <td style="background-color:#e0eeFF">
+
             @Html.DisplayFor(modelItem => item.idtemporada)
         </td>
 
-        <td>
+        <td style="background-color:#f2f2f2">
+
             @Html.DisplayFor(modelItem => item.fchcreacion)
         </td>
+        <td style="background-color:#e0eeFF">
 
-        <td>
-            @Html.DisplayFor(modelItem => item.fchmodificacion)
-        </td>
-
-        <td>
             @Html.DisplayFor(modelItem => item.usrcreador)
         </td>
 
-        <td>
+        <td style="background-color:#f2f2f2">
+
+            @Html.DisplayFor(modelItem => item.fchmodificacion)
+        </td>
+
+        <td style="background-color:#e0eeFF">
+
             @Html.DisplayFor(modelItem => item.usrmodificador)
         </td>
 
-        <td>
+        <td style="background-color:#f2f2f2">
+
             @Html.ActionLink("Edit", "Edit", new { id = item.idcalendario }) |
             @Html.ActionLink("Details", "Details", new { id = item.idcalendario }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.idcalendario }) |

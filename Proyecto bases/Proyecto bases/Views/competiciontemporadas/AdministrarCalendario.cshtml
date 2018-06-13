@@ -10,50 +10,54 @@
 
 <table class="table">
     <tr>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
+
             @Html.DisplayNameFor(model => model.idcalendario)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
+
             @Html.DisplayNameFor(model => model.fecha)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
+
             @Html.DisplayNameFor(model => model.fchcreacion)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fchmodificacion)
-        </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
+
             @Html.DisplayNameFor(model => model.usrcreador)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
+
+            @Html.DisplayNameFor(model => model.fchmodificacion)
+        </th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
+
             @Html.DisplayNameFor(model => model.usrmodificador)
         </th>
-        <th></th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
+        </th>
     </tr>
 
     @foreach (var item in Model)
     {
     <tr>
-        <td>
+        <td style="background-color:#f2f2f2">
             @Html.DisplayFor(modelItem => item.idcalendario)
         </td>
-        <td>
+        <td style="background-color:#e0eeFF">
             @Html.DisplayFor(modelItem => item.fecha)
         </td>
-        <td>
+        <td style="background-color:#f2f2f2">
             @Html.DisplayFor(modelItem => item.fchcreacion)
         </td>
-        <td>
+        <td style="background-color:#e0eeFF">
+            @Html.DisplayFor(modelItem => item.usrcreador)
+        </td>
+        <td style="background-color:#f2f2f2">
             @Html.DisplayFor(modelItem => item.fchmodificacion)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.competiciontemporada.usrcreador)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.usuario.usrcreador)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.usuario1.usrcreador)
+        <td style="background-color:#e0eeFF">
+            @Html.DisplayFor(modelItem => item.usrcreador)
         </td>
     </tr>
 }

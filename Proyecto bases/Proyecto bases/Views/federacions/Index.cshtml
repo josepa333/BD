@@ -22,16 +22,23 @@
             @Html.DisplayNameFor(model => model.fchfundada)
         </th>
         <th style="background-color:#1A2A40; color:#9CA6AD ">
-            @Html.DisplayNameFor(model => model.fchcreacion)
-        </th>
-        <th style="background-color:#1A2A40; color:#9CA6AD ">
-            @Html.DisplayNameFor(model => model.fchmodificacion)
-        </th>
-        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayNameFor(model => model.usrcreador)
         </th>
         <th style="background-color:#1A2A40; color:#9CA6AD ">
+<<<<<<< HEAD
+            @Html.DisplayNameFor(model => model.usrcreador)
+        </th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
+            @Html.DisplayNameFor(model => model.fchmodificacion)
+=======
+            @Html.DisplayNameFor(model => model.fchcreacion)
+        </th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayNameFor(model => model.usrmodificador)
+>>>>>>> 988a00fef626f8faaca8b211645197def9796cc9
+        </th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
+            @Html.DisplayNameFor(model => model.fchmodificacion)
         </th>
         <th style="background-color:#1A2A40; color:#9CA6AD "></th>
     </tr>
@@ -43,21 +50,28 @@
         </td>
         <td style="background-color:#e0eeFF">
             @Html.DisplayFor(modelItem => item.nombre)
-        </td >
+        </td>
         <td style="background-color:#f2f2f2">
             @Html.DisplayFor(modelItem => item.fchfundada)
-        </td>
-        <td style="background-color:#e0eeFF">
-            @Html.DisplayFor(modelItem => item.fchcreacion)
-        </td>
-        <td style="background-color:#f2f2f2">
-            @Html.DisplayFor(modelItem => item.fchmodificacion)
         </td>
         <td style="background-color:#e0eeFF">
             @Html.DisplayFor(modelItem => item.usrcreador)
         </td>
         <td style="background-color:#f2f2f2">
+<<<<<<< HEAD
+            @Html.DisplayFor(modelItem => item.usrcreador)
+        </td>
+        <td style="background-color:#e0eeFF">
+            @Html.DisplayFor(modelItem => item.fchmodificacion)
+=======
+            @Html.DisplayFor(modelItem => item.fchcreacion)
+        </td>
+        <td style="background-color:#e0eeFF">
             @Html.DisplayFor(modelItem => item.usrmodificador)
+>>>>>>> 988a00fef626f8faaca8b211645197def9796cc9
+        </td>
+        <td style="background-color:#f2f2f2">
+            @Html.DisplayFor(modelItem => item.fchmodificacion)
         </td>
         <td style="background-color:#e0eeFF">
             @Html.ActionLink("Edit", "Edit", new { id = item.idfederacion }) |

@@ -9,69 +9,79 @@
 </p>
 <table class="table">
     <tr>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
+
             @Html.DisplayNameFor(model => model.idfuncionario)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
+
             @Html.DisplayNameFor(model => model.idjuego)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
+
             @Html.DisplayNameFor(model => model.idclub)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
+
             @Html.DisplayNameFor(model => model.minjuego)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
+
             @Html.DisplayNameFor(model => model.video)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
+
             @Html.DisplayNameFor(model => model.fchcreacion)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fchmodificacion)
-        </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
+
             @Html.DisplayNameFor(model => model.usrcreador)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
+
+            @Html.DisplayNameFor(model => model.fchmodificacion)
+        </th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
+
             @Html.DisplayNameFor(model => model.usrmodificador)
         </th>
-        <th></th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
+        </th>
     </tr>
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.idfuncionario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.idjuego)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.idclub)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.minjuego)
-            </td>
-            <td>
-                <video src="@Url.Content("~/resources/" + item.video + ".mp4")" width="75" height="75" video autoplay />
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.fchcreacion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.fchmodificacion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.usrcreador)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.usrmodificador)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "EditarAnotadores", new { id = item.idjuego, id2 = item.minjuego }) |
-                @Html.ActionLink("Delete", "BorrarAnotadores", new { id = item.idjuego, id2 = item.minjuego })
-            </td>
-        </tr>
+    <tr>
+        <td style="background-color:#f2f2f2">
+            @Html.DisplayFor(modelItem => item.idfuncionario)
+        </td>
+        <td style="background-color:#e0eeFF">
+            @Html.DisplayFor(modelItem => item.idjuego)
+        </td>
+        <td style="background-color:#f2f2f2">
+            @Html.DisplayFor(modelItem => item.idclub)
+        </td>
+        <td style="background-color:#e0eeFF">
+            @Html.DisplayFor(modelItem => item.minjuego)
+        </td>
+        <td style="background-color:#f2f2f2">
+            <video src="@Url.Content("~/resources/" + item.video + ".mp4")" width="75" height="75" video autoplay />
+        </td>
+        <td style="background-color:#e0eeFF">
+            @Html.DisplayFor(modelItem => item.fchcreacion)
+        </td>
+        <td style="background-color:#f2f2f2">
+            @Html.DisplayFor(modelItem => item.usrcreador)
+        </td>
+        <td style="background-color:#e0eeFF">
+            @Html.DisplayFor(modelItem => item.fchmodificacion)
+        </td>
+        <td style="background-color:#f2f2f2">
+            @Html.DisplayFor(modelItem => item.usrmodificador)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditarAnotadores", new { id = item.idjuego, id2 = item.minjuego }) |
+            @Html.ActionLink("Delete", "BorrarAnotadores", new { id = item.idjuego, id2 = item.minjuego })
+        </td>
+    </tr>
     }
 </table>
