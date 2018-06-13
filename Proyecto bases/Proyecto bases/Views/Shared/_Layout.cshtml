@@ -25,10 +25,12 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-pills">
                     <li role="presentation"><a href=" /Home/Index" style="color:#9CA6AD"> Home</a></li>
-                    <li>@Html.ActionLink("Consultas", "Consultas","Home", null, new { style = "color:#9CA6AD" })</li>
+                    <li>@Html.ActionLink("Consultas", "Consultas", "Home", null, new { style = "color:#9CA6AD" })</li>
                     <li>@Html.ActionLink("Mantenimiento", "Mantenimiento", "Home", null, new { style = "color:#9CA6AD" })</li>
+                    <li>@Html.ActionLink("Crear calendario", "Index", "crearCalendario", null, new { style = "color:#9CA6AD" })</li>
                     <li>@Html.ActionLink("About", "About", "Home", null, new { style = "color:#9CA6AD" })</li>
                     <li>@Html.ActionLink("Contact Us", "Contact", "Home", null, new { style = "color:#9CA6AD" })</li>
+
                 </ul>
             </div>
         </div>
