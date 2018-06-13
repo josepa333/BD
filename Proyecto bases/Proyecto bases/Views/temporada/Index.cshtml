@@ -12,49 +12,49 @@
 </p>
 <table class="table">
     <tr>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayNameFor(model => model.idtemporada)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayNameFor(model => model.nombre)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayNameFor(model => model.usrcreador)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayNameFor(model => model.fchcreacion)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayNameFor(model => model.usrmodificador)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayNameFor(model => model.fchmodificacion)
         </th>
 
-        <th></th>
+        <th style="background-color:#1A2A40; color:#9CA6AD "></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <th>
+        <td style="background-color:#f2f2f2">
             @Html.DisplayFor(modelItem => item.idtemporada)
-        </th>
-        <th>
+        </td>
+        <td style="background-color:#e0eeFF">
             @Html.DisplayFor(modelItem => item.nombre)
-        </th>
-        <th>
+        </td>
+        <td style="background-color:#f2f2f2">
             @Html.DisplayFor(modelItem => item.usrcreador)
-        </th>
-        <th>
+        </td>
+        <td style="background-color:#e0eeFF">
             @Html.DisplayFor(modelItem => item.fchcreacion)
-        </th>
-        <th>
+        </td>
+        <td style="background-color:#f2f2f2">
             @Html.DisplayFor(modelItem => item.usrmodificador)
-        </th>
-        <th>
+        </td>
+        <td style="background-color:#e0eeFF">
             @Html.DisplayFor(modelItem => item.fchmodificacion)
-        </th>
-        <td>
+        </td>
+        <td style="background-color:#f2f2f2">
             @Html.ActionLink("Edit", "Edit", new { id = item.idtemporada }) |
             @Html.ActionLink("Details", "Details", new { id = item.idtemporada }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.idtemporada })

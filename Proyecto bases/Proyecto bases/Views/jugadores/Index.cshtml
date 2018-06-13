@@ -12,60 +12,60 @@
 </p>
 <table class="table">
     <tr>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayNameFor(model => model.idfuncionario)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayNameFor(model => model.rendimiento)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayNameFor(model => model.peso)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayNameFor(model => model.altura)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayNameFor(model => model.usrcreador)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayNameFor(model => model.fchcreacion)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayNameFor(model => model.usrmodificador)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayNameFor(model => model.fchmodificacion)
         </th>
-        <th></th>
+        <th style="background-color:#1A2A40; color:#9CA6AD "></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        <td style="background-color:#f2f2f2">
             @Html.DisplayFor(modelItem => item.idfuncionario)
         </td>
-        <td>
+        <td style="background-color:#e0eeFF">
             @Html.DisplayFor(modelItem => item.rendimiento)
         </td>
-        <td>
+        <td style="background-color:#f2f2f2">
             @Html.DisplayFor(modelItem => item.peso)
         </td>
-        <td>
+        <td style="background-color:#e0eeFF">
             @Html.DisplayFor(modelItem => item.altura)
         </td>
-        <td>
+        <td style="background-color:#f2f2f2">
             @Html.DisplayFor(modelItem => item.usrcreador)
         </td>
-        <td>
+        <td style="background-color:#e0eeFF">
             @Html.DisplayFor(modelItem => item.fchcreacion)
         </td>
-        <td>
+        <td style="background-color:#f2f2f2">
             @Html.DisplayFor(modelItem => item.usrmodificador)
         </td>
-        <td>
+        <td style="background-color:#e0eeFF">
             @Html.DisplayFor(modelItem => item.fchmodificacion)
         </td>
-        <td>
+        <td style="background-color:#f2f2f2">
             @Html.ActionLink("Edit", "Edit", new { id = item.idfuncionario }) |
             @Html.ActionLink("Details", "Details", new { id = item.idfuncionario }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.idfuncionario }) |

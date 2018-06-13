@@ -12,66 +12,66 @@
 </p>
 <table class="table">
     <tr>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayNameFor(model => model.club.nombre)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayNameFor(model => model.idfuncionario)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayNameFor(model => model.idcompeticion)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayNameFor(model => model.idtemporada)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayNameFor(model => model.sinopsis)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayNameFor(model => model.usrcreador)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayNameFor(model => model.fchcreacion)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayNameFor(model => model.usrmodificador)
         </th>
-        <th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
             @Html.DisplayNameFor(model => model.fchmodificacion)
         </th>
-        <th></th>
+        <th style="background-color:#1A2A40; color:#9CA6AD "></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <th>
+        <td style="background-color:#f2f2f2">
             @Html.DisplayFor(modelItem => item.club.nombre)
-        </th>
-        <th>
+        </td>
+        <td style="background-color:#e0eeFF">
             @Html.DisplayFor(modelItem => item.idfuncionario)
-        </th>
-        <th>
+        </td>
+        <td style="background-color:#f2f2f2">
             @Html.DisplayFor(modelItem => item.idcompeticion)
-        </th>
-        <th>
+        </td>
+        <td style="background-color:#e0eeFF">
             @Html.DisplayFor(modelItem => item.idtemporada)
-        </th>
-        <th>
+        </td>
+        <td style="background-color:#f2f2f2">
             @Html.DisplayFor(modelItem => item.sinopsis)
-        </th>
-        <th>
+        </td>
+        <td style="background-color:#e0eeFF">
             @Html.DisplayFor(modelItem => item.usrcreador)
-        </th>
-        <th>
+        </td>
+        <td style="background-color:#f2f2f2">
             @Html.DisplayFor(modelItem => item.fchcreacion)
-        </th>
-        <th>
+        </td>
+        <td style="background-color:#e0eeFF">
             @Html.DisplayFor(modelItem => item.usrmodificador)
-        </th>
-        <th>
+        </td>
+        <td style="background-color:#f2f2f2">
             @Html.DisplayFor(modelItem => item.fchmodificacion)
-        </th>
-        <td>
+        </td>
+        <td style="background-color:#e0eeFF">
             @Html.ActionLink("Edit", "Edit", new {  id=item.idfuncionario, id2 = item.idclub, id3 = item.idtemporada, id4 = item.idcompeticion }) |
             @Html.ActionLink("Details", "Details", new { id = item.idfuncionario, id2 = item.idclub, id3 = item.idtemporada, id4 = item.idcompeticion }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.idfuncionario, id2 = item.idclub, id3 = item.idtemporada, id4 = item.idcompeticion })
