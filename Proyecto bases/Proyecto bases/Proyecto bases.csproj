@@ -379,14 +379,14 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Content Include="Resources\1.png" />
-    <Content Include="Resources\2017127861.png" />
-    <Content Include="Resources\117700265.png" />
-    <Content Include="Resources\2.png" />
-    <Content Include="Resources\LionelMessi5.png" />
+    <Content Include="Resources\FD0.png" />
+    <Content Include="Resources\FD25.png" />
+    <Content Include="Resources\FD5.png" />
+    <Content Include="Resources\FD4.png" />
+    <Content Include="Resources\FD2.png" />
     <Content Include="Resources\15.mp4" />
-    <Content Include="Resources\Paulo-Dybala-Juventus-ProRendersFutboleros-Autor.-Marcos-Pérez.png" />
-    <Content Include="Resources\uno.JPG" />
+    <Content Include="Resources\FD3.png" />
+    <Content Include="Resources\FIFA.svg.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -579,6 +579,8 @@
     <Content Include="Views\fechacalendarios\BorrarJuegos.cshtml" />
     <Content Include="Views\fechacalendarios\EditarAnotadores.cshtml" />
     <Content Include="Views\fechacalendarios\BorrarAnotadores.cshtml" />
+    <Content Include="Views\Home\Mantenimiento.cshtml" />
+    <Content Include="Views\Home\Consultas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

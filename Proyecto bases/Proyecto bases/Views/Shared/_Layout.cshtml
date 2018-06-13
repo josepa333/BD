@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -7,50 +8,36 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Styles.Render("~/Content/jqueryui")
-    <link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 </head>
+
+
+
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <style>
+        h2 {
+            color: #9CA6AD
+        }
+    </style>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#1A2A40">
+        <img src="~/Resources/FIFA.svg.png" title="title" alt="IMAGES" width="100" height="50" />
         <div class="container">
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-pills">
-                    <li role="presentation"><a href=" /Home/Index"> Home</a></li>
-                    <li>@Html.ActionLink("Competicion temporada", "Index", "competiciontemporadas")</li>
-                    <li>@Html.ActionLink("Funcionario deportivo", "Index", "funcionariodeportivo")</li>
-                    <li>@Html.ActionLink("Juegos", "Index", "juegoes")</li>
-                    <li>@Html.ActionLink("Fechas calendario", "Index", "fechacalendarios")</li>
-                    <li>@Html.ActionLink("Competicion", "Index", "competicions")</li>
-                    <li>@Html.ActionLink("Federacion", "Index", "federacions")</li>
-                    <li>@Html.ActionLink("Alineacion", "Index", "alineacion")</li>
-                    <li>@Html.ActionLink("Arbitros", "Index", "arbitros")</li>
-                    <li>@Html.ActionLink("Contratos", "Index", "contratoes")</li>
-                    <li>@Html.ActionLink("Arbitro juego", "Index", "arbitrojuego")</li>
-                    <li>@Html.ActionLink("Temporada", "Index", "temporada")</li>
-                    <li>@Html.ActionLink("Funcionario CT", "Index", "funcclubcomptemporada")</li>
-                    <li>@Html.ActionLink("Usuarios", "Index", "usuarios")</li>
-                    <li>@Html.ActionLink("Anotadores", "Index", "anotadores")</li>
-                    <li>@Html.ActionLink("Clubes", "Index", "clubs")</li>
-                    <li>@Html.ActionLink("Jugadores", "Index", "jugadores")</li>
-                    <li>@Html.ActionLink("Club competicion temporada", "Index", "clubcompeticiontemporada")</li>
-                    <li>@Html.ActionLink("Entrenadores", "Index", "entrenador")</li>
-                    <li>@Html.ActionLink("Rivales", "Index", "rivales")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Calendario", "Index", "crearCalendario")</li>
-                    <li>@Html.ActionLink("Anotadores de rivales", "Index", "rivalesAnotadores")</li>
+                    <li role="presentation"><a href=" /Home/Index" style="color:#9CA6AD"> Home</a></li>
+                    <li>@Html.ActionLink("Consultas", "Consultas","Home", null, new { style = "color:#9CA6AD" })</li>
+                    <li>@Html.ActionLink("Mantenimiento", "Mantenimiento", "Home", null, new { style = "color:#9CA6AD" })</li>
+                    <li>@Html.ActionLink("About", "About", "Home", null, new { style = "color:#9CA6AD" })</li>
+                    <li>@Html.ActionLink("Contact Us", "Contact", "Home", null, new { style = "color:#9CA6AD" })</li>
                 </ul>
             </div>
         </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Fifa TEC.</p>
         </footer>
     </div>
 

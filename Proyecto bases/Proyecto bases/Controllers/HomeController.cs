@@ -13,6 +13,16 @@ namespace Proyecto_bases.Controllers
             return View();
         }
 
+        public ActionResult Mantenimiento()
+        {
+            return View();
+        }
+
+        public ActionResult Consultas()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

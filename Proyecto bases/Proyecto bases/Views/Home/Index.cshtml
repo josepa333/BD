@@ -1,29 +1,26 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
 <div class="jumbotron">
     <h1>FIFA TEC</h1>
     <p class="lead">Este modelo ayuda a planear y organizar todos los equipos, funcionarios y temporadas de Futbol</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Generar Datos &raquo;</a></p>
 </div>
-
 <div class="row">
     <div class="col-md-4">
-        <h2>Buscar Funcionario</h2>
+        <h2 style="color:#9CA6AD">Consultas</h2>
         <p>
-            FIFA TEC permite buscar la informacion de los funcionarios que estan en el sistema para mejor seguimiento de ellos.
+            Mediante esta opcion se permiten realizar algunas consultas al programa.
         </p>
-        <p><a class="btn btn-default" href="Agregar directorio destino">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" href="/Home/consultas" style="background-color:#192637; color:#F2F2F2">Realizar consulta &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Mantenimiento de Torneo</h2>
-        <p>Esta herramienta permite modificar la informacion de un torneo espesifico para evitar que un mal ingreso de los datos obligue a reiniciar la plataforma.</p>
-        <p><a class="btn btn-default" href="/competiciontemporadas/Index">Ver Competencia &raquo;</a></p>
+        <h2 style="color:#9CA6AD">Mantenimiento de Torneo</h2>
+        <p>Esta herramienta permite modificar la informacion de las tablas de la base desde la herramienta web.</p>
+        <p><a class="btn btn-default" href="/Home/mantenimiento" style="background-color:#192637; color:#F2F2F2">Ver Competencia &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Generacion de Torneo</h2>
-        <p>Mediante esta herramienta se pueden crear torneos aleatorios con resultados ya establecidos para poder ayudar con el aprendisaje de esta.</p>
-        <p><a class="btn btn-default" href="/Home/Contact">Learn more &raquo;</a></p>
+        <h2 style="color:#9CA6AD">Contactos</h2>
+        <p>En caso de que encuentre algun error, puede contactarnos en las siguentes direcciones.</p>
+        <p><a class="btn btn-default" href="/Home/Contact" style="background-color:#192637; color:#F2F2F2">Learn more &raquo;</a></p>
     </div>
 </div>
