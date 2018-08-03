@@ -1,0 +1,91 @@
+﻿@model Paises.ViewModel.Multipledata
+
+@{
+    ViewBag.Title = "Multipledata";
+}
+
+
+<h2>Personas</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Nombre")
+        </th>
+        <th>
+            @Html.DisplayName("Fecha nacimiento")
+        </th>
+        <th>
+            @Html.DisplayName("Correo")
+        </th>
+        <th>
+            @Html.DisplayName("Pais nacimiento")
+        </th>
+        <th>
+            @Html.DisplayName("Pais de residencia")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Personas)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nbrPersona)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fchNacimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.correo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pais1.nbrPais)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pais2.nbrPais)
+            </td>
+        </tr>
+    }
+
+</table>
+
+<h3>Paises</h3>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Nombre")
+        </th>
+        <th>
+            @Html.DisplayName("Area")
+        </th>
+        <th>
+            @Html.DisplayName("Poblacion")
+        </th>
+        <th>
+            @Html.DisplayName("Presidente")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Paises)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nbrPais)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.area)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.poblacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.persona.nbrPersona)
+            </td>
+        </tr>
+    }
+
+</table>
