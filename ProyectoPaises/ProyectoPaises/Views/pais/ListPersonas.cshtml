@@ -19,10 +19,10 @@
             @Html.DisplayNameFor(model => model.correo)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.pais1.nbrPais)
+            @Html.DisplayNameFor(model => model.paisNacimiento)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.pais2.nbrPais)
+            @Html.DisplayNameFor(model => model.paisResidencia)
         </th>
         <th></th>
     </tr>
@@ -40,20 +40,20 @@
                 @Html.DisplayFor(modelItem => item.correo)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.pais1.nbrPais)
+                @Html.DisplayFor(modelItem => item.paisNacimiento)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.pais2.nbrPais)
+                @Html.DisplayFor(modelItem => item.paisResidencia)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.cedula }) |
-                @Html.ActionLink("Details", "Details", new { id = item.cedula }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.cedula })
+                @Html.ActionLink("Edit", "EditPersona", new { id = item.cedula }) |
+                @Html.ActionLink("Delete", "DeletePersona", new { id = item.cedula })
             </td>
         </tr>
     }
 
 </table>
+
 
 
 <ul class="pagination">

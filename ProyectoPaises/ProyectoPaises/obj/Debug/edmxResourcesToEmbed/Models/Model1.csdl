@@ -65,7 +65,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="proyectoBases2Entities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="proyectoBases2Entities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="pais" EntityType="Self.pais" />
     <EntitySet Name="persona" EntityType="Self.persona" />
     <AssociationSet Name="pais_idPresidenteActual_fk" Association="Self.pais_idPresidenteActual_fk">

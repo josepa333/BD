@@ -34,7 +34,7 @@ namespace ProyectoPaises.Models
         public virtual pais pais1 { get; set; }
         public virtual pais pais2 { get; set; }
 
-        public List<persona> Listar(decimal idPais,int pageIndex, int pageSize, out int pageCount)
+        public List<persona> Listar(decimal idPais, int pageIndex, int pageSize, out int pageCount)
         {
             List<persona> orders = new List<persona>();
             using (SqlConnection conexion = new SqlConnection("Data Source=ecRhin.ec.tec.ac.cr\\Estudiantes;Initial Catalog=proyectoBases2;Persist Security Info=True;User ID=josepalvarado;Password=josepalvarado;MultipleActiveResultSets=True;Application Name=EntityFramework"))
@@ -71,5 +71,6 @@ namespace ProyectoPaises.Models
             }
             return orders;
         }
+
     }
 }

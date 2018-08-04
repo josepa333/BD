@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="proyectoBases2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="proyectoBases2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="pais">
           <Key>
             <PropertyRef Name="idPais" />
@@ -106,7 +106,8 @@
             <End Role="persona" EntitySet="persona" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="proyectoBases2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -175,7 +176,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="proyectoBases2Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="proyectoBases2Entities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="pais" EntityType="Self.pais" />
           <EntitySet Name="persona" EntityType="Self.persona" />
           <AssociationSet Name="pais_idPresidenteActual_fk" Association="Self.pais_idPresidenteActual_fk">
@@ -265,7 +266,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="proyectoBases2ModelStoreContainer" CdmEntityContainer="proyectoBases2Entities">
+        <EntityContainerMapping StorageEntityContainer="proyectoBases2ModelStoreContainer" CdmEntityContainer="proyectoBases2Entities2">
           <EntitySetMapping Name="pais">
             <EntityTypeMapping TypeName="proyectoBases2Model.pais">
               <MappingFragment StoreEntitySet="pais">

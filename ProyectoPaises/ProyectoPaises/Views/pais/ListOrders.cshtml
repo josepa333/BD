@@ -15,7 +15,7 @@
             @Html.DisplayNameFor(model => model.poblacion)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.persona.nbrPersona)
+            @Html.DisplayNameFor(model => model.idPresidenteActual)
         </th>
         <th></th>
     </tr>
@@ -33,13 +33,15 @@
                 @Html.DisplayFor(modelItem => item.poblacion)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.persona.nbrPersona)
+                @Html.DisplayFor(modelItem => item.idPresidenteActual)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.idPais }) |
-                @Html.ActionLink("Details", "Details", new { id = item.idPais }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.idPais }) |
-                @Html.ActionLink("Personas", "Personas", new { idPais = item.idPais })
+                <ul class="pagination">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.idPais }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.idPais }) |
+                    @Html.ActionLink("Personas", "Personas", new { idPais = item.idPais })
+
+                </ul>
             </td>
         </tr>
     }

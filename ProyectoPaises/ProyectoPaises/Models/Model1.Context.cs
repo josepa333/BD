@@ -15,10 +15,10 @@ namespace ProyectoPaises.Models
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class proyectoBases2Entities : DbContext
+    public partial class proyectoBases2Entities2 : DbContext
     {
-        public proyectoBases2Entities()
-            : base("name=proyectoBases2Entities")
+        public proyectoBases2Entities2()
+            : base("name=proyectoBases2Entities2")
         {
         }
     

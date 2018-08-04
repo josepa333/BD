@@ -12,7 +12,7 @@ namespace ProyectoPaises.Controllers
 {
     public class personasController : Controller
     {
-        private proyectoBases2Entities db = new proyectoBases2Entities();
+        private proyectoBases2Entities2 db = new proyectoBases2Entities2();
 
         // GET: personas
         public ActionResult Index()
@@ -35,6 +35,10 @@ namespace ProyectoPaises.Controllers
             }
             return View(persona);
         }
+
+
+        
+
 
         // GET: personas/Create
         public ActionResult Create()

@@ -60,7 +60,7 @@ namespace ProyectoPaises.Models
                                 order.nbrPais = (string)reader["nbrPais"];
                                 order.area = (decimal)reader["area"];
                                 order.poblacion = (decimal)reader["poblacion"];
-                                //order.idPresidenteActual = (Nullable<decimal>)reader["idPresidenteActual"];
+                                if (reader["idPresidenteActual"] != DBNull.Value) order.idPresidenteActual = (decimal)reader["idPresidenteActual"];
                                 orders.Add(order);
                             }
                         }

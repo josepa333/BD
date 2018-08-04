@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="proyectoBases2ModelStoreContainer" CdmEntityContainer="proyectoBases2Entities">
+  <EntityContainerMapping StorageEntityContainer="proyectoBases2ModelStoreContainer" CdmEntityContainer="proyectoBases2Entities2">
     <EntitySetMapping Name="pais">
       <EntityTypeMapping TypeName="proyectoBases2Model.pais">
         <MappingFragment StoreEntitySet="pais">

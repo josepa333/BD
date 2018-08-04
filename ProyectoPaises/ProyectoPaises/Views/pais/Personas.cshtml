@@ -50,8 +50,9 @@
 </table>
 
 <ul class="pagination">
-    <li> @Html.ActionLink("Anterior", "Personas", new { idPais = (ViewBag.idPais > 1 ) ? (ViewBag.idPais -1) : ViewBag.idPais, id = 1 }) </li>
-    <li>@Html.ActionLink("Siguiente", "Personas", new { idPais = (ViewBag.idPais + 1) , id = 1 }) </li>
+    <li> @Html.ActionLink("Anterior", "Personas", new { idPais = (ViewBag.idPais > 1) ? (ViewBag.idPais - 1) : ViewBag.idPais, id = 1 }) </li>
+    <li><span>Pág. @ViewBag.idPais de @ViewBag.totalPaises</span></li>
+    <li>@Html.ActionLink("Siguiente", "Personas", new { idPais = (ViewBag.idPais + 1), id = 1 }) </li>
 </ul>
 
 

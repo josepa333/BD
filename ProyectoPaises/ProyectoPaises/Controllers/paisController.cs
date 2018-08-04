@@ -12,7 +12,7 @@ namespace ProyectoPaises.Controllers
 {
     public class paisController : Controller
     {
-        private proyectoBases2Entities db = new proyectoBases2Entities();
+        private proyectoBases2Entities2 db = new proyectoBases2Entities2();
 
         // GET: pais
         public ActionResult Index(int id = 1)
@@ -39,6 +39,7 @@ namespace ProyectoPaises.Controllers
         //Paginacion de las personas de la ventana de cada pais
         public ActionResult Personas(decimal idPais, int id = 1)
         {
+            ViewBag.totalPaises = db.pais.Count();
             pais pais = db.pais.Where(x => x.idPais == idPais).First();
             ViewBag.nombrePais = pais.nbrPais;
             ViewBag.idPais = idPais;
@@ -63,6 +64,46 @@ namespace ProyectoPaises.Controllers
             ViewBag.PageIndexPersonas = pageIndex;
             return personas;
         }
+
+        //Configurar datos personas por pais
+
+
+        public ActionResult EditPersona(decimal id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            persona persona = db.persona.Find(id);
+            if (persona == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.paisNacimiento = new SelectList(db.pais, "idPais", "nbrPais", persona.paisNacimiento);
+            ViewBag.paisResidencia = new SelectList(db.pais, "idPais", "nbrPais", persona.paisResidencia);
+            return View(persona);
+        }
+
+        // POST: personas/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditPersona([Bind(Include = "cedula,nbrPersona,paisNacimiento,paisResidencia,fchNacimiento,correo")] persona persona)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(persona).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.paisNacimiento = new SelectList(db.pais, "idPais", "nbrPais", persona.paisNacimiento);
+            ViewBag.paisResidencia = new SelectList(db.pais, "idPais", "nbrPais", persona.paisResidencia);
+            return View(persona);
+        }
+
+ 
+
 
         // GET: pais/Details/5
         public ActionResult Details(decimal id)

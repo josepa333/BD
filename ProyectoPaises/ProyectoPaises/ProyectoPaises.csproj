@@ -211,8 +211,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -270,6 +270,8 @@
     <Content Include="Views\personas\Details.cshtml" />
     <Content Include="Views\personas\Edit.cshtml" />
     <Content Include="Views\personas\Index.cshtml" />
+    <Content Include="Views\pais\EditPersona.cshtml" />
+    <Content Include="Views\pais\DeletePersona.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
