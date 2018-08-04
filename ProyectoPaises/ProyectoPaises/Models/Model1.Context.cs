@@ -68,5 +68,35 @@ namespace ProyectoPaises.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<paginarPaises_Result>("paginarPaises", pageIndexParameter, pageSizeParameter, pageCount);
         }
+    
+        public virtual ObjectResult<paginarPersonas_Result> paginarPersonas(Nullable<int> pageIndex, Nullable<int> pageSize, ObjectParameter pageCount)
+        {
+            var pageIndexParameter = pageIndex.HasValue ?
+                new ObjectParameter("PageIndex", pageIndex) :
+                new ObjectParameter("PageIndex", typeof(int));
+    
+            var pageSizeParameter = pageSize.HasValue ?
+                new ObjectParameter("PageSize", pageSize) :
+                new ObjectParameter("PageSize", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<paginarPersonas_Result>("paginarPersonas", pageIndexParameter, pageSizeParameter, pageCount);
+        }
+    
+        public virtual ObjectResult<paginarPersonasPorPais_Result> paginarPersonasPorPais(Nullable<decimal> idPais, Nullable<int> pageIndex, Nullable<int> pageSize, ObjectParameter pageCount)
+        {
+            var idPaisParameter = idPais.HasValue ?
+                new ObjectParameter("idPais", idPais) :
+                new ObjectParameter("idPais", typeof(decimal));
+    
+            var pageIndexParameter = pageIndex.HasValue ?
+                new ObjectParameter("PageIndex", pageIndex) :
+                new ObjectParameter("PageIndex", typeof(int));
+    
+            var pageSizeParameter = pageSize.HasValue ?
+                new ObjectParameter("PageSize", pageSize) :
+                new ObjectParameter("PageSize", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<paginarPersonasPorPais_Result>("paginarPersonasPorPais", idPaisParameter, pageIndexParameter, pageSizeParameter, pageCount);
+        }
     }
 }

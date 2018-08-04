@@ -95,6 +95,17 @@
       <Parameter Name="PageSize" Mode="In" Type="Int32" />
       <Parameter Name="PageCount" Mode="InOut" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="paginarPersonas" ReturnType="Collection(proyectoBases2Model.paginarPersonas_Result)">
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="PageCount" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="paginarPersonasPorPais" ReturnType="Collection(proyectoBases2Model.paginarPersonasPorPais_Result)">
+      <Parameter Name="idPais" Mode="In" Type="Decimal" />
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="PageCount" Mode="InOut" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="listarPaises_Result">
     <Property Type="Int64" Name="Posición" Nullable="true" />
@@ -120,5 +131,23 @@
     <Property Type="Decimal" Name="area" Nullable="false" Precision="10" Scale="0" />
     <Property Type="Decimal" Name="poblacion" Nullable="false" Precision="10" Scale="0" />
     <Property Type="Decimal" Name="idPresidenteActual" Nullable="true" Precision="10" Scale="0" />
+  </ComplexType>
+  <ComplexType Name="paginarPersonas_Result">
+    <Property Type="Int64" Name="RowId" Nullable="true" />
+    <Property Type="Decimal" Name="cedula" Nullable="false" Precision="10" Scale="0" />
+    <Property Type="String" Name="nbrPersona" Nullable="false" MaxLength="25" />
+    <Property Type="Decimal" Name="paisNacimiento" Nullable="false" Precision="3" Scale="0" />
+    <Property Type="Decimal" Name="paisResidencia" Nullable="false" Precision="3" Scale="0" />
+    <Property Type="DateTime" Name="fchNacimiento" Nullable="true" Precision="23" />
+    <Property Type="String" Name="correo" Nullable="false" MaxLength="40" />
+  </ComplexType>
+  <ComplexType Name="paginarPersonasPorPais_Result">
+    <Property Type="Int64" Name="RowId" Nullable="true" />
+    <Property Type="Decimal" Name="cedula" Nullable="false" Precision="10" Scale="0" />
+    <Property Type="String" Name="nbrPersona" Nullable="false" MaxLength="25" />
+    <Property Type="Decimal" Name="paisNacimiento" Nullable="false" Precision="3" Scale="0" />
+    <Property Type="Decimal" Name="paisResidencia" Nullable="false" Precision="3" Scale="0" />
+    <Property Type="DateTime" Name="fchNacimiento" Nullable="true" Precision="23" />
+    <Property Type="String" Name="correo" Nullable="false" MaxLength="40" />
   </ComplexType>
 </Schema>

@@ -1,0 +1,66 @@
+﻿
+@model IEnumerable<ProyectoPaises.Models.persona>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nbrPersona)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fchNacimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.correo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pais1.nbrPais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pais2.nbrPais)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nbrPersona)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fchNacimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.correo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pais1.nbrPais)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pais2.nbrPais)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.cedula }) |
+                @Html.ActionLink("Details", "Details", new { id = item.cedula }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.cedula })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+<ul class="pagination">
+    <li>@Ajax.ActionLink("Primero", "ListPersonas", new { idPais= ViewBag.idPais, id = 1 }, new AjaxOptions { UpdateTargetId = "list-personas", InsertionMode = InsertionMode.Replace })</li>
+    <li>@Ajax.ActionLink("Anterior", "ListPersonas", new { idPais = ViewBag.idPais, id = (ViewBag.PageIndexPersonas - 1 < 1) ? 1 : (ViewBag.PageIndexPersonas - 1) }, new AjaxOptions { UpdateTargetId = "list-personas", InsertionMode = InsertionMode.Replace })</li>
+    <li><span>Pág. @ViewBag.PageIndexPersonas de @ViewBag.PageCountPersonas</span></li>
+    <li>@Ajax.ActionLink("Siguiente", "ListPersonas", new { idPais = ViewBag.idPais, id = (ViewBag.PageIndexPersonas + 1 > ViewBag.PageCountPersonas) ? ViewBag.PageCountPersonas : (ViewBag.PageIndexPersonas + 1) }, new AjaxOptions { UpdateTargetId = "list-personas", InsertionMode = InsertionMode.Replace })</li>
+    <li>@Ajax.ActionLink("Ultimo", "ListPersonas", new { idPais = ViewBag.idPais, id = ViewBag.PageCountPersonas }, new AjaxOptions { UpdateTargetId = "list-personas", InsertionMode = InsertionMode.Replace })</li>
+</ul>
+

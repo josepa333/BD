@@ -61,5 +61,31 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="paginarPersonas" FunctionName="proyectoBases2Model.Store.paginarPersonas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="proyectoBases2Model.paginarPersonas_Result">
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="nbrPersona" ColumnName="nbrPersona" />
+          <ScalarProperty Name="paisNacimiento" ColumnName="paisNacimiento" />
+          <ScalarProperty Name="paisResidencia" ColumnName="paisResidencia" />
+          <ScalarProperty Name="fchNacimiento" ColumnName="fchNacimiento" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="paginarPersonasPorPais" FunctionName="proyectoBases2Model.Store.paginarPersonasPorPais">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="proyectoBases2Model.paginarPersonasPorPais_Result">
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="nbrPersona" ColumnName="nbrPersona" />
+          <ScalarProperty Name="paisNacimiento" ColumnName="paisNacimiento" />
+          <ScalarProperty Name="paisResidencia" ColumnName="paisResidencia" />
+          <ScalarProperty Name="fchNacimiento" ColumnName="fchNacimiento" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

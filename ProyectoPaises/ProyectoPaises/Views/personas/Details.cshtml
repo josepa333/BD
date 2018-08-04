@@ -1,0 +1,59 @@
+﻿@model ProyectoPaises.Models.persona
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>persona</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nbrPersona)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nbrPersona)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fchNacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fchNacimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.correo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.correo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pais1.nbrPais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pais1.nbrPais)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pais2.nbrPais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pais2.nbrPais)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.cedula }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

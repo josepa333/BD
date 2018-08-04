@@ -31,9 +31,34 @@ namespace ProyectoPaises.Controllers
             int pageCount = 0;
             List<pais> paises = pais.Listar(pageIndex, 10, out pageCount);
             ViewBag.PageCount = pageCount;
-            ViewBag.PAgeIndex = pageIndex;
+            ViewBag.PageIndex = pageIndex;
             return paises;
         }
+
+
+        //Paginacion de las personas de la ventana de cada pais
+        public ActionResult Personas(decimal idPais, int id = 1)
+        {
+            ViewBag.idPais = idPais;
+            return View(BuscarPersonas(id, idPais));
+        }
+
+        public ActionResult ListPersonas(decimal idPais, int id = 1)
+        {
+            return PartialView(BuscarPersonas(id, idPais));
+        }
+
+        public List<persona> BuscarPersonas(int pageIndex, decimal idPais)
+        {
+            persona persona = new persona();
+            int pageCount = 0;
+            List<persona> personas = persona.Listar(idPais, pageIndex, 10, out pageCount);
+            ViewBag.PageCountPersonas = pageCount;
+            ViewBag.PageIndexPersonas = pageIndex;
+            return personas;
+        }
+
+
 
 
         // GET: pais/Details/5

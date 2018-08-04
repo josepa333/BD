@@ -74,6 +74,17 @@
     <Parameter Name="PageSize" Type="int" Mode="In" />
     <Parameter Name="PageCount" Type="int" Mode="InOut" />
   </Function>
+  <Function Name="paginarPersonas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="PageCount" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="paginarPersonasPorPais" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idPais" Type="decimal" Mode="In" />
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="PageCount" Type="int" Mode="InOut" />
+  </Function>
   <EntityContainer Name="proyectoBases2ModelStoreContainer">
     <EntitySet Name="pais" EntityType="Self.pais" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="persona" EntityType="Self.persona" Schema="dbo" store:Type="Tables" />

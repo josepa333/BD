@@ -38,7 +38,8 @@
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.idPais }) |
                 @Html.ActionLink("Details", "Details", new { id = item.idPais }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.idPais })
+                @Html.ActionLink("Delete", "Delete", new { id = item.idPais }) |
+                @Html.ActionLink("Personas", "Personas", new { idPais = item.idPais })
             </td>
         </tr>
     }
@@ -46,7 +47,7 @@
 </table>
 
 <ul class="pagination">
-    <li>@Ajax.ActionLink("Primero", "ListOrders", new { id = 1 }, new AjaxOptions { UpdateTargetId = "list-orders", InsertionMode = InsertionMode.Replace })</li>
+    <li>@Ajax.ActionLink("Primero", "ListOrders", new {id = 1 }, new AjaxOptions { UpdateTargetId = "list-orders", InsertionMode = InsertionMode.Replace })</li>
     <li>@Ajax.ActionLink("Anterior", "ListOrders", new { id = (ViewBag.PageIndex - 1 < 1) ? 1 : (ViewBag.PageIndex - 1) }, new AjaxOptions { UpdateTargetId = "list-orders", InsertionMode = InsertionMode.Replace })</li>
     <li><span>Pág. @ViewBag.PageIndex de @ViewBag.PageCount</span></li>
     <li>@Ajax.ActionLink("Siguiente", "ListOrders", new { id = (ViewBag.PageIndex + 1 > ViewBag.PageCount) ? ViewBag.PageCount : (ViewBag.PageIndex + 1) }, new AjaxOptions { UpdateTargetId = "list-orders", InsertionMode = InsertionMode.Replace })</li>

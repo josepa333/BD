@@ -79,6 +79,17 @@
           <Parameter Name="PageSize" Type="int" Mode="In" />
           <Parameter Name="PageCount" Type="int" Mode="InOut" />
         </Function>
+        <Function Name="paginarPersonas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PageIndex" Type="int" Mode="In" />
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+          <Parameter Name="PageCount" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="paginarPersonasPorPais" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPais" Type="decimal" Mode="In" />
+          <Parameter Name="PageIndex" Type="int" Mode="In" />
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+          <Parameter Name="PageCount" Type="int" Mode="InOut" />
+        </Function>
         <EntityContainer Name="proyectoBases2ModelStoreContainer">
           <EntitySet Name="pais" EntityType="Self.pais" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="persona" EntityType="Self.persona" Schema="dbo" store:Type="Tables" />
@@ -194,6 +205,17 @@
             <Parameter Name="PageSize" Mode="In" Type="Int32" />
             <Parameter Name="PageCount" Mode="InOut" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="paginarPersonas" ReturnType="Collection(proyectoBases2Model.paginarPersonas_Result)">
+            <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+            <Parameter Name="PageSize" Mode="In" Type="Int32" />
+            <Parameter Name="PageCount" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="paginarPersonasPorPais" ReturnType="Collection(proyectoBases2Model.paginarPersonasPorPais_Result)">
+            <Parameter Name="idPais" Mode="In" Type="Decimal" />
+            <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+            <Parameter Name="PageSize" Mode="In" Type="Int32" />
+            <Parameter Name="PageCount" Mode="InOut" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="listarPaises_Result">
           <Property Type="Int64" Name="Posición" Nullable="true" />
@@ -219,6 +241,24 @@
           <Property Type="Decimal" Name="area" Nullable="false" Precision="10" Scale="0" />
           <Property Type="Decimal" Name="poblacion" Nullable="false" Precision="10" Scale="0" />
           <Property Type="Decimal" Name="idPresidenteActual" Nullable="true" Precision="10" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="paginarPersonas_Result">
+          <Property Type="Int64" Name="RowId" Nullable="true" />
+          <Property Type="Decimal" Name="cedula" Nullable="false" Precision="10" Scale="0" />
+          <Property Type="String" Name="nbrPersona" Nullable="false" MaxLength="25" />
+          <Property Type="Decimal" Name="paisNacimiento" Nullable="false" Precision="3" Scale="0" />
+          <Property Type="Decimal" Name="paisResidencia" Nullable="false" Precision="3" Scale="0" />
+          <Property Type="DateTime" Name="fchNacimiento" Nullable="true" Precision="23" />
+          <Property Type="String" Name="correo" Nullable="false" MaxLength="40" />
+        </ComplexType>
+        <ComplexType Name="paginarPersonasPorPais_Result">
+          <Property Type="Int64" Name="RowId" Nullable="true" />
+          <Property Type="Decimal" Name="cedula" Nullable="false" Precision="10" Scale="0" />
+          <Property Type="String" Name="nbrPersona" Nullable="false" MaxLength="25" />
+          <Property Type="Decimal" Name="paisNacimiento" Nullable="false" Precision="3" Scale="0" />
+          <Property Type="Decimal" Name="paisResidencia" Nullable="false" Precision="3" Scale="0" />
+          <Property Type="DateTime" Name="fchNacimiento" Nullable="true" Precision="23" />
+          <Property Type="String" Name="correo" Nullable="false" MaxLength="40" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -283,6 +323,32 @@
                 <ScalarProperty Name="area" ColumnName="area" />
                 <ScalarProperty Name="poblacion" ColumnName="poblacion" />
                 <ScalarProperty Name="idPresidenteActual" ColumnName="idPresidenteActual" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="paginarPersonas" FunctionName="proyectoBases2Model.Store.paginarPersonas">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="proyectoBases2Model.paginarPersonas_Result">
+                <ScalarProperty Name="RowId" ColumnName="RowId" />
+                <ScalarProperty Name="cedula" ColumnName="cedula" />
+                <ScalarProperty Name="nbrPersona" ColumnName="nbrPersona" />
+                <ScalarProperty Name="paisNacimiento" ColumnName="paisNacimiento" />
+                <ScalarProperty Name="paisResidencia" ColumnName="paisResidencia" />
+                <ScalarProperty Name="fchNacimiento" ColumnName="fchNacimiento" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="paginarPersonasPorPais" FunctionName="proyectoBases2Model.Store.paginarPersonasPorPais">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="proyectoBases2Model.paginarPersonasPorPais_Result">
+                <ScalarProperty Name="RowId" ColumnName="RowId" />
+                <ScalarProperty Name="cedula" ColumnName="cedula" />
+                <ScalarProperty Name="nbrPersona" ColumnName="nbrPersona" />
+                <ScalarProperty Name="paisNacimiento" ColumnName="paisNacimiento" />
+                <ScalarProperty Name="paisResidencia" ColumnName="paisResidencia" />
+                <ScalarProperty Name="fchNacimiento" ColumnName="fchNacimiento" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

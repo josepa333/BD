@@ -1,0 +1,13 @@
+﻿@model IEnumerable<ProyectoPaises.Models.persona>
+
+@{
+    ViewBag.Title = "Personas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Personas</h2>
+
+
+<div id="list-personas">
+    @Html.Partial("ListPersonas", Model)
+</div>
