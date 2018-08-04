@@ -1,0 +1,55 @@
+﻿@model IEnumerable<ProyectoPaises.Models.pais>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nbrPais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.area)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.poblacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.persona.nbrPersona)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nbrPais)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.area)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.poblacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.persona.nbrPersona)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.idPais }) |
+                @Html.ActionLink("Details", "Details", new { id = item.idPais }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.idPais })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<ul class="pagination">
+    <li>@Ajax.ActionLink("Primero", "ListOrders", new { id = 1 }, new AjaxOptions { UpdateTargetId = "list-orders", InsertionMode = InsertionMode.Replace })</li>
+    <li>@Ajax.ActionLink("Anterior", "ListOrders", new { id = (ViewBag.PageIndex - 1 < 1) ? 1 : (ViewBag.PageIndex - 1) }, new AjaxOptions { UpdateTargetId = "list-orders", InsertionMode = InsertionMode.Replace })</li>
+    <li><span>Pág. @ViewBag.PageIndex de @ViewBag.PageCount</span></li>
+    <li>@Ajax.ActionLink("Siguiente", "ListOrders", new { id = (ViewBag.PageIndex + 1 > ViewBag.PageCount) ? ViewBag.PageCount : (ViewBag.PageIndex + 1) }, new AjaxOptions { UpdateTargetId = "list-orders", InsertionMode = InsertionMode.Replace })</li>
+    <li>@Ajax.ActionLink("Ultimo", "ListOrders", new { id = ViewBag.PageCount }, new AjaxOptions { UpdateTargetId = "list-orders", InsertionMode = InsertionMode.Replace })</li>
+</ul>
+

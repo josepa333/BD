@@ -1,0 +1,12 @@
+﻿@model IEnumerable<ProyectoPaises.Models.pais>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Paises</h2>
+
+<div id="list-orders">
+    @Html.Partial("ListOrders", Model)
+</div>

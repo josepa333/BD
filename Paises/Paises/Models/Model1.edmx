@@ -64,6 +64,16 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="listarPaises" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PageIndex" Type="int" Mode="In" />
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+          <Parameter Name="PageCount" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="listarPersonas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PageIndex" Type="int" Mode="In" />
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+          <Parameter Name="PageCount" Type="int" Mode="InOut" />
+        </Function>
         <EntityContainer Name="proyectoBases2ModelStoreContainer">
           <EntitySet Name="pais" EntityType="Self.pais" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="persona" EntityType="Self.persona" Schema="dbo" store:Type="Tables" />
@@ -165,7 +175,34 @@
             <End Role="pais" EntitySet="pais" />
             <End Role="persona" EntitySet="persona" />
           </AssociationSet>
+          <FunctionImport Name="listarPaises" ReturnType="Collection(proyectoBases2Model.listarPaises_Result)">
+            <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+            <Parameter Name="PageSize" Mode="In" Type="Int32" />
+            <Parameter Name="PageCount" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="listarPersonas" ReturnType="Collection(proyectoBases2Model.listarPersonas_Result)">
+            <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+            <Parameter Name="PageSize" Mode="In" Type="Int32" />
+            <Parameter Name="PageCount" Mode="InOut" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="listarPaises_Result">
+          <Property Type="Int64" Name="Posición" Nullable="true" />
+          <Property Type="Decimal" Name="idPais" Nullable="false" Precision="3" Scale="0" />
+          <Property Type="String" Name="nbrPais" Nullable="false" MaxLength="25" />
+          <Property Type="Decimal" Name="area" Nullable="false" Precision="10" Scale="0" />
+          <Property Type="Decimal" Name="poblacion" Nullable="false" Precision="10" Scale="0" />
+          <Property Type="Decimal" Name="idPresidenteActual" Nullable="true" Precision="10" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="listarPersonas_Result">
+          <Property Type="Int64" Name="Posición" Nullable="true" />
+          <Property Type="Decimal" Name="cedula" Nullable="false" Precision="10" Scale="0" />
+          <Property Type="String" Name="nbrPersona" Nullable="false" MaxLength="25" />
+          <Property Type="Decimal" Name="paisNacimiento" Nullable="false" Precision="3" Scale="0" />
+          <Property Type="Decimal" Name="paisResidencia" Nullable="false" Precision="3" Scale="0" />
+          <Property Type="DateTime" Name="fchNacimiento" Nullable="true" Precision="23" />
+          <Property Type="String" Name="correo" Nullable="false" MaxLength="40" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -195,6 +232,31 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="listarPaises" FunctionName="proyectoBases2Model.Store.listarPaises">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="proyectoBases2Model.listarPaises_Result">
+                <ScalarProperty Name="Posición" ColumnName="Posición" />
+                <ScalarProperty Name="idPais" ColumnName="idPais" />
+                <ScalarProperty Name="nbrPais" ColumnName="nbrPais" />
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="poblacion" ColumnName="poblacion" />
+                <ScalarProperty Name="idPresidenteActual" ColumnName="idPresidenteActual" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="listarPersonas" FunctionName="proyectoBases2Model.Store.listarPersonas">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="proyectoBases2Model.listarPersonas_Result">
+                <ScalarProperty Name="Posición" ColumnName="Posición" />
+                <ScalarProperty Name="cedula" ColumnName="cedula" />
+                <ScalarProperty Name="nbrPersona" ColumnName="nbrPersona" />
+                <ScalarProperty Name="paisNacimiento" ColumnName="paisNacimiento" />
+                <ScalarProperty Name="paisResidencia" ColumnName="paisResidencia" />
+                <ScalarProperty Name="fchNacimiento" ColumnName="fchNacimiento" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

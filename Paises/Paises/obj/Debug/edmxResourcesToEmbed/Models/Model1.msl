@@ -24,5 +24,30 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="listarPaises" FunctionName="proyectoBases2Model.Store.listarPaises">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="proyectoBases2Model.listarPaises_Result">
+          <ScalarProperty Name="Posición" ColumnName="Posición" />
+          <ScalarProperty Name="idPais" ColumnName="idPais" />
+          <ScalarProperty Name="nbrPais" ColumnName="nbrPais" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="poblacion" ColumnName="poblacion" />
+          <ScalarProperty Name="idPresidenteActual" ColumnName="idPresidenteActual" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="listarPersonas" FunctionName="proyectoBases2Model.Store.listarPersonas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="proyectoBases2Model.listarPersonas_Result">
+          <ScalarProperty Name="Posición" ColumnName="Posición" />
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="nbrPersona" ColumnName="nbrPersona" />
+          <ScalarProperty Name="paisNacimiento" ColumnName="paisNacimiento" />
+          <ScalarProperty Name="paisResidencia" ColumnName="paisResidencia" />
+          <ScalarProperty Name="fchNacimiento" ColumnName="fchNacimiento" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

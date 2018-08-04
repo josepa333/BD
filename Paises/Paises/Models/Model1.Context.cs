@@ -12,6 +12,8 @@ namespace Paises.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class proyectoBases2Entities : DbContext
     {
@@ -27,5 +29,31 @@ namespace Paises.Models
     
         public virtual DbSet<pais> pais { get; set; }
         public virtual DbSet<persona> persona { get; set; }
+    
+        public virtual ObjectResult<listarPaises_Result> listarPaises(Nullable<int> pageIndex, Nullable<int> pageSize, ObjectParameter pageCount)
+        {
+            var pageIndexParameter = pageIndex.HasValue ?
+                new ObjectParameter("PageIndex", pageIndex) :
+                new ObjectParameter("PageIndex", typeof(int));
+    
+            var pageSizeParameter = pageSize.HasValue ?
+                new ObjectParameter("PageSize", pageSize) :
+                new ObjectParameter("PageSize", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<listarPaises_Result>("listarPaises", pageIndexParameter, pageSizeParameter, pageCount);
+        }
+    
+        public virtual ObjectResult<listarPersonas_Result> listarPersonas(Nullable<int> pageIndex, Nullable<int> pageSize, ObjectParameter pageCount)
+        {
+            var pageIndexParameter = pageIndex.HasValue ?
+                new ObjectParameter("PageIndex", pageIndex) :
+                new ObjectParameter("PageIndex", typeof(int));
+    
+            var pageSizeParameter = pageSize.HasValue ?
+                new ObjectParameter("PageSize", pageSize) :
+                new ObjectParameter("PageSize", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<listarPersonas_Result>("listarPersonas", pageIndexParameter, pageSizeParameter, pageCount);
+        }
     }
 }

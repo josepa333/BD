@@ -80,5 +80,32 @@
       <End Role="pais" EntitySet="pais" />
       <End Role="persona" EntitySet="persona" />
     </AssociationSet>
+    <FunctionImport Name="listarPaises" ReturnType="Collection(proyectoBases2Model.listarPaises_Result)">
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="PageCount" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="listarPersonas" ReturnType="Collection(proyectoBases2Model.listarPersonas_Result)">
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="PageCount" Mode="InOut" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
+  <ComplexType Name="listarPaises_Result">
+    <Property Type="Int64" Name="Posición" Nullable="true" />
+    <Property Type="Decimal" Name="idPais" Nullable="false" Precision="3" Scale="0" />
+    <Property Type="String" Name="nbrPais" Nullable="false" MaxLength="25" />
+    <Property Type="Decimal" Name="area" Nullable="false" Precision="10" Scale="0" />
+    <Property Type="Decimal" Name="poblacion" Nullable="false" Precision="10" Scale="0" />
+    <Property Type="Decimal" Name="idPresidenteActual" Nullable="true" Precision="10" Scale="0" />
+  </ComplexType>
+  <ComplexType Name="listarPersonas_Result">
+    <Property Type="Int64" Name="Posición" Nullable="true" />
+    <Property Type="Decimal" Name="cedula" Nullable="false" Precision="10" Scale="0" />
+    <Property Type="String" Name="nbrPersona" Nullable="false" MaxLength="25" />
+    <Property Type="Decimal" Name="paisNacimiento" Nullable="false" Precision="3" Scale="0" />
+    <Property Type="Decimal" Name="paisResidencia" Nullable="false" Precision="3" Scale="0" />
+    <Property Type="DateTime" Name="fchNacimiento" Nullable="true" Precision="23" />
+    <Property Type="String" Name="correo" Nullable="false" MaxLength="40" />
+  </ComplexType>
 </Schema>
