@@ -4,10 +4,59 @@
     ViewBag.Title = "Personas";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<h2> @ViewBag.nombrePais @ViewBag.idPais  </h2>
 
-<h2>Personas</h2>
 
 
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Nombre pais")
+        </th>
+        <th>
+            @Html.DisplayName("ID")
+        </th>
+        <th>
+            @Html.DisplayName("Area")
+        </th>
+        <th>
+            @Html.DisplayName("Poblacion")
+        </th>
+        <th>
+            @Html.DisplayName("ID Presidente actual")
+        </th>
+
+
+    </tr>
+
+    <tr>
+        <th>
+            @ViewBag.nombrePais
+        </th>
+        <th>
+            @ViewBag.idPais
+        </th>
+        <th>
+            @ViewBag.areaPais
+        </th>
+        <th>
+            @ViewBag.poblacionPais
+        </th>
+        <th>
+            @ViewBag.presidentePais
+        </th>
+    </tr>
+
+</table>
+
+<ul class="pagination">
+    <li> @Html.ActionLink("Anterior", "Personas", new { idPais = (ViewBag.idPais > 1 ) ? (ViewBag.idPais -1) : ViewBag.idPais, id = 1 }) </li>
+    <li>@Html.ActionLink("Siguiente", "Personas", new { idPais = (ViewBag.idPais + 1) , id = 1 }) </li>
+</ul>
+
+
+
+<h3>Personas</h3>
 <div id="list-personas">
     @Html.Partial("ListPersonas", Model)
 </div>

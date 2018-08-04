@@ -39,7 +39,13 @@ namespace ProyectoPaises.Controllers
         //Paginacion de las personas de la ventana de cada pais
         public ActionResult Personas(decimal idPais, int id = 1)
         {
+            pais pais = db.pais.Where(x => x.idPais == idPais).First();
+            ViewBag.nombrePais = pais.nbrPais;
             ViewBag.idPais = idPais;
+            ViewBag.areaPais = pais.area;
+            ViewBag.poblacionPais = pais.poblacion;
+            ViewBag.presidentePais = pais.idPresidenteActual;
+
             return View(BuscarPersonas(id, idPais));
         }
 
@@ -57,9 +63,6 @@ namespace ProyectoPaises.Controllers
             ViewBag.PageIndexPersonas = pageIndex;
             return personas;
         }
-
-
-
 
         // GET: pais/Details/5
         public ActionResult Details(decimal id)
