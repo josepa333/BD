@@ -10,6 +10,7 @@
 namespace ProyectoPaises.Models
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.Data;
     using System.Data.SqlClient;
@@ -22,6 +23,10 @@ namespace ProyectoPaises.Models
             this.pais = new HashSet<pais>();
         }
     
+        public static List<persona> actualizadas = new List<persona>();
+        public static List<persona> borradas = new List<persona>();
+        public static List<persona> insertadas = new List<persona>();
+
         public decimal cedula { get; set; }
         public string nbrPersona { get; set; }
         public decimal paisNacimiento { get; set; }

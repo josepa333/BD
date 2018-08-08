@@ -93,8 +93,11 @@ namespace ProyectoPaises.Controllers
         {
             if (ModelState.IsValid)
             {
+                persona.actualizadas.Add(persona);
+                /*
                 db.Entry(persona).State = EntityState.Modified;
                 db.SaveChanges();
+                */
                 return RedirectToAction("Index");
             }
             ViewBag.paisNacimiento = new SelectList(db.pais, "idPais", "nbrPais", persona.paisNacimiento);
@@ -211,6 +214,18 @@ namespace ProyectoPaises.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        /*Commit*/
+        public ActionResult commitCambios(decimal idPais, int id)
+        {
+            for (int i = 0; i < persona.actualizadas.Count(); i++)
+            {
+                persona actual = persona.actualizadas[i];
+                db.Entry(actual).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+            return RedirectToAction("Index");
         }
     }
 }

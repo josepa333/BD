@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<ProyectoPaises.Models.persona>
-
 @{
     ViewBag.Title = "Personas";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -50,9 +49,11 @@
 </table>
 
 <ul class="pagination">
-    <li> @Html.ActionLink("Anterior", "Personas", new { idPais = (ViewBag.idPais > 1) ? (ViewBag.idPais - 1) : ViewBag.idPais, id = 1 }) </li>
+    <li> @Html.ActionLink("Primero", "Personas", new { idPais = 1, id = 1 }) </li>
+    <li> @Html.ActionLink("Anterior", "Personas", new { idPais = (ViewBag.idPais == 1) ? (ViewBag.totalPaises) : (ViewBag.idPais - 1), id = 1 }) </li>
     <li><span>Pág. @ViewBag.idPais de @ViewBag.totalPaises</span></li>
-    <li>@Html.ActionLink("Siguiente", "Personas", new { idPais = (ViewBag.idPais + 1), id = 1 }) </li>
+    <li>@Html.ActionLink("Siguiente", "Personas", new { idPais = (ViewBag.idPais < ViewBag.totalPaises) ? (ViewBag.idPais + 1) : 1, id = 1 }) </li>
+    <li>@Html.ActionLink("Ultimo", "Personas", new { idPais = @ViewBag.totalPaises - 1, id = 1 }) </li>
 </ul>
 
 
@@ -61,3 +62,8 @@
 <div id="list-personas">
     @Html.Partial("ListPersonas", Model)
 </div>
+
+
+<ul class="pagination">
+    <li>@Html.ActionLink("Commit", "commitCambios", new { idPais = 1, id = 1 }) </li>
+</ul>
