@@ -1,0 +1,34 @@
+﻿
+@model IEnumerable<ProyectoPaises.Models.consulta2_Result>
+@{
+    ViewBag.Title = "Resultados de partidos jugados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table">
+    <tr>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
+            @Html.DisplayName("Pais")
+        </th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
+            @Html.DisplayName("Año")
+        </th>
+        <th style="background-color:#1A2A40; color:#9CA6AD ">
+            @Html.DisplayName("Personas")
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="background-color:#f2f2f2">
+                @Html.DisplayFor(model => item.nbrPais)
+            </td>
+            <td style="background-color:#e0eeFF">
+                @Html.DisplayFor(model => item.ano)
+            </td>
+            <td style="background-color:#e0eeFF">
+                @Html.DisplayFor(model => item.cedula)
+            </td>
+        </tr>
+    }
+</table>

@@ -14,7 +14,7 @@ namespace ProyectoPaises.Controllers
 {
     public class paisController : Controller
     {
-        private proyectoBases2Entities2 db = new proyectoBases2Entities2();
+        private proyectoBases2Entities4 db = new proyectoBases2Entities4();
 
         // GET: pais
         public ActionResult Index(int id = 1)
@@ -47,7 +47,18 @@ namespace ProyectoPaises.Controllers
             ViewBag.idPais = idPais;
             ViewBag.areaPais = pais.area;
             ViewBag.poblacionPais = pais.poblacion;
-            ViewBag.presidentePais = pais.idPresidenteActual;
+            int existe = db.persona.Where(x => x.cedula == pais.idPresidenteActual).Where(x => x.paisResidencia == idPais).Count();
+            if(existe != 0)
+            {
+                persona presi = db.persona.Where(x => x.cedula == pais.idPresidenteActual).Where(x => x.paisResidencia == idPais).First();
+                String nombrePresi = presi.nbrPersona;
+                ViewBag.presidentePais = nombrePresi;
+
+            }
+            else
+            {
+                ViewBag.presidentePais = "Sin asignar" ;
+            }
 
             return View(BuscarPersonas(id, idPais));
         }
@@ -96,13 +107,13 @@ namespace ProyectoPaises.Controllers
             return View(persona);
         }
 
-        public ActionResult EditPersona(decimal id)
+        public ActionResult EditPersona(decimal id, decimal id2)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            persona persona = db.persona.Find(id);
+            persona persona = db.persona.Find(id,id2);
             if (persona == null)
             {
                 return HttpNotFound();
@@ -112,9 +123,9 @@ namespace ProyectoPaises.Controllers
             return View(persona);
         }
 
-        public ActionResult DeletePersona(decimal idPersona, decimal idPais, int page)
+        public ActionResult DeletePersona(decimal idPersona, decimal id2, decimal idPais, int page)
         {
-            persona persona = db.persona.Find(idPersona);
+            persona persona = db.persona.Find(idPersona,id2);
             db.persona.Remove(persona);
             db.SaveChanges();
             return RedirectToAction("Personas", "pais", new { idPais = idPais, id = page });
@@ -139,20 +150,7 @@ namespace ProyectoPaises.Controllers
             return View(persona);
         }
 
-        // GET: pais/Details/5
-        public ActionResult Details(decimal id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            pais pais = db.pais.Find(id);
-            if (pais == null)
-            {
-                return HttpNotFound();
-            }
-            return View(pais);
-        }
+  
 
         // GET: pais/Create
         public ActionResult Create()
@@ -191,7 +189,7 @@ namespace ProyectoPaises.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.idPresidenteActual = new SelectList(db.persona, "cedula", "nbrPersona", pais.idPresidenteActual);
+            ViewBag.idPresidenteActual = new SelectList(db.persona.Where(x => x.paisResidencia == id), "cedula", "nbrPersona", pais.idPresidenteActual);
             return View(pais);
         }
 
@@ -208,7 +206,7 @@ namespace ProyectoPaises.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.idPresidenteActual = new SelectList(db.persona, "cedula", "nbrPersona", pais.idPresidenteActual);
+            ViewBag.idPresidenteActual = new SelectList(db.persona.Where(x => x.paisResidencia == pais.idPais), "cedula", "nbrPersona", pais.idPresidenteActual);
             return View(pais);
         }
 
@@ -248,6 +246,7 @@ namespace ProyectoPaises.Controllers
         }
 
         /*Commit*/
+        /*
         public ActionResult commitCambios(decimal idPais, int id)
         {
             for (int i = 0; i < persona.actualizadas.Count(); i++)
@@ -257,6 +256,6 @@ namespace ProyectoPaises.Controllers
                 db.SaveChanges();
             }
             return RedirectToAction("Index");
-        }
+        }*/
     }
 }

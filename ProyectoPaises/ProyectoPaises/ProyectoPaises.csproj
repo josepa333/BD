@@ -156,16 +156,17 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\consultaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\paisController.cs" />
-    <Compile Include="Controllers\personasController.cs" />
+    <Compile Include="Controllers\personaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\listarPaises_Result.cs">
+    <Compile Include="Models\consulta1_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\listarPersonas_Result.cs">
+    <Compile Include="Models\consulta2_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.Context.cs">
@@ -189,9 +190,6 @@
     <Compile Include="Models\paginarPersonasPorPais_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\paginarPersonas_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\pais.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -199,6 +197,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\personasController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -265,14 +264,16 @@
     <Content Include="Views\pais\ListOrders.cshtml" />
     <Content Include="Views\pais\Personas.cshtml" />
     <Content Include="Views\pais\ListPersonas.cshtml" />
-    <Content Include="Views\personas\Create.cshtml" />
-    <Content Include="Views\personas\Delete.cshtml" />
-    <Content Include="Views\personas\Details.cshtml" />
-    <Content Include="Views\personas\Edit.cshtml" />
-    <Content Include="Views\personas\Index.cshtml" />
     <Content Include="Views\pais\EditPersona.cshtml" />
     <Content Include="Views\pais\DeletePersona.cshtml" />
     <Content Include="Views\pais\createPersona.cshtml" />
+    <Content Include="Views\persona\Create.cshtml" />
+    <Content Include="Views\persona\Delete.cshtml" />
+    <Content Include="Views\persona\Details.cshtml" />
+    <Content Include="Views\persona\Edit.cshtml" />
+    <Content Include="Views\persona\Index.cshtml" />
+    <Content Include="Views\consulta\consulta1.cshtml" />
+    <Content Include="Views\consulta\consulta2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

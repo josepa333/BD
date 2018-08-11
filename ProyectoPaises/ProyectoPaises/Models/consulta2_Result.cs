@@ -11,13 +11,10 @@ namespace ProyectoPaises.Models
 {
     using System;
     
-    public partial class listarPaises_Result
+    public partial class consulta2_Result
     {
-        public Nullable<long> Posición { get; set; }
-        public decimal idPais { get; set; }
         public string nbrPais { get; set; }
-        public decimal area { get; set; }
-        public decimal poblacion { get; set; }
-        public Nullable<decimal> idPresidenteActual { get; set; }
+        public Nullable<int> ano { get; set; }
+        public Nullable<int> cedula { get; set; }
     }
 }

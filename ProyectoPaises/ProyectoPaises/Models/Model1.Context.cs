@@ -15,10 +15,10 @@ namespace ProyectoPaises.Models
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class proyectoBases2Entities2 : DbContext
+    public partial class proyectoBases2Entities4 : DbContext
     {
-        public proyectoBases2Entities2()
-            : base("name=proyectoBases2Entities2")
+        public proyectoBases2Entities4()
+            : base("name=proyectoBases2Entities4")
         {
         }
     
@@ -30,30 +30,14 @@ namespace ProyectoPaises.Models
         public virtual DbSet<pais> pais { get; set; }
         public virtual DbSet<persona> persona { get; set; }
     
-        public virtual ObjectResult<listarPaises_Result> listarPaises(Nullable<int> pageIndex, Nullable<int> pageSize, ObjectParameter pageCount)
+        public virtual ObjectResult<consulta1_Result> consulta1()
         {
-            var pageIndexParameter = pageIndex.HasValue ?
-                new ObjectParameter("PageIndex", pageIndex) :
-                new ObjectParameter("PageIndex", typeof(int));
-    
-            var pageSizeParameter = pageSize.HasValue ?
-                new ObjectParameter("PageSize", pageSize) :
-                new ObjectParameter("PageSize", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<listarPaises_Result>("listarPaises", pageIndexParameter, pageSizeParameter, pageCount);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<consulta1_Result>("consulta1");
         }
     
-        public virtual ObjectResult<listarPersonas_Result> listarPersonas(Nullable<int> pageIndex, Nullable<int> pageSize, ObjectParameter pageCount)
+        public virtual ObjectResult<consulta2_Result> consulta2()
         {
-            var pageIndexParameter = pageIndex.HasValue ?
-                new ObjectParameter("PageIndex", pageIndex) :
-                new ObjectParameter("PageIndex", typeof(int));
-    
-            var pageSizeParameter = pageSize.HasValue ?
-                new ObjectParameter("PageSize", pageSize) :
-                new ObjectParameter("PageSize", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<listarPersonas_Result>("listarPersonas", pageIndexParameter, pageSizeParameter, pageCount);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<consulta2_Result>("consulta2");
         }
     
         public virtual ObjectResult<paginarPaises_Result> paginarPaises(Nullable<int> pageIndex, Nullable<int> pageSize, ObjectParameter pageCount)
@@ -67,19 +51,6 @@ namespace ProyectoPaises.Models
                 new ObjectParameter("PageSize", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<paginarPaises_Result>("paginarPaises", pageIndexParameter, pageSizeParameter, pageCount);
-        }
-    
-        public virtual ObjectResult<paginarPersonas_Result> paginarPersonas(Nullable<int> pageIndex, Nullable<int> pageSize, ObjectParameter pageCount)
-        {
-            var pageIndexParameter = pageIndex.HasValue ?
-                new ObjectParameter("PageIndex", pageIndex) :
-                new ObjectParameter("PageIndex", typeof(int));
-    
-            var pageSizeParameter = pageSize.HasValue ?
-                new ObjectParameter("PageSize", pageSize) :
-                new ObjectParameter("PageSize", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<paginarPersonas_Result>("paginarPersonas", pageIndexParameter, pageSizeParameter, pageCount);
         }
     
         public virtual ObjectResult<paginarPersonasPorPais_Result> paginarPersonasPorPais(Nullable<decimal> idPais, Nullable<int> pageIndex, Nullable<int> pageSize, ObjectParameter pageCount)

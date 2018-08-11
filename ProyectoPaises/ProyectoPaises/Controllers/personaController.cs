@@ -10,25 +10,25 @@ using ProyectoPaises.Models;
 
 namespace ProyectoPaises.Controllers
 {
-    public class personasController : Controller
+    public class personaController : Controller
     {
-        private proyectoBases2Entities2 db = new proyectoBases2Entities2();
+        private proyectoBases2Entities4 db = new proyectoBases2Entities4();
 
-        // GET: personas
+        // GET: persona
         public ActionResult Index()
         {
             var persona = db.persona.Include(p => p.pais1).Include(p => p.pais2);
             return View(persona.ToList());
         }
 
-        // GET: personas/Details/5
-        public ActionResult Details(decimal id)
+        // GET: persona/Details/5
+        public ActionResult Details(decimal id, decimal id2)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            persona persona = db.persona.Find(id);
+            persona persona = db.persona.Find(id,id2);
             if (persona == null)
             {
                 return HttpNotFound();
@@ -36,11 +36,7 @@ namespace ProyectoPaises.Controllers
             return View(persona);
         }
 
-
-        
-
-
-        // GET: personas/Create
+        // GET: persona/Create
         public ActionResult Create()
         {
             ViewBag.paisNacimiento = new SelectList(db.pais, "idPais", "nbrPais");
@@ -48,7 +44,7 @@ namespace ProyectoPaises.Controllers
             return View();
         }
 
-        // POST: personas/Create
+        // POST: persona/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -67,14 +63,14 @@ namespace ProyectoPaises.Controllers
             return View(persona);
         }
 
-        // GET: personas/Edit/5
-        public ActionResult Edit(decimal id)
+        // GET: persona/Edit/5
+        public ActionResult Edit(decimal id, decimal id2)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            persona persona = db.persona.Find(id);
+            persona persona = db.persona.Find(id,id2);
             if (persona == null)
             {
                 return HttpNotFound();
@@ -84,7 +80,7 @@ namespace ProyectoPaises.Controllers
             return View(persona);
         }
 
-        // POST: personas/Edit/5
+        // POST: persona/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -102,14 +98,14 @@ namespace ProyectoPaises.Controllers
             return View(persona);
         }
 
-        // GET: personas/Delete/5
-        public ActionResult Delete(decimal id)
+        // GET: persona/Delete/5
+        public ActionResult Delete(decimal id, decimal id2)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            persona persona = db.persona.Find(id);
+            persona persona = db.persona.Find(id,id2);
             if (persona == null)
             {
                 return HttpNotFound();
@@ -117,12 +113,12 @@ namespace ProyectoPaises.Controllers
             return View(persona);
         }
 
-        // POST: personas/Delete/5
+        // POST: persona/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(decimal id)
+        public ActionResult DeleteConfirmed(decimal id, decimal id2)
         {
-            persona persona = db.persona.Find(id);
+            persona persona = db.persona.Find(id,id2);
             db.persona.Remove(persona);
             db.SaveChanges();
             return RedirectToAction("Index");

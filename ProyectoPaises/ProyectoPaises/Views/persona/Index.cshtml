@@ -48,9 +48,9 @@
             @Html.DisplayFor(modelItem => item.pais2.nbrPais)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.cedula }) |
-            @Html.ActionLink("Details", "Details", new { id=item.cedula }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.cedula })
+            @Html.ActionLink("Edit", "Edit", new {  id=item.cedula, id2=item.paisResidencia  }) |
+            @Html.ActionLink("Details", "Details", new { id = item.cedula, id2 = item.paisResidencia }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.cedula, id2 = item.paisResidencia })
         </td>
     </tr>
 }

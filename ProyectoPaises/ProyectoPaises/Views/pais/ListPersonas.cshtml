@@ -45,8 +45,8 @@
                 @Html.DisplayFor(modelItem => item.paisResidencia)
             </td>
             <td>
-                @Html.ActionLink("Edit", "EditPersona", new { id = item.cedula }) |
-                @Html.ActionLink("Delete", "DeletePersona", new { idPersona = item.cedula, idPais = ViewBag.idPais, page = ViewBag.PageIndexPersonas })
+                @Html.ActionLink("Edit", "EditPersona", new { id = item.cedula, id2 = item.paisResidencia }) |
+                @Html.ActionLink("Delete", "DeletePersona", new { idPersona = item.cedula, id2 = item.paisResidencia, idPais = ViewBag.idPais, page = ViewBag.PageIndexPersonas })
             </td>
         </tr>
     }

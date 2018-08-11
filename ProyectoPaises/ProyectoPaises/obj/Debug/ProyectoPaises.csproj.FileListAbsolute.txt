@@ -86,7 +86,6 @@ C:\Users\jose pablo\Desktop\BD\BD\ProyectoPaises\ProyectoPaises\bin\Microsoft.AI
 C:\Users\jose pablo\Desktop\BD\BD\ProyectoPaises\ProyectoPaises\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\jose pablo\Desktop\BD\BD\ProyectoPaises\ProyectoPaises\bin\Microsoft.AI.Web.xml
 C:\Users\jose pablo\Desktop\BD\BD\ProyectoPaises\ProyectoPaises\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\jose pablo\Desktop\BD\BD\ProyectoPaises\ProyectoPaises\obj\Debug\ProyectoPaises.csprojAssemblyReference.cache
 C:\Users\jose pablo\Desktop\BD\BD\ProyectoPaises\ProyectoPaises\obj\Debug\ProyectoPaises.csproj.CoreCompileInputs.cache
 C:\Users\jose pablo\Desktop\BD\BD\ProyectoPaises\ProyectoPaises\obj\Debug\ProyectoPaises.csproj.CopyComplete
 C:\Users\jose pablo\Desktop\BD\BD\ProyectoPaises\ProyectoPaises\obj\Debug\ProyectoPaises.dll
@@ -95,3 +94,4 @@ C:\Users\jose pablo\Desktop\BD\BD\ProyectoPaises\ProyectoPaises\bin\EntityFramew
 C:\Users\jose pablo\Desktop\BD\BD\ProyectoPaises\ProyectoPaises\bin\EntityFramework.SqlServer.dll
 C:\Users\jose pablo\Desktop\BD\BD\ProyectoPaises\ProyectoPaises\bin\EntityFramework.xml
 C:\Users\jose pablo\Desktop\BD\BD\ProyectoPaises\ProyectoPaises\bin\EntityFramework.SqlServer.xml
+C:\Users\jose pablo\Desktop\BD\BD\ProyectoPaises\ProyectoPaises\obj\Debug\ProyectoPaises.csprojAssemblyReference.cache

@@ -13,6 +13,7 @@
   <EntityType Name="persona">
     <Key>
       <PropertyRef Name="cedula" />
+      <PropertyRef Name="paisResidencia" />
     </Key>
     <Property Name="cedula" Type="numeric" Precision="10" Scale="0" Nullable="false" />
     <Property Name="nbrPersona" Type="varchar" MaxLength="25" Nullable="false" />
@@ -21,15 +22,17 @@
     <Property Name="fchNacimiento" Type="datetime" />
     <Property Name="correo" Type="varchar" MaxLength="40" Nullable="false" />
   </EntityType>
-  <Association Name="pais_idPresidenteActual_fk">
+  <Association Name="pais_idPresidenteActualIdPais_fk">
     <End Role="persona" Type="Self.persona" Multiplicity="0..1" />
     <End Role="pais" Type="Self.pais" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="persona">
         <PropertyRef Name="cedula" />
+        <PropertyRef Name="paisResidencia" />
       </Principal>
       <Dependent Role="pais">
         <PropertyRef Name="idPresidenteActual" />
+        <PropertyRef Name="idPais" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -59,22 +62,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="listarPaises" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="PageIndex" Type="int" Mode="In" />
-    <Parameter Name="PageSize" Type="int" Mode="In" />
-    <Parameter Name="PageCount" Type="int" Mode="InOut" />
-  </Function>
-  <Function Name="listarPersonas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="PageIndex" Type="int" Mode="In" />
-    <Parameter Name="PageSize" Type="int" Mode="In" />
-    <Parameter Name="PageCount" Type="int" Mode="InOut" />
-  </Function>
+  <Function Name="consulta1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="consulta2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="paginarPaises" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="PageIndex" Type="int" Mode="In" />
-    <Parameter Name="PageSize" Type="int" Mode="In" />
-    <Parameter Name="PageCount" Type="int" Mode="InOut" />
-  </Function>
-  <Function Name="paginarPersonas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="PageIndex" Type="int" Mode="In" />
     <Parameter Name="PageSize" Type="int" Mode="In" />
     <Parameter Name="PageCount" Type="int" Mode="InOut" />
@@ -88,7 +78,7 @@
   <EntityContainer Name="proyectoBases2ModelStoreContainer">
     <EntitySet Name="pais" EntityType="Self.pais" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="persona" EntityType="Self.persona" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="pais_idPresidenteActual_fk" Association="Self.pais_idPresidenteActual_fk">
+    <AssociationSet Name="pais_idPresidenteActualIdPais_fk" Association="Self.pais_idPresidenteActualIdPais_fk">
       <End Role="persona" EntitySet="persona" />
       <End Role="pais" EntitySet="pais" />
     </AssociationSet>
