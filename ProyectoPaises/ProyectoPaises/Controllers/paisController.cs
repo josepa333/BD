@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using ProyectoPaises.Models;
 
+
+
 namespace ProyectoPaises.Controllers
 {
     public class paisController : Controller
@@ -62,11 +64,37 @@ namespace ProyectoPaises.Controllers
             List<persona> personas = persona.Listar(idPais, pageIndex, 10, out pageCount);
             ViewBag.PageCountPersonas = pageCount;
             ViewBag.PageIndexPersonas = pageIndex;
+            ViewBag.idPais = idPais;
             return personas;
         }
 
         //Configurar datos personas por pais
 
+        public ActionResult CreatePersona()
+        {
+            ViewBag.paisNacimiento = new SelectList(db.pais, "idPais", "nbrPais");
+            ViewBag.paisResidencia = new SelectList(db.pais, "idPais", "nbrPais");
+            return View();
+        }
+
+        // POST: personas/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreatePersona([Bind(Include = "cedula,nbrPersona,paisNacimiento,paisResidencia,fchNacimiento,correo")] persona persona)
+        {
+            if (ModelState.IsValid)
+            {
+                db.persona.Add(persona);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.paisNacimiento = new SelectList(db.pais, "idPais", "nbrPais", persona.paisNacimiento);
+            ViewBag.paisResidencia = new SelectList(db.pais, "idPais", "nbrPais", persona.paisResidencia);
+            return View(persona);
+        }
 
         public ActionResult EditPersona(decimal id)
         {
@@ -84,6 +112,14 @@ namespace ProyectoPaises.Controllers
             return View(persona);
         }
 
+        public ActionResult DeletePersona(decimal idPersona, decimal idPais, int page)
+        {
+            persona persona = db.persona.Find(idPersona);
+            db.persona.Remove(persona);
+            db.SaveChanges();
+            return RedirectToAction("Personas", "pais", new { idPais = idPais, id = page });
+        }
+
         // POST: personas/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -93,20 +129,15 @@ namespace ProyectoPaises.Controllers
         {
             if (ModelState.IsValid)
             {
-                persona.actualizadas.Add(persona);
-                /*
+                //persona.actualizadas.Add(persona);
                 db.Entry(persona).State = EntityState.Modified;
                 db.SaveChanges();
-                */
                 return RedirectToAction("Index");
             }
             ViewBag.paisNacimiento = new SelectList(db.pais, "idPais", "nbrPais", persona.paisNacimiento);
             ViewBag.paisResidencia = new SelectList(db.pais, "idPais", "nbrPais", persona.paisResidencia);
             return View(persona);
         }
-
- 
-
 
         // GET: pais/Details/5
         public ActionResult Details(decimal id)
