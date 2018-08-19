@@ -24,10 +24,6 @@ namespace ProyectoPaises.Views
         // GET: personas/Details/5
         public ActionResult Details(decimal id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             persona persona = db.persona.Find(id);
             if (persona == null)
             {
@@ -66,10 +62,6 @@ namespace ProyectoPaises.Views
         // GET: personas/Edit/5
         public ActionResult Edit(decimal id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             persona persona = db.persona.Find(id);
             if (persona == null)
             {
@@ -101,10 +93,6 @@ namespace ProyectoPaises.Views
         // GET: personas/Delete/5
         public ActionResult Delete(decimal id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             persona persona = db.persona.Find(id);
             if (persona == null)
             {

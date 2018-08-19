@@ -7,8 +7,7 @@
 
 <h2>Editar Persona</h2>
 
-@using (Html.BeginForm())
-{
+<form name="frmInsertCountry" id="frmInsertCountry" method="post" enctype="multipart/form-data">
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
@@ -51,14 +50,31 @@
             </div>
         </div>
 
+
+        <div class="form-group">
+            @Html.DisplayName("foto")
+
+            <div class="col-md-offset-2 col-md-10">
+                <input type="file" id="pic_file" name="foto" />
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.DisplayName("entrevista")
+
+            <div class="col-md-offset-2 col-md-10">
+                <input type="file" id="video_file" name="entrevista" />
+            </div>
+        </div>
+
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
     </div>
-}
+</form>
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>

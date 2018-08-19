@@ -52,18 +52,27 @@
 
         <td>
             @{
-                var imgscr = string.Format("~/resources/perfil.png");
+                var imgscr = "Resources/perfil.png";
                 if (item.FOTO != null)
                 {
                     var base64 = Convert.ToBase64String(item.FOTO);
-                    imgscr = string.Format("data:image/PNG;base64,{0}", base64);
+                    imgscr = string.Format("data:image/png;base64,{0}", base64);
                 }
             }
             <img src=@imgscr width="75" height="75" />
         </td>
 
         <th>
-            
+
+            @{
+        var vidscr = "";
+        if (item.ENTREVISTA != null)
+        {
+            var base64 = Convert.ToBase64String(item.ENTREVISTA);
+            vidscr = string.Format("data:video/mp4;base64,{0}", base64);
+        }
+            }
+            <video src=@vidscr controls width="200" />
 
         </th>
 

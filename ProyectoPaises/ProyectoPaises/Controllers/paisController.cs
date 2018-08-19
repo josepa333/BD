@@ -48,6 +48,8 @@ namespace ProyectoPaises.Controllers
             ViewBag.idPais = idPais;
             ViewBag.areaPais = pais.area;
             ViewBag.poblacionPais = pais.poblacion;
+            ViewBag.paisBandera = pais.BANDERA;
+            ViewBag.paisHimno = pais.HIMNO;
             int existe = db.persona.Where(x => x.cedula == pais.idPresidenteActual).Where(x => x.paisResidencia == idPais).Count();
             if(existe != 0)
             {
@@ -96,19 +98,29 @@ namespace ProyectoPaises.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreatePersona([Bind(Include = "cedula,nbrPersona,paisNacimiento,paisResidencia,fchNacimiento,correo")] persona persona, HttpPostedFileBase foto, HttpPostedFileBase entrevista)
         {
-            byte[] picture;
-
             MemoryStream target = new MemoryStream();
-            foto.InputStream.CopyTo(target);
-            picture = target.ToArray();
 
-            byte[] interview;
-            target = new MemoryStream();
-            entrevista.InputStream.CopyTo(target);
-            interview = target.ToArray();
+            if (foto != null)
+            {
+                byte[] picture;
 
-            persona.FOTO = picture;
-            persona.ENTREVISTA = interview;
+                foto.InputStream.CopyTo(target);
+                picture = target.ToArray();
+                persona.FOTO = picture;
+            }
+
+
+            if(entrevista != null)
+            {
+                byte[] interview;
+                target = new MemoryStream();
+                entrevista.InputStream.CopyTo(target);
+                interview = target.ToArray();
+                persona.ENTREVISTA = interview;
+
+            }
+
+
 
             if (ModelState.IsValid)
             {
@@ -124,10 +136,6 @@ namespace ProyectoPaises.Controllers
 
         public ActionResult EditPersona(decimal id, decimal id2)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             persona persona = db.persona.Find(id,id2);
             if (persona == null)
             {
@@ -151,8 +159,31 @@ namespace ProyectoPaises.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditPersona([Bind(Include = "cedula,nbrPersona,paisNacimiento,paisResidencia,fchNacimiento,correo")] persona persona)
+        public ActionResult EditPersona([Bind(Include = "cedula,nbrPersona,paisNacimiento,paisResidencia,fchNacimiento,correo")] persona persona, HttpPostedFileBase foto, HttpPostedFileBase entrevista)
         {
+            MemoryStream target = new MemoryStream();
+
+            if (foto != null)
+            {
+                byte[] picture;
+
+                foto.InputStream.CopyTo(target);
+                picture = target.ToArray();
+                persona.FOTO = picture;
+            }
+
+
+            if (entrevista != null)
+            {
+                byte[] interview;
+                target = new MemoryStream();
+                entrevista.InputStream.CopyTo(target);
+                interview = target.ToArray();
+                persona.ENTREVISTA = interview;
+
+            }
+
+
             if (ModelState.IsValid)
             {
                 //persona.actualizadas.Add(persona);
@@ -181,21 +212,25 @@ namespace ProyectoPaises.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "idPais,nbrPais,area,poblacion,idPresidenteActual")] pais pais, HttpPostedFileBase bandera, HttpPostedFileBase himno)
         {
-
-            byte[] anthem;
-
             MemoryStream target = new MemoryStream();
-            himno.InputStream.CopyTo(target);
-            anthem = target.ToArray();
+            if (himno != null)
+            {
+                byte[] anthem;
 
-            byte[] flag;
-            target = new MemoryStream();
-            bandera.InputStream.CopyTo(target);
-            flag = target.ToArray();
+                
+                himno.InputStream.CopyTo(target);
+                anthem = target.ToArray();
+                pais.BANDERA = anthem;
 
-            pais.BANDERA = flag;
-            pais.HIMNO = anthem;
-
+            }
+            if (bandera != null)
+            {
+                byte[] flag;
+                target = new MemoryStream();
+                bandera.InputStream.CopyTo(target);
+                flag = target.ToArray();
+                pais.HIMNO = flag;
+            }
 
             if (ModelState.IsValid)
             {
@@ -211,10 +246,6 @@ namespace ProyectoPaises.Controllers
         // GET: pais/Edit/5
         public ActionResult Edit(decimal id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             pais pais = db.pais.Find(id);
             if (pais == null)
             {
@@ -229,8 +260,27 @@ namespace ProyectoPaises.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idPais,nbrPais,area,poblacion,idPresidenteActual")] pais pais)
+        public ActionResult Edit([Bind(Include = "idPais,nbrPais,area,poblacion,idPresidenteActual")] pais pais, HttpPostedFileBase bandera, HttpPostedFileBase himno)
         {
+            MemoryStream target = new MemoryStream();
+            if (himno != null)
+            {
+                byte[] anthem;
+
+
+                himno.InputStream.CopyTo(target);
+                anthem = target.ToArray();
+                pais.BANDERA = anthem;
+
+            }
+            if (bandera != null)
+            {
+                byte[] flag;
+                target = new MemoryStream();
+                bandera.InputStream.CopyTo(target);
+                flag = target.ToArray();
+                pais.HIMNO = flag;
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(pais).State = EntityState.Modified;
@@ -244,10 +294,6 @@ namespace ProyectoPaises.Controllers
         // GET: pais/Delete/5
         public ActionResult Delete(decimal id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             pais pais = db.pais.Find(id);
             if (pais == null)
             {

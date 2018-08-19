@@ -40,15 +40,31 @@
         </td>
         <td>
             @{
-                var imgscr = string.Format("~/resources/perfil.png");
-                if (item.BANDERA != null)
-                {
-                    var base64 = Convert.ToBase64String(item.BANDERA);
-                    imgscr = string.Format("data:image/gif;base64,{0}", base64);
-                }
+        var imgscr = "Resources/Earth_flag.png";
+        if (item.BANDERA != null)
+        {
+            var base64 = Convert.ToBase64String(item.BANDERA);
+            imgscr = string.Format("data:image/PNG;base64,{0}", base64);
+        }
             }
-            <img src='@imgscr'width="75" height="75"/>
+            <img src=@imgscr width="100" height="60" />
+
+
+
         </td>
+        <td>
+
+            @{
+        var audsrc = "";
+        if (item.HIMNO != null)
+        {
+            var hbase64 = Convert.ToBase64String(item.HIMNO);
+            audsrc = string.Format("data:audio/mp3;base64,{0}", hbase64);
+        }
+            }
+            <audio src='@audsrc' controls />
+        </td>
+
         <td>
             <ul class="pagination">
                 @Html.ActionLink("Edit", "Edit", new { id = item.idPais }) |
