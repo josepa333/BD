@@ -8,6 +8,8 @@
     <Property Name="nbrPais" Type="varchar" MaxLength="25" Nullable="false" />
     <Property Name="area" Type="numeric" Precision="10" Scale="0" Nullable="false" />
     <Property Name="poblacion" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="BANDERA" Type="varbinary(max)" />
+    <Property Name="HIMNO" Type="varbinary(max)" />
     <Property Name="idPresidenteActual" Type="numeric" Precision="10" Scale="0" />
   </EntityType>
   <EntityType Name="persona">
@@ -21,8 +23,10 @@
     <Property Name="paisResidencia" Type="numeric" Precision="3" Scale="0" Nullable="false" />
     <Property Name="fchNacimiento" Type="datetime" />
     <Property Name="correo" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="FOTO" Type="varbinary(max)" />
+    <Property Name="ENTREVISTA" Type="varbinary(max)" />
   </EntityType>
-  <Association Name="pais_idPresidenteActualIdPais_fk">
+  <Association Name="pais_idPais_idPresidenteActual_fk">
     <End Role="persona" Type="Self.persona" Multiplicity="0..1" />
     <End Role="pais" Type="Self.pais" Multiplicity="*" />
     <ReferentialConstraint>
@@ -49,9 +53,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="persona_paisResidencia_fk">
-    <End Role="pais" Type="Self.pais" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
+    <End Role="pais" Type="Self.pais" Multiplicity="1" />
     <End Role="persona" Type="Self.persona" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="pais">
@@ -64,6 +66,9 @@
   </Association>
   <Function Name="consulta1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="consulta2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="insercionPersonas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numPais" Type="int" Mode="In" />
+  </Function>
   <Function Name="paginarPaises" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="PageIndex" Type="int" Mode="In" />
     <Parameter Name="PageSize" Type="int" Mode="In" />
@@ -78,7 +83,7 @@
   <EntityContainer Name="proyectoBases2ModelStoreContainer">
     <EntitySet Name="pais" EntityType="Self.pais" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="persona" EntityType="Self.persona" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="pais_idPresidenteActualIdPais_fk" Association="Self.pais_idPresidenteActualIdPais_fk">
+    <AssociationSet Name="pais_idPais_idPresidenteActual_fk" Association="Self.pais_idPais_idPresidenteActual_fk">
       <End Role="persona" EntitySet="persona" />
       <End Role="pais" EntitySet="pais" />
     </AssociationSet>

@@ -17,33 +17,47 @@
         <th>
             @Html.DisplayNameFor(model => model.idPresidenteActual)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BANDERA)
+        </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.nbrPais)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.area)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.poblacion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.idPresidenteActual)
-            </td>
-            <td>
-                <ul class="pagination">
-                    @Html.ActionLink("Edit", "Edit", new { id = item.idPais }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.idPais }) |
-                    @Html.ActionLink("Personas", "Personas", new { idPais = item.idPais })
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nbrPais)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.area)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.poblacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idPresidenteActual)
+        </td>
+        <td>
+            @{
+                var imgscr = string.Format("~/resources/perfil.png");
+                if (item.BANDERA != null)
+                {
+                    var base64 = Convert.ToBase64String(item.BANDERA);
+                    imgscr = string.Format("data:image/gif;base64,{0}", base64);
+                }
+            }
+            <img scr='@imgscr'width="75" height="75"/>
+        </td>
+        <td>
+            <ul class="pagination">
+                @Html.ActionLink("Edit", "Edit", new { id = item.idPais }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.idPais }) |
+                @Html.ActionLink("Personas", "Personas", new { idPais = item.idPais })
 
-                </ul>
-            </td>
-        </tr>
+            </ul>
+        </td>
+    </tr>
     }
 
 </table>

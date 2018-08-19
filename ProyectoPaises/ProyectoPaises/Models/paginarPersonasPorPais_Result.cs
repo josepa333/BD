@@ -20,5 +20,7 @@ namespace ProyectoPaises.Models
         public decimal paisResidencia { get; set; }
         public Nullable<System.DateTime> fchNacimiento { get; set; }
         public string correo { get; set; }
+        public byte[] FOTO { get; set; }
+        public byte[] ENTREVISTA { get; set; }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -14,7 +15,7 @@ namespace ProyectoPaises.Controllers
 {
     public class paisController : Controller
     {
-        private proyectoBases2Entities4 db = new proyectoBases2Entities4();
+        private proyectoBases2Entities5 db = new proyectoBases2Entities5();
 
         // GET: pais
         public ActionResult Index(int id = 1)
@@ -93,8 +94,22 @@ namespace ProyectoPaises.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreatePersona([Bind(Include = "cedula,nbrPersona,paisNacimiento,paisResidencia,fchNacimiento,correo")] persona persona)
+        public ActionResult CreatePersona([Bind(Include = "cedula,nbrPersona,paisNacimiento,paisResidencia,fchNacimiento,correo")] persona persona, HttpPostedFileBase foto, HttpPostedFileBase entrevista)
         {
+            byte[] picture;
+
+            MemoryStream target = new MemoryStream();
+            foto.InputStream.CopyTo(target);
+            picture = target.ToArray();
+
+            byte[] interview;
+
+            entrevista.InputStream.CopyTo(target);
+            interview = target.ToArray();
+
+            persona.FOTO = picture;
+            persona.ENTREVISTA = interview;
+
             if (ModelState.IsValid)
             {
                 db.persona.Add(persona);
@@ -164,8 +179,24 @@ namespace ProyectoPaises.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idPais,nbrPais,area,poblacion,idPresidenteActual")] pais pais)
+        public ActionResult Create([Bind(Include = "idPais,nbrPais,area,poblacion,idPresidenteActual")] pais pais, HttpPostedFileBase bandera, HttpPostedFileBase himno)
         {
+
+            byte[] anthem;
+
+            MemoryStream target = new MemoryStream();
+            himno.InputStream.CopyTo(target);
+            anthem = target.ToArray();
+
+            byte[] flag;
+
+            bandera.InputStream.CopyTo(target);
+            flag = target.ToArray();
+
+            pais.BANDERA = flag;
+            pais.HIMNO = anthem;
+
+
             if (ModelState.IsValid)
             {
                 db.pais.Add(pais);

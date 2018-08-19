@@ -27,6 +27,8 @@ namespace ProyectoPaises.Models
         public string nbrPais { get; set; }
         public decimal area { get; set; }
         public decimal poblacion { get; set; }
+        public byte[] BANDERA { get; set; }
+        public byte[] HIMNO { get; set; }
         public Nullable<decimal> idPresidenteActual { get; set; }
     
         public virtual persona persona { get; set; }
@@ -34,9 +36,6 @@ namespace ProyectoPaises.Models
         public virtual ICollection<persona> persona1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<persona> persona2 { get; set; }
-
-
-
 
         public List<pais> Listar(int pageIndex, int pageSize, out int pageCount)
         {
@@ -63,6 +62,8 @@ namespace ProyectoPaises.Models
                                 order.nbrPais = (string)reader["nbrPais"];
                                 order.area = (decimal)reader["area"];
                                 order.poblacion = (decimal)reader["poblacion"];
+                                if (reader["BANDERA"] != DBNull.Value) order.BANDERA = (byte[])reader["BANDERA"];
+                                if (reader["HIMNO"] != DBNull.Value) order.HIMNO = (byte[])reader["HIMNO"];
                                 if (reader["idPresidenteActual"] != DBNull.Value) order.idPresidenteActual = (decimal)reader["idPresidenteActual"];
                                 orders.Add(order);
                             }
@@ -73,8 +74,6 @@ namespace ProyectoPaises.Models
             }
             return orders;
         }
-
-
 
     }
 }

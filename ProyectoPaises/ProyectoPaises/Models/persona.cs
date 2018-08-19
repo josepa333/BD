@@ -28,11 +28,14 @@ namespace ProyectoPaises.Models
         public decimal paisResidencia { get; set; }
         public Nullable<System.DateTime> fchNacimiento { get; set; }
         public string correo { get; set; }
+        public byte[] FOTO { get; set; }
+        public byte[] ENTREVISTA { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<pais> pais { get; set; }
         public virtual pais pais1 { get; set; }
         public virtual pais pais2 { get; set; }
+
 
         public List<persona> Listar(decimal idPais, int pageIndex, int pageSize, out int pageCount)
         {
@@ -61,8 +64,10 @@ namespace ProyectoPaises.Models
                                 order.nbrPersona = (string)reader["nbrPersona"];
                                 order.paisNacimiento = (decimal)reader["paisNacimiento"];
                                 order.paisResidencia = (decimal)reader["paisResidencia"];
-                                order.fchNacimiento = (System.DateTime)reader["fchNacimiento"];
+                                //order.fchNacimiento = (System.DateTime)reader["fchNacimiento"];
                                 order.correo = (string)reader["correo"];
+                                if (reader["FOTO"] != DBNull.Value) order.FOTO = (byte[])reader["FOTO"];
+                                if (reader["ENTREVISTA"] != DBNull.Value) order.ENTREVISTA = (byte[])reader["ENTREVISTA"];
                                 orders.Add(order);
                             }
                         }
@@ -72,7 +77,6 @@ namespace ProyectoPaises.Models
             }
             return orders;
         }
-
 
     }
 }

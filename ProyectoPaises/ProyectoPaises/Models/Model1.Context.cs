@@ -15,10 +15,10 @@ namespace ProyectoPaises.Models
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class proyectoBases2Entities4 : DbContext
+    public partial class proyectoBases2Entities5 : DbContext
     {
-        public proyectoBases2Entities4()
-            : base("name=proyectoBases2Entities4")
+        public proyectoBases2Entities5()
+            : base("name=proyectoBases2Entities5")
         {
         }
     
@@ -38,6 +38,15 @@ namespace ProyectoPaises.Models
         public virtual ObjectResult<consulta2_Result> consulta2()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<consulta2_Result>("consulta2");
+        }
+    
+        public virtual int insercionPersonas(Nullable<int> numPais)
+        {
+            var numPaisParameter = numPais.HasValue ?
+                new ObjectParameter("numPais", numPais) :
+                new ObjectParameter("numPais", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("insercionPersonas", numPaisParameter);
         }
     
         public virtual ObjectResult<paginarPaises_Result> paginarPaises(Nullable<int> pageIndex, Nullable<int> pageSize, ObjectParameter pageCount)

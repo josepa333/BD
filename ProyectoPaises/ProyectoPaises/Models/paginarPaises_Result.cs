@@ -18,6 +18,8 @@ namespace ProyectoPaises.Models
         public string nbrPais { get; set; }
         public decimal area { get; set; }
         public decimal poblacion { get; set; }
+        public byte[] BANDERA { get; set; }
+        public byte[] HIMNO { get; set; }
         public Nullable<decimal> idPresidenteActual { get; set; }
     }
 }

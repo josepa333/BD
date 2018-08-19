@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="proyectoBases2ModelStoreContainer" CdmEntityContainer="proyectoBases2Entities4">
+  <EntityContainerMapping StorageEntityContainer="proyectoBases2ModelStoreContainer" CdmEntityContainer="proyectoBases2Entities5">
     <EntitySetMapping Name="pais">
       <EntityTypeMapping TypeName="proyectoBases2Model.pais">
         <MappingFragment StoreEntitySet="pais">
@@ -8,6 +8,8 @@
           <ScalarProperty Name="nbrPais" ColumnName="nbrPais" />
           <ScalarProperty Name="area" ColumnName="area" />
           <ScalarProperty Name="poblacion" ColumnName="poblacion" />
+          <ScalarProperty Name="BANDERA" ColumnName="BANDERA" />
+          <ScalarProperty Name="HIMNO" ColumnName="HIMNO" />
           <ScalarProperty Name="idPresidenteActual" ColumnName="idPresidenteActual" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -21,6 +23,8 @@
           <ScalarProperty Name="paisResidencia" ColumnName="paisResidencia" />
           <ScalarProperty Name="fchNacimiento" ColumnName="fchNacimiento" />
           <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="FOTO" ColumnName="FOTO" />
+          <ScalarProperty Name="ENTREVISTA" ColumnName="ENTREVISTA" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -43,6 +47,7 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="insercionPersonas" FunctionName="proyectoBases2Model.Store.insercionPersonas" />
     <FunctionImportMapping FunctionImportName="paginarPaises" FunctionName="proyectoBases2Model.Store.paginarPaises">
       <ResultMapping>
         <ComplexTypeMapping TypeName="proyectoBases2Model.paginarPaises_Result">
@@ -51,6 +56,8 @@
           <ScalarProperty Name="nbrPais" ColumnName="nbrPais" />
           <ScalarProperty Name="area" ColumnName="area" />
           <ScalarProperty Name="poblacion" ColumnName="poblacion" />
+          <ScalarProperty Name="BANDERA" ColumnName="BANDERA" />
+          <ScalarProperty Name="HIMNO" ColumnName="HIMNO" />
           <ScalarProperty Name="idPresidenteActual" ColumnName="idPresidenteActual" />
         </ComplexTypeMapping>
       </ResultMapping>
@@ -65,6 +72,8 @@
           <ScalarProperty Name="paisResidencia" ColumnName="paisResidencia" />
           <ScalarProperty Name="fchNacimiento" ColumnName="fchNacimiento" />
           <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="FOTO" ColumnName="FOTO" />
+          <ScalarProperty Name="ENTREVISTA" ColumnName="ENTREVISTA" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

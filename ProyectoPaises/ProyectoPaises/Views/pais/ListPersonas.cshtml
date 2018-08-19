@@ -23,32 +23,55 @@
         <th>
             @Html.DisplayNameFor(model => model.paisResidencia)
         </th>
+
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.nbrPersona)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.fchNacimiento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.correo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.paisNacimiento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.paisResidencia)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "EditPersona", new { id = item.cedula, id2 = item.paisResidencia }) |
-                @Html.ActionLink("Delete", "DeletePersona", new { idPersona = item.cedula, id2 = item.paisResidencia, idPais = ViewBag.idPais, page = ViewBag.PageIndexPersonas })
-            </td>
-        </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nbrPersona)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fchNacimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.correo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.paisNacimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.paisResidencia)
+        </td>
+
+        <td>
+            @{
+                var fbase64 = Convert.ToBase64String(item.FOTO);
+                var imgscr = string.Format("data:image/gif;base64,{0}", fbase64);
+            }
+            <img scr='@imgscr'>
+        </td>
+
+        <th>
+            @{
+                var ebase64 = Convert.ToBase64String(item.ENTREVISTA);
+                var entscr = string.Format("data:video/mp4;base64,{0}", ebase64);
+            }
+
+            <video width="320" height="240" controls>
+                <source src='@entscr'>
+                Your browser does not support the video tag.
+            </video>
+
+        </th>
+
+        <td>
+            @Html.ActionLink("Edit", "EditPersona", new { id = item.cedula, id2 = item.paisResidencia }) |
+            @Html.ActionLink("Delete", "DeletePersona", new { idPersona = item.cedula, id2 = item.paisResidencia, idPais = ViewBag.idPais, page = ViewBag.PageIndexPersonas })
+        </td>
+    </tr>
     }
 
 </table>
