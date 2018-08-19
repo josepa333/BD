@@ -103,7 +103,7 @@ namespace ProyectoPaises.Controllers
             picture = target.ToArray();
 
             byte[] interview;
-
+            target = new MemoryStream();
             entrevista.InputStream.CopyTo(target);
             interview = target.ToArray();
 
@@ -189,7 +189,7 @@ namespace ProyectoPaises.Controllers
             anthem = target.ToArray();
 
             byte[] flag;
-
+            target = new MemoryStream();
             bandera.InputStream.CopyTo(target);
             flag = target.ToArray();
 

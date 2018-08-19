@@ -27,6 +27,9 @@
         <th>
             @Html.DisplayNameFor(model => model.pais2.nbrPais)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FOTO)
+        </th>
         <th></th>
     </tr>
 
@@ -48,7 +51,18 @@
             @Html.DisplayFor(modelItem => item.pais2.nbrPais)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new {  id=item.cedula, id2=item.paisResidencia  }) |
+            @{
+                string imgscr = string.Format("Resources/perfil.png");
+                if (item.FOTO != null)
+                {
+                    string base64 = Convert.ToBase64String(item.FOTO);
+                    imgscr = string.Format("data:image/png;base64,{0}", base64);
+                }
+            }
+            <img scr='@imgscr' class="img-responsive" height="100" width="100"/>
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.cedula, id2 = item.paisResidencia }) |
             @Html.ActionLink("Details", "Details", new { id = item.cedula, id2 = item.paisResidencia }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.cedula, id2 = item.paisResidencia })
         </td>
