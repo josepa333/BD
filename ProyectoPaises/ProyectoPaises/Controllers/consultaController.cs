@@ -10,7 +10,7 @@ namespace ProyectoPaises.Controllers
 {
     public class consultaController : Controller
     {
-        private proyectoBases2Entities5 db = new proyectoBases2Entities5();
+        private proyectoBases2Entities5 db = Transaccion.Contexto();
         // GET: consulta
         public ActionResult Index()
         {

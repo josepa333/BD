@@ -24,6 +24,12 @@
         <th>
             @Html.DisplayName("Presidente actual")
         </th>
+        <th>
+            @Html.DisplayName("Bandera")
+        </th>
+        <th>
+            @Html.DisplayName("Himno")
+        </th>
 
 
     </tr>
@@ -44,6 +50,29 @@
         <th>
             @ViewBag.presidentePais
         </th>
+        <td>
+            @{
+                var imgscr = "Resources/Earth_flag.png";
+                if (@ViewBag.BANDERA != null)
+                {
+                    var base64 = Convert.ToBase64String(@ViewBag.BANDERA);
+                    imgscr = string.Format("data:image/PNG;base64,{0}", base64);
+                }
+            }
+            <img src=@imgscr width="100" height="60" />
+        </td>
+
+        <td>
+            @{
+                var audsrc = "";
+                if (@ViewBag.HIMNO != null)
+                {
+                    var hbase64 = Convert.ToBase64String(@ViewBag.HIMNO);
+                    audsrc = string.Format("data:audio/mp3;base64,{0}", hbase64);
+                }
+            }
+            <audio src='@audsrc' controls />
+        </td>
 
     </tr>
 
@@ -66,5 +95,5 @@
 
 
 <ul class="pagination">
-    <li>@Html.ActionLink("Commit", "commitCambios", new { idPais = 1, id = 1 }) </li>
+    <li>@Html.ActionLink("Commit", "commitCambios", new { }) </li>
 </ul>

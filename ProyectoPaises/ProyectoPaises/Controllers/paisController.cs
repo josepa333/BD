@@ -50,6 +50,8 @@ namespace ProyectoPaises.Controllers
             ViewBag.poblacionPais = pais.poblacion;
             ViewBag.paisBandera = pais.BANDERA;
             ViewBag.paisHimno = pais.HIMNO;
+            ViewBag.BANDERA = pais.BANDERA;
+            ViewBag.HIMNO = pais.HIMNO;
             int existe = db.persona.Where(x => x.cedula == pais.idPresidenteActual).Where(x => x.paisResidencia == idPais).Count();
             if(existe != 0)
             {
@@ -120,12 +122,9 @@ namespace ProyectoPaises.Controllers
 
             }
 
-
-
             if (ModelState.IsValid)
             {
-                db.persona.Add(persona);
-                db.SaveChanges();
+                Transaccion.agregarPersona(persona);
                 return RedirectToAction("Index");
             }
 
@@ -136,7 +135,7 @@ namespace ProyectoPaises.Controllers
 
         public ActionResult EditPersona(decimal id, decimal id2)
         {
-            persona persona = db.persona.Find(id,id2);
+            persona persona = Transaccion.Contexto().persona.Find(id,id2);
             if (persona == null)
             {
                 return HttpNotFound();
@@ -150,7 +149,6 @@ namespace ProyectoPaises.Controllers
         {
             persona persona = db.persona.Find(idPersona,id2);
             db.persona.Remove(persona);
-            db.SaveChanges();
             return RedirectToAction("Personas", "pais", new { idPais = idPais, id = page });
         }
 
@@ -186,13 +184,12 @@ namespace ProyectoPaises.Controllers
 
             if (ModelState.IsValid)
             {
-                //persona.actualizadas.Add(persona);
-                db.Entry(persona).State = EntityState.Modified;
-                db.SaveChanges();
+                //Transaccion.modificarPersona(persona);
+
                 return RedirectToAction("Index");
             }
-            ViewBag.paisNacimiento = new SelectList(db.pais, "idPais", "nbrPais", persona.paisNacimiento);
-            ViewBag.paisResidencia = new SelectList(db.pais, "idPais", "nbrPais", persona.paisResidencia);
+            ViewBag.paisNacimiento = new SelectList(Transaccion.Contexto().pais, "idPais", "nbrPais", persona.paisNacimiento);
+            ViewBag.paisResidencia = new SelectList(Transaccion.Contexto().pais, "idPais", "nbrPais", persona.paisResidencia);
             return View(persona);
         }
 
@@ -235,7 +232,6 @@ namespace ProyectoPaises.Controllers
             if (ModelState.IsValid)
             {
                 db.pais.Add(pais);
-                db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -246,12 +242,12 @@ namespace ProyectoPaises.Controllers
         // GET: pais/Edit/5
         public ActionResult Edit(decimal id)
         {
-            pais pais = db.pais.Find(id);
+            pais pais = Transaccion.Contexto().pais.Find(id);
             if (pais == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.idPresidenteActual = new SelectList(db.persona.Where(x => x.paisResidencia == id), "cedula", "nbrPersona", pais.idPresidenteActual);
+            ViewBag.idPresidenteActual = new SelectList(Transaccion.Contexto().persona.Where(x => x.paisResidencia == id), "cedula", "nbrPersona", pais.idPresidenteActual);
             return View(pais);
         }
 
@@ -284,7 +280,6 @@ namespace ProyectoPaises.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(pais).State = EntityState.Modified;
-                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             ViewBag.idPresidenteActual = new SelectList(db.persona.Where(x => x.paisResidencia == pais.idPais), "cedula", "nbrPersona", pais.idPresidenteActual);
@@ -309,7 +304,6 @@ namespace ProyectoPaises.Controllers
         {
             pais pais = db.pais.Find(id);
             db.pais.Remove(pais);
-            db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -317,22 +311,19 @@ namespace ProyectoPaises.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                //db.Dispose();
             }
             base.Dispose(disposing);
         }
 
         /*Commit*/
-        /*
-        public ActionResult commitCambios(decimal idPais, int id)
+
+        public ActionResult commitCambios()
         {
-            for (int i = 0; i < persona.actualizadas.Count(); i++)
-            {
-                persona actual = persona.actualizadas[i];
-                db.Entry(actual).State = EntityState.Modified;
-                db.SaveChanges();
-            }
+
+            Transaccion.commit();
+            Transaccion.reiniciarInstancia();
             return RedirectToAction("Index");
-        }*/
+        }
     }
 }
