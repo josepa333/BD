@@ -1,0 +1,85 @@
+﻿@model IEnumerable<ProyectoPaises.Models.pais>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nbrPais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.area)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.poblacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idPresidenteActual)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BANDERA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HIMNO)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nbrPais)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.area)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.poblacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.persona.nbrPersona)
+        </td>
+
+        <td>
+            @{
+                var imgscr = "Resources/Earth_flag.png";
+                if (item.BANDERA != null)
+                {
+                    var base64 = Convert.ToBase64String(item.BANDERA);
+                    imgscr = string.Format("data:image/PNG;base64,{0}", base64);
+                }
+            }
+            <img src=@imgscr width="100" height="60" />
+        </td>
+
+        <td>
+
+            @{
+                var audsrc = "";
+                if (item.HIMNO != null)
+                {
+                    var hbase64 = Convert.ToBase64String(item.HIMNO);
+                    audsrc = string.Format("data:audio/mp3;base64,{0}", hbase64);
+                }
+            }
+            <audio src='@audsrc' controls />
+        </td>
+
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.idPais }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.idPais })
+        </td>
+    </tr>
+}
+
+</table>

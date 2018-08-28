@@ -38,7 +38,7 @@
             @Html.DisplayFor(modelItem => item.poblacion)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.idPresidenteActual)
+            @Html.DisplayFor(modelItem => item.persona.nbrPersona)
         </td>
         <td>
             @{
@@ -82,9 +82,9 @@
 
 <ul class="pagination">
     <li>@Ajax.ActionLink("Primero", "ListOrders", new {id = 1 }, new AjaxOptions { UpdateTargetId = "list-orders", InsertionMode = InsertionMode.Replace })</li>
-    <li>@Ajax.ActionLink("Anterior", "ListOrders", new { id = (ViewBag.PageIndex - 1 < 1) ? 1 : (ViewBag.PageIndex - 1) }, new AjaxOptions { UpdateTargetId = "list-orders", InsertionMode = InsertionMode.Replace })</li>
+    <li>@Ajax.ActionLink("Anterior", "ListOrders", new { id = (ViewBag.PageIndex - 1 < 1) ? ViewBag.PageCount : (ViewBag.PageIndex - 1) }, new AjaxOptions { UpdateTargetId = "list-orders", InsertionMode = InsertionMode.Replace })</li>
     <li><span>Pág. @ViewBag.PageIndex de @ViewBag.PageCount</span></li>
-    <li>@Ajax.ActionLink("Siguiente", "ListOrders", new { id = (ViewBag.PageIndex + 1 > ViewBag.PageCount) ? ViewBag.PageCount : (ViewBag.PageIndex + 1) }, new AjaxOptions { UpdateTargetId = "list-orders", InsertionMode = InsertionMode.Replace })</li>
+    <li>@Ajax.ActionLink("Siguiente", "ListOrders", new { id = (ViewBag.PageIndex + 1 > ViewBag.PageCount) ? 1 : (ViewBag.PageIndex + 1) }, new AjaxOptions { UpdateTargetId = "list-orders", InsertionMode = InsertionMode.Replace })</li>
     <li>@Ajax.ActionLink("Ultimo", "ListOrders", new { id = ViewBag.PageCount }, new AjaxOptions { UpdateTargetId = "list-orders", InsertionMode = InsertionMode.Replace })</li>
 </ul>
 

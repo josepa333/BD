@@ -1,0 +1,67 @@
+﻿@model ProyectoPaises.Models.pais
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>pais</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nbrPais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nbrPais)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.area)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.area)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.poblacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.poblacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BANDERA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BANDERA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HIMNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HIMNO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.persona.nbrPersona)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.persona.nbrPersona)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idPais }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

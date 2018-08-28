@@ -159,6 +159,7 @@
     <Compile Include="Controllers\consultaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\paisController.cs" />
+    <Compile Include="Controllers\paisMoController.cs" />
     <Compile Include="Controllers\personaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -277,9 +278,15 @@
     <Content Include="Views\persona\Index.cshtml" />
     <Content Include="Views\consulta\consulta1.cshtml" />
     <Content Include="Views\consulta\consulta2.cshtml" />
+    <Content Include="Views\paisMo\Create.cshtml" />
+    <Content Include="Views\paisMo\Delete.cshtml" />
+    <Content Include="Views\paisMo\Details.cshtml" />
+    <Content Include="Views\paisMo\Edit.cshtml" />
+    <Content Include="Views\paisMo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\paisModificacion\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

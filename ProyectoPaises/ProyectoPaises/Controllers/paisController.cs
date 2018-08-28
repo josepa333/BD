@@ -149,6 +149,7 @@ namespace ProyectoPaises.Controllers
         {
             persona persona = db.persona.Find(idPersona,id2);
             db.persona.Remove(persona);
+            db.SaveChanges();
             return RedirectToAction("Personas", "pais", new { idPais = idPais, id = page });
         }
 
@@ -185,7 +186,8 @@ namespace ProyectoPaises.Controllers
             if (ModelState.IsValid)
             {
                 //Transaccion.modificarPersona(persona);
-
+                db.Entry(persona).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             ViewBag.paisNacimiento = new SelectList(Transaccion.Contexto().pais, "idPais", "nbrPais", persona.paisNacimiento);
@@ -232,6 +234,7 @@ namespace ProyectoPaises.Controllers
             if (ModelState.IsValid)
             {
                 db.pais.Add(pais);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -280,6 +283,7 @@ namespace ProyectoPaises.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(pais).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             ViewBag.idPresidenteActual = new SelectList(db.persona.Where(x => x.paisResidencia == pais.idPais), "cedula", "nbrPersona", pais.idPresidenteActual);
@@ -304,6 +308,7 @@ namespace ProyectoPaises.Controllers
         {
             pais pais = db.pais.Find(id);
             db.pais.Remove(pais);
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -311,7 +316,7 @@ namespace ProyectoPaises.Controllers
         {
             if (disposing)
             {
-                //db.Dispose();
+                db.Dispose();
             }
             base.Dispose(disposing);
         }
