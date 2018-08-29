@@ -186,8 +186,10 @@ namespace ProyectoPaises.Controllers
             if (ModelState.IsValid)
             {
                 //Transaccion.modificarPersona(persona);
+                Transaccion.rollBack();
                 db.Entry(persona).State = EntityState.Modified;
                 db.SaveChanges();
+                Transaccion.reiniciarInstancia();
                 return RedirectToAction("Index");
             }
             ViewBag.paisNacimiento = new SelectList(Transaccion.Contexto().pais, "idPais", "nbrPais", persona.paisNacimiento);
@@ -216,10 +218,10 @@ namespace ProyectoPaises.Controllers
             {
                 byte[] anthem;
 
-                
+
                 himno.InputStream.CopyTo(target);
                 anthem = target.ToArray();
-                pais.BANDERA = anthem;
+                pais.HIMNO = anthem;
 
             }
             if (bandera != null)
@@ -228,7 +230,7 @@ namespace ProyectoPaises.Controllers
                 target = new MemoryStream();
                 bandera.InputStream.CopyTo(target);
                 flag = target.ToArray();
-                pais.HIMNO = flag;
+                pais.BANDERA = flag;
             }
 
             if (ModelState.IsValid)
@@ -265,11 +267,9 @@ namespace ProyectoPaises.Controllers
             if (himno != null)
             {
                 byte[] anthem;
-
-
                 himno.InputStream.CopyTo(target);
                 anthem = target.ToArray();
-                pais.BANDERA = anthem;
+                pais.HIMNO = anthem;
 
             }
             if (bandera != null)
@@ -278,12 +278,14 @@ namespace ProyectoPaises.Controllers
                 target = new MemoryStream();
                 bandera.InputStream.CopyTo(target);
                 flag = target.ToArray();
-                pais.HIMNO = flag;
+                pais.BANDERA = flag;
             }
             if (ModelState.IsValid)
             {
+                Transaccion.rollBack();
                 db.Entry(pais).State = EntityState.Modified;
                 db.SaveChanges();
+                Transaccion.reiniciarInstancia();
                 return RedirectToAction("Index");
             }
             ViewBag.idPresidenteActual = new SelectList(db.persona.Where(x => x.paisResidencia == pais.idPais), "cedula", "nbrPersona", pais.idPresidenteActual);
@@ -330,5 +332,14 @@ namespace ProyectoPaises.Controllers
             Transaccion.reiniciarInstancia();
             return RedirectToAction("Index");
         }
+
+        public ActionResult rollBackCambios()
+        {
+            Transaccion.rollBack();
+            Transaccion.reiniciarInstancia();
+            return RedirectToAction("Index");
+        }
+
+        
     }
 }

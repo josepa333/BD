@@ -41,7 +41,7 @@ namespace ProyectoPaises.Models
         {
             List<persona> orders = new List<persona>();
 
-            using (SqlConnection conexion = new SqlConnection("Data Source=ecRhin.ec.tec.ac.cr\\Estudiantes;Initial Catalog=proyectoBases2;Persist Security Info=True;User ID=josepalvarado;Password=josepalvarado;MultipleActiveResultSets=True;Application Name=EntityFramework"))
+            using (SqlConnection conexion = new SqlConnection(Transaccion.getConnectionString()))
             {
                 conexion.Open();
                 using (SqlCommand comando = new SqlCommand("paginarPersonasPorPais", conexion))

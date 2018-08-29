@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -45,8 +46,29 @@ namespace ProyectoPaises.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "cedula,nbrPersona,paisNacimiento,paisResidencia,fchNacimiento,correo")] persona persona)
+        public ActionResult Create([Bind(Include = "cedula,nbrPersona,paisNacimiento,paisResidencia,fchNacimiento,correo")] persona persona, HttpPostedFileBase foto, HttpPostedFileBase entrevista)
         {
+            MemoryStream target = new MemoryStream();
+
+            if (foto != null)
+            {
+                byte[] picture;
+
+                foto.InputStream.CopyTo(target);
+                picture = target.ToArray();
+                persona.FOTO = picture;
+            }
+
+
+            if (entrevista != null)
+            {
+                byte[] interview;
+                target = new MemoryStream();
+                entrevista.InputStream.CopyTo(target);
+                interview = target.ToArray();
+                persona.ENTREVISTA = interview;
+
+            }
             if (ModelState.IsValid)
             {
                 db.persona.Add(persona);
@@ -77,8 +99,29 @@ namespace ProyectoPaises.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "cedula,nbrPersona,paisNacimiento,paisResidencia,fchNacimiento,correo")] persona persona)
+        public ActionResult Edit([Bind(Include = "cedula,nbrPersona,paisNacimiento,paisResidencia,fchNacimiento,correo")] persona persona, HttpPostedFileBase foto, HttpPostedFileBase entrevista)
         {
+            MemoryStream target = new MemoryStream();
+
+            if (foto != null)
+            {
+                byte[] picture;
+
+                foto.InputStream.CopyTo(target);
+                picture = target.ToArray();
+                persona.FOTO = picture;
+            }
+
+
+            if (entrevista != null)
+            {
+                byte[] interview;
+                target = new MemoryStream();
+                entrevista.InputStream.CopyTo(target);
+                interview = target.ToArray();
+                persona.ENTREVISTA = interview;
+
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(persona).State = EntityState.Modified;

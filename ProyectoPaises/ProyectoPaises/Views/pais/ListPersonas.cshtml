@@ -9,6 +9,9 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.cedula)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.nbrPersona)
         </th>
         <th>
@@ -27,6 +30,9 @@
         <th>
             @Html.DisplayNameFor(model => model.FOTO)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ENTREVISTA)
+        </th>
 
         <th></th>
     </tr>
@@ -34,6 +40,9 @@
     @foreach (var item in Model)
     {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cedula)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.nbrPersona)
         </td>
@@ -65,12 +74,12 @@
         <th>
 
             @{
-        var vidscr = "";
-        if (item.ENTREVISTA != null)
-        {
-            var base64 = Convert.ToBase64String(item.ENTREVISTA);
-            vidscr = string.Format("data:video/mp4;base64,{0}", base64);
-        }
+                var vidscr = "";
+                if (item.ENTREVISTA != null)
+                {
+                    var base64 = Convert.ToBase64String(item.ENTREVISTA);
+                    vidscr = string.Format("data:video/mp4;base64,{0}", base64);
+                }
             }
             <video src=@vidscr controls width="200" />
 

@@ -13,7 +13,7 @@ namespace ProyectoPaises.Models
         public static volatile Transaccion instance = null;
         private static proyectoBases2Entities5 contexto;
         private static DbContextTransaction transaction;
-        private static List<persona> personasModificadas = new List<persona>();
+        private static String connectionString;
 
         public static Transaccion Instance()
         {
@@ -52,24 +52,20 @@ namespace ProyectoPaises.Models
             instance = new Transaccion();
         }
 
-        public static void modificarPersona(persona cristiano)
+        public static void rollBack()
         {
-            personasModificadas.Add(cristiano);
+            transaction.Rollback();
         }
 
-
-        private static void guardarCambios()
+        public static String getConnectionString()
         {
-            foreach(persona cambiada in personasModificadas)
-            {
-                contexto.Entry(cambiada).State = EntityState.Modified;
-                contexto.SaveChanges();
-            }
-
-            personasModificadas.Clear();
-
+            return connectionString;
         }
 
+        public static void setConnectionString(String conne)
+        {
+            connectionString = conne;
+        }
 
 
 
