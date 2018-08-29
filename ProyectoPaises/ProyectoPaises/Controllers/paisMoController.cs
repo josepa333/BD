@@ -59,7 +59,7 @@ namespace ProyectoPaises.Controllers
 
                 himno.InputStream.CopyTo(target);
                 anthem = target.ToArray();
-                pais.HIMNO = anthem;
+                pais.BANDERA = anthem;
 
             }
             if (bandera != null)
@@ -68,7 +68,7 @@ namespace ProyectoPaises.Controllers
                 target = new MemoryStream();
                 bandera.InputStream.CopyTo(target);
                 flag = target.ToArray();
-                pais.BANDERA = flag;
+                pais.HIMNO = flag;
             }
 
             if (ModelState.IsValid)
@@ -113,7 +113,7 @@ namespace ProyectoPaises.Controllers
 
                 himno.InputStream.CopyTo(target);
                 anthem = target.ToArray();
-                pais.HIMNO = anthem;
+                pais.BANDERA = anthem;
 
             }
             if (bandera != null)
@@ -122,7 +122,7 @@ namespace ProyectoPaises.Controllers
                 target = new MemoryStream();
                 bandera.InputStream.CopyTo(target);
                 flag = target.ToArray();
-                pais.BANDERA = flag;
+                pais.HIMNO = flag;
             }
             if (ModelState.IsValid)
             {
