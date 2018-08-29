@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="proyectoBases2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="nombres">
+    <Key>
+      <PropertyRef Name="nombre" />
+    </Key>
+    <Property Name="nombre" Type="varchar" MaxLength="25" Nullable="false" />
+  </EntityType>
   <EntityType Name="pais">
     <Key>
       <PropertyRef Name="idPais" />
@@ -64,11 +70,22 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="actualizaPersona" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cedula" Type="numeric" Mode="In" />
+    <Parameter Name="nbrPersona" Type="varchar" Mode="In" />
+    <Parameter Name="paisNacimiento" Type="numeric" Mode="In" />
+    <Parameter Name="paisResidencia" Type="numeric" Mode="In" />
+    <Parameter Name="fecha" Type="datetime" Mode="In" />
+    <Parameter Name="correo" Type="varchar" Mode="In" />
+    <Parameter Name="foto" Type="varbinary(max)" Mode="In" />
+    <Parameter Name="entrevista" Type="varbinary(max)" Mode="In" />
+  </Function>
   <Function Name="consulta1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="consulta2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="insercionPersonas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="numPais" Type="int" Mode="In" />
   </Function>
+  <Function Name="meterPoblacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="paginarPaises" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="PageIndex" Type="int" Mode="In" />
     <Parameter Name="PageSize" Type="int" Mode="In" />
@@ -81,6 +98,7 @@
     <Parameter Name="PageCount" Type="int" Mode="InOut" />
   </Function>
   <EntityContainer Name="proyectoBases2ModelStoreContainer">
+    <EntitySet Name="nombres" EntityType="Self.nombres" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="pais" EntityType="Self.pais" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="persona" EntityType="Self.persona" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="pais_idPais_idPresidenteActual_fk" Association="Self.pais_idPais_idPresidenteActual_fk">

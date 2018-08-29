@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="proyectoBases2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="nombres">
+    <Key>
+      <PropertyRef Name="nombre" />
+    </Key>
+    <Property Name="nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
   <EntityType Name="pais">
     <Key>
       <PropertyRef Name="idPais" />
@@ -70,7 +76,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="proyectoBases2Entities5" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="proyectoBases2Entities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="nombres" EntityType="Self.nombres" />
     <EntitySet Name="pais" EntityType="Self.pais" />
     <EntitySet Name="persona" EntityType="Self.persona" />
     <AssociationSet Name="pais_idPais_idPresidenteActual_fk" Association="Self.pais_idPais_idPresidenteActual_fk">
@@ -85,11 +92,22 @@
       <End Role="pais" EntitySet="pais" />
       <End Role="persona" EntitySet="persona" />
     </AssociationSet>
+    <FunctionImport Name="actualizaPersona">
+      <Parameter Name="cedula" Mode="In" Type="Decimal" />
+      <Parameter Name="nbrPersona" Mode="In" Type="String" />
+      <Parameter Name="paisNacimiento" Mode="In" Type="Decimal" />
+      <Parameter Name="paisResidencia" Mode="In" Type="Decimal" />
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+      <Parameter Name="correo" Mode="In" Type="String" />
+      <Parameter Name="foto" Mode="In" Type="Binary" />
+      <Parameter Name="entrevista" Mode="In" Type="Binary" />
+    </FunctionImport>
     <FunctionImport Name="consulta1" ReturnType="Collection(proyectoBases2Model.consulta1_Result)" />
     <FunctionImport Name="consulta2" ReturnType="Collection(proyectoBases2Model.consulta2_Result)" />
     <FunctionImport Name="insercionPersonas">
       <Parameter Name="numPais" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="meterPoblacion" />
     <FunctionImport Name="paginarPaises" ReturnType="Collection(proyectoBases2Model.paginarPaises_Result)">
       <Parameter Name="PageIndex" Mode="In" Type="Int32" />
       <Parameter Name="PageSize" Mode="In" Type="Int32" />
@@ -105,8 +123,8 @@
   <ComplexType Name="consulta1_Result">
     <Property Type="Decimal" Name="idPais" Nullable="false" Precision="3" Scale="0" />
     <Property Type="String" Name="nbrPais" Nullable="false" MaxLength="25" />
-    <Property Type="Int32" Name="ano" Nullable="true" />
     <Property Type="Decimal" Name="poblacion" Nullable="false" Precision="10" Scale="0" />
+    <Property Type="Int32" Name="promedio" Nullable="true" />
   </ComplexType>
   <ComplexType Name="consulta2_Result">
     <Property Type="String" Name="nbrPais" Nullable="true" MaxLength="25" />

@@ -37,6 +37,7 @@ namespace ProyectoPaises.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<persona> persona2 { get; set; }
 
+
         public List<pais> Listar(int pageIndex, int pageSize, out int pageCount)
         {
             List<pais> orders = new List<pais>();
@@ -75,7 +76,6 @@ namespace ProyectoPaises.Models
             return orders;
         }
 
-            
 
     }
 }

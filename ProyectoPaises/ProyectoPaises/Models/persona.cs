@@ -36,7 +36,6 @@ namespace ProyectoPaises.Models
         public virtual pais pais1 { get; set; }
         public virtual pais pais2 { get; set; }
 
-
         public List<persona> Listar(decimal idPais, int pageIndex, int pageSize, out int pageCount)
         {
             List<persona> orders = new List<persona>();

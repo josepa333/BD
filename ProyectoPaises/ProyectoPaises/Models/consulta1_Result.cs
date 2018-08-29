@@ -15,7 +15,7 @@ namespace ProyectoPaises.Models
     {
         public decimal idPais { get; set; }
         public string nbrPais { get; set; }
-        public Nullable<int> ano { get; set; }
         public decimal poblacion { get; set; }
+        public Nullable<int> promedio { get; set; }
     }
 }

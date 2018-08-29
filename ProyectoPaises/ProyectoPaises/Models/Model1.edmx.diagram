@@ -4,7 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1e5238e0f37b434f9c1098ddeaa74a7e" Name="Diagram1">
+      <Diagram DiagramId="09bd42e673dc4fd388325ece7a32cd8d" Name="Diagram1">
+        <EntityTypeShape EntityType="proyectoBases2Model.nombres" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="proyectoBases2Model.pais" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="proyectoBases2Model.persona" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="proyectoBases2Model.pais_idPais_idPresidenteActual_fk" ManuallyRouted="false" />

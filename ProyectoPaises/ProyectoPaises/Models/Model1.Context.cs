@@ -15,10 +15,10 @@ namespace ProyectoPaises.Models
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class proyectoBases2Entities5 : DbContext
+    public partial class proyectoBases2Entities1 : DbContext
     {
-        public proyectoBases2Entities5()
-            : base("name=proyectoBases2Entities5")
+        public proyectoBases2Entities1()
+            : base("name=proyectoBases2Entities1")
         {
         }
     
@@ -27,8 +27,46 @@ namespace ProyectoPaises.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<nombres> nombres { get; set; }
         public virtual DbSet<pais> pais { get; set; }
         public virtual DbSet<persona> persona { get; set; }
+    
+        public virtual int actualizaPersona(Nullable<decimal> cedula, string nbrPersona, Nullable<decimal> paisNacimiento, Nullable<decimal> paisResidencia, Nullable<System.DateTime> fecha, string correo, byte[] foto, byte[] entrevista)
+        {
+            var cedulaParameter = cedula.HasValue ?
+                new ObjectParameter("cedula", cedula) :
+                new ObjectParameter("cedula", typeof(decimal));
+    
+            var nbrPersonaParameter = nbrPersona != null ?
+                new ObjectParameter("nbrPersona", nbrPersona) :
+                new ObjectParameter("nbrPersona", typeof(string));
+    
+            var paisNacimientoParameter = paisNacimiento.HasValue ?
+                new ObjectParameter("paisNacimiento", paisNacimiento) :
+                new ObjectParameter("paisNacimiento", typeof(decimal));
+    
+            var paisResidenciaParameter = paisResidencia.HasValue ?
+                new ObjectParameter("paisResidencia", paisResidencia) :
+                new ObjectParameter("paisResidencia", typeof(decimal));
+    
+            var fechaParameter = fecha.HasValue ?
+                new ObjectParameter("fecha", fecha) :
+                new ObjectParameter("fecha", typeof(System.DateTime));
+    
+            var correoParameter = correo != null ?
+                new ObjectParameter("correo", correo) :
+                new ObjectParameter("correo", typeof(string));
+    
+            var fotoParameter = foto != null ?
+                new ObjectParameter("foto", foto) :
+                new ObjectParameter("foto", typeof(byte[]));
+    
+            var entrevistaParameter = entrevista != null ?
+                new ObjectParameter("entrevista", entrevista) :
+                new ObjectParameter("entrevista", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("actualizaPersona", cedulaParameter, nbrPersonaParameter, paisNacimientoParameter, paisResidenciaParameter, fechaParameter, correoParameter, fotoParameter, entrevistaParameter);
+        }
     
         public virtual ObjectResult<consulta1_Result> consulta1()
         {
@@ -47,6 +85,11 @@ namespace ProyectoPaises.Models
                 new ObjectParameter("numPais", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("insercionPersonas", numPaisParameter);
+        }
+    
+        public virtual int meterPoblacion()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("meterPoblacion");
         }
     
         public virtual ObjectResult<paginarPaises_Result> paginarPaises(Nullable<int> pageIndex, Nullable<int> pageSize, ObjectParameter pageCount)

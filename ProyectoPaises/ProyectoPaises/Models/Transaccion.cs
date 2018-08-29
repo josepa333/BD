@@ -11,7 +11,7 @@ namespace ProyectoPaises.Models
     public class Transaccion
     {
         public static volatile Transaccion instance = null;
-        private static proyectoBases2Entities5 contexto;
+        private static proyectoBases2Entities1 contexto;
         private static DbContextTransaction transaction;
         private static String connectionString;
 
@@ -25,13 +25,13 @@ namespace ProyectoPaises.Models
         }
 
 
-        public static proyectoBases2Entities5 Contexto()
+        public static proyectoBases2Entities1 Contexto()
         {
             return contexto;
         }
         private Transaccion()
         {
-            contexto = new proyectoBases2Entities5();
+            contexto = new proyectoBases2Entities1();
             transaction = contexto.Database.BeginTransaction(System.Data.IsolationLevel.RepeatableRead);
         }
 
@@ -65,6 +65,12 @@ namespace ProyectoPaises.Models
         public static void setConnectionString(String conne)
         {
             connectionString = conne;
+        }
+
+        public static void matarContexto()
+        {
+            contexto = null;
+            instance = null;
         }
 
 

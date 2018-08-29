@@ -12,7 +12,7 @@ namespace ProyectoPaises.Views
 {
     public class personasController : Controller
     {
-        private proyectoBases2Entities5 db = new proyectoBases2Entities5();
+        private proyectoBases2Entities1 db = new proyectoBases2Entities1();
 
         // GET: personas
         public ActionResult Index()

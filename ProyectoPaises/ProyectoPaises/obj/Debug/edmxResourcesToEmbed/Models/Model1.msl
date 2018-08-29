@@ -1,6 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="proyectoBases2ModelStoreContainer" CdmEntityContainer="proyectoBases2Entities5">
+  <EntityContainerMapping StorageEntityContainer="proyectoBases2ModelStoreContainer" CdmEntityContainer="proyectoBases2Entities1">
+    <EntitySetMapping Name="nombres">
+      <EntityTypeMapping TypeName="proyectoBases2Model.nombres">
+        <MappingFragment StoreEntitySet="nombres">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="pais">
       <EntityTypeMapping TypeName="proyectoBases2Model.pais">
         <MappingFragment StoreEntitySet="pais">
@@ -28,13 +35,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="actualizaPersona" FunctionName="proyectoBases2Model.Store.actualizaPersona" />
     <FunctionImportMapping FunctionImportName="consulta1" FunctionName="proyectoBases2Model.Store.consulta1">
       <ResultMapping>
         <ComplexTypeMapping TypeName="proyectoBases2Model.consulta1_Result">
           <ScalarProperty Name="idPais" ColumnName="idPais" />
           <ScalarProperty Name="nbrPais" ColumnName="nbrPais" />
-          <ScalarProperty Name="ano" ColumnName="ano" />
           <ScalarProperty Name="poblacion" ColumnName="poblacion" />
+          <ScalarProperty Name="promedio" ColumnName="promedio" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -48,6 +56,7 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="insercionPersonas" FunctionName="proyectoBases2Model.Store.insercionPersonas" />
+    <FunctionImportMapping FunctionImportName="meterPoblacion" FunctionName="proyectoBases2Model.Store.meterPoblacion" />
     <FunctionImportMapping FunctionImportName="paginarPaises" FunctionName="proyectoBases2Model.Store.paginarPaises">
       <ResultMapping>
         <ComplexTypeMapping TypeName="proyectoBases2Model.paginarPaises_Result">

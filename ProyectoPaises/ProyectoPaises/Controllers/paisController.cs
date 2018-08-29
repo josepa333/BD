@@ -16,7 +16,7 @@ namespace ProyectoPaises.Controllers
 {
     public class paisController : Controller
     {
-        private proyectoBases2Entities5 db = new proyectoBases2Entities5();
+        private proyectoBases2Entities1 db = new proyectoBases2Entities1();
 
         // GET: pais
         public ActionResult Index(int id = 1)
@@ -182,10 +182,12 @@ namespace ProyectoPaises.Controllers
                 persona.ENTREVISTA = interview;
 
             }
+            Console.Write("Va a evaluar");
 
 
             if (ModelState.IsValid)
             {
+             /*
                 SqlConnection conexion = new SqlConnection(Transaccion.getConnectionString());
                 conexion.Open();
                 SqlCommand cmd = new SqlCommand("actualizaPersona", conexion);
@@ -207,17 +209,20 @@ namespace ProyectoPaises.Controllers
                 SqlParameter parameter8 = new SqlParameter("@entrevista", persona.ENTREVISTA);
                 cmd.Parameters.Add(parameter8);
 
+                cmd.CommandTimeout = 0;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.ExecuteNonQuery();
                 conexion.Close();
+                */
                 
-                /*
-                //Transaccion.modificarPersona(persona);
                 Transaccion.rollBack();
+                Transaccion.matarContexto();
+                db = new proyectoBases2Entities1();
                 db.Entry(persona).State = EntityState.Modified;
                 db.SaveChanges();
-                Transaccion.reiniciarInstancia();
-                */
+                Transaccion ma = Transaccion.Instance();
+
+
                 return RedirectToAction("Index");
             }
             ViewBag.paisNacimiento = new SelectList(Transaccion.Contexto().pais, "idPais", "nbrPais", persona.paisNacimiento);

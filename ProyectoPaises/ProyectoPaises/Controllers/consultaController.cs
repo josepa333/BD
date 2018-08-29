@@ -10,14 +10,14 @@ namespace ProyectoPaises.Controllers
 {
     public class consultaController : Controller
     {
-        private proyectoBases2Entities5 db = Transaccion.Contexto();
+        private proyectoBases2Entities1 db = Transaccion.Contexto();
         // GET: consulta
         public ActionResult Index()
         {
             return View();
         }
 
-
+         
         public ActionResult consulta1()
         {
             SqlConnection conn = new SqlConnection(Transaccion.getConnectionString());

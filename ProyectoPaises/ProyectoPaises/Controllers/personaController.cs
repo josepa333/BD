@@ -13,7 +13,7 @@ namespace ProyectoPaises.Controllers
 {
     public class personaController : Controller
     {
-        private proyectoBases2Entities5 db = new proyectoBases2Entities5();
+        private proyectoBases2Entities1 db = new proyectoBases2Entities1();
 
         // GET: persona
         public ActionResult Index()
