@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -185,11 +186,38 @@ namespace ProyectoPaises.Controllers
 
             if (ModelState.IsValid)
             {
+                SqlConnection conexion = new SqlConnection(Transaccion.getConnectionString());
+                conexion.Open();
+                SqlCommand cmd = new SqlCommand("actualizaPersona", conexion);
+
+                SqlParameter parameter1 = new SqlParameter("@cedula", persona.cedula);
+                cmd.Parameters.Add(parameter1);
+                SqlParameter parameter2 = new SqlParameter("@nbrPersona", persona.nbrPersona);
+                cmd.Parameters.Add(parameter2);
+                SqlParameter parameter3 = new SqlParameter("@paisNacimiento", persona.paisNacimiento);
+                cmd.Parameters.Add(parameter3);
+                SqlParameter parameter4 = new SqlParameter("@paisResidencia", persona.paisResidencia);
+                cmd.Parameters.Add(parameter4);
+                SqlParameter parameter5 = new SqlParameter("@fecha", persona.fchNacimiento);
+                cmd.Parameters.Add(parameter5);
+                SqlParameter parameter6 = new SqlParameter("@correo", persona.correo);
+                cmd.Parameters.Add(parameter6);
+                SqlParameter parameter7 = new SqlParameter("@foto", persona.FOTO);
+                cmd.Parameters.Add(parameter7);
+                SqlParameter parameter8 = new SqlParameter("@entrevista", persona.ENTREVISTA);
+                cmd.Parameters.Add(parameter8);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+                conexion.Close();
+                
+                /*
                 //Transaccion.modificarPersona(persona);
                 Transaccion.rollBack();
                 db.Entry(persona).State = EntityState.Modified;
                 db.SaveChanges();
                 Transaccion.reiniciarInstancia();
+                */
                 return RedirectToAction("Index");
             }
             ViewBag.paisNacimiento = new SelectList(Transaccion.Contexto().pais, "idPais", "nbrPais", persona.paisNacimiento);

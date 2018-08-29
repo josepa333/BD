@@ -20,7 +20,7 @@ namespace ProyectoPaises.Controllers
 
         public ActionResult consulta1()
         {
-            SqlConnection conn = new SqlConnection("data source=ecRhin.ec.tec.ac.cr\\Estudiantes;initial catalog=ProyectoBasesJAR;persist security info=True;user id=josepalvarado;password=josepalvarado;MultipleActiveResultSets=True;App=EntityFramework");
+            SqlConnection conn = new SqlConnection(Transaccion.getConnectionString());
             conn.Open();
             SqlCommand cmd = new SqlCommand("consulta1", conn);
 
@@ -31,7 +31,7 @@ namespace ProyectoPaises.Controllers
 
         public ActionResult consulta2()
         {
-            SqlConnection conn = new SqlConnection("data source=ecRhin.ec.tec.ac.cr\\Estudiantes;initial catalog=ProyectoBasesJAR;persist security info=True;user id=josepalvarado;password=josepalvarado;MultipleActiveResultSets=True;App=EntityFramework");
+            SqlConnection conn = new SqlConnection(Transaccion.getConnectionString());
             conn.Open();
             SqlCommand cmd = new SqlCommand("consulta2", conn);
 

@@ -11,7 +11,7 @@ namespace ProyectoPaises.Controllers
     {
         public ActionResult Index()
         {
-            Transaccion.setConnectionString("Data Source=ecRhin.ec.tec.ac.cr\\Estudiantes;Initial Catalog=proyectoBases2;Persist Security Info=True;User ID=josepalvarado;Password=josepalvarado;MultipleActiveResultSets=True;Application Name=EntityFramework");
+            Transaccion.setConnectionString("Data Source=basesdosjoseadrianyricardo.database.windows.net;initial catalog=proyectoBases2;persist security info=True;user id=joseadrianricardo;password=Alvarado!Garnier!Bonilla;MultipleActiveResultSets=True;Application Name=EntityFramework");
             Transaccion ma = Transaccion.Instance();
             return View();
         }
